@@ -12,7 +12,7 @@ public class Cart {
 	}
 	
 	public void addProduct(ProductBean product) {
-		products.add(product);
+			products.add(product);
 	}
 	
 	public void deleteProduct(ProductBean product) {

@@ -2,20 +2,14 @@
     pageEncoding="ISO-8859-1"%>
     
     <%
-	Collection<?> products = (Collection<?>) request.getAttribute("products");
-	if(products == null) {
-		response.sendRedirect("./product");	
-		return;
-	}
-	
+    
 	ProductBean product = (ProductBean) request.getAttribute("product");
 	
-	Cart cart = (Cart) request.getAttribute("cart");
 	%>
 	
 <!DOCTYPE html>
 <html>
-<%@ page import="java.util.*, model.ProductBean, model.Cart"%>
+<%@ page import="java.util.*, model.ProductBean"%>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,8 +17,11 @@
 	<title>Dettagli</title>
 </head>
 
-<body>
+<body style="background-color: #FFCC7C">
 	<h2>Details</h2>
+	<h3 style="text-align: right"><a href="product">Prodotti</a></h3>
+	<h3 style="text-align: right"><a href="cart">Carrello</a></h3>
+	
 	<%
 		if (product != null) {
 	%>
@@ -35,6 +32,7 @@
 			<th>Descrizione</th>
 			<th>Prezzo</th>
 			<th>Quantita</th>
+			<th>Azioni</th>
 		</tr>
 		<tr>
 			<td><%=product.getID()%></td>
@@ -42,6 +40,7 @@
 			<td><%=product.getDescription()%></td>
 			<td><%=product.getPrice()%></td>
 			<td><%=product.getQuantity()%></td>
+			<td><a href="product?action=addC&id=<%=product.getID()%>">Aggiungi al Carrello</a></td>
 		</tr>
 	</table>
 	<%

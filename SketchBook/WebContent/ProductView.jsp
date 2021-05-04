@@ -23,8 +23,9 @@
 	<title>Prodotti</title>
 </head>
 
-<body style="background-color: #c0c0c0" >
+<body style="background-color: #FFCC7C" >
 	<h2>Prodotti</h2>
+	<h3 style="text-align: right"><a href="cart">Carrello</a></h3>
 	<table border="1">
 		<tr>
 			<th>ID <a href="product?sort=id">Ordina</a></th>
@@ -42,8 +43,8 @@
 			<td><%=bean.getID()%></td>
 			<td><%=bean.getName()%></td>
 			<td><%=bean.getDescription()%></td>
-			<td><a href="product?action=read&id=<%=bean.getID()%>">Dettagli</a><br>
-				<a href="product?action=addC&id=<%=bean.getID()%>">Aggiungi al Carrello</a>
+			<td><a href="details?action=read&id=<%=bean.getID()%>">Dettagli</a><br><br>
+				<a href="cart?action=addC&id=<%=bean.getID()%>">Aggiungi al Carrello</a>
 				</td>
 		</tr>
 		<%
@@ -57,46 +58,5 @@
 			}
 		%>
 	</table>
-	
-	<h2>Details</h2>
-	<%
-		if (product != null) {
-	%>
-	<table border="1">
-		<tr>
-			<th>ID</th>
-			<th>Nome</th>
-			<th>Descrizione</th>
-			<th>Prezzo</th>
-			<th>Quantita</th>
-		</tr>
-		<tr>
-			<td><%=product.getID()%></td>
-			<td><%=product.getName()%></td>
-			<td><%=product.getDescription()%></td>
-			<td><%=product.getPrice()%>€</td>
-			<td><%=product.getQuantity()%></td>
-		</tr>
-	</table>
-	<%
-		}
-	%>
-	<% if(cart != null) { %>
-		<h2>Cart</h2>
-		<table border="1">
-		<tr>
-			<th>Nome</th>
-			<th>Azioni</th>
-		</tr>
-		<% List<ProductBean> prodcart = cart.getProducts(); 	
-		   for(ProductBean beancart: prodcart) {
-		%>
-		<tr>
-			<td><%=beancart.getName()%></td>
-			<td><a href="product?action=deleteC&id=<%=beancart.getID()%>">Rimuovi dal carrello</a></td>
-		</tr>
-		<%} %>
-	</table>		
-	<% } %>	
 </body>
 </html>
