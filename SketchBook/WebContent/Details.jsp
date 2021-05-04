@@ -40,7 +40,7 @@
 			<td><%=product.getDescription()%></td>
 			<td><%=product.getPrice()%></td>
 			<td><%=product.getQuantity()%></td>
-			<td><a href="product?action=addC&id=<%=product.getID()%>">Aggiungi al Carrello</a></td>
+			<td><a href="cart?action=addC&id=<%=product.getID()%>">Aggiungi al Carrello</a></td>
 		</tr>
 	</table>
 	<%
