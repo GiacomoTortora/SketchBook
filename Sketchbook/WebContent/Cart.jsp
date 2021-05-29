@@ -37,6 +37,5 @@
 		<%} %>
 	</table>
 	<h2>Totale: <%=totale%></h2>
-	<br>
 </body>
 </html>

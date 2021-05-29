@@ -11,11 +11,16 @@
 	ProductBean product = (ProductBean) request.getAttribute("product");
 	
 	Cart cart = (Cart) request.getAttribute("cart");
+	
+	UserBean currUser=new UserBean();
+	
+	
+	
 %>
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*, model.ProductBean, model.Cart"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*, model.ProductBean, model.Cart, model.UserBean"%>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,6 +31,16 @@
 <body style="background-color: #FFCC7C" >
 	<h2>Prodotti</h2>
 	<h3 style="text-align: right"><a href="cart">Carrello</a></h3>
+	<h4 style="text-align: right"><a href="LoginPage.jsp">Login</a></h4>
+	<% 
+	 String print="";
+	 currUser= (UserBean) session.getAttribute("currentSessionUser");
+	 if(currUser==null) {
+      print="WiP"; 
+	 }
+	 else print="Salve, "+currUser.getFirstName();
+	%>
+	<h3 style="text-align: left"><a href="UserPage.jsp"><%=print %></a></h3>
 	<table border="1">
 		<tr>
 			<th>ID <a href="product?sort=id">Ordina</a></th>
