@@ -10,7 +10,8 @@ public class UserDAO {
 	
 	 static Connection con=null;
 	 static ResultSet rs=null;
-   public static UserBean doRetrieve(UserBean bean) {
+	 
+     public static UserBean doRetrieve(UserBean bean) {
 	 
      Statement stmt=null;
      String email=bean.getEmail();
@@ -38,7 +39,7 @@ public class UserDAO {
              bean.setLastName(lastName);
              bean.setValid(true);
          }
-        
+       
      }
 
      
@@ -47,5 +48,43 @@ public class UserDAO {
      }
      return bean;
      
+   }
+   
+   public static boolean isUniqueEmail(UserBean bean) {
+	   Statement stmt=null;
+	   String email=bean.getEmail();
+	   String query="SELECT Nome FROM cliente WHERE Email='"+email+"'";
+	   System.out.println("Your email is " + email);
+	   System.out.println("Query: "+query);
+	   try {
+		   con= DriverManagerConnectionPool.getConnection();
+		   stmt=con.createStatement();
+		   rs=stmt.executeQuery(query);
+		   if(!rs.first()) {
+			   return true;
+		   } 
+	   } catch(Exception e) {
+		   System.out.println("Errore: "+e);
+	   }
+	   return false;
+   }
+   
+   public static void doSubmit(UserBean bean) {
+	   PreparedStatement preparedStatement=null;
+	   try {  
+	   con=DriverManagerConnectionPool.getConnection();
+	   preparedStatement=con.prepareStatement("INSERT INTO cliente (Nome, Cognome, Email, Password) VALUES (?,?,?,?)");
+	   preparedStatement.setString(1, bean.getFirstName());
+	   preparedStatement.setString(2, bean.getLastName());
+	   preparedStatement.setString(3, bean.getEmail());
+	   preparedStatement.setString(4, bean.getPassword());
+	   int i=preparedStatement.executeUpdate();
+	   con.commit();
+	   if(i!=0) {
+		   System.out.println("success");
+	   } 
+	   }  catch(Exception e) {
+		   System.out.println("Errore: "+e);
+	   } 
    }
 }
