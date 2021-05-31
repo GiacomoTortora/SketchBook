@@ -9,14 +9,16 @@ public class ProductBean implements Serializable {
 	private int id;
 	private String nome;
 	private String descrizione;
-	private int prezzo;
+	private double prezzo;
 	private int quantita;
+	private int quantitaCarrello;
 
 	public ProductBean() {
 		id = -1;
 		nome = "";
 		descrizione = "";
 		quantita = 0;
+		quantitaCarrello=1;
 	}
 
 	public int getID() {
@@ -24,7 +26,7 @@ public class ProductBean implements Serializable {
 	}
 
 	public void setID(int code) {
-		this.id = code;
+		id = code;
 	}
 
 	public String getName() {
@@ -32,7 +34,7 @@ public class ProductBean implements Serializable {
 	}
 
 	public void setName(String name) {
-		this.nome = name;
+		nome = name;
 	}
 
 	public String getDescription() {
@@ -40,15 +42,15 @@ public class ProductBean implements Serializable {
 	}
 
 	public void setDescription(String description) {
-		this.descrizione = description;
+		descrizione = description;
 	}
 
 	public double getPrice() {
 		return prezzo;
 	}
 
-	public void setPrice(int price) {
-		this.prezzo = price;
+	public void setPrice(double price) {
+		prezzo = price;
 	}
 
 	public int getQuantity() {
@@ -56,7 +58,15 @@ public class ProductBean implements Serializable {
 	}
 
 	public void setQuantity(int quantity) {
-		this.quantita = quantity;
+		quantita = quantity;
+	}
+	
+	public int getQuantitaCarrello() {
+		return quantitaCarrello;
+	}
+	
+	public void setQuantitaCarrello() {
+		quantitaCarrello++;
 	}
 
 	@Override

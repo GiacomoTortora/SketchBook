@@ -18,6 +18,22 @@
     <servlet-name>ProductControl</servlet-name>
     <servlet-class>control.ProductControl</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LogoutController</servlet-name>
+  	<servlet-class>control.LogoutController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SignUpController</servlet-name>
+  	<servlet-class>control.SignUpController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SignUpController</servlet-name>
+  	<url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutController</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>LoginController</servlet-name>
   	<url-pattern>/login</url-pattern>
