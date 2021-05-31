@@ -14,7 +14,6 @@
 	
 	UserBean currUser=new UserBean();
 	
-	currUser= (UserBean) session.getAttribute("currentSessionUser");
 	
 	
 %>
@@ -32,35 +31,16 @@
 <body style="background-color: #FFCC7C" >
 	<h2>Prodotti</h2>
 	<h3 style="text-align: right"><a href="cart">Carrello</a></h3>
+	<h4 style="text-align: right"><a href="LoginPage.jsp">Login</a></h4>
 	<% 
-	 String print="Login";
+	 String print="";
+	 currUser= (UserBean) session.getAttribute("currentSessionUser");
 	 if(currUser==null) {
-	 %>
-	 <h4 style="text-align: right"><a href="LoginPage.jsp"><%=print%></a></h4>
-	 <h5 style="text-align: right"><a href="SignUpPage.jsp">Sign Up</a></h5>
-	 <%
-        } 
-        else { print="Logout";
-    %>
-	  <h4 style="text-align: right"><a href="LogoutController"><%=print%></a></h4>
-	   <%
-        }
-    %>
-	<% 
-	 String prints="SketchBook.it";
-	 if(currUser==null) {
-	 %>
-	 <h3 style="text-align: left"><%=prints %></h3>
-	 <%
-        } 
-        else { prints="Salve, "+currUser.getFirstName();
-    %>
-	  <h3 style="text-align: left"><a href="UserPage.jsp"><%=prints %></a></h3>
-	   <%
-        } 
-    %>
- 
-	
+      print="WiP"; 
+	 }
+	 else print="Salve, "+currUser.getFirstName();
+	%>
+	<h3 style="text-align: left"><a href="UserPage.jsp"><%=print %></a></h3>
 	<table border="1">
 		<tr>
 			<th>ID <a href="product?sort=id">Ordina</a></th>
@@ -90,7 +70,7 @@
 			<td colspan="6">Nessun prodotto disponibile</td>
 		</tr>
 		<%
-			} 
+			}
 		%>
 	</table>
 </body>

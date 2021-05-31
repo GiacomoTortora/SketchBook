@@ -21,14 +21,14 @@ public class UserBean {
 		lastName="";
 		valid=true;
 	}
-		
+	
 	public String getEmail() {
 		return email;
 	}
 	
 	public void setEmail(String newEmail) {
 		
-		this.email=newEmail;
+		email=newEmail;
 	}
 	
 	public String getPassword() {
@@ -36,7 +36,7 @@ public class UserBean {
 	}
 	
 	public void setPassword(String newPassword) {
-		 this.password=newPassword;
+		 password=newPassword;
 	}
 	
 	public String getFirstName() {
@@ -44,7 +44,7 @@ public class UserBean {
 	}
 	
 	public void setFirstName(String newFirstName) {
-	   this.firstName=newFirstName;
+	   firstName=newFirstName;
 	}
 	
 	public String getLastName() {
@@ -52,7 +52,7 @@ public class UserBean {
 	}
 	
 	public void setLastName(String newLastName) {
-		 this.lastName=newLastName;
+		 lastName=newLastName;
 	}
 	
 	public boolean isValid() {
@@ -60,7 +60,7 @@ public class UserBean {
     }
 
 	public void setValid(boolean newValid) {
-	       this.valid = newValid;
+	       valid = newValid;
 	}	
 	
 	public int getId() {
@@ -71,6 +71,7 @@ public class UserBean {
 		return admin;
 	}
 	
+	@Override
 	public String toString() {
 		return email + " (" + id + "), " + password + " " + firstName + " " + lastName;
 	}

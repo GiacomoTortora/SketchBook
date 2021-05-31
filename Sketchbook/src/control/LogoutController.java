@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet("/LogoutController")
 public class LogoutController extends HttpServlet {
-	private static final long serialVersionUID = 102131974239L;
+	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -30,7 +30,7 @@ public class LogoutController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if(session != null)
 		    session.invalidate();
-		request.getRequestDispatcher("ProductView.jsp").forward(request,response);
+		request.getRequestDispatcher("/index.jsp").forward(request,response);
 	}
 
 	/**

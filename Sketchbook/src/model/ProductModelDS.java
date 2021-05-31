@@ -81,7 +81,7 @@ public class ProductModelDS implements ProductModel {
 				bean.setID(rs.getInt("ID"));
 				bean.setName(rs.getString("NOME"));
 				bean.setDescription(rs.getString("DESCRIZIONE"));
-				bean.setPrice(rs.getDouble("PREZZO"));
+				bean.setPrice(rs.getInt("PREZZO"));
 				bean.setQuantity(rs.getInt("QUANTITA"));
 			}
 
@@ -150,7 +150,7 @@ public class ProductModelDS implements ProductModel {
 				bean.setID(rs.getInt("ID"));
 				bean.setName(rs.getString("NOME"));
 				bean.setDescription(rs.getString("DESCRIZIONE"));
-				bean.setPrice(rs.getDouble("PREZZO"));
+				bean.setPrice(rs.getInt("PREZZO"));
 				bean.setQuantity(rs.getInt("QUANTITA"));
 				products.add(bean);
 			}
