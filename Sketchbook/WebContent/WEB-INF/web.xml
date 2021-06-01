@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>SketchBook</display-name>
+  <welcome-file-list>
+    <welcome-file>ProductView.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+        <location>/general-error.html</location>
+    </error-page>
+  <resource-ref>
+    <description>JNDI reference to a data source</description>
+    <res-ref-name>jdbc/ecommerce</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <servlet>
+  	<servlet-name>LoginController</servlet-name>
+  	<servlet-class>control.LoginController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProductControl</servlet-name>
+    <servlet-class>control.ProductControl</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>LogoutController</servlet-name>
+  	<servlet-class>control.LogoutController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SignUpController</servlet-name>
+  	<servlet-class>control.SignUpController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SignUpController</servlet-name>
+  	<url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutController</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginController</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProductControl</servlet-name>
+    <url-pattern>/product</url-pattern>
+  </servlet-mapping>
+</web-app>
