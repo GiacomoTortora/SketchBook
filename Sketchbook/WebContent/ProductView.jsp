@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 
 <%
 	Collection<?> products = (Collection<?>) request.getAttribute("products");
@@ -20,21 +20,18 @@
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*, model.ProductBean, model.Cart, model.UserBean"%>
+<%@ page contentType="text/html; charset=ISO-8859-1" import="java.util.*, model.ProductBean, model.Cart, model.UserBean"%>
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link href="./css/ProductStyle.css" rel="stylesheet" type="text/css">
 	<link rel="shortcut icon" href="./immagini/favicon.png"/>
-	<script src="https://www.w3schools.com/lib/w3.js"></script>
 	<title>Prodotti</title>
 </head>
 
 <body style="background-color: #FFCC7C" >
 
-<!-- w3-include-html (riga 35 e 36) è uno script dato da w3schools per includere file html in altri file -->
-	<div w3-include-html="header.html"></div>
-	<script>w3.includeHTML();</script>
+	<%@ include file="./fragments/header.jsp" %>	
 	<% 
 	 String print="Login";
 	 if(currUser==null) { 
@@ -88,5 +85,7 @@
 			}
 		%>
 	</table>
+	
+	<%@ include file="./fragments/footer.jsp" %>
 </body>
 </html>
