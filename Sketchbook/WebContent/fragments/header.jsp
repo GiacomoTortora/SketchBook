@@ -30,22 +30,6 @@
                         </div>
                         <div class="top_bar_content ml-auto">
                             <div class="top_bar_menu">
-                                <ul class="standard_dropdown top_bar_dropdown">
-                                    <li> <a href="#">Italian<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">English</a></li>
-                                            <li><a href="#">Spanish</a></li>
-                                            <li><a href="#">Japanese</a></li>
-                                        </ul>
-                                    </li>
-                                    <li> <a href="#">EUR Euro<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">$ US Dollar</a></li>
-                                            <li><a href="#">GBP British Pound</a></li>
-                                            <li><a href="#">JPY Japanese Yen</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
                             </div>
                             <div class="top_bar_user">
                                 <div class="user_icon"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918647/user.svg" alt=""></div>
