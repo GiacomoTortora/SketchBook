@@ -19,10 +19,11 @@
 	<title>Carrello</title>
 </head>
 
-<body style="background-color: #FFCC7C">
+<body style="background-color: #FFFFFF">
+<%@ include file="./fragments/header.jsp" %>
 <!--  cart non pienamente funzionante -->
-		<h2>Carrello</h2>
-		<h3 style="text-align: right"><a href="home">Prodotti</a></h3>
+		<h2 style="color: #0e8ce4">Carrello</h2>
+		<br>
 		<table border="1">
 		<tr>
 			<th>Nome</th>
@@ -42,7 +43,9 @@
 	 </tr>
 	  <% }%>
 	</table>
-	<h2>Totale: &#8364 <%=totale%></h2>
+	<br>
+	<h2 style="color: #0e8ce4">Totale: &#8364 <%=totale%></h2>
+	<br>
 	
 	<% 
 	 String print="Acquista";
@@ -57,5 +60,7 @@
 	   <%
         }
     %>
+    
+    <%@ include file="./fragments/footer.jsp" %>
 </body>
 </html>

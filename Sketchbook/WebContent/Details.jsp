@@ -18,11 +18,8 @@
 	<title>Dettagli</title>
 </head>
 
-<body style="background-color: #FFCC7C">
-	<h2>Details</h2>
-	<h3 style="text-align: right"><a href="home">Prodotti</a></h3>
-	<h3 style="text-align: right"><a href="cart">Carrello</a></h3>
-	
+<body style="background-color: #FFFFFF">
+<%@ include file="./fragments/header.jsp" %>
 	<%
 		if (product != null) {
 	%>
@@ -47,5 +44,7 @@
 	<%
 		}
 	%>
+	
+	<%@ include file="./fragments/footer.jsp" %>
 </body>
 </html>

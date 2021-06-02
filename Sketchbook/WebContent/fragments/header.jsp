@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div> <!-- Header Main -->
-        <div class="header_main">
+        <div class="header_main" style="background-color: #FFFFFF">
             <div class="container">
                 <div class="row">
                     <!-- Logo -->
@@ -68,7 +68,7 @@
                     </div> <!-- Search -->
                     <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
                         <div class="header_search">
-                            <div class="header_search_content" style="background-color: #fafafa">
+                            <div class="header_search_content" style="background-color: #FFFFFF">
                                 <div class="header_search_form_container">
                                     <form action="#" class="header_search_form clearfix"> <input type="search" required="required" class="header_search_input" placeholder="Cerca...">
                                         <div class="custom_dropdown" style="display: none;">
@@ -110,7 +110,7 @@
                             <div class="main_nav_menu">
                                 <ul class="standard_dropdown main_nav_dropdown">
                                     <li><a href="home">Home<i class="fas fa-chevron-down"></i></a></li>
-                                    <li class="hassubs"> <a href="#">Categoria 1<i class="fas fa-chevron-down"></i></a>
+                                    <li class="hassubs"> <a href="#">Categoria 1</a>
                                         <ul>
                                             <li> <a href="#">Sottocategoria 1<i class="fas fa-chevron-down"></i></a>
                                                 <ul>
@@ -124,7 +124,7 @@
                                             <li><a href="#">Sottocategoria 4<i class="fas fa-chevron-down"></i></a></li>
                                         </ul>
                                     </li>
-                                    <li class="hassubs"> <a href="#">Categoria 2<i class="fas fa-chevron-down"></i></a>
+                                    <li class="hassubs"> <a href="#">Categoria 2</a>
                                         <ul>
                                             <li> <a href="#">Sottocategoria 2<i class="fas fa-chevron-down"></i></a>
                                                 <ul>
@@ -138,11 +138,10 @@
                                             <li><a href="#">Sottocategoria 5<i class="fas fa-chevron-down"></i></a></li>
                                         </ul>
                                     </li>
-                                    <li class="hassubs"> <a href="#">Pagine<i class="fas fa-chevron-down"></i></a>
+                                    <li class="hassubs"> <a href="#">Pagine</a>
                                         <ul>
                                             <li><a href="cart">Carrello<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="ProductView.html">Prodotti<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="home">Prodotti<i class="fas fa-chevron-down"></i></a></li>
                                             <li><a href="contact.html">Contatti<i class="fas fa-chevron-down"></i></a></li>
                                         </ul>
                                     </li>
@@ -238,7 +237,7 @@
             </div>
         </div>
     </header>
-    <div style="height: 100px"> </div>
+    <div style="height: 250px"> </div>
 </div>
 </body>
 </html>

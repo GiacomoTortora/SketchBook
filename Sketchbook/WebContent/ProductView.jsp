@@ -29,7 +29,7 @@
 	<title>Prodotti</title>
 </head>
 
-<body style="background-color: #FFCC7C" >
+<body style="background-color: #FFFFFF" >
 
 	<%@ include file="./fragments/header.jsp" %>	
 	<% 
@@ -53,7 +53,7 @@
 	        } 
 	    %>
 		 
-	<table border="1">
+	<table>
 		<tr>
 			<th>ID <a href="product?sort=id">Ordina</a></th>
 			<th>Nome <a href="product?sort=nome">Ordina</a></th>

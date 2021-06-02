@@ -5,7 +5,7 @@
     <welcome-file>ProductView.jsp</welcome-file>
   </welcome-file-list>
   <error-page>
-        <location>/general-error.html</location>
+        <location>/general-error.jsp</location>
     </error-page>
   <resource-ref>
     <description>JNDI reference to a data source</description>

@@ -7,7 +7,6 @@
    <!DOCTYPE html>
 
    <html>
-
       <head>
          <meta http-equiv="Content-Type" 
             content="text/html; charset=windows-1256">
@@ -16,7 +15,8 @@
          <title>   User Logged Successfully   </title>
       </head>
 	
-      <body style="background-color: #FFCC7C">
+      <body style="background-color: #FFFFFF">
+      <%@ include file="./fragments/header.jsp" %>
 
          
             <% UserBean currentUser = (UserBean) (session.getAttribute("currentSessionUser"));
@@ -27,6 +27,7 @@
             Per tornare indietro, clicca <a href="home">QUI</a>
        
 
+	  <%@ include file="./fragments/footer.jsp" %>
       </body>
 	
    </html>

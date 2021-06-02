@@ -10,11 +10,12 @@
 
 <title>Login Page</title>
 </head>
-<body style="background-color: #FFCC7C">
+<body style="background-color: #FFFFFF">
+<%@ include file="./fragments/header.jsp" %>
 
-   <h3 style="text-align: left"><a href="home">Indietro</a></h3>
+	<h2 align="center" style="color: #0e8ce4">Login</h2><br>
 
-   <form action="login" method="post">
+   <form action="login" method="post" style="width: -50%; margin-left:40%; margin-right:25%; margin-bottom:250px;">
    
    Enter your email here
    <input type="text" name="email" placeholder="example@mail.com" required/><br>		
@@ -25,8 +26,8 @@
 	<br><br>		
 	<input type="submit" value="Login">
 	<br>
-	
-
 </form>
+
+<%@ include file="./fragments/footer.jsp" %>
 </body>
 </html>

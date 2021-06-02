@@ -15,11 +15,13 @@
          <title>Invalid Login</title>
       </head>
 	
-      <body style="background-color: #FFCC7C">
+      <body style="background-color: #FFFFFF">
+      <%@ include file="./fragments/header.jsp" %>
          <p>
             Spiacente, sei un utente non registrato.<br> Per registrarti fai click <a href="SignUpPage.jsp">QUI</a><br>
             Per tornare alal home, clicca <a href="home">QUI</a>
          </p>
+         <%@ include file="./fragments/footer.jsp" %>
       </body>
 	
    </html>
