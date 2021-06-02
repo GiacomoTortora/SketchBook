@@ -25,20 +25,18 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="./css/ProductStyle.css" rel="stylesheet" type="text/css">
+	<script src="https://www.w3schools.com/lib/w3.js"></script>
 	<title>Prodotti</title>
 </head>
 
 <body style="background-color: #FFCC7C" >
-	<h2>Prodotti</h2>
-	<h3 style="text-align: left"><a href="cart">Carrello</a></h3>
-	
+
+<!-- w3-include-html (riga 35 e 36) è uno script dato da w3schools per includere file html in altri file -->
+	<div w3-include-html="header.html"></div>
+	<script>w3.includeHTML();</script>
 	<% 
 	 String print="Login";
 	 if(currUser==null) { 
-		 %>
-		 <h3 style="text-align: right"><a href="LoginPage.jsp"><%=print%></a></h3>
-		 <h3 style="text-align: right"><a href="SignUpPage.jsp">Sign Up</a></h3>
-		 <%
 	        } 
 	        else { print="Logout";
 	    %>
@@ -47,13 +45,10 @@
 	        }
 	    %>
 		<% 
-		 String prints="SketchBook.it";
+
 		 if(currUser==null) {
-		 %>
-		 <h3 style="text-align: left"><%=prints %></h3>
-		 <%
 	        } 
-	        else { prints="Salve, "+currUser.getFirstName();
+	        else { String prints="Salve, "+currUser.getFirstName();
 	    %>
 		  <h3 style="text-align: left"><a href="UserPage.jsp"><%=prints %></a></h3>
 		   <%

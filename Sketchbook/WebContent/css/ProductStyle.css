@@ -3,7 +3,7 @@ body {
 }
 
 html {
-	width: 500px;
+	width: 1700px;
 	margin: 10px auto;
 }
 
@@ -34,7 +34,7 @@ a:active {
 }
 
 table {
-	width: 500px;
+	width: 1700px;
 }
 
 table, th, td {
@@ -44,7 +44,7 @@ table, th, td {
 }
 
 th, td {
-	padding: 5px;
+	padding: 50px;
 }
 
 label {
