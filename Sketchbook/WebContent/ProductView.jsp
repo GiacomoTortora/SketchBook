@@ -4,7 +4,7 @@
 <%
 	Collection<?> products = (Collection<?>) request.getAttribute("products");
 	if(products == null) {
-		response.sendRedirect("./product");	
+		response.sendRedirect("./home");	
 		return;
 	}
 	
@@ -25,6 +25,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="./css/ProductStyle.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="./immagini/favicon.png"/>
 	<script src="https://www.w3schools.com/lib/w3.js"></script>
 	<title>Prodotti</title>
 </head>

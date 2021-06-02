@@ -15,13 +15,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="./css/ProductStyle.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="./immagini/favicon.png"/>
 	<title>Carrello</title>
 </head>
 
 <body style="background-color: #FFCC7C">
 <!--  cart non pienamente funzionante -->
 		<h2>Carrello</h2>
-		<h3 style="text-align: right"><a href="product">Prodotti</a></h3>
+		<h3 style="text-align: right"><a href="home">Prodotti</a></h3>
 		<table border="1">
 		<tr>
 			<th>Nome</th>

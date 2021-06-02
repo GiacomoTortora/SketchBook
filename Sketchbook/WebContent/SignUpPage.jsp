@@ -5,11 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="./css/ProductStyle.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="./immagini/favicon.png"/>
 <title>Registrati</title>
 </head>
 <body style="background-color: #FFCC7C">
 
- <h3 style="text-align: left"><a href="product">Indietro</a></h3>
+ <h3 style="text-align: left"><a href="home">Indietro</a></h3>
 
  <form action="signup" method="post">
   Inserisci qui la email

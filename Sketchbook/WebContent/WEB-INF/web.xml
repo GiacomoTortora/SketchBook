@@ -18,6 +18,14 @@
   	<servlet-class>control.LoginController</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>CartController</servlet-name>
+  	<servlet-class>control.CartController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProductDetails</servlet-name>
+  	<servlet-class>control.ProductDetails</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>ProductControl</servlet-name>
     <servlet-class>control.ProductControl</servlet-class>
   </servlet>
@@ -34,8 +42,16 @@
   	<url-pattern>/signup</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+  	<servlet-name>ProductDetails</servlet-name>
+  	<url-pattern>/details</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
   	<servlet-name>LogoutController</servlet-name>
   	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CartController</servlet-name>
+  	<url-pattern>/cart</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>LoginController</servlet-name>
@@ -43,6 +59,6 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ProductControl</servlet-name>
-    <url-pattern>/product</url-pattern>
+    <url-pattern>/home</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -15,7 +15,7 @@ import model.ProductModel;
 import model.ProductModelDM;
 import model.ProductModelDS;
 
-@WebServlet(name="/CartController", urlPatterns={"/cart"})
+@WebServlet("/CartController")
 public class CartController extends HttpServlet {
 	
 	private static final long serialVersionUID = 9155027043637128429L;

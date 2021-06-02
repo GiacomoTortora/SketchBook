@@ -11,7 +11,8 @@
       <head>
          <meta http-equiv="Content-Type" 
             content="text/html; charset=windows-1256">
-            <link href="./css/ProductStyle.css" rel="stylesheet" type="text/css">	
+            <link href="./css/ProductStyle.css" rel="stylesheet" type="text/css">
+            <link rel="shortcut icon" href="./immagini/favicon.png"/>	
          <title>   User Logged Successfully   </title>
       </head>
 	
@@ -23,7 +24,7 @@
 			
             BENVENUTO, <%= currentUser.getFirstName() + " " + currentUser.getLastName() %>.<br>
             
-            Per tornare indietro, clicca <a href="ProductView.jsp">qui</a>
+            Per tornare indietro, clicca <a href="home">QUI</a>
        
 
       </body>
