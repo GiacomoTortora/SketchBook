@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
     
     <%
     
@@ -14,7 +14,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="./css/ProductStyle.css" rel="stylesheet" type="text/css">
-	<link rel="shortcut icon" href="./immagini/favicon.png"/>
+	<link rel="shortcut icon" href="./images/favicon.png"/>
 	<title>Dettagli</title>
 </head>
 

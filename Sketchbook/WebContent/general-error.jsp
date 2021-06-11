@@ -1,24 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Page Not Found</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//cloud.typenetwork.com/projects/1037/fontface.css/" rel="stylesheet" type="text/css" />
-    <link href="./css/error-page.css" rel="stylesheet" type="text/css" />
+    
+    <title>Page Not Found</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.png"/>
+    <link rel="stylesheet" href="assets/css/error-page.css"/>
 	
 </head>
 <body>
-    <video width="100%" autoplay muted loop playsinline>
-        <source src="https://d33wubrfki0l68.cloudfront.net/8b6d9610807c6d28fb5a28a2375cc7f17e423ca3/c2dc3/video/404.mp4" type="video/mp4"/>
-    </video>
+<%@ include file="/fragments/header.jsp" %>
+
+ 	<img src="assets/img/404.png">
     <div class="content">
+    	<h1 style="font-size: 3000%">404</h1>
+    	<br><br><br><br><br><br><br><br>
         <h1>Hey, non dovresti essere qui!</h1>
-        <p>Beh, è un pò imbarazzante, ma la pagina che stai cercando di visualizzare non esiste.</p>
-        <a href="home">Torna alla home</a>
+        <h2>Beh, Ã¨ un pÃ² imbarazzante, ma la pagina che stai cercando di visualizzare non esiste.</h2>
+        <a href="home">Torna alla home</a><br><br><br>
     </div>
-<%@ include file="./fragments/footer.jsp" %>
+    
+	<%@ include file="/fragments/footer.jsp" %>
 </body>
 </html>

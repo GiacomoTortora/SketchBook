@@ -1,227 +1,228 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
     
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="ISO-8859-1">
-<link href="./css/header.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="./css/header1.css">
-<link rel="stylesheet" href="./css/header2.css">
-<title>Insert title here</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SketchBook</title>
+    
+    <meta name="description" content="SketchBook Art Shop">
+    <link rel="shortcut icon" href="assets/img/favicon.png"/>
+    
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/carousel.css" rel="stylesheet">
+    <link href="assets/ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href='https://fonts.googleapis.com/css?family=Catamaran:400,100,300' rel='stylesheet' type='text/css'>
+
+    <link href="assets/css/custom-scroll/jquery.mCustomScrollbar.css" rel="stylesheet"> 
 </head>
+
 <body>
-	<script src="./javascript/header1.js"></script>
-	<script src="./javascript/header2.js"></script>
-	<script src="./javascript/header3.js"></script>
-<div class="super_container">
-    <!-- Header -->
-    <header class="header">
-        <!-- Top Bar -->
-        <div class="top_bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col d-flex flex-row">
-                        <div class="top_bar_contact_item">
-                            <div class="top_bar_icon"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918577/phone.png" alt=""></div>+39 123 456 7890
-                        </div>
-                        <div class="top_bar_contact_item">
-                            <div class="top_bar_icon"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918597/mail.png" alt=""></div>contatti@sketchbook.com
-                        </div>
-                        <div class="top_bar_content ml-auto">
-                            <div class="top_bar_menu">
-                            </div>
-                            <div class="top_bar_user">
-                                <div class="user_icon"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918647/user.svg" alt=""></div>
-                                <div><a href="SignUpPage.jsp">Register</a></div>
-                                <div><a href="LoginPage.jsp">Sign in</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+    <div class="toplinks">
+      <a href="#signin" data-toggle="modal" data-target="#Modal-Registration"> <i class="ion-person"></i> Registrati</a>
+      <a href="#signin" data-toggle="modal" data-target="#Modal-SignIn"> <i class="ion-unlocked"></i> Login</a>
+      <a href="preferiti.jsp"> <i class="ion-ios-heart"></i> Preferiti </a>
+      <a href="#" class="hidden-xs"> <i class="ion-android-call"></i> +39 123 456 7890 </a>
+    </div>
+
+    
+    <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home" style="font-weight:bold; font-size:30px"> SketchBook </a>
+            <a class="navbar-brand pull-right hidden-sm hidden-md hidden-lg" href="#open-cart"> <i class="ion-bag"></i></a>
+          </div>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="./">Home</a></li>
+              <li class="dropdown">
+                <a href="./store/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  Prodotti <i class="ion-android-arrow-dropdown"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Categoria 1</a></li>
+                  <li><a href="#">Categoria 2</a></li>
+                  <li><a href="#">Categoria 3</a></li>
+                  <li><a href="#">Categoria 4</a></li>
+                </ul>
+              </li>
+              <li><a href="Cart.jsp">Carrello</a></li>
+              <li><a href="about.jsp">Chi Siamo</a></li>
+              <li><a href="contacts.jsp">Contatti</a></li>
+            </ul>
+          </div>
+
+
+          <div class="search hidden-xs" data-style="hidden">
+            <div class="input">
+              <button type="button"><i class="ion-ios-search"></i></button>
+
+              <input type="text" name="search" value="" placeholder="Cerca..." />
             </div>
-        </div> <!-- Header Main -->
-        <div class="header_main" style="background-color: #FFFFFF">
-            <div class="container">
-                <div class="row">
-                    <!-- Logo -->
-                    <div class="col-lg-2 col-sm-3 col-3 order-1">
-                        <div class="logo_container">
-                            <div class="logo"><a href="home">SketchBook</a></div>
-                        </div>
-                    </div> <!-- Search -->
-                    <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
-                        <div class="header_search">
-                            <div class="header_search_content" style="background-color: #FFFFFF">
-                                <div class="header_search_form_container">
-                                    <form action="#" class="header_search_form clearfix"> <input type="search" required="required" class="header_search_input" placeholder="Cerca...">
-                                        <div class="custom_dropdown" style="display: none;">
-                                        </div> <button type="submit" class="header_search_button trans_300" value="Submit"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png" alt=""></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- Wishlist -->
-                    <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
-                        <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-                            <div class="wishlist d-flex flex-row align-items-center justify-content-end">
-                                <div class="wishlist_icon"><img src="./immagini/shopping-cart-seach.png" alt=""></div>
-                                <div class="wishlist_content">
-                                    <div class="wishlist_text"><a href="LoginPage.jsp">I miei ordini</a></div>
-                                </div>
-                            </div> <!-- Cart -->
-                            <div class="cart">
-                                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                    <div class="cart_icon"> <img src="./immagini/shopping-cart.png" alt="">
-                                    </div>
-                                    <div class="cart_content">
-                                        <div class="cart_text"><a href="cart">Carrello</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- Main Navigation -->
-        <nav class="main_nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="main_nav_content d-flex flex-row">
-                            <!-- Categories Menu -->
-                            <!-- Main Nav Menu -->
-                            <div class="main_nav_menu">
-                                <ul class="standard_dropdown main_nav_dropdown">
-                                    <li><a href="home">Home<i class="fas fa-chevron-down"></i></a></li>
-                                    <li class="hassubs"> <a href="#">Categoria 1</a>
-                                        <ul>
-                                            <li> <a href="#">Sottocategoria 1<i class="fas fa-chevron-down"></i></a>
-                                                <ul>
-                                                    <li><a href="#">Prodotto 1<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Prodotto 2<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Prodotto 3<i class="fas fa-chevron-down"></i></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Sottocategoria 2<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Sottocategoria 3<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Sottocategoria 4<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="hassubs"> <a href="#">Categoria 2</a>
-                                        <ul>
-                                            <li> <a href="#">Sottocategoria 2<i class="fas fa-chevron-down"></i></a>
-                                                <ul>
-                                                    <li><a href="#">Prodotto 1<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Prodotto 2<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Prodotto 3<i class="fas fa-chevron-down"></i></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Sottocategoria 3<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Sottocategoria 4<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Sottocategoria 5<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="hassubs"> <a href="#">Pagine</a>
-                                        <ul>
-                                            <li><a href="cart">Carrello<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="home">Prodotti<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="contact.html">Contatti<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="general-error.html">Contatti<i class="fas fa-chevron-down"></i></a></li>
-                                </ul>
-                            </div> <!-- Menu Trigger -->
-                            <div class="menu_trigger_container ml-auto">
-                                <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
-                                    <div class="menu_burger">
-                                        <div class="menu_trigger_text">menu</div>
-                                        <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav> 
-        
-        
-        <!-- Menu -->
-        <div class="page_menu">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="page_menu_content">
-                            <div class="page_menu_search">
-                                <form action="#"> <input type="search" required="required" class="page_menu_search_input" placeholder="Search for products..."> </form>
-                            </div>
-                            <ul class="page_menu_nav">
-                                <li class="page_menu_item has-children"> <a href="#">Language<i class="fa fa-angle-down"></i></a>
-                                    <ul class="page_menu_selection">
-                                        <li><a href="#">English<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Italian<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Spanish<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Japanese<i class="fa fa-angle-down"></i></a></li>
-                                    </ul>
-                                </li>
-                                <li class="page_menu_item has-children"> <a href="#">Currency<i class="fa fa-angle-down"></i></a>
-                                    <ul class="page_menu_selection">
-                                        <li><a href="#">US Dollar<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">EUR Euro<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">GBP British Pound<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">JPY Japanese Yen<i class="fa fa-angle-down"></i></a></li>
-                                    </ul>
-                                </li>
-                                <li class="page_menu_item"> <a href="#">Home<i class="fa fa-angle-down"></i></a> </li>
-                                <li class="page_menu_item has-children"> <a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
-                                    <ul class="page_menu_selection">
-                                        <li><a href="#">Super Deals<i class="fa fa-angle-down"></i></a></li>
-                                        <li class="page_menu_item has-children"> <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
-                                            <ul class="page_menu_selection">
-                                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                    </ul>
-                                </li>
-                                <li class="page_menu_item has-children"> <a href="#">Featured Brands<i class="fa fa-angle-down"></i></a>
-                                    <ul class="page_menu_selection">
-                                        <li><a href="#">Featured Brands<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                    </ul>
-                                </li>
-                                <li class="page_menu_item has-children"> <a href="#">Trending Styles<i class="fa fa-angle-down"></i></a>
-                                    <ul class="page_menu_selection">
-                                        <li><a href="#">Trending Styles<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="menu_contact">
-                                <div class="menu_contact_item">
-                                    <div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div>
-                                </div>
-                                <div class="menu_contact_item">
-                                    <div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </header>
-    <div style="height: 250px"> </div>
-</div>
-</body>
+    </nav>
+    
+    <div class="modal fade" id="Modal-SignIn" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-android-close"></i></span></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                  <h2 class="modal-title text-center">Login</h2>
+                  <br>
+
+                  <form class="signin" action="index.php" method="post">
+                    <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+                    <br>
+                    <input type="password" name="password" value="" placeholder="Password" required="" class="form-control" />
+                    <br>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <a href="#forgin-password" data-action="Forgot-Password">Recupera password ></a>
+                  </form>
+                  <br>
+
+                  <div class="social-login">
+                      <div class="or"><p>OPPURE</p></div>
+                      <a href="#"><i class="icon" data-src="assets/img/icons/facebook.svg"></i></a>
+                      <p>via</p>
+                      <a href="#"><i class="icon" data-src="assets/img/icons/google-plus.svg"></i></a>
+                  </div>
+                  <br><br>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="Modal-Registration" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-android-close"></i></span></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                  <h2 class="modal-title text-center">Registrati</h2>
+                  <br>
+
+                  <form class="join" action="index.php" method="post">
+                    <input type="text" name="name" value="" placeholder="Nome" required="" class="form-control" />
+                    <br>
+
+                    <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+                    <br>
+
+                    <input type="password" name="password" value="" placeholder="Password" required="" class="form-control" />
+                    <br>
+
+                    <input type="text" name="confirm" value="" placeholder="Ripeti Password" required="" class="form-control" />
+                    <br>
+
+                    <button type="submit" class="btn btn-primary btn-sm">Registrati</button> &nbsp;&nbsp;
+                    <a href="#">Termini e condizioni ></a>
+
+                    <br><br>
+                    <p>
+                      Creando un account potrai fare shopping più velocemente, controllare i tuoi ordini, e restare aggiornato sulle novità.
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="Modal-ForgotPassword" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-android-close"></i></span></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h4 class="modal-title">Hai dimenticato la tua password?</h4>
+                  <br>
+
+                  <form class="join" action="index.php" method="post">
+                    <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+                    <br>
+
+                    <button type="submit" class="btn btn-primary btn-sm">Continua</button>
+                    <a href="#Sign-In" data-action="Sign-In">Indietro ></a>
+                  </form>
+                </div>
+                <div class="col-sm-6">
+                  <br><br>
+                  <p>
+                    Inserisci la e-mail associata al tuo account. Fai click su continua per ricevere la tua password via mail.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="Modal-Gallery" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="ion-android-close"></i></span></button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <script src="./assets/js/jquery-latest.min.js"></script>
+    
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/js/core.js"></script>
+    <script type="text/javascript" src="./assets/js/store.js"></script>
+    
+	<script type="text/javascript" src="./assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript" src="./assets/js/jquery-ui-1.11.4.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.ui.touch-punch.js"></script>
+    
+    </body>
 </html>
