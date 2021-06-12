@@ -12,9 +12,6 @@
 	
 	Cart cart = (Cart) request.getAttribute("cart");
 	
-	UserBean currUser=new UserBean();
-	
-	currUser= (UserBean) session.getAttribute("currentSessionUser");
 	
 %>
 

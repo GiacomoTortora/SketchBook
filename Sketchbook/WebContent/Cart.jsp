@@ -4,7 +4,6 @@
     
     <%	
 	Cart cart = (Cart) request.getAttribute("cart");
-    UserBean currUser= (UserBean) session.getAttribute("currentSessionUser");
     double totale=0;
 	%>
 	

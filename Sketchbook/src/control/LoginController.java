@@ -30,6 +30,16 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+		
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
 		try
 		{	    
 
@@ -43,12 +53,12 @@ public class LoginController extends HttpServlet {
 			        
 		          HttpSession session = request.getSession(true);	    
 		          session.setAttribute("currentSessionUser",user); 
-		          response.sendRedirect("userLogged.jsp"); //loggato
+		          response.sendRedirect("ProductView.jsp"); //loggato
 		          System.out.println("buono");
 		     }
 			        
 		     else { 
-		          response.sendRedirect("invalidLogin.jsp"); //errore
+		          response.sendRedirect("general-error.jsp"); //errore
 		          System.out.println("male");
 		     }
 		} 
@@ -58,15 +68,7 @@ public class LoginController extends HttpServlet {
 		{
 		     System.out.println(e); 
 		} 
-		       }
-		
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		       
 	}
 
 }

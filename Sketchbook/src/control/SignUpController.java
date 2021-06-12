@@ -40,33 +40,33 @@ public class SignUpController extends HttpServlet {
 		String email="", email2="", firstName="", lastName="", password="", password2="";
 		email=request.getParameter("email");
 		if(email=="") {
-			response.sendRedirect("SignUpError.jsp");
+			response.sendRedirect("general-error.jsp");
 		}
 		email2=request.getParameter("email2");
 		if(email2=="") {
-			response.sendRedirect("SignUpError.jsp");
+			response.sendRedirect("general-error.jsp");
 		}
 		if(!email.equals(email2)) {
-			response.sendRedirect("SignUpError.jsp");
+			response.sendRedirect("general-error.jsp");
 		}
 		firstName=request.getParameter("firstName");
 		if(firstName=="") {
-			response.sendRedirect("SignUpError.jsp");
+			response.sendRedirect("general-error.jsp");
 		}
 		lastName=request.getParameter("lastName");
 		if(lastName=="") {
-			response.sendRedirect("SignUpError.jsp");
+			response.sendRedirect("general-error.jsp");
 		}
 		password=request.getParameter("password");
 		if(password=="") {
-			response.sendRedirect("SignUpError.jsp");
+			response.sendRedirect("general-error.jsp");
 		}
 		password2=request.getParameter("password2");
 		if(password2=="") {
-			response.sendRedirect("SignUpError.jsp");
+			response.sendRedirect("general-error.jsp");
 		}
 		if(!password.equals(password2)) {
-			response.sendRedirect("SignUpError.jsp");
+			response.sendRedirect("general-error.jsp");
 		}
 		System.out.println(email2);
 		System.out.println(firstName);
@@ -79,7 +79,7 @@ public class SignUpController extends HttpServlet {
 		if(UserDAO.isUniqueEmail(newUser)==true) {
 			UserDAO.doSubmit(newUser);
 			 request.getRequestDispatcher("ProductView.jsp").forward(request, response);;
-		} else response.sendRedirect("SignUpError.jsp");
+		} else response.sendRedirect("general-error.jsp");
 	}
 
 }

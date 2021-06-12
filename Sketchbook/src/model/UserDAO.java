@@ -12,23 +12,13 @@ public class UserDAO {
 	 
    public static UserBean doRetrieve(UserBean bean) {
 	 
-     Statement stmt=null;
-     String email=bean.getEmail();
-     String password=bean.getPassword();
-     
-     String searchQuery=  "SELECT * FROM cliente WHERE Email='"
-             + email
-             + "' AND Password='"
-             + password
-             + "'";
-     //controllo
-     System.out.println("Your email is " + email);          
-     System.out.println("Your password is " + password);
-     System.out.println("Query: "+searchQuery);
+     PreparedStatement preparedStatement=null; //si usa prepared statement per evitare SQL-injection
      try {  //connessione al db
     	 con= DriverManagerConnectionPool.getConnection();
-    	 stmt=con.createStatement();
-         rs = stmt.executeQuery(searchQuery); 
+    	 preparedStatement=con.prepareStatement("SELECT * FROM cliente WHERE Email=? AND Password=?");
+    	 preparedStatement.setString(1, bean.getEmail());
+    	 preparedStatement.setString(2, bean.getPassword());
+         rs = preparedStatement.executeQuery();
          bean.setValid(false); //si presuppone riscontro negativo
              while(rs.next()) {//caso positivo, il rs esiste solo se la query ha avuto esito positivo.
         	 String firstName = rs.getString("Nome");
@@ -38,10 +28,7 @@ public class UserDAO {
              bean.setLastName(lastName);
              bean.setValid(true);
          }
-        
      }
-
-     
      catch(Exception e) {
     	 System.out.println("Errore: "+e);
      }
@@ -50,15 +37,12 @@ public class UserDAO {
    }
    
    public static boolean isUniqueEmail(UserBean bean) {
-	   Statement stmt=null;
-	   String email=bean.getEmail();
-	   String query="SELECT Nome FROM cliente WHERE Email='"+email+"'";
-	   System.out.println("Your email is " + email);
-	   System.out.println("Query: "+query);
+	   PreparedStatement preparedStatement=null;
 	   try {
 		   con= DriverManagerConnectionPool.getConnection();
-		   stmt=con.createStatement();
-		   rs=stmt.executeQuery(query);
+		   preparedStatement=con.prepareStatement("SELECT Nome FROM cliente WHERE Email=?");
+		   preparedStatement.setString(1, bean.getEmail());
+		   rs=preparedStatement.executeQuery();
 		   if(!rs.first()) {
 			   return true;
 		   } 

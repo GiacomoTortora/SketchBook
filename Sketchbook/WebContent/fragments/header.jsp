@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+    pageEncoding="utf-8"
+    import="model.UserBean"
+    %>
+    
+<% 
+ UserBean currUser=new UserBean();
+
+ currUser= (UserBean) session.getAttribute("currentSessionUser");
+%>
+
+
     
 <!DOCTYPE html>
 <html lang="en">
@@ -26,9 +36,20 @@
 <body>
 
     <div class="toplinks">
+     <%
+      if (currUser==null) {
+     %>
       <a href="#signin" data-toggle="modal" data-target="#Modal-Registration"> <i class="ion-person"></i> Registrati</a>
       <a href="#signin" data-toggle="modal" data-target="#Modal-SignIn"> <i class="ion-unlocked"></i> Login</a>
+     <%
+      }
+      else {
+     %>
+      <a href="LogoutController"> Logout</a>
       <a href="preferiti.jsp"> <i class="ion-ios-heart"></i> Preferiti </a>
+       <%
+      }
+     %>
       <a href="#" class="hidden-xs"> <i class="ion-android-call"></i> +39 123 456 7890 </a>
     </div>
 
@@ -90,7 +111,7 @@
                   <h2 class="modal-title text-center">Login</h2>
                   <br>
 
-                  <form class="signin" action="index.php" method="post">
+                  <form class="signin" action="login" method="post">
                     <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
                     <br>
                     <input type="password" name="password" value="" placeholder="Password" required="" class="form-control" />
@@ -131,17 +152,24 @@
                   <h2 class="modal-title text-center">Registrati</h2>
                   <br>
 
-                  <form class="join" action="index.php" method="post">
-                    <input type="text" name="name" value="" placeholder="Nome" required="" class="form-control" />
+                  <form class="join" action="signup" method="post">
+                  
+                    <input type="text" name="firstName" value="" placeholder="Nome" required="" class="form-control" />
+                    <br>
+                    
+                    <input type="text" name="lastName" value="" placeholder="Cognome" required="" class="form-control" />
                     <br>
 
                     <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+                    <br>
+                    
+                     <input type="email" name="email2" value="" placeholder="Ripeti E-mail" required="" class="form-control" />
                     <br>
 
                     <input type="password" name="password" value="" placeholder="Password" required="" class="form-control" />
                     <br>
 
-                    <input type="text" name="confirm" value="" placeholder="Ripeti Password" required="" class="form-control" />
+                    <input type="text" name="password2" value="" placeholder="Ripeti Password" required="" class="form-control" />
                     <br>
 
                     <button type="submit" class="btn btn-primary btn-sm">Registrati</button> &nbsp;&nbsp;
@@ -197,7 +225,8 @@
         </div>
       </div>
     </div>
-
+    
+  
     <div class="modal fade" id="Modal-Gallery" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
