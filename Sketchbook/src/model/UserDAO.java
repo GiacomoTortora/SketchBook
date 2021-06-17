@@ -19,14 +19,18 @@ public class UserDAO {
     	 preparedStatement.setString(1, bean.getEmail());
     	 preparedStatement.setString(2, bean.getPassword());
          rs = preparedStatement.executeQuery();
-         bean.setValid(false); //si presuppone riscontro negativo
+         //valid= false, di default si presuppone riscontro negativo
              while(rs.next()) {//caso positivo, il rs esiste solo se la query ha avuto esito positivo.
         	 String firstName = rs.getString("Nome");
              String lastName = rs.getString("Cognome");
+             String ruolo = rs.getString("Ruolo");
              System.out.println("Welcome " + firstName);
              bean.setFirstName(firstName);
              bean.setLastName(lastName);
              bean.setValid(true);
+             if(ruolo.equals("admin")) {
+            	 bean.setAdmin();
+             }
          }
      }
      catch(Exception e) {
@@ -55,12 +59,14 @@ public class UserDAO {
    public static void doSubmit(UserBean bean) {
 	   PreparedStatement preparedStatement=null;
 	   try {  
+	   String ruolo="user";
 	   con=DriverManagerConnectionPool.getConnection();
-	   preparedStatement=con.prepareStatement("INSERT INTO cliente (Nome, Cognome, Email, Password) VALUES (?,?,?,?)");
+	   preparedStatement=con.prepareStatement("INSERT INTO cliente (Nome, Cognome, Email, Password, Ruolo) VALUES (?,?,?,?,?)");
 	   preparedStatement.setString(1, bean.getFirstName());
 	   preparedStatement.setString(2, bean.getLastName());
 	   preparedStatement.setString(3, bean.getEmail());
 	   preparedStatement.setString(4, bean.getPassword());
+	   preparedStatement.setString(5, ruolo);
 	   int i=preparedStatement.executeUpdate();
 	   con.commit();
 	   if(i!=0) {
@@ -70,4 +76,7 @@ public class UserDAO {
 		   System.out.println("Errore: "+e);
 	   } 
    }
+   
+   
+   
 }

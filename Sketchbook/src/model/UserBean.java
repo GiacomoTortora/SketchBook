@@ -17,7 +17,8 @@ public class UserBean {
 		password="";
 		firstName="";
 		lastName="";
-		valid=true;
+		valid=false;
+		admin=false;
 	}
 	
 	public String getEmail() {
@@ -67,6 +68,10 @@ public class UserBean {
 	
 	public boolean isAdmin() {
 		return admin;
+	}
+	
+	public void setAdmin() {
+		this.admin=true;
 	}
 	
 	public String toString() {

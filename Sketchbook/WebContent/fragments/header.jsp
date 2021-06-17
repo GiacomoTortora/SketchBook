@@ -5,8 +5,13 @@
     
 <% 
  UserBean currUser=new UserBean();
+ 
+ UserBean admin=new UserBean();
 
  currUser= (UserBean) session.getAttribute("currentSessionUser");
+ 
+ admin=(UserBean) session.getAttribute("adminSession");
+ 
 %>
 
 
@@ -37,19 +42,24 @@
 
     <div class="toplinks">
      <%
-      if (currUser==null) {
+      if (currUser==null && admin==null) {
      %>
       <a href="#signin" data-toggle="modal" data-target="#Modal-Registration"> <i class="ion-person"></i> Registrati</a>
       <a href="#signin" data-toggle="modal" data-target="#Modal-SignIn"> <i class="ion-unlocked"></i> Login</a>
      <%
       }
-      else {
+      else if(currUser!=null && admin==null) {
      %>
       <a href="LogoutController"> Logout</a>
       <a href="preferiti.jsp"> <i class="ion-ios-heart"></i> Preferiti </a>
        <%
       }
+     else if(currUser==null && admin!=null) {
      %>
+      <a href="protected.jsp"> Funzioni admin</a>
+       <%
+     }
+       %>
       <a href="#" class="hidden-xs"> <i class="ion-android-call"></i> +39 123 456 7890 </a>
     </div>
 

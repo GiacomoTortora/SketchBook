@@ -51,10 +51,17 @@ public class LoginController extends HttpServlet {
 		     if (user.isValid())
 		     {
 			        
-		          HttpSession session = request.getSession(true);	    
-		          session.setAttribute("currentSessionUser",user); 
-		          response.sendRedirect("ProductView.jsp"); //loggato
+		          HttpSession session = request.getSession(true);
+		          if(user.isAdmin()) {
+		        	  session.setAttribute("adminSession", user);
+		        	  System.out.println("benvenuto admin");
+		        	  response.sendRedirect("ProductView.jsp");   //admin loggato
+		          }
+		          else if(!user.isAdmin()) {
+		          session.setAttribute("currentSessionUser",user);
+		          response.sendRedirect("ProductView.jsp");  //user loggato
 		          System.out.println("buono");
+		          }
 		     }
 			        
 		     else { 
