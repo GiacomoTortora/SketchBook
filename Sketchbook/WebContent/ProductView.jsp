@@ -137,25 +137,25 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-md-4 no-padding padding-xs">
-            <div class="bar medium" data-background="assets/img/bars/macbook.jpg">
-              <h3 class="title black">MacBook Air</h3>
+            <div class="bar medium" data-background="assets/img/bars/pencil.jpg">
+              <h3 class="title black">Matite</h3>
 
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="./store/" rel="nofollow" class="btn btn-default black"> Buy now </a>
+                  <a href="./store/" rel="nofollow" class="btn btn-default black"> Vedi </a>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
-            <div class="bar small" data-background="assets/img/bars/dellinspirion.jpg">
-              <h3 class="title black">Dell Inspirion 7000</h3>
+            <div class="bar small" data-background="assets/img/bars/brush.jpg">
+              <h3 class="title black">Pennelli</h3>
 
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="./store/" rel="nofollow" class="btn btn-primary black"> Buy now </a>
+                  <a href="./store/" rel="nofollow" class="btn btn-primary black"> Vedi </a>
                 </div>
               </div>
             </div>
@@ -163,25 +163,25 @@
             <hr class="offset-xs">
             <hr class="offset-xs">
 
-            <div class="bar small" data-background="assets/img/bars/surfacestudio.jpg">
-              <h3 class="title">Surface Studio</h3>
+            <div class="bar small" data-background="assets/img/bars/paper.jpg">
+              <h3 class="title black">Fogli</h3>
               
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="./store/" rel="nofollow" class="btn btn-primary black"> Buy now </a>
+                  <a href="./store/" rel="nofollow" class="btn btn-primary black"> Vedi </a>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-md-4 no-padding hidden-xs hidden-sm">
-            <div class="bar medium" data-background="assets/img/bars/accessories.jpg">
-              <h3 class="title black">Accessories</h3>
+            <div class="bar medium" data-background="assets/img/bars/oil-colors.jpg">
+              <h3 class="title black">Pittura</h3>
               
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="./store/" rel="nofollow" class="btn btn-primary black"> Buy now </a>
+                  <a href="./store/" rel="nofollow" class="btn btn-primary black"> Vedi </a>
                 </div>
               </div>
             </div>
@@ -195,52 +195,52 @@
 
     <section class="products">
       <div class="container">
-        <h2 class="h2 upp align-center"> Pennelli </h2>
+        <h2 class="h2 upp align-center"> I più venduti </h2>
         <hr class="offset-lg">
 
         <div class="row">
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/products/apple-imac-27-retina.jpg" alt="Apple iMac 27 Retina"/></a>
+              <a href="./"><img src="assets/img/product-home/derwent.jpg" alt="Derwent 6pz"/></a>
 
               <div class="content align-center">
-                <p class="price">$2099.99</p>
-                <h2 class="h3">iMac 27 Retina</h2>
+                <p class="price">€8.95</p>
+                <h2 class="h3">Derwent Matite 6pz</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
           </div>
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/products/microsoft-surface-studio.jpg" alt="Microsoft Surface Studio"/></a>
+              <a href="./"><img src="assets/img/product-home/winsor-newton-promarkers.jpg" alt="Winsor&Newton ProMarker"/></a>
 
               <div class="content align-center">
-                <p class="price">$3749.99</p>
-                <h2 class="h3">Surface Studio</h2>
+                <p class="price">€17.36</p>
+                <h2 class="h3">W&N Promarkers</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
           </div>
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/products/dell-inspiron-23.jpg" alt="Dell Inspion 23"/></a>
+              <a href="./"><img src="assets/img/product-home/ecoline.jpg" alt="Ecoline Brush Pen"/></a>
 
               <div class="content align-center">
-                <p class="price">$1987.99</p>
-                <h2 class="h3">Dell Inspion 23</h2>
+                <p class="price">€14.78</p>
+                <h2 class="h3">Ecoline Brush Pen</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
           </div>
@@ -248,15 +248,15 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/products/lenovo-ideacenter.jpg" alt="Lenovo IdeaCenter"/></a>
+              <a href="./"><img src="assets/img/product-home/wn-acquerelli.jpg" alt="Winsor&Newton Set Acquerelli"/></a>
 
               <div class="content align-center">
-                <p class="price">$2487.99</p>
-                <h2 class="h3">Lenovo IdeaCenter</h2>
+                <p class="price">€14.49</p>
+                <h2 class="h3">W&N Acquerelli</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
           </div>
@@ -273,73 +273,58 @@
 
     <section class="products">
       <div class="container">
-        <h2 class="h2 upp align-center"> Matite</h2>
+        <h2 class="h2 upp align-center"> In Sconto </h2>
         <hr class="offset-lg">
 
         <div class="row">
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/products/lenovo-yoga.jpg" alt="Lenovo Yoga 900"/></a>
+              <a href="./"><img src="assets/img/product-home/derwent-paintkit.jpg" alt="Derwent Paint Kit"/></a>
 
               <div class="content align-center">
-                <p class="price">$1899.99</p>
-                <h2 class="h3">Lenovo Yoga 900</h2>
+                <p class="price">€23.80</p>
+                <p class="price through">€39.90</p>
+                <h2 class="h3">Derwent Paint Kit</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
           </div>
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/products/surface-pro.jpg" alt="Surface Pro"/></a>
+              <a href="./"><img src="assets/img/product-home/promarker-color.jpg" alt="Winsor&Newton Promarker Color"/></a>
 
               <div class="content align-center">
-                <p class="sale">$2099.99</p>
-                <p class="price through">$2499.99</p>
-                <h2 class="h3">Microsoft Surface Pro</h2>
+                <p class="sale">€16.24</p>
+                <p class="price through">€21.99</p>
+                <h2 class="h3">W&N Promarker Color</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
           </div>
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/products/hp-spectre-x360.jpg" alt="HP Spectre x360"/></a>
+              <a href="./"><img src="assets/img/product-home/art-book.jpg" alt="Canson Art Book"/></a>
 
               <div class="content align-center">
-                <p class="price">$2994.99</p>
-                <h2 class="h3">HP Spectre x360</h2>
+                <p class="price">€9.99</p>
+                <p class="price through">€14.99</p>
+                <h2 class="h3">Canson Art Book</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
           </div>
-
-          <div class="col-sm-6 col-md-4 product visible-sm">
-            <div class="body">
-              <a href="./"><img src="assets/img/products/dell-inspiron-2in1.jpg" alt="Dell Inspiron 7000 2-in-1s"/></a>
-
-              <div class="content align-center">
-                <p class="price">$1994.99</p>
-                <h2 class="h3">Dell Inspiron 7000</h2>
-                <hr class="offset-sm">
-
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
-              </div>
-            </div>
-          </div>
-
-
         </div>
         <div class="align-right align-center-xs">
           <hr class="offset-sm">
@@ -351,78 +336,59 @@
 
     <section class="products">
       <div class="container">
-        <h2 class="h2 upp align-center">Pitture</h2>
+        <h2 class="h2 upp align-center">Gli altri hanno acquistato</h2>
         <hr class="offset-lg">
 
         <div class="row">
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/products/mi-pad-2.jpg" alt="Xiamomi Mi Pad 2"/></a>
+              <a href="./"><img src="assets/img/product-home/faber-castell.jpg" alt="Faber Castel Polychromos"/></a>
 
               <div class="content align-center">
-                <p class="price">$899.99</p>
-                <h2 class="h3">Mi Pad 2</h2>
+                <p class="price">€54.90</p>
+                <h2 class="h3">Faber-Castel Polychromos</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
           </div>
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/products/ipad-air.jpg" alt="Apple iPad Air"/></a>
+              <a href="./"><img src="assets/img/product-home/pennelli.jpg" alt="Pennelli LeFranc"/></a>
 
               <div class="content align-center">
-                <p class="price">$1099.99</p>
-                <h2 class="h3">Apple iPad Air</h2>
+                <p class="price">€6.16</p>
+                <h2 class="h3">Penneelli LeFranc</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
           </div>
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/products/asus-transformer.jpg" alt="Asus Transformer"/></a>
+              <a href="./"><img src="assets/img/product-home/tela.jpg" alt="Tela Pintura 30x40"/></a>
 
               <div class="content align-center">
-                <p class="price">$987.99</p>
-                <h2 class="h3">Asus Transformer</h2>
+                <p class="price">€5.30</p>
+                <h2 class="h3">Tela Pintura 30x40</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
           </div>
-
-          <div class="col-sm-6 col-md-4 product visible-sm">
-            <div class="body">
-              <a href="./"><img src="assets/img/products/ipad-mini.jpg" alt="iPad Mini"/></a>
-
-              <div class="content align-center">
-                <p class="price">$399.99</p>
-                <h2 class="h3">iPad Mini</h2>
-                <hr class="offset-sm">
-
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
         <div class="align-right align-center-xs">
           <hr class="offset-sm">
           <a href="./store/"> <h5 class="upp">Scopri di più</h5> </a>
         </div>
-      </div>
     </section>
 
 
