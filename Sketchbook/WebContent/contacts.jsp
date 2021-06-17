@@ -84,7 +84,6 @@
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/core.js"></script>
     <script type="text/javascript" src="assets/js/store.js"></script>
-    <script type="text/javascript" src="assets/js/carousel.js"></script>
     <script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
 
     <script type="text/javascript" src="assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>

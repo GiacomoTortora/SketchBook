@@ -52,11 +52,14 @@
      %>
       <a href="LogoutController"> Logout</a>
       <a href="preferiti.jsp"> <i class="ion-ios-heart"></i> Preferiti </a>
+      <a href="#"><i class="ion-person"></i> Salve, <%= currUser.getFirstName() %> </a>
        <%
       }
      else if(currUser==null && admin!=null) {
      %>
-      <a href="protected.jsp"> Funzioni admin</a>
+      <a href="protected.jsp"><i class="ion-person"></i> Funzioni admin</a>
+      <a href="LogoutController"><i class="ion-person"></i> Logout</a>
+      
        <%
      }
        %>

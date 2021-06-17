@@ -6,7 +6,7 @@
   </welcome-file-list>
   <error-page>
         <location>/general-error.jsp</location>
-    </error-page>
+  </error-page>
   <resource-ref>
     <description>JNDI reference to a data source</description>
     <res-ref-name>jdbc/ecommerce</res-ref-name>
