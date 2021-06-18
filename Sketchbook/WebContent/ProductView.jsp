@@ -217,7 +217,7 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/winsor-newton-promarkers.jpg" alt="Winsor&Newton ProMarker"/></a>
+              <a href="details?action=read&id=13"><img src="assets/img/product-home/winsor-newton-promarkers.jpg" alt="Winsor&Newton ProMarker"/></a>
 
               <div class="content align-center">
                 <p class="price">€17.36</p>
@@ -232,10 +232,10 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/ecoline.jpg" alt="Ecoline Brush Pen"/></a>
+              <a href="details?action=read&id=15"><img src="assets/img/product-home/ecoline.jpg" alt="Ecoline Brush Pen"/></a>
 
               <div class="content align-center">
-                <p class="price">€14.78</p>
+                <p class="price">€14.79</p>
                 <h2 class="h3">Ecoline Brush Pen</h2>
                 <hr class="offset-sm">
 
@@ -248,7 +248,7 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/wn-acquerelli.jpg" alt="Winsor&Newton Set Acquerelli"/></a>
+              <a href="details?action=read&id=17"><img src="assets/img/product-home/wn-acquerelli.jpg" alt="Winsor&Newton Set Acquerelli"/></a>
 
               <div class="content align-center">
                 <p class="price">€14.49</p>
@@ -280,7 +280,7 @@
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/derwent-paintkit.jpg" alt="Derwent Paint Kit"/></a>
+              <a href="details?action=read&id=19"><img src="assets/img/product-home/derwent-paintkit.jpg" alt="Derwent Paint Kit"/></a>
 
               <div class="content align-center">
                 <p class="price">€23.80</p>
@@ -296,7 +296,7 @@
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/promarker-color.jpg" alt="Winsor&Newton Promarker Color"/></a>
+              <a href="details?action=read&id=16"><img src="assets/img/product-home/promarker-color.jpg" alt="Winsor&Newton Promarker Color"/></a>
 
               <div class="content align-center">
                 <p class="sale">€16.24</p>
@@ -312,7 +312,7 @@
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/art-book.jpg" alt="Canson Art Book"/></a>
+              <a href="details?action=read&id=5"><img src="assets/img/product-home/art-book.jpg" alt="Canson Art Book"/></a>
 
               <div class="content align-center">
                 <p class="price">€9.99</p>
@@ -343,10 +343,10 @@
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/faber-castell.jpg" alt="Faber Castel Polychromos"/></a>
+              <a href="details?action=read&id=7"><img src="assets/img/product-home/faber-castell.jpg" alt="Faber Castel Polychromos"/></a>
 
               <div class="content align-center">
-                <p class="price">€54.90</p>
+                <p class="price">€55.00</p>
                 <h2 class="h3">Faber-Castel Polychromos</h2>
                 <hr class="offset-sm">
 
@@ -358,11 +358,11 @@
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/pennelli.jpg" alt="Pennelli LeFranc"/></a>
+              <a href="details?action=read&id=22"><img src="assets/img/product-home/pennelli.jpg" alt="Pennelli LeFranc"/></a>
 
               <div class="content align-center">
                 <p class="price">€6.16</p>
-                <h2 class="h3">Penneelli LeFranc</h2>
+                <h2 class="h3">Pennelli LeFranc Bougeois</h2>
                 <hr class="offset-sm">
 
                 <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
@@ -373,10 +373,10 @@
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/tela.jpg" alt="Tela Pintura 30x40"/></a>
+              <a href="details?action=read&id=24"><img src="assets/img/product-home/tela.jpg" alt="Tela Pintura 30x40"/></a>
 
               <div class="content align-center">
-                <p class="price">€5.30</p>
+                <p class="price">€5.29</p>
                 <h2 class="h3">Tela Pintura 30x40</h2>
                 <hr class="offset-sm">
 

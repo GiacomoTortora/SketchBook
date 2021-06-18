@@ -99,9 +99,9 @@
 
               <h1><%=product.getName() %></h1>
 
-              <p> &middot; 6 PZ</p>
-              <p> &middot; Matite di alta qualità</p>
-              <p> &middot; Marca Derwent</p>
+              <p> &middot; Alta Qualità</p>
+              <p> &middot; Prestazioni Eccellenti</p>
+              <p> &middot; Materiali di Ottima Fattura</p>
               <hr class="offset-md hidden-sm">
               <hr class="offset-sm visible-sm">
               <hr class="offset-xs visible-sm">
@@ -125,10 +125,10 @@
           <div class="col-sm-7 white sm-padding">
             <hr class="offset-sm visible-xs">
 
-            <h2 class="h1"><%=product.getName()%></h2>
+            <h2 class="h1">Dettagli Prodotto</h2>
             <br>
 
-            <p>
+            <p style="font-size:150%">
               <%=product.getDescription()%>
             </p>
             <br>
