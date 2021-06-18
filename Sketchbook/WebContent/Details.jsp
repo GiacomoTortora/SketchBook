@@ -1,50 +1,238 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-    
-    <%
-    
+	pageEncoding="utf-8"%>
+
+<%
 	ProductBean product = (ProductBean) request.getAttribute("product");
-	
-	%>
-	
+%>
+
 <!DOCTYPE html>
 <html>
-<%@ page import="java.util.*, model.ProductBean"%>
+<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.ProductBean, model.Cart, model.UserBean"%>
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="./css/ProductStyle.css" rel="stylesheet" type="text/css">
-	<link rel="shortcut icon" href="./images/favicon.png"/>
-	<title>Dettagli</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <%
+    	String name = product.getName();
+    %>
+    
+    <title><%= name %></title>
+    
+    <link rel="shortcut icon" href="assets/img/favicon.png"/>
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/carousel-product.css" rel="stylesheet">
+    <link href="assets/ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href='https://fonts.googleapis.com/css?family=Catamaran:400,100,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/custom-scroll/jquery.mCustomScrollbar.css" rel="stylesheet">
 </head>
 
-<body style="background-color: #FFFFFF">
-<%@ include file="./fragments/header.jsp" %>
-	<%
-		if (product != null) {
-	%>
-	<table border="1">
-		<tr>
-			<th>ID</th>
-			<th>Nome</th>
-			<th>Descrizione</th>
-			<th>Prezzo</th>
-			<th>Quantita</th>
-			<th>Azioni</th>
-		</tr>
-		<tr>
-			<td><%=product.getID()%></td>
-			<td><%=product.getName()%></td>
-			<td><%=product.getDescription()%></td>
-			<td><%=product.getPrice()%></td>
-			<td><%=product.getQuantity()%></td>
-			<td><a href="cart?action=addC&id=<%=product.getID()%>">Aggiungi al Carrello</a></td>
-		</tr>
-	</table>
-	<%
-		}
-	%>
+<body>
+
+	<%@ include file="/fragments/header.jsp" %>	
+	
+    <hr class="offset-lg">
+    <hr class="offset-lg">
+    <hr class="offset-lg">
+    <hr class="offset-lg">
+
+    <section class="product">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7 col-md-7 white no-padding">
+            <div class="carousel-product" data-count="4" data-current="1">
+
+              <div class="items">
+                <button class="btn btn-control" data-direction="right"> <i class="ion-ios-arrow-right"></i></button>
+                <button class="btn btn-control" data-direction="left"> <i class="ion-ios-arrow-left"></i></button>
+
+
+                <div class="item center" data-marker="1">
+                  <img src="assets/img/product/<%=product.getID()%>/1.jpg" alt="<%=product.getName()%>" class="background"/>
+                </div>
+                
+                <div class="item" data-marker="2">
+                  <img src="assets/img/product/<%=product.getID()%>/2.jpg" alt="<%=product.getName()%>" class="background"/>
+                </div>
+
+                <div class="item" data-marker="3">
+                  <img src="assets/img/product/<%=product.getID()%>/3.jpg" alt="<%=product.getName()%>" class="background"/>
+                </div>
+
+                <div class="item" data-marker="4">
+                  <img src="assets/img/product/<%=product.getID()%>/4.jpg" alt="<%=product.getName()%>" class="background"/>
+
+                  <div class="tiles">
+                    <a href="https://www.youtube.com/watch?v=uKxyLmbOc0Q&ab_channel=YugoKanno%28tema%29YugoKanno%28tema%29">
+                        <img src="assets/img/product/<%=product.getID()%>/4.jpg" alt="<%=product.getName()%>">
+                        
+
+                      <div class="overlay"></div>
+                      <div class="content">
+                        <div class="content-outside">
+                          <div class="content-inside">
+                            <i class="ion-ios-play"></i>
+                            <h2 class="white hidden-xs"><br><%=product.getName()%></h2>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="markers">
+                <li data-marker="1" class="active"></li>
+                <li data-marker="2"></li>
+                <li data-marker="3"></li>
+                <li data-marker="4"></li>
+              </ul>
+
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-5 no-padding-xs">
+            <div class="caption">
+              <img src="assets/img/brands/<%=product.getID()%>.png" alt="<%=product.getName()%>" class="brand hidden-xs hidden-sm" />
+
+              <h1><%=product.getName() %></h1>
+
+              <p> &middot; 6 PZ</p>
+              <p> &middot; Matite di alta qualità</p>
+              <p> &middot; Marca Derwent</p>
+              <hr class="offset-md hidden-sm">
+              <hr class="offset-sm visible-sm">
+              <hr class="offset-xs visible-sm">
+
+			  <%
+              	double price=0.0;
+              	price = ((product.getPrice()) + ((product.getPrice() * 22) / 100));       	
+              %>
+
+              <p class="price">€<%= String.format("%.2f", price) %></p>
+              <hr class="offset-md">
+
+              <button class="btn btn-primary rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button>
+              <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai preferiti </button>
+            </div>
+          </div>
+        </div>
+        <hr class="offset-sm hidden-xs">
+
+        <div class="row">
+          <div class="col-sm-7 white sm-padding">
+            <hr class="offset-sm visible-xs">
+
+            <h2 class="h1"><%=product.getName()%></h2>
+            <br>
+
+            <p>
+              <%=product.getDescription()%>
+            </p>
+            <br>
+              <hr class="offset-lg">
+          </div>
+          <div class="col-sm-5 no-padding-xs">
+            <div class="talk white">
+              <h2 class="h3">Hai qualche domanda?</h2>
+              <p class="">Mandaci un messaggio su WhatsApp</p>
+              <hr class="offset-md">
+
+              <a href="#" class="btn btn-primary btn-sm"> <i class="ion-social-whatsapp"></i> +39 123 456 7890 </a>
+              <hr class="offset-md visible-xs">
+            </div>
+            <hr class="offset-sm hidden-xs">          
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="offset-lg">
+
+    <section class="products">
+      <div class="container">
+        <h2 class="upp align-center-xs"> Gli altri hanno acquistato </h2>
+        <hr class="offset-lg">
+
+        <div class="row">
+
+          <div class="col-sm-6 col-md-3 product">
+            <div class="body">
+              <a href="details?action=read&id=10"><img src="assets/img/product-home/10.jpg" alt="Derwent 6pz"/></a>
+
+              <div class="content align-center">
+                <p class="price">€8.95</p>
+                <h2 class="h3">Derwent Matite 6pz</h2>
+                <hr class="offset-sm">
+
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 product">
+            <div class="body">
+              <a href="./"><img src="assets/img/product-home/winsor-newton-promarkers.jpg" alt="Winsor&Newton ProMarker"/></a>
+
+              <div class="content align-center">
+                <p class="price">€17.36</p>
+                <h2 class="h3">W&N Promarkers</h2>
+                <hr class="offset-sm">
+
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 product">
+            <div class="body">
+              <a href="./"><img src="assets/img/product-home/ecoline.jpg" alt="Ecoline Brush Pen"/></a>
+
+              <div class="content align-center">
+                <p class="price">€14.78</p>
+                <h2 class="h3">Ecoline Brush Pen</h2>
+                <hr class="offset-sm">
+
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-sm-6 col-md-3 product">
+            <div class="body">
+              <a href="./"><img src="assets/img/product-home/wn-acquerelli.jpg" alt="Winsor&Newton Set Acquerelli"/></a>
+
+              <div class="content align-center">
+                <p class="price">€14.49</p>
+                <h2 class="h3">W&N Acquerelli</h2>
+                <hr class="offset-sm">
+
+                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+    </section>
 	
 	<%@ include file="./fragments/footer.jsp" %>
+	
+	<script src="assets/js/jquery-latest.min.js"></script>
+    
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/core.js"></script>
+    <script type="text/javascript" src="assets/js/store.js"></script>
+    <script type="text/javascript" src="assets/js/carousel-product.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui-1.11.4.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.ui.touch-punch.js"></script>
 </body>
 </html>

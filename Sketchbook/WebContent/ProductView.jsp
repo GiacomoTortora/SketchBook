@@ -202,7 +202,7 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/derwent.jpg" alt="Derwent 6pz"/></a>
+              <a href="details?action=read&id=10"><img src="assets/img/product-home/10.jpg" alt="Derwent 6pz"/></a>
 
               <div class="content align-center">
                 <p class="price">€8.95</p>
