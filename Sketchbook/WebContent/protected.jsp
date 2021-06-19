@@ -1,20 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-   
+    pageEncoding="utf-8"
+    import="model.UserBean"
+    %>
+    
+
    
 <!DOCTYPE html>
 <html>
 <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Amministratore </title>
-    <link rel="shortcut icon" href="assets/img/favicon.png"/>
+    <link rel="shortcut icon" href="assets/img/favicon.png"/>   
   </head>
   
 <body>
-	<%@ include file="/fragments/header.jsp" %>
-	<hr class="offset-top">
+<%@ include file="/fragments/header.jsp" %>	
+  
+<% if(admin==null) response.sendRedirect("401error.jsp"); %>
 
  <h1> Pagina protetta</h1>
  <br>
@@ -26,7 +31,6 @@
  </ul>
  
  <%@ include file="/fragments/footer.jsp" %>
- 
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/core.js"></script>
     <script type="text/javascript" src="assets/js/store.js"></script>
