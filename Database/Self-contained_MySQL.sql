@@ -27,6 +27,7 @@ CREATE TABLE `cliente` (
   `Cognome` varchar(45) NOT NULL,
   `Email` varchar(45) NOT NULL,
   `Password` varchar(45) NOT NULL,
+  `Ruolo` varchar(20) NOT NULL,  
   PRIMARY KEY (`ID`),
   UNIQUE KEY `Email_UNIQUE` (`Email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -38,7 +39,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` (Nome, cognome, Email, Password) VALUES ('Jack','Tortora','jack@mail.com','Jack123'),('Raffaele','Parisi','raffaele@mail.com','Raffaele123'),('Simone','Califano','simone@mail.com','Simone123');
+INSERT INTO `cliente` (Nome, cognome, Email, Password, Ruolo) VALUES ('Jack','Tortora','jack@mail.com','Jack123', 'admin'),('Raffaele','Parisi','raffaele@mail.com','Raffaele123', 'admin'),('Simone','Califano','simone@mail.com','Simone123', 'admin');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
