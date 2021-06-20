@@ -52,7 +52,7 @@
      %>
       <a href="LogoutController"> Logout</a>
       <a href="preferiti.jsp"> <i class="ion-ios-heart"></i> Preferiti </a>
-      <a href="#"><i class="ion-person"></i> Salve, <%= currUser.getFirstName() %> </a>
+      <a href="registeredUser.jsp"><i class="ion-person"></i> Salve, <%= currUser.getFirstName() %> </a>
        <%
       }
      else if(currUser==null && admin!=null) {

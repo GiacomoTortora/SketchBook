@@ -12,7 +12,6 @@ public class UserBean {
 	private boolean admin;
 	
 	public UserBean() {
-		id=-1;
 		email="";
 		password="";
 		firstName="";
@@ -64,6 +63,10 @@ public class UserBean {
 	
 	public int getId() {
 		return id;
+	}
+	
+	public void setId(int newId) {
+		this.id=newId;
 	}
 	
 	public boolean isAdmin() {

@@ -24,9 +24,11 @@ public class UserDAO {
         	 String firstName = rs.getString("Nome");
              String lastName = rs.getString("Cognome");
              String ruolo = rs.getString("Ruolo");
+             int id=rs.getInt("ID");
              System.out.println("Welcome " + firstName);
              bean.setFirstName(firstName);
              bean.setLastName(lastName);
+             bean.setId(id);
              bean.setValid(true);
              if(ruolo.equals("admin")) {
             	 bean.setAdmin();

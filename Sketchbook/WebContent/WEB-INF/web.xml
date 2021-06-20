@@ -33,7 +33,11 @@
   	<servlet-name>LogoutController</servlet-name>
   	<servlet-class>control.LogoutController</servlet-class>
   </servlet>
-  <servlet>
+   <servlet>
+   	<servlet-name>OrderController</servlet-name>
+   	<servlet-class>control.OrderController</servlet-class>
+   </servlet>
+   <servlet>
   	<servlet-name>SignUpController</servlet-name>
   	<servlet-class>control.SignUpController</servlet-class>
   </servlet>
@@ -60,5 +64,9 @@
   <servlet-mapping>
     <servlet-name>ProductControl</servlet-name>
     <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>OrderController</servlet-name>
+  	<url-pattern>/orders</url-pattern>
   </servlet-mapping>
 </web-app>

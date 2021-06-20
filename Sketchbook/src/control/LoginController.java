@@ -59,6 +59,7 @@ public class LoginController extends HttpServlet {
 		          }
 		          else if(!user.isAdmin()) {
 		          session.setAttribute("currentSessionUser",user);
+		          System.out.println(user.getFirstName());
 		          response.sendRedirect("ProductView.jsp");  //user loggato
 		          System.out.println("buono");
 		          }
