@@ -17,7 +17,7 @@
 
 <!DOCTYPE html>
 <html>
-	<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.ProductBean, model.Cart, model.UserBean"%>
+	<%@ page contentType="text/html; charset=utf-8" import="java.util.*,model.bean.ProductBean, model.Cart,model.bean.UserBean"%>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

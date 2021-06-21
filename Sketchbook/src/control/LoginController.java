@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.UserBean;
-import model.UserDAO;
+import model.dao.UserDAO;
 
 /**
  * Servlet implementation class LoginController

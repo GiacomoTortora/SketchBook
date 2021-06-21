@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"
-    import="model.UserBean"
+    import="model.bean.UserBean"
     %>
     
 <% 

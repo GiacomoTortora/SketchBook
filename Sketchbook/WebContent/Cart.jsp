@@ -9,7 +9,7 @@
 	
 <!DOCTYPE html>
 <html>
-<%@ page import="java.util.*, model.ProductBean, model.Cart, model.UserBean"%>
+<%@ page import="java.util.*,model.bean.ProductBean, model.Cart,model.bean.UserBean"%>
 
 <head>
 	<meta charset="utf-8">

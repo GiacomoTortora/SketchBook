@@ -1,4 +1,4 @@
-package model;
+package model.bean;
 
 public class UserBean {
 	
@@ -10,15 +10,6 @@ public class UserBean {
 	private int id;
 	private boolean valid;
 	private boolean admin;
-	
-	public UserBean() {
-		email="";
-		password="";
-		firstName="";
-		lastName="";
-		valid=false;
-		admin=false;
-	}
 	
 	public String getEmail() {
 		return email;
@@ -73,8 +64,12 @@ public class UserBean {
 		return admin;
 	}
 	
-	public void setAdmin() {
-		this.admin=true;
+	public void setAdmin(boolean value) {
+		this.admin=value;
+	}
+	
+	public boolean getAdmin() {
+		return admin;
 	}
 	
 	public String toString() {

@@ -10,8 +10,8 @@ import javax.servlet.http.HttpSession;
 
 import model.Cart;
 import model.OrderBean;
-import model.OrderDAO;
 import model.UserBean;
+import model.dao.OrderDAO;
 
 /**
  * Servlet implementation class OrderController
