@@ -82,7 +82,7 @@ public class OrderDAO {
 
 		OrderBean bean = new OrderBean();
 		ProductDAO prodotti = new ProductDAO();
-		String selectSQL = "SELECT * FROM " + OrderDAO.TABLE_NAME1 + " WHERE CODE = ?";
+		String selectSQL = "SELECT * FROM " + OrderDAO.TABLE_NAME1 + " WHERE ID = ?";
 
 		try {
 			connection = ds.getConnection();
@@ -119,7 +119,7 @@ public class OrderDAO {
 
 		int result = 0;
 
-		String deleteSQL = "DELETE FROM " + OrderDAO.TABLE_NAME1 + " WHERE CODE = ?";
+		String deleteSQL = "DELETE FROM " + OrderDAO.TABLE_NAME1 + " WHERE ID = ?";
 
 		try {
 			connection = ds.getConnection();

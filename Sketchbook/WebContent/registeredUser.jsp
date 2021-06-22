@@ -18,6 +18,9 @@
   
 <body>
 <%@ include file="/fragments/header.jsp" %>	
+
+ <hr class="offset-lg">
+ <hr class="offset-lg">
   
 <% if(currUser==null) response.sendRedirect("401error.jsp"); %>
 

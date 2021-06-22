@@ -402,8 +402,8 @@
           <div class="col-sm-6 col-md-6 item">
 
             <div class="body">
-              <a href="assets/img/blog/3.png">
-                <img src="assets/img/blog/3.png" title="Apple Devices" alt="Apple Devices">
+              <a href="assets/img/blog/4.png">
+                <img src="assets/img/blog/4.png" title="img4" alt="img4">
               </a>
 
               <div class="caption">
@@ -422,8 +422,8 @@
           <div class="col-sm-6 col-md-6 item">
 
             <div class="body">
-              <a href="assets/img/blog/2.png">
-                <img src="assets/img/blog/2.png" title="Coffee" alt="Coffee">
+              <a href="assets/img/blog/1.png">
+                <img src="assets/img/blog/1.png" title="img1" alt="img1">
               </a>
 
               <div class="caption">
@@ -440,8 +440,8 @@
           </div>
           <div class="col-sm-6 col-md-6 item">
             <div class="body">
-              <a href="assets/img/blog/4.png">
-                <img src="assets/img/blog/4.png" title="Coffee" alt="Coffee">
+              <a href="assets/img/blog/3.png">
+                <img src="assets/img/blog/3.png" title="img3" alt="img3">
               </a>
 
               <div class="caption">
@@ -459,8 +459,8 @@
           
             <div class="col-sm-6 col-md-6 item">
             <div class="body">
-              <a href="assets/img/blog/1.png">
-                <img src="assets/img/blog/1.png" title="Coffee" alt="Coffee">
+              <a href="assets/img/blog/2.png">
+                <img src="assets/img/blog/2.png" title="img2" alt="img2">
               </a>
 
               <div class="caption">

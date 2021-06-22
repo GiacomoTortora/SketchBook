@@ -77,7 +77,7 @@ public class UserDAO {
 
 		UserBean bean = new UserBean();
 
-		String selectSQL = "SELECT * FROM " + UserDAO.TABLE_NAME + " WHERE CODE = ?";
+		String selectSQL = "SELECT * FROM " + UserDAO.TABLE_NAME + " WHERE ID = ?";
 
 		try {
 			connection = ds.getConnection();
@@ -117,7 +117,7 @@ public class UserDAO {
 
 		int result = 0;
 
-		String deleteSQL = "DELETE FROM " + UserDAO.TABLE_NAME + " WHERE CODE = ?";
+		String deleteSQL = "DELETE FROM " + UserDAO.TABLE_NAME + " WHERE ID = ?";
 
 		try {
 			connection = ds.getConnection();
