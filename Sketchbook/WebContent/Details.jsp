@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"
-	import="model.bean.ProductBean"
-	%>
+%>
 
 <%
 	ProductBean product = (ProductBean) request.getAttribute("product");
@@ -9,7 +8,7 @@
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=utf-8" impmodel.bean.ProductBeanmodel.ProductBean, model.Cart, model.UserBean"%>
+<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.ProductBean, model.bean.ProductBean, model.Cart, model.bean.UserBean, model.dao.ProductDAO"%>
 
 <head>
 	<meta charset="utf-8">
