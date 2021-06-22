@@ -38,6 +38,7 @@ public class SignUpController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		UserDAO signup=new UserDAO();
 		UserBean newUser=new UserBean();
 		String email="", email2="", firstName="", lastName="", password="", password2="";
 		email=request.getParameter("email");
@@ -79,8 +80,8 @@ public class SignUpController extends HttpServlet {
 		newUser.setLastName(lastName);
 		newUser.setPassword(password2);
 		try {
-			if(UserDAO.doRetrieveUniqueEmail(newUser)==true) {
-				UserDAO.doSave(newUser);
+			if(signup.doRetrieveUniqueEmail(newUser)==true) {
+				signup.doSave(newUser);
 				 request.getRequestDispatcher("ProductView.jsp").forward(request, response);;
 			} else response.sendRedirect("general-error.jsp");
 		} catch (SQLException e) {

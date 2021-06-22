@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+        UserDAO login=new UserDAO();
 		try
 		{	    
 
@@ -47,7 +47,7 @@ public class LoginController extends HttpServlet {
 		     user.setEmail(request.getParameter("email"));
 		     user.setPassword(request.getParameter("password"));
 
-		     user = UserDAO.doRetrieveByForm(user);
+		     user = login.doRetrieveByForm(user);
 		     if (user.isValid())
 		     {
 			        

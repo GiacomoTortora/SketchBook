@@ -31,7 +31,7 @@ public class ProductDAO {
 		  }
 	}
 	
-	public static synchronized Collection<ProductBean> doRetrieveAll(String order) throws SQLException{
+	public  synchronized Collection<ProductBean> doRetrieveAll(String order) throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -76,7 +76,7 @@ public class ProductDAO {
 	}
 	
 	
-	public static synchronized ProductBean doRetrieveByKey(int code) throws SQLException {
+	public synchronized ProductBean doRetrieveByKey(int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -112,7 +112,7 @@ public class ProductDAO {
 		return bean;
 	}
 	
-	public static synchronized List<ProductBean> doRetrieveByOrder(int code) throws SQLException {
+	public synchronized List<ProductBean> doRetrieveByOrder(int code) throws SQLException {
 		{
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
@@ -158,7 +158,7 @@ public class ProductDAO {
 	}
 	
 	
-	public static synchronized boolean doDelete(int code) throws SQLException {
+	public synchronized boolean doDelete(int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -188,7 +188,7 @@ public class ProductDAO {
 	
 	
 
-	public static synchronized void doSave(ProductBean product) throws SQLException {
+	public synchronized void doSave(ProductBean product) throws SQLException {
    
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;

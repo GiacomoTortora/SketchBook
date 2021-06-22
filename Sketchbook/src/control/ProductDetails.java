@@ -26,13 +26,14 @@ public class ProductDetails extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String action = request.getParameter("action");
+		ProductDAO products=new ProductDAO();
 
 		try {
 			if (action != null) {
 				} if (action.equalsIgnoreCase("read")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					request.removeAttribute("product");
-					request.setAttribute("product", ProductDAO.doRetrieveByKey(id));
+					request.setAttribute("product", products.doRetrieveByKey(id));
 				}
 		
 			}

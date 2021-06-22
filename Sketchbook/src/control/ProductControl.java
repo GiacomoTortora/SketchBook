@@ -34,24 +34,24 @@ public class ProductControl extends HttpServlet {
 			cart = new Cart();
 			request.getSession().setAttribute("cart", cart);
 		}
-		
+		ProductDAO products=new ProductDAO();
 		String action = request.getParameter("action");
 
 		try {
 			if (action != null) {
 				if (action.equalsIgnoreCase("addC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					cart.addProduct(ProductDAO.doRetrieveByKey(id));
+					cart.addProduct(products.doRetrieveByKey(id));
 				} else if (action.equalsIgnoreCase("deleteC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					cart.deleteProduct(ProductDAO.doRetrieveByKey(id));
+					cart.deleteProduct(products.doRetrieveByKey(id));
 				} else if (action.equalsIgnoreCase("read")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					request.removeAttribute("product");
-					request.setAttribute("product", ProductDAO.doRetrieveByKey(id));
+					request.setAttribute("product", products.doRetrieveByKey(id));
 				} else if (action.equalsIgnoreCase("delete")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					ProductDAO.doDelete(id);
+					products.doDelete(id);
 				} else if (action.equalsIgnoreCase("insert")) {
 					String name = request.getParameter("name");
 					String description = request.getParameter("description");
@@ -63,7 +63,7 @@ public class ProductControl extends HttpServlet {
 					bean.setDescrizione(description);
 					bean.setPrezzo(price);
 					bean.setQuantitaCatalogo(quantity);
-					ProductDAO.doSave(bean);
+					products.doSave(bean);
 				}
 			}			
 		} catch (SQLException e) {
@@ -78,7 +78,7 @@ public class ProductControl extends HttpServlet {
 
 		try {
 			request.removeAttribute("products");
-			request.setAttribute("products", ProductDAO.doRetrieveAll(sort));
+			request.setAttribute("products", products.doRetrieveAll(sort));
 		} catch (SQLException e) {
 			System.out.println("Error:" + e.getMessage());
 		}

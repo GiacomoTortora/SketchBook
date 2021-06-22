@@ -32,16 +32,18 @@ public class CartController extends HttpServlet {
 			request.getSession().setAttribute("cart", cart);
 		}
 		
+		ProductDAO prodotti= new ProductDAO();
+		
 		String action = request.getParameter("action");
 
 		try {
 			if (action != null) {
 				if (action.equalsIgnoreCase("addC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					cart.addProduct(ProductDAO.doRetrieveByKey(id));
+					cart.addProduct(prodotti.doRetrieveByKey(id));
 				} else if (action.equalsIgnoreCase("deleteC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					cart.deleteProduct(ProductDAO.doRetrieveByKey(id));
+					cart.deleteProduct(prodotti.doRetrieveByKey(id));
 				}
 			}
 		}

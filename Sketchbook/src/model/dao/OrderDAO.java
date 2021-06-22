@@ -32,12 +32,12 @@ public class OrderDAO {
 		  }
 	}
 	
-	public static synchronized Collection<OrderBean> doRetrieveAll(String order) throws SQLException{
+	public synchronized Collection<OrderBean> doRetrieveAll(String order) throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
-
 		Collection<OrderBean> ordini = new LinkedList<OrderBean>();
+		ProductDAO prodotti = new ProductDAO();
 		
 		String selectSQL = "SELECT * FROM " + OrderDAO.TABLE_NAME1;
 		
@@ -55,7 +55,7 @@ public class OrderDAO {
 				OrderBean bean = new OrderBean();
 				
 				bean.setId(rs.getInt("id"));
-				bean.setProdotti(ProductDAO.doRetrieveByOrder(bean.getId()));
+				bean.setProdotti(prodotti.doRetrieveByOrder(bean.getId()));
 				bean.setData(rs.getDate("Data"));
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
@@ -76,12 +76,12 @@ public class OrderDAO {
 		return ordini;
 	}
 	
-	public static synchronized OrderBean doRetrieveByKey(int code) throws SQLException {
+	public synchronized OrderBean doRetrieveByKey(int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		OrderBean bean = new OrderBean();
-		
+		ProductDAO prodotti = new ProductDAO();
 		String selectSQL = "SELECT * FROM " + OrderDAO.TABLE_NAME1 + " WHERE CODE = ?";
 
 		try {
@@ -93,7 +93,7 @@ public class OrderDAO {
 
 			while (rs.next()) {
 				bean.setId(rs.getInt("id"));
-				bean.setProdotti(ProductDAO.doRetrieveByOrder(bean.getId()));
+				bean.setProdotti(prodotti.doRetrieveByOrder(bean.getId()));
 				bean.setData(rs.getDate("Data"));
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
@@ -113,7 +113,7 @@ public class OrderDAO {
 	}
 	
 	
-	public static synchronized boolean doDelete(int code) throws SQLException {
+	public synchronized boolean doDelete(int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -143,7 +143,7 @@ public class OrderDAO {
 	
 	
 
-	public static synchronized void doSave(OrderBean ordine) throws SQLException {
+	public synchronized void doSave(OrderBean ordine) throws SQLException {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -201,12 +201,13 @@ public class OrderDAO {
 	}
 	
 	
-		public static synchronized Collection<OrderBean> doRetrieveByUser(UserBean user, String order) throws SQLException{
+		public synchronized Collection<OrderBean> doRetrieveByUser(UserBean user, String order) throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		Collection<OrderBean> ordini = new LinkedList<OrderBean>();
+		ProductDAO prodotti = new ProductDAO();
 		
 		String selectSQL = "Select *" + 
 							"FROM " + OrderDAO.TABLE_NAME1 +
@@ -229,7 +230,7 @@ public class OrderDAO {
 				OrderBean bean = new OrderBean();
 				
 				bean.setId(rs.getInt("id"));
-				bean.setProdotti(ProductDAO.doRetrieveByOrder(bean.getId()));
+				bean.setProdotti(prodotti.doRetrieveByOrder(bean.getId()));
 				bean.setData(rs.getDate("Data"));
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));

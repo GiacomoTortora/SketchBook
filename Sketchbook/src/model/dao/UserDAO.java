@@ -141,11 +141,10 @@ public class UserDAO {
 	
 	
 
-	public static synchronized void doSave(UserBean user) throws SQLException {
+	public synchronized void doSave(UserBean user) throws SQLException {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
-
 		String insertSQL = "INSERT INTO " + UserDAO.TABLE_NAME
 				+ " (NOME, COGNOME, EMAIL, PASSWORD, RUOLO) VALUES (?, ?, ?, ?, ?)";
 
@@ -175,7 +174,7 @@ public class UserDAO {
 		}
 	}
  
-  public static UserBean doRetrieveByForm(UserBean bean) throws SQLException {
+  public UserBean doRetrieveByForm(UserBean bean) throws SQLException {
 	Connection connection=null;
     PreparedStatement preparedStatement=null; //si usa prepared statement per evitare SQL-injection
     ResultSet rs=null;
@@ -216,7 +215,7 @@ public class UserDAO {
      
    
    
-   public static boolean doRetrieveUniqueEmail (UserBean bean) throws SQLException {
+   public boolean doRetrieveUniqueEmail (UserBean bean) throws SQLException {
 	  PreparedStatement preparedStatement=null;
 	  Connection connection=null;
 	  ResultSet rs=null;

@@ -36,13 +36,14 @@ public class OrderController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		OrderDAO order=new OrderDAO();
 		try {
 			Collection<OrderBean> orders = new LinkedList<OrderBean>();
 			System.out.println("init");
 			UserBean user = (UserBean)request.getSession().getAttribute("currentSessionUser");
 			if(user!=null) {
 			System.out.println("vai così!");
-			orders=OrderDAO.doRetrieveByUser(user,"");
+			orders=order.doRetrieveByUser(user,"");
 			response.sendRedirect("ProductView.jsp");
 			System.out.println("ma sei fortissimo! O__O");
 			}
