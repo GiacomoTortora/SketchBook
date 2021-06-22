@@ -3,8 +3,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collection;
 import java.util.*;
+import java.sql.Date;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -32,13 +32,12 @@ public class OrderDAO {
 		  }
 	}
 	
-	public synchronized Collection<OrderBean> doRetrieveAll(String order) throws SQLException{
+	public static synchronized Collection<OrderBean> doRetrieveAll(String order) throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		Collection<OrderBean> ordini = new LinkedList<OrderBean>();
-		ProductDAO prodotti = new ProductDAO();
 		
 		String selectSQL = "SELECT * FROM " + OrderDAO.TABLE_NAME1;
 		
@@ -56,7 +55,7 @@ public class OrderDAO {
 				OrderBean bean = new OrderBean();
 				
 				bean.setId(rs.getInt("id"));
-				bean.setProdotti(prodotti.doRetrieveByOrder(bean.getId()));
+				bean.setProdotti(ProductDAO.doRetrieveByOrder(bean.getId()));
 				bean.setData(rs.getDate("Data"));
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
@@ -77,12 +76,11 @@ public class OrderDAO {
 		return ordini;
 	}
 	
-	public synchronized OrderBean doRetrieveByKey(int code) throws SQLException {
+	public static synchronized OrderBean doRetrieveByKey(int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		OrderBean bean = new OrderBean();
-		ProductDAO prodotti = new ProductDAO();
 		
 		String selectSQL = "SELECT * FROM " + OrderDAO.TABLE_NAME1 + " WHERE CODE = ?";
 
@@ -95,7 +93,7 @@ public class OrderDAO {
 
 			while (rs.next()) {
 				bean.setId(rs.getInt("id"));
-				bean.setProdotti(prodotti.doRetrieveByOrder(bean.getId()));
+				bean.setProdotti(ProductDAO.doRetrieveByOrder(bean.getId()));
 				bean.setData(rs.getDate("Data"));
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
@@ -115,7 +113,7 @@ public class OrderDAO {
 	}
 	
 	
-	public synchronized boolean doDelete(int code) throws SQLException {
+	public static synchronized boolean doDelete(int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -145,7 +143,7 @@ public class OrderDAO {
 	
 	
 
-	public synchronized void doSave(OrderBean ordine) throws SQLException {
+	public static synchronized void doSave(OrderBean ordine) throws SQLException {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -190,9 +188,6 @@ public class OrderDAO {
 				preparedStatement = connection.prepareStatement(update);
 				preparedStatement.executeUpdate();
 			}
-						
-			
-
 			connection.commit();
 		} finally {
 			try {
@@ -206,13 +201,12 @@ public class OrderDAO {
 	}
 	
 	
-		public synchronized Collection<OrderBean> doRetrieveByUser(UserBean user, String order) throws SQLException{
+		public static synchronized Collection<OrderBean> doRetrieveByUser(UserBean user, String order) throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		Collection<OrderBean> ordini = new LinkedList<OrderBean>();
-		ProductDAO prodotti = new ProductDAO();
 		
 		String selectSQL = "Select *" + 
 							"FROM " + OrderDAO.TABLE_NAME1 +
@@ -235,7 +229,7 @@ public class OrderDAO {
 				OrderBean bean = new OrderBean();
 				
 				bean.setId(rs.getInt("id"));
-				bean.setProdotti(prodotti.doRetrieveByOrder(bean.getId()));
+				bean.setProdotti(ProductDAO.doRetrieveByOrder(bean.getId()));
 				bean.setData(rs.getDate("Data"));
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
@@ -257,37 +251,42 @@ public class OrderDAO {
 	}
 	
 
-	/* public static OrderBean doRetrieve(UserBean user) {
+	/*public static synchronized ArrayList<OrderBean> doRetrieveByUser2(UserBean user) {
 		 PreparedStatement preparedStatement=null;
-		 OrderBean bean=new OrderBean();
+		 OrderBean order=new OrderBean();
+		 ArrayList<OrderBean> orders=new ArrayList<OrderBean>();
+		 Connection connection=null;
+		 ResultSet rs=null;
 		 try {
+		 connection=ds.getConnection();
 	     System.out.println(user.getFirstName());
 	     System.out.println(user.getId());
-		 con=DriverManagerConnectionPool.getConnection();
-		 preparedStatement=con.prepareStatement("SELECT ID_Cliente, NomeProdotto, PrezzoProdotto, Sconto,"
-		 		+ "Data, Stato FROM ordine JOIN dettagli_ordine ON ordine.ID=dettagli_ordine.ID_Ordine WHERE ID_Cliente=?");
+		 preparedStatement=connection.prepareStatement("SELECT ordine.ID_Cliente, dettagli_ordine.NomeProdotto, dettagli_ordine.PrezzoProdotto,"
+		 		+ "ordine.Data, ordine.Stato "
+		 		+ "FROM ordine INNER JOIN dettagli_ordine ON ordine.ID=dettagli_ordine.ID_Ordine WHERE ordine.ID_Cliente=?");
 		 preparedStatement.setInt(1, user.getId());
 		 rs=preparedStatement.executeQuery();
 		 while(rs.next()) {
+	        ProductBean product=new ProductBean();
 			int id=rs.getInt(1);
-			bean.setId(id);
+			order.setIdCliente(id);
 			String nome=rs.getString(2);
-			bean.setNome(nome);
+			product.setNome(nome);
 			Double prezzo=rs.getDouble(3);
-			bean.setPrezzo(prezzo);
-		    Double sconto=rs.getDouble(4);
-		    bean.setSconto(sconto);
-			Date data=rs.getDate(5);
-			bean.setData(data);
-			String stato=rs.getString(6);
-			bean.setStato(stato);
+			product.setPrezzo(prezzo);
+			Date data=rs.getDate(4);
+			order.setData(data);
+			String stato=rs.getString(5);
+			order.setStato(stato);
 			System.out.println("nome prodotto: "+nome);
+			order.addProduct(product);
 		 }
 		 
+         
 		 } catch(Exception e) {
 			 System.out.println("Errore: "+e);
 		 }
-		return bean;
+		return orders;
 		 
 	 }*/
 }

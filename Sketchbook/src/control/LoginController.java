@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.UserBean;
+import model.bean.UserBean;
 import model.dao.UserDAO;
 
 /**
@@ -47,7 +47,7 @@ public class LoginController extends HttpServlet {
 		     user.setEmail(request.getParameter("email"));
 		     user.setPassword(request.getParameter("password"));
 
-		     user = UserDAO.doRetrieve(user);
+		     user = UserDAO.doRetrieveByForm(user);
 		     if (user.isValid())
 		     {
 			        

@@ -31,7 +31,7 @@ public class ProductDAO {
 		  }
 	}
 	
-	public synchronized Collection<ProductBean> doRetrieveAll(String order) throws SQLException{
+	public static synchronized Collection<ProductBean> doRetrieveAll(String order) throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -58,7 +58,7 @@ public class ProductDAO {
 				bean.setDescrizione(rs.getString("descrizione"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setIva(rs.getDouble("iva"));
-				bean.setQuantitaCatalogo(rs.getInt("Quantità"));
+				bean.setQuantitaCatalogo(rs.getInt("Quantita"));
 				
 				prodotti.add(bean);
 			}
@@ -76,7 +76,7 @@ public class ProductDAO {
 	}
 	
 	
-	public synchronized ProductBean doRetrieveByKey(int code) throws SQLException {
+	public static synchronized ProductBean doRetrieveByKey(int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -97,7 +97,7 @@ public class ProductDAO {
 				bean.setDescrizione(rs.getString("descrizione"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setIva(rs.getDouble("iva"));
-				bean.setQuantitaCatalogo(rs.getInt("Quantità"));
+				bean.setQuantitaCatalogo(rs.getInt("Quantita"));
 			}
 
 		} finally {
@@ -112,7 +112,7 @@ public class ProductDAO {
 		return bean;
 	}
 	
-	public synchronized List<ProductBean> doRetrieveByOrder(int code) throws SQLException {
+	public static synchronized List<ProductBean> doRetrieveByOrder(int code) throws SQLException {
 		{
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
@@ -121,7 +121,7 @@ public class ProductDAO {
 			ProductBean bean = new ProductBean();
 
 			String selectSQL = "SELECT ID_PRODOTTO, NOMEPRODOTTO, PREZZOPRODOTTO, IVAPRODOTTO" +
-								"DESCRIZIONEPRODOTTO, QUANTITà " +
+								"DESCRIZIONEPRODOTTO, QUANTITA " +
 								"FROM " + ProductDAO.TABLE_NAME2 + "JOIN" + OrderDAO.TABLE_NAME1 +
 								"ON ID_ORDINE = ID" +
 								"WHERE CODE = ?";
@@ -139,7 +139,7 @@ public class ProductDAO {
 					bean.setDescrizione(rs.getString("DESCRIZIONEPRODOTTO"));
 					bean.setPrezzo(rs.getDouble("PREZZOPRODOTTO"));
 					bean.setIva(rs.getDouble("IVAPRODOTTO"));
-					bean.setQuantitaCarrello(rs.getInt("Quantità"));
+					bean.setQuantitaCarrello(rs.getInt("Quantita"));
 					
 					prodotti.add(bean);
 				}
@@ -158,7 +158,7 @@ public class ProductDAO {
 	}
 	
 	
-	public synchronized boolean doDelete(int code) throws SQLException {
+	public static synchronized boolean doDelete(int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -188,16 +188,17 @@ public class ProductDAO {
 	
 	
 
-	public synchronized void doSave(ProductBean product) throws SQLException {
-
+	public static synchronized void doSave(ProductBean product) throws SQLException {
+   
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + ProductDAO.TABLE_NAME1
-				+ "(NOME, DESCRIZIONE, PREZZO, IVA, Quantità) VALUES (?, ?, ?, ?, ?)";
+				+ "(NOME, DESCRIZIONE, PREZZO, IVA, Quantita) VALUES (?, ?, ?, ?, ?)";
 
 		try {
 			connection = ds.getConnection();
+			connection.setAutoCommit(false);
 			preparedStatement = connection.prepareStatement(insertSQL);
 			preparedStatement.setString(1, product.getNome());
 			preparedStatement.setString(2, product.getDescrizione());

@@ -1,6 +1,9 @@
 package control;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.LinkedList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,8 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Cart;
-import model.OrderBean;
-import model.UserBean;
+import model.bean.UserBean;
+import model.bean.OrderBean;
+import model.dao.ProductDAO;
 import model.dao.OrderDAO;
 
 /**
@@ -33,13 +37,14 @@ public class OrderController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			OrderBean order=new OrderBean();
+			Collection<OrderBean> orders = new LinkedList<OrderBean>();
 			System.out.println("init");
 			UserBean user = (UserBean)request.getSession().getAttribute("currentSessionUser");
 			if(user!=null) {
-			order=OrderDAO.doRetrieve(user);
-			System.out.println(order.getNome());
+			System.out.println("vai così!");
+			orders=OrderDAO.doRetrieveByUser(user,"");
 			response.sendRedirect("ProductView.jsp");
+			System.out.println("ma sei fortissimo! O__O");
 			}
 		} catch(Throwable e) {
 			System.out.println();

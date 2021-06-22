@@ -12,28 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Cart;
-import model.ProductBean;
-import model.ProductModel;
-import model.ProductModelDM;
-import model.ProductModelDS;
+import model.bean.ProductBean;
+import model.dao.ProductDAO;
 
 @WebServlet("/ProductControl")
 public class ProductControl extends HttpServlet {
 	private static final long serialVersionUID = -6761931902777938797L;
 
-	// ProductModelDS usa il DataSource
-	// ProductModelDM usa il DriverManager	
+	// ProductModelDS usa il DataSource	
 	static boolean isDataSource = true;
-	
-	static ProductModel model;
-	
-	static {
-		if (isDataSource) {
-			model = new ProductModelDS();
-		} else {
-			model = new ProductModelDM();
-		}
-	}
 	
 	public ProductControl() {
 		super();
@@ -54,17 +41,17 @@ public class ProductControl extends HttpServlet {
 			if (action != null) {
 				if (action.equalsIgnoreCase("addC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					cart.addProduct(model.doRetrieveByKey(id));
+					cart.addProduct(ProductDAO.doRetrieveByKey(id));
 				} else if (action.equalsIgnoreCase("deleteC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					cart.deleteProduct(model.doRetrieveByKey(id));
+					cart.deleteProduct(ProductDAO.doRetrieveByKey(id));
 				} else if (action.equalsIgnoreCase("read")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					request.removeAttribute("product");
-					request.setAttribute("product", model.doRetrieveByKey(id));
+					request.setAttribute("product", ProductDAO.doRetrieveByKey(id));
 				} else if (action.equalsIgnoreCase("delete")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					model.doDelete(id);
+					ProductDAO.doDelete(id);
 				} else if (action.equalsIgnoreCase("insert")) {
 					String name = request.getParameter("name");
 					String description = request.getParameter("description");
@@ -72,11 +59,11 @@ public class ProductControl extends HttpServlet {
 					int quantity = Integer.parseInt(request.getParameter("quantity"));
 
 					ProductBean bean = new ProductBean();
-					bean.setName(name);
-					bean.setDescription(description);
-					bean.setPrice(price);
-					bean.setQuantity(quantity);
-					model.doSave(bean);
+					bean.setNome(name);
+					bean.setDescrizione(description);
+					bean.setPrezzo(price);
+					bean.setQuantitaCatalogo(quantity);
+					ProductDAO.doSave(bean);
 				}
 			}			
 		} catch (SQLException e) {
@@ -91,7 +78,7 @@ public class ProductControl extends HttpServlet {
 
 		try {
 			request.removeAttribute("products");
-			request.setAttribute("products", model.doRetrieveAll(sort));
+			request.setAttribute("products", ProductDAO.doRetrieveAll(sort));
 		} catch (SQLException e) {
 			System.out.println("Error:" + e.getMessage());
 		}

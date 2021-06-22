@@ -51,7 +51,7 @@ public class ProductBean implements Serializable {
 	}
 	
 	public void setIva(double newIva) {
-		if(newIva <= 0 || newIva >= 0)
+		if(newIva <= 0 || newIva >= 100)
 			throw new BadIvaException("Valore non valido");
 		iva = newIva;
 	}

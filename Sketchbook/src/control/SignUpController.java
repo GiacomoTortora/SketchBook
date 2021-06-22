@@ -1,12 +1,14 @@
 package control;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.UserBean;
+import model.bean.UserBean;
 import model.dao.UserDAO;
 
 /**
@@ -76,10 +78,21 @@ public class SignUpController extends HttpServlet {
 		newUser.setFirstName(firstName);
 		newUser.setLastName(lastName);
 		newUser.setPassword(password2);
-		if(UserDAO.isUniqueEmail(newUser)==true) {
-			UserDAO.doSubmit(newUser);
-			 request.getRequestDispatcher("ProductView.jsp").forward(request, response);;
-		} else response.sendRedirect("general-error.jsp");
+		try {
+			if(UserDAO.doRetrieveUniqueEmail(newUser)==true) {
+				UserDAO.doSave(newUser);
+				 request.getRequestDispatcher("ProductView.jsp").forward(request, response);;
+			} else response.sendRedirect("general-error.jsp");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

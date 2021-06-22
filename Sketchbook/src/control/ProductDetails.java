@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.ProductModel;
-import model.ProductModelDM;
-import model.ProductModelDS;
+import model.dao.ProductDAO;
 
 @WebServlet("/ProductDetails")
 public class ProductDetails extends HttpServlet {
@@ -20,16 +18,6 @@ public class ProductDetails extends HttpServlet {
 	private static final long serialVersionUID = 6542932021034042140L;
 
 	static boolean isDataSource = true;
-	
-	static ProductModel model;
-	
-	static {
-		if (isDataSource) {
-			model = new ProductModelDS();
-		} else {
-			model = new ProductModelDM();
-		}
-	}
 
     public ProductDetails() {
         super();
@@ -44,7 +32,7 @@ public class ProductDetails extends HttpServlet {
 				} if (action.equalsIgnoreCase("read")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					request.removeAttribute("product");
-					request.setAttribute("product", model.doRetrieveByKey(id));
+					request.setAttribute("product", ProductDAO.doRetrieveByKey(id));
 				}
 		
 			}

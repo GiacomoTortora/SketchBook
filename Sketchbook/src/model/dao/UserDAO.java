@@ -141,7 +141,7 @@ public class UserDAO {
 	
 	
 
-	public synchronized void doSave(UserBean user) throws SQLException {
+	public static synchronized void doSave(UserBean user) throws SQLException {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -151,6 +151,7 @@ public class UserDAO {
 
 		try {
 			connection = ds.getConnection();
+			connection.setAutoCommit(false);
 			preparedStatement = connection.prepareStatement(insertSQL);
 			preparedStatement.setString(1, user.getFirstName());
 			preparedStatement.setString(2, user.getLastName());
@@ -162,7 +163,6 @@ public class UserDAO {
 				preparedStatement.setString(5,"user");
 			
 			preparedStatement.executeUpdate();
-
 			connection.commit();
 		} finally {
 			try {
@@ -175,12 +175,13 @@ public class UserDAO {
 		}
 	}
  
-  /* public static UserBean doRetrieve(UserBean bean) {
-	 
-   /*  PreparedStatement preparedStatement=null; //si usa prepared statement per evitare SQL-injection
-     try {  //connessione al db
-    	 con= DriverManagerConnectionPool.getConnection();
-    	 preparedStatement=con.prepareStatement("SELECT * FROM cliente WHERE Email=? AND Password=?");
+  public static UserBean doRetrieveByForm(UserBean bean) throws SQLException {
+	Connection connection=null;
+    PreparedStatement preparedStatement=null; //si usa prepared statement per evitare SQL-injection
+    ResultSet rs=null;
+     try {  
+    	 connection= ds.getConnection();
+    	 preparedStatement=connection.prepareStatement("SELECT * FROM cliente WHERE Email=? AND Password=?");
     	 preparedStatement.setString(1, bean.getEmail());
     	 preparedStatement.setString(2, bean.getPassword());
          rs = preparedStatement.executeQuery();
@@ -196,32 +197,50 @@ public class UserDAO {
              bean.setId(id);
              bean.setValid(true);
              if(ruolo.equals("admin")) {
-            	 bean.setAdmin();
+            	 bean.setAdmin(true);
              }
          }
-     }
-     catch(Exception e) {
-    	 System.out.println("Errore: "+e);
-     }
+     } finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
      return bean;
+  }
      
-   }
+     
+     
    
-   public static boolean isUniqueEmail(UserBean bean) {
+   
+   public static boolean doRetrieveUniqueEmail (UserBean bean) throws SQLException {
 	  PreparedStatement preparedStatement=null;
+	  Connection connection=null;
+	  ResultSet rs=null;
 	   try {
-		   con= DriverManagerConnectionPool.getConnection();
-		   preparedStatement=con.prepareStatement("SELECT Nome FROM cliente WHERE Email=?");
+		   connection= ds.getConnection();
+		   preparedStatement=connection.prepareStatement("SELECT Nome FROM cliente WHERE Email=?");
 		   preparedStatement.setString(1, bean.getEmail());
 		   rs=preparedStatement.executeQuery();
 		   if(!rs.first()) {
 			   return true;
 		   } 
-	   } catch(Exception e) {
-		   System.out.println("Errore: "+e);
-	   }
+	   } finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		} 
 	   return false;
    }
+   
+}
 
    /* public static void doSubmit(UserBean bean) {
 	  PreparedStatement preparedStatement=null;
@@ -242,4 +261,4 @@ public class UserDAO {
 	   }  catch(Exception e) {
 		   System.out.println("Errore: "+e);
 	   } */
-   }
+   

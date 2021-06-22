@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Cart;
-import model.ProductModel;
-import model.ProductModelDM;
-import model.ProductModelDS;
+import model.dao.ProductDAO;
 
 @WebServlet("/CartController")
 public class CartController extends HttpServlet {
@@ -21,19 +19,9 @@ public class CartController extends HttpServlet {
 	private static final long serialVersionUID = 9155027043637128429L;
 
 	static boolean isDataSource = true;
-	
-	static ProductModel model;
-	
-	static {
-		if (isDataSource) {
-			model = new ProductModelDS();
-		} else {
-			model = new ProductModelDM();
-		}
-	}
 
     public CartController() {
-        super();
+       super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -50,10 +38,10 @@ public class CartController extends HttpServlet {
 			if (action != null) {
 				if (action.equalsIgnoreCase("addC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					cart.addProduct(model.doRetrieveByKey(id));
+					cart.addProduct(ProductDAO.doRetrieveByKey(id));
 				} else if (action.equalsIgnoreCase("deleteC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					cart.deleteProduct(model.doRetrieveByKey(id));
+					cart.deleteProduct(ProductDAO.doRetrieveByKey(id));
 				}
 			}
 		}

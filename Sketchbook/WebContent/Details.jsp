@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+	pageEncoding="utf-8"
+	import="model.bean.ProductBean"
+	%>
 
 <%
 	ProductBean product = (ProductBean) request.getAttribute("product");
@@ -15,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <%
-    	String name = product.getName();
+    	String name = product.getNome();
     %>
     
     <title><%= name %></title>
@@ -51,23 +53,23 @@
 
 
                 <div class="item center" data-marker="1">
-                  <img src="assets/img/product/<%=product.getID()%>/1.jpg" alt="<%=product.getName()%>" class="background"/>
+                  <img src="assets/img/product/<%=product.getId()%>/1.jpg" alt="<%=product.getNome()%>" class="background"/>
                 </div>
                 
                 <div class="item" data-marker="2">
-                  <img src="assets/img/product/<%=product.getID()%>/2.jpg" alt="<%=product.getName()%>" class="background"/>
+                  <img src="assets/img/product/<%=product.getId()%>/2.jpg" alt="<%=product.getNome()%>" class="background"/>
                 </div>
 
                 <div class="item" data-marker="3">
-                  <img src="assets/img/product/<%=product.getID()%>/3.jpg" alt="<%=product.getName()%>" class="background"/>
+                  <img src="assets/img/product/<%=product.getId()%>/3.jpg" alt="<%=product.getNome()%>" class="background"/>
                 </div>
 
                 <div class="item" data-marker="4">
-                  <img src="assets/img/product/<%=product.getID()%>/4.jpg" alt="<%=product.getName()%>" class="background"/>
+                  <img src="assets/img/product/<%=product.getId()%>/4.jpg" alt="<%=product.getNome()%>" class="background"/>
 
                   <div class="tiles">
                     <a href="https://www.youtube.com/watch?v=uKxyLmbOc0Q&ab_channel=YugoKanno%28tema%29YugoKanno%28tema%29">
-                        <img src="assets/img/product/<%=product.getID()%>/4.jpg" alt="<%=product.getName()%>">
+                        <img src="assets/img/product/<%=product.getId()%>/4.jpg" alt="<%=product.getNome()%>">
                         
 
                       <div class="overlay"></div>
@@ -75,7 +77,7 @@
                         <div class="content-outside">
                           <div class="content-inside">
                             <i class="ion-ios-play"></i>
-                            <h2 class="white hidden-xs"><br><%=product.getName()%></h2>
+                            <h2 class="white hidden-xs"><br><%=product.getNome()%></h2>
                           </div>
                         </div>
                       </div>
@@ -95,9 +97,9 @@
           </div>
           <div class="col-sm-5 col-md-5 no-padding-xs">
             <div class="caption">
-              <img src="assets/img/brands/<%=product.getID()%>.png" alt="<%=product.getName()%>" class="brand hidden-xs hidden-sm" />
+              <img src="assets/img/brands/<%=product.getId()%>.png" alt="<%=product.getNome()%>" class="brand hidden-xs hidden-sm" />
 
-              <h1><%=product.getName() %></h1>
+              <h1><%=product.getNome() %></h1>
 
               <p> &middot; Alta Qualità</p>
               <p> &middot; Prestazioni Eccellenti</p>
@@ -108,7 +110,7 @@
 
 			  <%
               	double price=0.0;
-              	price = ((product.getPrice()) + ((product.getPrice() * 22) / 100));       	
+              	price = product.getPrezzoTot();       	
               %>
 
               <p class="price">€<%= String.format("%.2f", price) %></p>
@@ -129,7 +131,7 @@
             <br>
 
             <p style="font-size:150%">
-              <%=product.getDescription()%>
+              <%=product.getDescrizione()%>
             </p>
             <br>
               <hr class="offset-lg">
