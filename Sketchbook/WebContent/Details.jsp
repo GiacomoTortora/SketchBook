@@ -8,7 +8,7 @@
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.ProductBean, model.bean.ProductBean, model.Cart, model.bean.UserBean, model.dao.ProductDAO"%>
+<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.ProductBean, model.Cart, model.bean.UserBean"%>
 
 <head>
 	<meta charset="utf-8">

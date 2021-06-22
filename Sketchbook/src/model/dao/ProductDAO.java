@@ -82,7 +82,7 @@ public class ProductDAO {
 
 		ProductBean bean = new ProductBean();
 
-		String selectSQL = "SELECT * FROM " + ProductDAO.TABLE_NAME1 + " WHERE CODE = ?";
+		String selectSQL = "SELECT * FROM " + ProductDAO.TABLE_NAME1 + " WHERE ID = ?";
 
 		try {
 			connection = ds.getConnection();
@@ -124,7 +124,7 @@ public class ProductDAO {
 								"DESCRIZIONEPRODOTTO, QUANTITA " +
 								"FROM " + ProductDAO.TABLE_NAME2 + "JOIN" + OrderDAO.TABLE_NAME1 +
 								"ON ID_ORDINE = ID" +
-								"WHERE CODE = ?";
+								"WHERE ID = ?";
 
 			try {
 				connection = ds.getConnection();
@@ -164,7 +164,7 @@ public class ProductDAO {
 
 		int result = 0;
 
-		String deleteSQL = "DELETE FROM " + ProductDAO.TABLE_NAME1 + " WHERE CODE = ?";
+		String deleteSQL = "DELETE FROM " + ProductDAO.TABLE_NAME1 + " WHERE ID = ?";
 
 		try {
 			connection = ds.getConnection();
