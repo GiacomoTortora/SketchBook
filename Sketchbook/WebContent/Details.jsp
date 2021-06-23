@@ -175,7 +175,7 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/winsor-newton-promarkers.jpg" alt="Winsor&Newton ProMarker"/></a>
+              <a href="details?action=read&id=13"><img src="assets/img/product-home/winsor-newton-promarkers.jpg" alt="Winsor&Newton ProMarker"/></a>
 
               <div class="content align-center">
                 <p class="price">€17.36</p>
@@ -190,7 +190,7 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/ecoline.jpg" alt="Ecoline Brush Pen"/></a>
+              <a href="details?action=read&id=15"><img src="assets/img/product-home/ecoline.jpg" alt="Ecoline Brush Pen"/></a>
 
               <div class="content align-center">
                 <p class="price">€14.78</p>
@@ -206,7 +206,7 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="./"><img src="assets/img/product-home/wn-acquerelli.jpg" alt="Winsor&Newton Set Acquerelli"/></a>
+              <a href="details?action=read&id=17"><img src="assets/img/product-home/wn-acquerelli.jpg" alt="Winsor&Newton Set Acquerelli"/></a>
 
               <div class="content align-center">
                 <p class="price">€14.49</p>

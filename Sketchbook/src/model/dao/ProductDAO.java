@@ -31,7 +31,7 @@ public class ProductDAO {
 		  }
 	}
 	
-	public  synchronized Collection<ProductBean> doRetrieveAll(String order) throws SQLException{
+	public synchronized Collection<ProductBean> doRetrieveAll(String order) throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
