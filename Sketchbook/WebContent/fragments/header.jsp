@@ -88,7 +88,7 @@
                   Prodotti <i class="ion-android-arrow-dropdown"></i>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Categoria 1</a></li>
+                  <li><a href="AllProducts.jsp">Tutti i Prodotti</a></li>
                   <li><a href="#">Categoria 2</a></li>
                   <li><a href="#">Categoria 3</a></li>
                   <li><a href="#">Categoria 4</a></li>

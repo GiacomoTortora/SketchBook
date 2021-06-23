@@ -209,8 +209,8 @@
                 <h2 class="h3">Derwent Matite 6pz</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
           </div>
@@ -224,8 +224,8 @@
                 <h2 class="h3">W&N Promarkers</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
           </div>
@@ -239,8 +239,8 @@
                 <h2 class="h3">Ecoline Brush Pen</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
           </div>
@@ -255,8 +255,8 @@
                 <h2 class="h3">W&N Acquerelli</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
           </div>
@@ -288,8 +288,8 @@
                 <h2 class="h3">Derwent Paint Kit</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
           </div>
@@ -304,8 +304,8 @@
                 <h2 class="h3">W&N Promarker Color</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
           </div>
@@ -320,8 +320,8 @@
                 <h2 class="h3">Canson Art Book</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
           </div>
@@ -350,8 +350,8 @@
                 <h2 class="h3">Faber-Castel Polychromos</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
           </div>
@@ -365,8 +365,8 @@
                 <h2 class="h3">Pennelli LeFranc Bougeois</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
           </div>
@@ -380,8 +380,8 @@
                 <h2 class="h3">Tela Pintura 30x40</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
+                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
           </div>
