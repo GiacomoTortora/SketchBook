@@ -31,7 +31,7 @@ public class ProductDAO {
 		  }
 	}
 	
-	public  synchronized Collection<ProductBean> doRetrieveAll(String order) throws SQLException{
+	public synchronized Collection<ProductBean> doRetrieveAll(String order) throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -205,6 +205,82 @@ public class ProductDAO {
 			preparedStatement.setDouble(3, product.getPrezzo());
 			preparedStatement.setDouble(4, product.getIva());
 			preparedStatement.setInt(5, product.getQuantitaCatalogo());
+			
+			preparedStatement.executeUpdate();
+
+			connection.commit();
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+	}
+	
+	public synchronized Collection<ProductBean> doRetrieveByName(String name) throws SQLException {
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		List<ProductBean> prodotti = new ArrayList<ProductBean>();
+
+		String selectSQL = "SELECT * FROM " + ProductDAO.TABLE_NAME1 +
+							"WHERE NOME LIKE ?";
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setString(1, "%" + name + "%");
+
+			ResultSet rs = preparedStatement.executeQuery();
+			
+			while(rs.next()) {
+				ProductBean bean = new ProductBean();
+				
+				bean.setId(rs.getInt("id"));
+				bean.setNome(rs.getString("nome"));
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setPrezzo(rs.getDouble("prezzo"));
+				bean.setIva(rs.getDouble("iva"));
+				bean.setQuantitaCatalogo(rs.getInt("Quantita"));
+				
+				prodotti.add(bean);
+			}
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		return prodotti;
+	}
+	
+	public synchronized void doUpdate(ProductBean product) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		String updateSQL = "UPDATE prodotto NOME = ?, DESCRIZIONE = ?, PREZZO = ?" +
+							"IVA = ?, QUANTITA = ?" +
+							" WHERE ID = ?";
+
+		try {
+			connection = ds.getConnection();
+			connection.setAutoCommit(false);
+			preparedStatement = connection.prepareStatement(updateSQL);
+			
+			preparedStatement = connection.prepareStatement(updateSQL);
+			preparedStatement.setString(1, product.getNome());
+			preparedStatement.setString(2, product.getDescrizione());
+			preparedStatement.setDouble(3, product.getPrezzo());
+			preparedStatement.setDouble(4, product.getIva());
+			preparedStatement.setInt(5, product.getQuantitaCatalogo());
+			preparedStatement.setInt(6, product.getId());
 			
 			preparedStatement.executeUpdate();
 

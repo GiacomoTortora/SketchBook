@@ -3,6 +3,8 @@ import java.sql.*;
 import javax.sql.*;
 import javax.naming.*;
 import java.util.*;
+
+import model.bean.OrderBean;
 import model.bean.UserBean;
 
 
@@ -238,6 +240,46 @@ public class UserDAO {
 		} 
 	   return false;
    }
+   
+   public synchronized void doUpdate(UserBean user) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		String updateSQL = "UPDATE " + UserDAO.TABLE_NAME + 
+							"SET NOME = ?, COGNOME = ?, EMAIL = ?, PASSWORD = ?, RUOLO = ?" +
+							"WHERE ID = ?";
+
+		try {
+			connection = ds.getConnection();
+			connection.setAutoCommit(false);
+			preparedStatement = connection.prepareStatement(updateSQL);
+			
+			preparedStatement = connection.prepareStatement(updateSQL);
+			preparedStatement.setString(1, user.getFirstName());
+			preparedStatement.setString(2, user.getLastName());
+			preparedStatement.setString(3, user.getEmail());
+			preparedStatement.setString(4, user.getPassword());
+			
+			if(user.isAdmin())
+				preparedStatement.setString(5, "admin");
+			else
+				preparedStatement.setString(5, "user");
+			
+			preparedStatement.setInt(6, user.getId());
+			
+			preparedStatement.executeUpdate();
+
+			connection.commit();
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+	}
    
 }
 

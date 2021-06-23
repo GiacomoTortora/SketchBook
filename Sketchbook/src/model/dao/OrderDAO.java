@@ -182,11 +182,8 @@ public class OrderDAO {
 				
 				preparedStatement.executeUpdate();
 				
-				String update = "UPDATE prodotto SET quantità = quantità -" + prodotto.getQuantitaCarrello() +
-								 "WHERE ID = " + prodotto.getId();
-				
-				preparedStatement = connection.prepareStatement(update);
-				preparedStatement.executeUpdate();
+				prodotto.setQuantitaCatalogo(prodotto.getQuantitaCatalogo() - prodotto.getQuantitaCarrello());
+				new ProductDAO().doUpdate(prodotto);
 			}
 			connection.commit();
 		} finally {
@@ -209,10 +206,10 @@ public class OrderDAO {
 		Collection<OrderBean> ordini = new LinkedList<OrderBean>();
 		ProductDAO prodotti = new ProductDAO();
 		
-		String selectSQL = "Select *" + 
+		String selectSQL = "Select * " + 
 							"FROM " + OrderDAO.TABLE_NAME1 +
 							"JOIN cliente ON cliente.ID = ID_CLIENTE" +
-							"WHERE cliente.ID = ?";
+							" WHERE cliente.ID = ?";
 							
 		
 		if (order != null && !order.equals("")) {
@@ -250,6 +247,38 @@ public class OrderDAO {
 		}
 		return ordini;
 	}
+		
+		public synchronized void doUpdate(OrderBean ordine) throws SQLException {
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+
+			String updateSQL = "UPDATE " + OrderDAO.TABLE_NAME1 + 
+								"SET DATA = ?, STATO = ?" +
+								"WHERE ID = ?";
+
+			try {
+				connection = ds.getConnection();
+				connection.setAutoCommit(false);
+				preparedStatement = connection.prepareStatement(updateSQL);
+				
+				preparedStatement = connection.prepareStatement(updateSQL);
+				preparedStatement.setDate(1, ordine.getData());
+				preparedStatement.setString(2, ordine.getStato());
+				preparedStatement.setInt(3, ordine.getId());
+				
+				preparedStatement.executeUpdate();
+
+				connection.commit();
+			} finally {
+				try {
+					if (preparedStatement != null)
+						preparedStatement.close();
+				} finally {
+					if (connection != null)
+						connection.close();
+				}
+			}
+		}
 	
 
 	/*public static synchronized ArrayList<OrderBean> doRetrieveByUser2(UserBean user) {
