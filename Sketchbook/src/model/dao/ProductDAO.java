@@ -261,6 +261,46 @@ public class ProductDAO {
 		return prodotti;
 	}
 	
+public synchronized Collection<ProductBean> doRetrieveByCategory(int categoria) throws SQLException {
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		List<ProductBean> prodotti = new ArrayList<ProductBean>();
+
+		String selectSQL = "SELECT * FROM " + ProductDAO.TABLE_NAME1 + " WHERE CATEGORIA = ? ";
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setInt(1, categoria);
+
+			ResultSet rs = preparedStatement.executeQuery();
+			
+			while(rs.next()) {
+				ProductBean bean = new ProductBean();
+				
+				bean.setId(rs.getInt("id"));
+				bean.setNome(rs.getString("nome"));
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setPrezzo(rs.getDouble("prezzo"));
+				bean.setIva(rs.getDouble("iva"));
+				bean.setQuantitaCatalogo(rs.getInt("Quantita"));
+				
+				prodotti.add(bean);
+			}
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		return prodotti;
+	}
+	
 	public synchronized void doUpdate(ProductBean product) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;

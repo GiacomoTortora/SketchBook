@@ -89,9 +89,12 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a href="AllProducts.jsp">Tutti i Prodotti</a></li>
-                  <li><a href="#">Categoria 2</a></li>
-                  <li><a href="#">Categoria 3</a></li>
-                  <li><a href="#">Categoria 4</a></li>
+                  <li><a href="ProductCategory?action=read&categoria=1">Matite</a></li>
+                  <li><a href="ProductCategory?action=read&categoria=2">Pennarelli</a></li>
+                  <li><a href="ProductCategory?action=read&categoria=3">Pittura</a></li>
+                  <li><a href="ProductCategory?action=read&categoria=4">Pennelli</a></li>
+                  <li><a href="ProductCategory?action=read&categoria=5">Fogli</a></li>
+                  <li><a href="ProductCategory?action=read&categoria=6">Tele</a></li>
                 </ul>
               </li>
               <li><a href="Cart.jsp">Carrello</a></li>

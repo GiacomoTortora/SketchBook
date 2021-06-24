@@ -3,8 +3,7 @@
 %>
 
 <%
-	Collection<?> products = new ProductDAO().doRetrieveAll("");
-	ProductBean product = (ProductBean) request.getAttribute("product");
+	Collection<?> products = new ProductDAO().doRetrieveByCategory(Integer.parseInt(request.getParameter("categoria")));
 %>
 
 <!DOCTYPE html>
@@ -59,41 +58,6 @@
           <hr class="offset-lg">
 
           <div class="filter">
-            <div class="item">
-                <div class="title">
-                    <a href="#clear" data-action="open" class="down"> <i class="ion-android-arrow-dropdown"></i> Open</a>
-                    <a href="#clear" data-action="clear"> <i class="ion-ios-trash-outline"></i> Reset</a>
-                    <h1 class="h4">Tipo</h1>
-                </div>
-
-                <div class="controls">
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                      <div class="label" data-value="Matite">Matite</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                      <div class="label" data-value="Pennelli">Pennelli</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                      <div class="label" data-value="Pitture">Pitture</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="Fogli">Fogli</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-                </div>
-            </div>
-
-            <br>
             <div class="item">
                 <div class="title">
                     <a href="#clear" data-action="open" class="down"> <i class="ion-android-arrow-dropdown"></i> Open</a>

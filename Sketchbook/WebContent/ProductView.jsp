@@ -143,7 +143,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="./store/" rel="nofollow" class="btn btn-default black"> Vedi </a>
+                  <a href="ProductCategory?action=read&categoria=1" rel="nofollow" class="btn btn-default black"> Vedi </a>
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="./store/" rel="nofollow" class="btn btn-primary black"> Vedi </a>
+                  <a href="ProductCategory?action=read&categoria=4" rel="nofollow" class="btn btn-primary black"> Vedi </a>
                 </div>
               </div>
             </div>
@@ -169,7 +169,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="./store/" rel="nofollow" class="btn btn-primary black"> Vedi </a>
+                  <a href="ProductCategory?action=read&categoria=5" rel="nofollow" class="btn btn-primary black"> Vedi </a>
                 </div>
               </div>
             </div>
@@ -181,7 +181,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="./store/" rel="nofollow" class="btn btn-primary black"> Vedi </a>
+                  <a href="ProductCategory?action=read&categoria=3" rel="nofollow" class="btn btn-primary black"> Vedi </a>
                 </div>
               </div>
             </div>

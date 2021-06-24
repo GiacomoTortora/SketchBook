@@ -13,6 +13,7 @@ public class ProductBean implements Serializable {
 	private double iva;
 	private int quantitaCarrello;
 	private int quantitaCatalogo;
+	private int categoria;
 	
 	public int getId() {
 		return id;
@@ -82,6 +83,14 @@ public class ProductBean implements Serializable {
 		if(++quantitaCatalogo > quantitaCatalogo)
 			throw new InvalidQuantitaException("Quantità non valida");
 		quantitaCarrello++;
+	}
+	
+	public int getCategoria() {
+		return categoria;
+	}
+	
+	public void setCategoria(int category) {
+		categoria = category;
 	}
 
 	@Override
