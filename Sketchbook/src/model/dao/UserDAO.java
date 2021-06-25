@@ -246,8 +246,8 @@ public class UserDAO {
 		PreparedStatement preparedStatement = null;
 
 		String updateSQL = "UPDATE " + UserDAO.TABLE_NAME + 
-							"SET NOME = ?, COGNOME = ?, EMAIL = ?, PASSWORD = ?, RUOLO = ?" +
-							"WHERE ID = ?";
+							" SET NOME = ?, COGNOME = ?, EMAIL = ?, PASSWORD = ?, RUOLO = ?" +
+							" WHERE ID = ?";
 
 		try {
 			connection = ds.getConnection();

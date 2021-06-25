@@ -152,8 +152,8 @@ public class OrderDAO {
 				+ " (ID, DATA, STATO, ID_CLIENTE) VALUES (?, ?, ?, ?)";
 		
 		String insertSQL2 = "INSERT INTO " + OrderDAO.TABLE_NAME2 
-							+ "ID_ORDINE, ID_PRODOTTO, NOMEPRODOTTO, PREZZOPRODOTTO " + 
-							"IVAPRODOTTO, DESCRIZIONEPRODOTTO, QUANTITà" +
+							+ " ID_ORDINE, ID_PRODOTTO, NOMEPRODOTTO, PREZZOPRODOTTO " + 
+							"IVAPRODOTTO, DESCRIZIONEPRODOTTO, QUANTITA " +
 							"VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try {
 			connection = ds.getConnection();
@@ -199,18 +199,19 @@ public class OrderDAO {
 	
 	
 		public synchronized Collection<OrderBean> doRetrieveByUser(UserBean user, String order) throws SQLException{
-		
+	
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		Collection<OrderBean> ordini = new LinkedList<OrderBean>();
-		ProductDAO prodotti = new ProductDAO();
 		
-		String selectSQL = "Select * " + 
+		ProductDAO prodotti = new ProductDAO();
+	
+		String selectSQL = "select * " + 
 							"FROM " + OrderDAO.TABLE_NAME1 +
-							"JOIN cliente ON cliente.ID = ID_CLIENTE" +
+							" JOIN cliente ON cliente.ID = ID_CLIENTE" +
 							" WHERE cliente.ID = ?";
-							
+				
 		
 		if (order != null && !order.equals("")) {
 			selectSQL += " ORDER BY " + order;
@@ -222,11 +223,12 @@ public class OrderDAO {
 			preparedStatement.setInt(1, user.getId());
 			
 			ResultSet rs = preparedStatement.executeQuery();
-
+		
 			while (rs.next()) {
-				OrderBean bean = new OrderBean();
 				
+				OrderBean bean = new OrderBean();
 				bean.setId(rs.getInt("id"));
+				
 				bean.setProdotti(prodotti.doRetrieveByOrder(bean.getId()));
 				bean.setData(rs.getDate("Data"));
 				bean.setStato(rs.getString("Stato"));
@@ -253,7 +255,7 @@ public class OrderDAO {
 			PreparedStatement preparedStatement = null;
 
 			String updateSQL = "UPDATE " + OrderDAO.TABLE_NAME1 + 
-								"SET DATA = ?, STATO = ?" +
+								" SET DATA = ?, STATO = ? " +
 								"WHERE ID = ?";
 
 			try {
