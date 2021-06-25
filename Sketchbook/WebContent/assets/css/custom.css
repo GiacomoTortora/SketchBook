@@ -266,7 +266,8 @@
 	}
 	
 	.errormsg{
-	   color: 'red';
+	   color: red;
+	   font-style: italic;
 	}
 
 	.modal#Modal-SignIn .modal-header,

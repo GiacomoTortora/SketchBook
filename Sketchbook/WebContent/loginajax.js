@@ -29,13 +29,13 @@ function validateSignUpForm(form){
 	    $('#newEmailErr2').html("Inserire email di conferma valida");
 	} else if(password=="" || password==null || password.length<4){
 		form.password.focus();
-	    $('#newPasswordErr').html("La password dev'essere più lunga di 4 caratteri'");
+	    $('#newPasswordErr').html("La password dev'essere più lunga di 4 caratteri");
 	} else if(password2=="" || password2==null || password2.length<4){
 		form.password2.focus();
-	    $('#newPassword2Err').html("La password di conferma dev'essere più lunga di 4 caratteri'");
+	    $('#newPassword2Err').html("La password di conferma dev'essere più lunga di 4 caratteri");
 	} else if(!regExpMail.test(email)){
 		form.email.focus();
-	    $('#newEmailErr').html("Inserire formato valido per l'email'");
+	    $('#newEmailErr').html("Inserire formato valido per l'email");
 	} else if(password2!=password){
 		form.password.focus();
 		form.password2.focus();
@@ -63,7 +63,7 @@ if (email==null || email=="" || email.length<6){
 	$('#emailErr').html("L'email dev'essere più lunga di 6 caratteri");
 }else if(password.length<4){
 	form.password.focus();
-	$('#pwdErr').html("La password dev'essere più lunga di 4 caratteri'");
+	$('#pwdErr').html("La password dev'essere più lunga di 4 caratteri");
   } else if(!regExpMail.test(email)){
 	 form.email.focus();
      $('#emailErr').html("Inserire email valida");
