@@ -46,8 +46,8 @@ public class LoginController extends HttpServlet {
 		     UserBean user = new UserBean();
 		     user.setEmail(request.getParameter("email"));
 		     user.setPassword(request.getParameter("password"));
-
 		     user = login.doRetrieveByForm(user);
+		     
 		     if (user.isValid())
 		     {
 			        
@@ -55,18 +55,20 @@ public class LoginController extends HttpServlet {
 		          if(user.isAdmin()) {
 		        	  session.setAttribute("adminSession", user);
 		        	  System.out.println("benvenuto admin");
-		        	  response.sendRedirect("ProductView.jsp");   //admin loggato
+		        	  //response.sendRedirect("ProductView.jsp");
+		        	     //admin loggato
 		          }
 		          else if(!user.isAdmin()) {
 		          session.setAttribute("currentSessionUser",user);
 		          System.out.println(user.getFirstName());
-		          response.sendRedirect("ProductView.jsp");  //user loggato
+		          //response.sendRedirect("ProductView.jsp");
+		           //user loggato
 		          System.out.println("buono");
 		          }
 		     }
 			        
 		     else { 
-		          response.sendRedirect("general-error.jsp"); //errore
+		    	  
 		          System.out.println("male");
 		     }
 		} 

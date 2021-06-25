@@ -27,16 +27,19 @@
     
     <meta name="description" content="SketchBook Art Shop">
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
-    
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
     <link href="assets/css/carousel.css" rel="stylesheet">
     <link href="assets/ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Catamaran:400,100,300' rel='stylesheet' type='text/css'>
-
     <link href="assets/css/custom-scroll/jquery.mCustomScrollbar.css" rel="stylesheet"> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="loginajax.js"> </script>
 </head>
+
+
 
 <body>
 
@@ -126,11 +129,14 @@
                 <div class="col-sm-6 col-sm-offset-3">
                   <h2 class="modal-title text-center">Login</h2>
                   <br>
+                  
 
-                  <form class="signin" action="login" method="post">
-                    <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+                  <form id="loginFrm" name="loginFrm" class="signin" method="post" onsubmit="return validateLoginForm(this)">
+                    <input id="email" type="email" name="email" value="" placeholder="E-mail" required="" class="form-control"/>
+                    <p class="errormsg" id="emailErr" name="emailErr"></p>
                     <br>
-                    <input type="password" name="password" value="" placeholder="Password" required="" class="form-control" />
+                    <input id="password" type="password" name="password" value="" placeholder="Password" required="" class="form-control" />
+                    <p class="errormsg" id="pwdErr" name="pwdErr"></p>
                     <br>
 
                     <button type="submit" class="btn btn-primary">Login</button>
@@ -154,7 +160,7 @@
         </div>
       </div>
     </div>
-
+    
     <div class="modal fade" id="Modal-Registration" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -167,28 +173,40 @@
                 <div class="col-sm-6 col-sm-offset-3">
                   <h2 class="modal-title text-center">Registrati</h2>
                   <br>
-
-                  <form class="join" action="signup" method="post">
+                <form id= "signupFrm" name="signupFrm" class="join" method="post" onsubmit="return validateSignUpForm(this)">
+        
                   
-                    <input type="text" name="firstName" value="" placeholder="Nome" required="" class="form-control" />
+                    <input id="firstName" type="text" name="firstName" value="" placeholder="Nome" required="" class="form-control" />
+                    <p class="errormsg" id="fnameErr" name="fnameErr"></p>
                     <br>
                     
-                    <input type="text" name="lastName" value="" placeholder="Cognome" required="" class="form-control" />
-                    <br>
-
-                    <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+                    
+                    <input id="lastName" type="text" name="lastName" value="" placeholder="Cognome" required="" class="form-control" />
+                    <p class="errormsg" id="lnameErr" name="lnameErr"></p>
                     <br>
                     
-                     <input type="email" name="email2" value="" placeholder="Ripeti E-mail" required="" class="form-control" />
-                    <br>
 
-                    <input type="password" name="password" value="" placeholder="Password" required="" class="form-control" />
+                    <input id="newEmail" type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+                    <p class="errormsg" id="newEmailErr" name="newEmailErr"></p>
                     <br>
+                    
+                    
+                     <input id="newEmail2" type="email" name="email2" value="" placeholder="Ripeti E-mail" required="" class="form-control" />
+                     <p class="errormsg" id="newEmail2Err" name="newEmail2Err"></p>
+                     <br>
+                    
 
-                    <input type="text" name="password2" value="" placeholder="Ripeti Password" required="" class="form-control" />
+                    <input id="newPassword" type="password" name="password" value="" placeholder="Password" required="" class="form-control" />
+                    <p class="errormsg" id="newPasswordErr" name="newPasswordErr"></p>
                     <br>
+                    
 
-                    <button type="submit" class="btn btn-primary btn-sm">Registrati</button> &nbsp;&nbsp;
+                    <input id="newPassword2" type="text" name="password2" value="" placeholder="Ripeti Password" required="" class="form-control" />
+                    <p class="errormsg" id="newPassword2Err" name="newPassword2Err"></p>
+                    <br>
+                    
+
+                    <button id="signupBtn" type="submit" class="btn btn-primary btn-sm">Registrati</button> &nbsp;&nbsp;
                     <a href="#">Termini e condizioni ></a>
 
                     <br><br>

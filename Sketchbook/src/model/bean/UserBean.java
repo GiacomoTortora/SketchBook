@@ -11,6 +11,7 @@ public class UserBean {
 	private boolean valid;
 	private boolean admin;
 	
+	
 	public String getEmail() {
 		return email;
 	}

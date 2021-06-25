@@ -186,7 +186,7 @@ public class UserDAO {
     	 preparedStatement.setString(1, bean.getEmail());
     	 preparedStatement.setString(2, bean.getPassword());
          rs = preparedStatement.executeQuery();
-         //valid= false, di default si presuppone riscontro negativo
+         bean.setValid(false);//valid= false, di default si presuppone riscontro negativo
              while(rs.next()) {//caso positivo, il rs esiste solo se la query ha avuto esito positivo.
         	 String firstName = rs.getString("Nome");
              String lastName = rs.getString("Cognome");

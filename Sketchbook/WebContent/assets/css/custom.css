@@ -264,6 +264,10 @@
 	.modal-content {
 		border-radius: 0px !important;
 	}
+	
+	.errormsg{
+	   color: 'red';
+	}
 
 	.modal#Modal-SignIn .modal-header,
 	.modal#Modal-Registration .modal-header,

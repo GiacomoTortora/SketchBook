@@ -39,50 +39,26 @@ public class SignUpController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserDAO signup=new UserDAO();
+		try {
 		UserBean newUser=new UserBean();
-		String email="", email2="", firstName="", lastName="", password="", password2="";
-		email=request.getParameter("email");
-		if(email=="") {
-			response.sendRedirect("general-error.jsp");
-		}
-		email2=request.getParameter("email2");
-		if(email2=="") {
-			response.sendRedirect("general-error.jsp");
-		}
-		if(!email.equals(email2)) {
-			response.sendRedirect("general-error.jsp");
-		}
+		String newEmail="", firstName="", lastName="", newPassword="", newPassword2="", newEmail2="";
+		newEmail=request.getParameter("newEmail");
+		newEmail2=request.getParameter("newEmail2");
 		firstName=request.getParameter("firstName");
-		if(firstName=="") {
-			response.sendRedirect("general-error.jsp");
-		}
 		lastName=request.getParameter("lastName");
-		if(lastName=="") {
-			response.sendRedirect("general-error.jsp");
-		}
-		password=request.getParameter("password");
-		if(password=="") {
-			response.sendRedirect("general-error.jsp");
-		}
-		password2=request.getParameter("password2");
-		if(password2=="") {
-			response.sendRedirect("general-error.jsp");
-		}
-		if(!password.equals(password2)) {
-			response.sendRedirect("general-error.jsp");
-		}
-		System.out.println(email2);
+		newPassword=request.getParameter("newPassword");
+		newPassword2=request.getParameter("newPassword2");
+		System.out.println(newEmail2);
 		System.out.println(firstName);
 		System.out.println(lastName);
-		System.out.println(password2);
-		newUser.setEmail(email2);
+		System.out.println(newPassword2);
+		newUser.setEmail(newEmail2);
 		newUser.setFirstName(firstName);
 		newUser.setLastName(lastName);
-		newUser.setPassword(password2);
-		try {
+		newUser.setPassword(newPassword2);
 			if(signup.doRetrieveUniqueEmail(newUser)==true) {
 				signup.doSave(newUser);
-				 request.getRequestDispatcher("ProductView.jsp").forward(request, response);;
+				 request.getRequestDispatcher("ProductView.jsp").forward(request, response);
 			} else response.sendRedirect("general-error.jsp");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
