@@ -117,22 +117,26 @@ public class ProductDAO {
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
 			
+			
 			List<ProductBean> prodotti = new ArrayList<ProductBean>();
+			
 			ProductBean bean = new ProductBean();
+			
 
 			String selectSQL = "SELECT ID_PRODOTTO, NOMEPRODOTTO, PREZZOPRODOTTO, IVAPRODOTTO" +
-								"DESCRIZIONEPRODOTTO, QUANTITA " +
-								"FROM " + ProductDAO.TABLE_NAME2 + "JOIN" + OrderDAO.TABLE_NAME1 +
-								"ON ID_ORDINE = ID" +
+								", DESCRIZIONEPRODOTTO, QUANTITA " +
+								"FROM " + ProductDAO.TABLE_NAME2 + " JOIN " + OrderDAO.TABLE_NAME1 +
+								" ON ID_ORDINE = ID " +
 								"WHERE ID = ?";
+			
 
 			try {
 				connection = ds.getConnection();
 				preparedStatement = connection.prepareStatement(selectSQL);
 				preparedStatement.setInt(1, code);
-
+				
 				ResultSet rs = preparedStatement.executeQuery();
-
+				
 				while (rs.next()) {
 					bean.setId(rs.getInt("ID_PRODOTTO"));
 					bean.setNome(rs.getString("NOMEPRODOTTO"));
@@ -194,7 +198,7 @@ public class ProductDAO {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + ProductDAO.TABLE_NAME1
-				+ "(NOME, DESCRIZIONE, PREZZO, IVA, Quantita) VALUES (?, ?, ?, ?, ?)";
+				+ " (NOME, DESCRIZIONE, PREZZO, IVA, Quantita) VALUES (?, ?, ?, ?, ?)";
 
 		try {
 			connection = ds.getConnection();
@@ -228,7 +232,7 @@ public class ProductDAO {
 		List<ProductBean> prodotti = new ArrayList<ProductBean>();
 
 		String selectSQL = "SELECT * FROM " + ProductDAO.TABLE_NAME1 +
-							"WHERE NOME LIKE ?";
+							" WHERE NOME LIKE ?";
 
 		try {
 			connection = ds.getConnection();
@@ -265,7 +269,7 @@ public class ProductDAO {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		String updateSQL = "UPDATE prodotto NOME = ?, DESCRIZIONE = ?, PREZZO = ?" +
+		String updateSQL = "UPDATE prodotto NOME = ?, DESCRIZIONE = ?, PREZZO = ? " +
 							"IVA = ?, QUANTITA = ?" +
 							" WHERE ID = ?";
 
