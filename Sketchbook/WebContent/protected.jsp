@@ -27,7 +27,7 @@
  <h2> Funzioni admin</h2>
  <ul>
   <li> <a href= ""> Gestione catalogo  </a> </li>
-  <li> <a href=""> Visualizzazione ordini </a> </li>
+  <li> <a href="AllOrders.jsp"> Visualizzazione ordini </a> </li>
  </ul>
  
  <%@ include file="/fragments/footer.jsp" %>

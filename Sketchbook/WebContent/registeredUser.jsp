@@ -24,11 +24,11 @@
   
 <% if(currUser==null) response.sendRedirect("401error.jsp"); %>
 
- <h1> Salve, <%=currUser.getFirstName() %></h1>
+ <h1 style="margin-left: 5%"> Salve, <%=currUser.getFirstName() %></h1>
  <br>
  
- <h2> Scelga un operazione</h2>
- <ul>
+ <h2 style="margin-left: 5%"> Scelga un operazione</h2>
+ <ul style="margin-left: 5%">
   <li> <a href= "orders"> Visualizzazione ordini effettuati </a> </li>
  </ul>
  

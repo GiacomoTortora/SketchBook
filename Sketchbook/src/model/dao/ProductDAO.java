@@ -13,7 +13,6 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.util.*;
 import model.bean.ProductBean;
-import model.bean.UserBean;
 
 public class ProductDAO {
 	private static DataSource ds;
@@ -112,16 +111,13 @@ public class ProductDAO {
 		return bean;
 	}
 	
-	public synchronized List<ProductBean> doRetrieveByOrder(int code) throws SQLException {
+	public synchronized Collection<ProductBean> doRetrieveByOrder(int code) throws SQLException {
 		{
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
 			
 			
-			List<ProductBean> prodotti = new ArrayList<ProductBean>();
-			
-			ProductBean bean = new ProductBean();
-			
+			Collection<ProductBean> prodotti = new LinkedList<ProductBean>();			
 
 			String selectSQL = "SELECT ID_PRODOTTO, NOMEPRODOTTO, PREZZOPRODOTTO, IVAPRODOTTO" +
 								", DESCRIZIONEPRODOTTO, QUANTITA " +
@@ -138,6 +134,8 @@ public class ProductDAO {
 				ResultSet rs = preparedStatement.executeQuery();
 				
 				while (rs.next()) {
+					ProductBean bean = new ProductBean();
+					
 					bean.setId(rs.getInt("ID_PRODOTTO"));
 					bean.setNome(rs.getString("NOMEPRODOTTO"));
 					bean.setDescrizione(rs.getString("DESCRIZIONEPRODOTTO"));

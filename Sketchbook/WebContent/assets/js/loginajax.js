@@ -8,8 +8,8 @@ const regExpPwd= /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{4,16
 regExpPwd= accettate lettere minuscole, maiuscole, numeri. Necessita almeno un carattere minuscolo, uno maiuscolo, 
 un numero ed un carattere speciale ([#?!@$%^&*-), la pass dev'essere compresa fra 4 e 16 caratteri
 */
-const regExpName= /^[a-zA-Z ]{2,15}$/;
-//regExpName= accettati solo caratteri minuscoli e maiuscoli dalla A-Z e nome/cognome dev'essere compreso fra 2 e 15 caratteri
+const regExpName= /^[a-zA-Z ]{2,32}$/;
+//regExpName= accettati solo caratteri minuscoli e maiuscoli dalla A-Z e nome/cognome dev'essere compreso fra 2 e 32 caratteri
 
 function validateSignUpForm(form){
 	

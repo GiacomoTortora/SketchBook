@@ -175,36 +175,29 @@
                   <br>
                 <form id= "signupFrm" name="signupFrm" class="join" method="post" onsubmit="return validateSignUpForm(this)">
         
-                  
+                  	<h5>Nome (max 32 caratteri)</h5>
                     <input id="firstName" type="text" name="firstName" value="" placeholder="Il nome contiene solo lettere" required="" class="form-control" />
                     <p class="errormsg" id="fnameErr" name="fnameErr"></p>
-                    <br>
                     
-                    
+                    <h5>Cognome (max 32 caratteri)</h5>
                     <input id="lastName" type="text" name="lastName" value="" placeholder="Il cognome contiene solo lettere" required="" class="form-control" />
                     <p class="errormsg" id="lnameErr" name="lnameErr"></p>
-                    <br>
                     
-
+					<h5>Email</h5>
                     <input id="newEmail" type="email" name="email" value="" placeholder="Inserire email corretta" required="" class="form-control" />
                     <p class="errormsg" id="newEmailErr" name="newEmailErr"></p>
-                    <br>
                     
-                    
+                    <h5>Conferma Email</h5>
                      <input id="newEmail2" type="email" name="email2" value="" placeholder="Ripeti E-mail" required="" class="form-control" />
                      <p class="errormsg" id="newEmail2Err" name="newEmail2Err"></p>
-                     <br>
                     
-
-                    <input id="newPassword" type="password" name="password" value="" placeholder="Almeno 1 minuscola,1 maiuscola,1 speciale" required="" class="form-control" />
+					<h5>Password (4-16 caratteri)</h5>
+                    <input id="newPassword" type="password" name="password" value="" placeholder="1 minuscola,1 maiuscola,1 speciale" required="" class="form-control" />
                     <p class="errormsg" id="newPasswordErr" name="newPasswordErr"></p>
-                    <br>
                     
-
+					<h5>Conferma Password</h5>
                     <input id="newPassword2" type="text" name="password2" value="" placeholder="Ripeti Password" required="" class="form-control" />
                     <p class="errormsg" id="newPassword2Err" name="newPassword2Err"></p>
-                    <br>
-                    
 
                     <button id="signupBtn" type="submit" class="btn btn-primary btn-sm">Registrati</button> &nbsp;&nbsp;
                     <a href="#">Termini e condizioni ></a>

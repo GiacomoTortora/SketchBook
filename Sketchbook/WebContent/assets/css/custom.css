@@ -12,6 +12,7 @@
 
 	body { overflow-x: hidden; }
 	body[data-view="modal-open"] { overflow-y: hidden !important; }
+	
 /* General */
 
 /* Text */

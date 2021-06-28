@@ -10,25 +10,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import model.Cart;
 import model.bean.UserBean;
 import model.bean.OrderBean;
-import model.dao.ProductDAO;
 import model.dao.OrderDAO;
 
 /**
  * Servlet implementation class OrderController
  */
-@WebServlet("/OrderController")
-public class OrderController extends HttpServlet {
+@WebServlet("/AllOrdersController")
+public class AllOrdersController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public OrderController() {
+    public AllOrdersController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -48,7 +45,7 @@ public class OrderController extends HttpServlet {
 			System.out.println();
 		}
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ordini.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AllOrders.jsp");
 		dispatcher.forward(request, response);
 	}
 

@@ -2,6 +2,7 @@ package model.bean;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 public class OrderBean {
 
@@ -9,7 +10,7 @@ public class OrderBean {
 	private Date data;
 	private String stato;
 	private int idCliente;
-	private double totale;
+	private double totale=0;
 	private List<ProductBean> prodotti = new ArrayList<ProductBean>();
 		
 	public int getId() {
@@ -50,7 +51,7 @@ public class OrderBean {
 	
 	public void aggiornaTotale() {
 		for(ProductBean p : prodotti)
-			totale += p.getPrezzo();
+			totale += p.getPrezzoTot();
     }
 	public void setTotale(Double newPrezzo) {
 		this.totale=newPrezzo;
@@ -62,8 +63,8 @@ public class OrderBean {
 		return prodotti;
 	}
 	
-	public void setProdotti(final List newProdotti) {
-		prodotti = newProdotti;
+	public void setProdotti(final Collection<ProductBean> collection) {
+		prodotti = (List<ProductBean>) collection;
 		aggiornaTotale();
 	}
 	

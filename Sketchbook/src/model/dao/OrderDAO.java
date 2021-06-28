@@ -4,7 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
-import java.sql.Date;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -204,8 +203,6 @@ public class OrderDAO {
 		PreparedStatement preparedStatement = null;
 
 		Collection<OrderBean> ordini = new LinkedList<OrderBean>();
-		
-		ProductDAO prodotti = new ProductDAO();
 	
 		String selectSQL = "select * " + 
 							"FROM " + OrderDAO.TABLE_NAME1 +
@@ -225,6 +222,7 @@ public class OrderDAO {
 			ResultSet rs = preparedStatement.executeQuery();
 		
 			while (rs.next()) {
+				ProductDAO prodotti = new ProductDAO();
 				
 				OrderBean bean = new OrderBean();
 				bean.setId(rs.getInt("id"));
