@@ -36,7 +36,7 @@
     <link href="assets/css/custom-scroll/jquery.mCustomScrollbar.css" rel="stylesheet"> 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="loginajax.js"> </script>
+    <script type="text/javascript" src="assets/js/loginajax.js"> </script>
 </head>
 
 
@@ -176,17 +176,17 @@
                 <form id= "signupFrm" name="signupFrm" class="join" method="post" onsubmit="return validateSignUpForm(this)">
         
                   
-                    <input id="firstName" type="text" name="firstName" value="" placeholder="Nome" required="" class="form-control" />
+                    <input id="firstName" type="text" name="firstName" value="" placeholder="Il nome contiene solo lettere" required="" class="form-control" />
                     <p class="errormsg" id="fnameErr" name="fnameErr"></p>
                     <br>
                     
                     
-                    <input id="lastName" type="text" name="lastName" value="" placeholder="Cognome" required="" class="form-control" />
+                    <input id="lastName" type="text" name="lastName" value="" placeholder="Il cognome contiene solo lettere" required="" class="form-control" />
                     <p class="errormsg" id="lnameErr" name="lnameErr"></p>
                     <br>
                     
 
-                    <input id="newEmail" type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
+                    <input id="newEmail" type="email" name="email" value="" placeholder="Inserire email corretta" required="" class="form-control" />
                     <p class="errormsg" id="newEmailErr" name="newEmailErr"></p>
                     <br>
                     
@@ -196,7 +196,7 @@
                      <br>
                     
 
-                    <input id="newPassword" type="password" name="password" value="" placeholder="Password" required="" class="form-control" />
+                    <input id="newPassword" type="password" name="password" value="" placeholder="Almeno 1 minuscola,1 maiuscola,1 speciale" required="" class="form-control" />
                     <p class="errormsg" id="newPasswordErr" name="newPasswordErr"></p>
                     <br>
                     

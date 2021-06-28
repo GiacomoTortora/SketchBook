@@ -41,12 +41,10 @@ public class SignUpController extends HttpServlet {
 		UserDAO signup=new UserDAO();
 		try {
 		UserBean newUser=new UserBean();
-		String newEmail="", firstName="", lastName="", newPassword="", newPassword2="", newEmail2="";
-		newEmail=request.getParameter("newEmail");
+		String firstName="", lastName="", newPassword2="", newEmail2="";
 		newEmail2=request.getParameter("newEmail2");
 		firstName=request.getParameter("firstName");
 		lastName=request.getParameter("lastName");
-		newPassword=request.getParameter("newPassword");
 		newPassword2=request.getParameter("newPassword2");
 		System.out.println(newEmail2);
 		System.out.println(firstName);
