@@ -74,22 +74,23 @@
     <nav class="navbar navbar-default">
         <div class="container">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+            		style="z-index: 2">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="home" style="font-weight:bold; font-size:30px"> SketchBook </a>
-            <a class="navbar-brand pull-right hidden-sm hidden-md hidden-lg" href="Cart.jsp"> <i class="ion-bag"></i></a>
+            <a class="navbar-brand pull-right hidden-sm hidden-md hidden-lg hidden-xs" href="Cart.jsp"> <i class="ion-bag"></i></a>
           </div>
 
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="./">Home</a></li>
+              <li class="active"><a href="./"><i class="ion-android-home"></i> Home</a></li>
               <li class="dropdown">
                 <a href="./store/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  Prodotti <i class="ion-android-arrow-dropdown"></i>
+                  <i class="ion-pricetag"></i> Prodotti <i class="ion-android-arrow-dropdown"></i>
                 </a>
                 <ul class="dropdown-menu">
                   <li><a href="AllProducts.jsp">Tutti i Prodotti</a></li>
@@ -101,19 +102,16 @@
                   <li><a href="ProductCategory?action=read&categoria=6">Tele</a></li>
                 </ul>
               </li>
-              <li><a href="Cart.jsp">Carrello</a></li>
-              <li><a href="about.jsp">Chi Siamo</a></li>
-              <li><a href="contacts.jsp">Contatti</a></li>
+              <li><a href="Cart.jsp"><i class="ion-ios-cart"></i> Carrello</a></li>
+              <li><a href="about.jsp"><i class="ion-help"></i> Chi Siamo</a></li>
             </ul>
           </div>
 
-
-          <div class="search hidden-xs" data-style="hidden">
+          <div class="search" data-style="hidden">
             <div class="input">
               <button type="button"><i class="ion-ios-search"></i></button>
 
               <input id="searchInput" type="text" name="search" value="" placeholder="Cerca..."/>
-        
             </div>
           </div>
         </div>

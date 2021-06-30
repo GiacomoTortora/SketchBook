@@ -21,8 +21,10 @@
 
       <div class="container about">
         <div class="row">
-          <div class="col-sm-6 hidden-sm hidden-md hidden-lg">
-            <img src="assets/img/about/anytime-mobility.png" alt="Anywhere, anytime mobility" title="Anywhere, anytime mobility"/>
+          <div class="col-sm-6 hidden-sm hidden-md hidden-lg" style="right:80px">
+            <video width="640" height="432" autoplay muted>
+  				<source src="assets/img/about/video.mp4" type="video/mp4">
+			</video>
           </div>
           <div class="col-sm-6">
             <hr class="offset-lg hidden-xs hidden-sm">
@@ -31,13 +33,18 @@
             <hr class="offset-md">
 
             <p class="lead">
-              Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.
+              Jack, Simone e Raffaele sono tre amici e colleghi di studio all'università che cercano di andare avanti tra gli innumerevoli CFU da sconfiggere.
+              Questo sito è il frutto del loro lavoro durante l'esame di Tecnologie Software per il Web tenuto dalla Professoressa Francese Rita.
+              <br><br>"Si dai Jack, è carino il disegno"
+              <br>-Simone
             </p>
           </div>
           <div class="col-sm-6 hidden-xs">
             <hr class="offset-lg visible-sm">
             <hr class="offset-lg visible-sm">
-            <img src="assets/img/about/anytime-mobility.png" alt="Anywhere, anytime mobility" title="Anywhere, anytime mobility"/>
+            <video width="640" height="432" autoplay muted>
+  				<source src="assets/img/about/video.mp4" type="video/mp4">
+			</video>
           </div>
         </div>
       </div>
@@ -56,7 +63,7 @@
         <div class="row">
           <div class="col-sm-6">
             <hr class="offset-lg visible-sm">
-            <img src="assets/img/about/new-entertainment.png" alt="Anywhere, anytime mobility" title="Anywhere, anytime mobility"/>
+            <img src="assets/img/about/1.png" alt="SketchBook Art Shop" title="SketchBook Art Shop"/>
           </div>
           <div class="col-sm-6">
             <hr class="offset-lg hidden-xs hidden-sm">
@@ -65,8 +72,11 @@
             <hr class="offset-md">
 
             <p class="lead">
-              Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.
-            </p>
+              Il sito nasce dall'idea di fare qualcosa di diverso dal solito, cavalcando il fatto che a Jack e Simone piace disegnare e se
+              ne intendono (poco eh) di questo mondo. 
+              <br><br>"Che bello! Abbiamo unito l'utile al dilettevole!"
+              <br>-Jack
+           </p>
           </div>
         </div>
       </div>
@@ -87,7 +97,7 @@
       <div class="container about">
         <div class="row">
           <div class="col-sm-6 hidden-sm hidden-md hidden-lg">
-            <img src="assets/img/about/sleek-and-colorful.png" alt="Sleek and colorful" title="Sleek and colorful"/>
+            <img src="assets/img/about/2.png" alt="Sleek and colorful" title="Sleek and colorful"/>
           </div>
           <div class="col-sm-6">
             <hr class="offset-lg hidden-xs hidden-sm">
@@ -96,42 +106,20 @@
             <hr class="offset-md">
 
             <p class="lead">
-             Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.
+             I nostri prodotti sono solo un esempio di cosa può offrire il mercato e abbiamo selezionato una
+             gamma di prodotti esemplificativi per questo progetto.
+             <br><br>"Secondo me sono troppi"
+             <br>-Raffaele
             </p>
           </div>
           <div class="col-sm-6 hidden-xs">
             <hr class="offset-lg visible-sm">
-            <img src="assets/img/about/sleek-and-colorful.png" alt="Sleek and colorful" title="Sleek and colorful"/>
+            <img src="assets/img/about/2.png" alt="Sleek and colorful" title="Sleek and colorful"/>
           </div>
         </div>
       </div>
 
       <hr class="offset-lg">
-      <hr class="offset-lg hidden-xs">
-      <hr class="offset-lg hidden-xs">
-    </div>
-    <hr class="offset-lg hidden-xs">
-    <hr class="offset-lg">
-
-    <div class="container align-center">
-      <h1 class="upp"> Contattaci </h1>
-      <p> Inviaci una domanda dal box qui sotto. </p>
-      <hr class="offset-md">
-      
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-          <form class="contact" action="index.php" method="post">
-            <textarea class="form-control" name="message" placeholder="Messaggio..." required="" rows="5"></textarea>
-            <br>
-
-            <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
-            <br>
-
-            <button type="submit" class="btn btn-primary justify"> Invia </button>
-          </form>
-        </div>
-      </div>
-      <br>
     </div>
 	
 	<%@ include file="/fragments/footer.jsp" %>

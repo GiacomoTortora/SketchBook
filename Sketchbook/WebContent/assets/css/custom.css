@@ -2311,10 +2311,10 @@
 				position: absolute;
 				top: 0;
 				left: auto;
-				right: 0;
+				right: 70px;
 				width: 380px;
 				height: 50px;
-				z-index: 100;
+				z-index: 1;
 
 				background-color: transparent;
 			}

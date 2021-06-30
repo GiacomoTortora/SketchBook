@@ -69,22 +69,22 @@
             <p>Per avere informazioni e ricevere sconti speciali sui nostri prodotti.</p>
             <hr class="offset-sm">
 
-            <form action="index.php" method="post">
+            <form action="#" method="post">
               <div class="input-group">
                 <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control">
                 <span class="input-group-btn">
-                  <button type="submit" class="btn btn-primary"> Iscriviti <i class="ion-android-send"></i> </button>
+                  <button type="submit" class="btn btn-primary"> Iscriviti  <i class="ion-android-send"></i> </button>
                 </span>
-              </div><!-- /input-group -->
+              </div>
             </form>
             <hr class="offset-lg">
             <hr class="offset-md">
 
             <div class="social">
-              <a href="#"><i class="ion-social-facebook"></i></a>
-              <a href="#"><i class="ion-social-twitter"></i></a>
-              <a href="#"><i class="ion-social-instagram-outline"></i></a>
-              <a href="#"><i class="ion-social-linkedin-outline"></i></a>
+              <a href="https://www.facebook.com"><i class="ion-social-facebook"></i></a>
+              <a href="https://www.twitter.com"><i class="ion-social-twitter"></i></a>
+              <a href="https://www.instagram.com"><i class="ion-social-instagram-outline"></i></a>
+              <a href="https://www.linkedin.com"><i class="ion-social-linkedin-outline"></i></a>
             </div>
 
 
@@ -102,59 +102,31 @@
             <h1 class="h4">Informazioni <i class="ion-plus-round hidden-sm hidden-md hidden-lg"></i> </h1>
 
             <div class="list-group">
-              <a href="#" class="list-group-item">Chi Siamo</a>
-              <a href="#" class="list-group-item">Termini e Condizioni</a>
-              <a href="#" class="list-group-item">Ordini</a>
-              <a href="#" class="list-group-item">Spedizioni</a>
+              <a href="about.jsp" class="list-group-item">Chi Siamo</a>
+              <a href="contacts.jsp" class="list-group-item">Contatti</a>
             </div>
           </div>  
           <div class="col-sm-3 col-md-2">
             <h1 class="h4">Prodotti <i class="ion-plus-round hidden-sm hidden-md hidden-lg"></i> </h1>
 
             <div class="list-group">
-              <a href="#" class="list-group-item">Disegno</a>
-              <a href="#" class="list-group-item">Pittura</a>
-              <a href="#" class="list-group-item">Colori</a>
+              <a href="AllProducts.jsp" class="list-group-item">Tutti i Prodotti</a>
+              <a href="ProductCategory?action=read&categoria=1" class="list-group-item">Matite</a>
+              <a href="ProductCategory?action=read&categoria=2" class="list-group-item">Pennarelli</a>
+              <a href="ProductCategory?action=read&categoria=3" class="list-group-item">Pittura</a>
+              <a href="ProductCategory?action=read&categoria=4" class="list-group-item">Pennelli</a>
+              <a href="ProductCategory?action=read&categoria=5" class="list-group-item">Fogli</a>
+              <a href="ProductCategory?action=read&categoria=6" class="list-group-item">Tele</a>
             </div>
           </div>
           <div class="col-sm-3 col-md-2">
           	<h1 class="h4">Supporto <i class="ion-plus-round hidden-sm hidden-md hidden-lg"></i> </h1>
 
             <div class="list-group">
-              <a href="#" class="list-group-item">Resi</a>
-              <a href="#" class="list-group-item">FAQ</a>
               <a href="#" class="list-group-item">Contatti</a>
             </div>
           </div>
           <div class="col-sm-3 col-md-2">
-            <h1 class="h4">Location</h1>
-
-            <div class="dropdown">
-      			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      			    Lingua
-      			    <span class="caret"></span>
-      			  </button>
-      			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      			    <li><a href="#English"> <img src="assets/img/flags/gb.png" alt="Eng"/> English</a></li>
-      			    <li><a href="#Spanish"> <img src="assets/img/flags/es.png" alt="Spa"/> Spanish</a></li>
-      			    <li><a href="#Deutch"> <img src="assets/img/flags/de.png" alt="De"/> Deutch</a></li>
-      			    <li><a href="#French"> <img src="assets/img/flags/fr.png" alt="Fr"/> French</a></li>
-      			  </ul>
-      			</div>
-      			<hr class="offset-xs">
-
-      			<div class="dropdown">
-      			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      			    Valuta
-      			    <span class="caret"></span>
-      			  </button>
-      			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      			    <li><a href="#Euro"><i class="ion-social-euro"></i> Euro</a></li>
-      			    <li><a href="#Dollar"><i class="ion-social-usd"></i> Dollar</a></li>
-      			    <li><a href="#Yen"><i class="ion-social-yen"></i> Yen</a></li>
-      			    <li><a href="#Bitcoin"><i class="ion-social-bitcoin"></i> Bitcoin</a></li>
-      			  </ul>
-      			</div>
 
           </div>
           <div class="col-sm-3 col-md-3 col-md-offset-1 align-right hidden-sm hidden-xs">
