@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Catalogo</title>
+    <title>Ordini Complessivi</title>
     
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Catamaran:400,100,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/custom-scroll/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href="assets/css/table.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="/fragments/header.jsp" %>	
@@ -32,53 +33,49 @@
     <hr class="offset-lg">
     <hr class="offset-lg">
     
-   <h1 style="margin-left: 19.5%">Ordini Totali di tutti i Clienti</h1>
+   <h1 style="margin-left: 5%">Ordini Totali di tutti i Clienti</h1>
     
-   <div class="container">
-   <div class="row">
-   <div class="col-sm-12 col-md-13">
-          <hr class="offset-lg">
-
-          <div class="products">
-            <div class="row">
-
+	<div class="table">
+		<div class="table-header">
+			<div class="header__item"><a id="ID" class="filter__link filter__link--number" href="#">ID</a></div>
+			<div class="header__item"><a id="Stato" class="filter__link" href="#">Cliente</a></div>
+			<div class="header__item" style="color: white">Data</div>
+			<div class="header__item"><a id="Stato" class="filter__link" href="#">Stato</a></div>
+			<div class="header__item" style="color: white">Totale</div>
+			<div class="header__item" style="color: white">Azioni</div>
+		</div>
+		<div class="table-content">	
+		
 					<%
 							Iterator<?> it = orders.iterator();
 							while (it.hasNext()) {
 							OrderBean bean = (OrderBean) it.next();
 							UserBean usBean=new UserDAO().doRetrieveByKey(bean.getIdCliente());
 					%>
-
-              <div class="col-sm-5 col-md-4 product">
-                <div class="body">
-                  <div class="content">
-                    <h1 class="h3">ID Ordine: <%=bean.getId()%></h1>
-                    <h2 class="h3">Cliente: <%=usBean.getFirstName()%> <%=usBean.getLastName()%></h2>
-                    
-                    <%
+					
+					<%
               			double price=0.0;
               			price = bean.getTotale();       	
               		%>
-                    
-                    <h1 class="h4">Stato: <%=bean.getStato()%></h1>
-                    <hr class="offset-lg">
-                    <p class="price">Totale: €<%= String.format("%.2f", price) %></p>
-                    <hr class="offset-xl">
-                    <a href="OrderDetails?action=read&id=<%=bean.getId() %>"><button class="btn btn-primary btn-sm rounded">Visualizza Dettagli</button></a>
-                  </div>
-                </div>
-              </div>
+
+              <div class="table-row" style="font-size:120%">		
+				<div class="table-data"><%=bean.getId()%></div>
+				<div class="table-data"><%=usBean.getFirstName()%> <%=usBean.getLastName()%></div>
+				<div class="table-data"><%=bean.getData()%></div>
+				<div class="table-data"><%=bean.getStato()%></div>
+				<div class="table-data">€<%= String.format("%.2f", price) %></div>
+				<div class="table-data"><a href="OrderDetails?action=read&id=<%=bean.getId() %>"><button class="btn btn-primary btn-sm rounded">Visualizza Dettagli</button></a></div>
+			</div>              
+
               <%
 				 }
               %>
             </div>
-          </div>
-        </div>
-      </div>
-	</div>
+            </div>
 
 	<%@ include file="./fragments/footer.jsp" %>
 	
+	<script type="text/javascript" src="assets/js/tableSort.js"></script>
 	<script src="assets/js/jquery-latest.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/core.js"></script>

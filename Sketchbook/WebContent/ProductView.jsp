@@ -65,7 +65,7 @@
                     <h2 class="h1 lg upp colorful blue">TINTORETTO <br> RIMO KIT 7914</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="./store/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
+                    <a href="./store/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più <i class="ion-android-arrow-forward"></i></a>
 
                   </div>
                 </div>
@@ -89,7 +89,7 @@
                     <h2 class="h1 lg upp colorful blue">TINTORETTO <br> THIERRY DUVAL KIT</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="./store/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
+                    <a href="./store/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più <i class="ion-android-arrow-forward"></i></a>
                     
                   </div>
                 </div>
@@ -113,7 +113,7 @@
                     <h2 class="h1 lg upp colorful blue">Pennelli e <br class="hidden-xs"> materiale da pittura</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="./blog/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
+                    <a href="./blog/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più <i class="ion-android-arrow-forward"></i></a>
                       
                   </div>
                 </div>
@@ -143,7 +143,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="ProductCategory?action=read&categoria=1" rel="nofollow" class="btn btn-default black"> Vedi </a>
+                  <a href="ProductCategory?action=read&categoria=1" rel="nofollow" class="btn btn-default black"> Vedi <i class="ion-android-arrow-forward"></i></a>
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="ProductCategory?action=read&categoria=4" rel="nofollow" class="btn btn-primary black"> Vedi </a>
+                  <a href="ProductCategory?action=read&categoria=4" rel="nofollow" class="btn btn-primary black"> Vedi <i class="ion-android-arrow-forward"></i></a>
                 </div>
               </div>
             </div>
@@ -169,7 +169,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="ProductCategory?action=read&categoria=5" rel="nofollow" class="btn btn-primary black"> Vedi </a>
+                  <a href="ProductCategory?action=read&categoria=5" rel="nofollow" class="btn btn-primary black"> Vedi <i class="ion-android-arrow-forward"></i></a>
                 </div>
               </div>
             </div>
@@ -181,7 +181,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="ProductCategory?action=read&categoria=3" rel="nofollow" class="btn btn-primary black"> Vedi </a>
+                  <a href="ProductCategory?action=read&categoria=3" rel="nofollow" class="btn btn-primary black"> Vedi <i class="ion-android-arrow-forward"></i></a>
                 </div>
               </div>
             </div>
