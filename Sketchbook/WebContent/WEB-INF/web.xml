@@ -38,6 +38,10 @@
    	<servlet-class>control.OrderController</servlet-class>
    </servlet>
    <servlet>
+   	<servlet-name>SearchController</servlet-name>
+   	<servlet-class>control.SearchController</servlet-class>
+   </servlet>
+   <servlet>
   	<servlet-name>SignUpController</servlet-name>
   	<servlet-class>control.SignUpController</servlet-class>
   </servlet>
@@ -56,6 +60,10 @@
   <servlet-mapping>
   	<servlet-name>CartController</servlet-name>
   	<url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SearchController</servlet-name>
+  	<url-pattern>/search</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>LoginController</servlet-name>

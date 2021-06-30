@@ -37,6 +37,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="assets/js/loginajax.js"> </script>
+    <script type="text/javascript" src="assets/js/autocomplete.js"> </script>
+    
 </head>
 
 
@@ -53,22 +55,21 @@
       }
       else if(currUser!=null && admin==null) {
      %>
-      <a href="LogoutController"> Logout</a>
+      <a href="LogoutController"><i class="ion-log-out"></i> Logout</a>
       <a href="preferiti.jsp"> <i class="ion-ios-heart"></i> Preferiti </a>
       <a href="registeredUser.jsp"><i class="ion-person"></i> Salve, <%= currUser.getFirstName() %> </a>
        <%
       }
      else if(currUser==null && admin!=null) {
      %>
-      <a href="protected.jsp"><i class="ion-person"></i> Funzioni admin</a>
-      <a href="LogoutController"><i class="ion-person"></i> Logout</a>
+      <a href="LogoutController"><i class="ion-log-out"></i> Logout</a>
+      <a href="protected.jsp"><i class="ion-wrench"></i> Benvenuto, Admin <%=admin.getFirstName() %></a>
       
        <%
      }
        %>
       <a href="#" class="hidden-xs"> <i class="ion-android-call"></i> +39 123 456 7890 </a>
     </div>
-
     
     <nav class="navbar navbar-default">
         <div class="container">
@@ -80,7 +81,7 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="home" style="font-weight:bold; font-size:30px"> SketchBook </a>
-            <a class="navbar-brand pull-right hidden-sm hidden-md hidden-lg" href="#open-cart"> <i class="ion-bag"></i></a>
+            <a class="navbar-brand pull-right hidden-sm hidden-md hidden-lg" href="Cart.jsp"> <i class="ion-bag"></i></a>
           </div>
 
           <div id="navbar" class="navbar-collapse collapse">
@@ -111,7 +112,8 @@
             <div class="input">
               <button type="button"><i class="ion-ios-search"></i></button>
 
-              <input type="text" name="search" value="" placeholder="Cerca..." />
+              <input id="searchInput" type="text" name="search" value="" placeholder="Cerca..."/>
+        
             </div>
           </div>
         </div>
