@@ -65,7 +65,7 @@
                     <h2 class="h1 lg upp colorful blue">TINTORETTO <br> RIMO KIT 7914</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="./store/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più <i class="ion-android-arrow-forward"></i></a>
+                    <a href="./store/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
 
                   </div>
                 </div>
@@ -89,7 +89,7 @@
                     <h2 class="h1 lg upp colorful blue">TINTORETTO <br> THIERRY DUVAL KIT</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="./store/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più <i class="ion-android-arrow-forward"></i></a>
+                    <a href="./store/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
                     
                   </div>
                 </div>
@@ -113,7 +113,7 @@
                     <h2 class="h1 lg upp colorful blue">Pennelli e <br class="hidden-xs"> materiale da pittura</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="./blog/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più <i class="ion-android-arrow-forward"></i></a>
+                    <a href="./blog/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
                       
                   </div>
                 </div>
