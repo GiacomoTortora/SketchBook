@@ -38,11 +38,12 @@
     <hr class="offset-lg">
     
    <h1 style="margin-left: 5%">I tuoi ordini</h1>
+   <h4 class="h4" style="margin-left: 5%">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per ID, Data e Stato)</h4>
    
    	<div class="table">
 		<div class="table-header">
 			<div class="header__item"><a id="ID" class="filter__link filter__link--number" href="#">ID</a></div>
-			<div class="header__item" style="color: white">Data</div>
+			<div class="header__item"><a id="Data" class="filter__link" href="#">Data</a></div>
 			<div class="header__item"><a id="Stato" class="filter__link" href="#">Stato</a></div>
 			<div class="header__item" style="color: white">Totale</div>
 			<div class="header__item" style="color: white">Azioni</div>

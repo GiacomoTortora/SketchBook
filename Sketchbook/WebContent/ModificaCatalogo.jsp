@@ -3,19 +3,19 @@
 %>
 
 <%
-	Collection<?> orders = new OrderDAO().doRetrieveAll("");
+	Collection<?> products = new ProductDAO().doRetrieveAll("");
 %>
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.OrderBean, model.Cart, model.bean.UserBean, model.dao.OrderDAO, model.dao.UserDAO"%>
+<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.ProductBean, model.Cart, model.dao.ProductDAO"%>
 
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Ordini Complessivi</title>
+    <title>Visualizzazione e Modifica Catalogo</title>
     
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -33,39 +33,40 @@
     <hr class="offset-lg">
     <hr class="offset-lg">
     
-   <h1 style="margin-left: 5%">Ordini Totali di tutti i Clienti</h1>
-   <h4 class="h4" style="margin-left: 5%">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per ID, Cliente, Data e Stato)</h4>
+   <h1 style="margin-left: 5%"><i class="ion-ios-list"></i> Modifica Catalogo <i class="ion-ios-list"></i></h1>
+   <h4 class="h4" style="margin-left: 5%">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per ID, Nome e IVA)</h4>
     
 	<div class="table">
 		<div class="table-header">
-			<div class="header__item"><a id="ID" class="filter__link filter__link--number" href="#">ID</a></div>
-			<div class="header__item"><a id="Cliente" class="filter__link" href="#">Cliente</a></div>
-			<div class="header__item"><a id="Data" class="filter__link" href="#">Data</a></div>
-			<div class="header__item"><a id="Stato" class="filter__link" href="#">Stato</a></div>
-			<div class="header__item" style="color: white">Totale</div>
+			<div class="header__item"><a id="id" class="filter__link filter__link--number" href="">ID</a></div>
+			<div class="header__item"><a id="nome" class="filter__link" href="">Nome</a></div>
+			<div class="header__item" style="color: white">Prezzo</div>
+			<div class="header__item"><a id="iva" class="filter__link filter__link--number" href="">IVA</a></div>
+			<div class="header__item" style="color: white">PrezzoTOT</div>
 			<div class="header__item" style="color: white">Azioni</div>
 		</div>
 		<div class="table-content">	
 		
 					<%
-							Iterator<?> it = orders.iterator();
-							while (it.hasNext()) {
-							OrderBean bean = (OrderBean) it.next();
-							UserBean usBean=new UserDAO().doRetrieveByKey(bean.getIdCliente());
+						Iterator<?> it = products.iterator();
+						while (it.hasNext()) {
+						ProductBean bean = (ProductBean) it.next();
 					%>
 					
 					<%
-              			double price=0.0;
-              			price = bean.getTotale();       	
+						double price=0.0;
+              			double priceTOT=0.0;
+              			price = bean.getPrezzo();
+              			priceTOT = bean.getPrezzoTot();       	
               		%>
 
               <div class="table-row" style="font-size:120%">		
 				<div class="table-data"><%=bean.getId()%></div>
-				<div class="table-data"><%=usBean.getFirstName()%> <%=usBean.getLastName()%></div>
-				<div class="table-data"><%=bean.getData()%></div>
-				<div class="table-data"><%=bean.getStato()%></div>
+				<div class="table-data"><%=bean.getNome()%></div>
 				<div class="table-data">€<%= String.format("%.2f", price) %></div>
-				<div class="table-data"><a href="OrderDetails?action=read&id=<%=bean.getId() %>"><button class="btn btn-primary btn-sm rounded">Visualizza Dettagli</button></a></div>
+				<div class="table-data"><%=bean.getIva()%></div>
+				<div class="table-data">€<%= String.format("%.2f", priceTOT) %></div>
+				<div class="table-data"><a href="#"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a></div>
 			</div>              
 
               <%
@@ -76,7 +77,7 @@
 
 	<%@ include file="./fragments/footer.jsp" %>
 	
-	<script type="text/javascript" src="assets/js/tableSort.js"></script>
+	<script type="text/javascript" src="assets/js/tableSort2.js"></script>
 	<script src="assets/js/jquery-latest.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/core.js"></script>

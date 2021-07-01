@@ -3,19 +3,22 @@
 %>
 
 <%
-	Collection<?> orders = new OrderDAO().doRetrieveAll("");
+	UserBean orderUser=new UserBean();
+	orderUser= (UserBean) session.getAttribute("currentSessionUser");
+
+	Collection<?> indirizzi = new IndirizzoSpedizioneDAO().doRetrieveByUser(orderUser,"");
 %>
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.OrderBean, model.Cart, model.bean.UserBean, model.dao.OrderDAO, model.dao.UserDAO"%>
+<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.IndirizzoSpedizioneBean, model.Cart, model.bean.UserBean, model.dao.IndirizzoSpedizioneDAO"%>
 
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Ordini Complessivi</title>
+    <title>I Tuoi Indirizzi di Spedizione</title>
     
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -32,48 +35,49 @@
 	
     <hr class="offset-lg">
     <hr class="offset-lg">
+    <hr class="offset-lg">
     
-   <h1 style="margin-left: 5%">Ordini Totali di tutti i Clienti</h1>
-   <h4 class="h4" style="margin-left: 5%">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per ID, Cliente, Data e Stato)</h4>
-    
-	<div class="table">
-		<div class="table-header">
-			<div class="header__item"><a id="ID" class="filter__link filter__link--number" href="#">ID</a></div>
-			<div class="header__item"><a id="Cliente" class="filter__link" href="#">Cliente</a></div>
-			<div class="header__item"><a id="Data" class="filter__link" href="#">Data</a></div>
-			<div class="header__item"><a id="Stato" class="filter__link" href="#">Stato</a></div>
-			<div class="header__item" style="color: white">Totale</div>
-			<div class="header__item" style="color: white">Azioni</div>
-		</div>
-		<div class="table-content">	
-		
+   <h1 class="align-center">I Tuoi Indirizzi di Spedizione</h1>
+   
+   	<div class="container">
+   <div class="row">
+   <div class="col-sm-12 col-md-13">
+          <hr class="offset-lg">
+
+          <div class="products">
+            <div class="row">
+
 					<%
-							Iterator<?> it = orders.iterator();
+							Iterator<?> it = indirizzi.iterator();
 							while (it.hasNext()) {
-							OrderBean bean = (OrderBean) it.next();
-							UserBean usBean=new UserDAO().doRetrieveByKey(bean.getIdCliente());
+							IndirizzoSpedizioneBean bean = (IndirizzoSpedizioneBean) it.next();
 					%>
-					
-					<%
-              			double price=0.0;
-              			price = bean.getTotale();       	
-              		%>
 
-              <div class="table-row" style="font-size:120%">		
-				<div class="table-data"><%=bean.getId()%></div>
-				<div class="table-data"><%=usBean.getFirstName()%> <%=usBean.getLastName()%></div>
-				<div class="table-data"><%=bean.getData()%></div>
-				<div class="table-data"><%=bean.getStato()%></div>
-				<div class="table-data">€<%= String.format("%.2f", price) %></div>
-				<div class="table-data"><a href="OrderDetails?action=read&id=<%=bean.getId() %>"><button class="btn btn-primary btn-sm rounded">Visualizza Dettagli</button></a></div>
-			</div>              
-
+              <div class="col-sm-5 col-md-4 product">
+                <div class="body">
+                  <div class="content">
+                    <h1 class="h3">Indirizzo n. <%=bean.getId()%></h1>
+                    <h2 class="h4">Via: <%=bean.getVia()%></h2>
+                    <h2 class="h4">Città:: <%=bean.getCitta()%></h2>
+                    <h2 class="h4">CAP: <%=bean.getCAP()%></h2>
+                    <h2 class="h4">Provincia: <%=bean.getProvincia()%></h2>
+                    <h2 class="h4">Stato: <%=bean.getStato()%></h2>
+                    <hr class="offset-xl">
+                    <a href=""><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
+                  </div>
+                </div>
+              </div>
               <%
 				 }
               %>
             </div>
-            </div>
-
+          </div>
+        </div>
+      </div>
+	</div>
+	<a href=""><button class="btn btn-primary btn-lg rounded" style="margin-left:80%">Aggiungi Indirizzo di Spedizione <i class="ion-android-add-circle"></i></button></a>
+	
+            	
 	<%@ include file="./fragments/footer.jsp" %>
 	
 	<script type="text/javascript" src="assets/js/tableSort.js"></script>

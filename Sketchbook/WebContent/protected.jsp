@@ -58,7 +58,7 @@
                     <h1 class="h3" style="color:#3ab5da">Gestisci Catalogo Prodotti <i class="ion-ios-list"></i></h1>                       
                     <h4 class="h5">Permette di gestire il catalogo prodotti. (Aggiungere, rimuovere, modificare)</h4>
                     <hr class="offset-xl">
-                    <a href=""><button class="btn btn-primary btn-sm rounded">Vai</button></a>
+                    <a href="ModificaCatalogo.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
                   </div>
                 </div>
               </div>

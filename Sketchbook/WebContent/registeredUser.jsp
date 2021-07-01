@@ -47,7 +47,7 @@
                     <h1 class="h3" style="color:#3ab5da">Dati Personali <i class="ion-person"></i></h1>                       
                     <h4 class="h5">Permette di modificare i propri dati personali.</h4>
                     <hr class="offset-xl">
-                    <a href=""><button class="btn btn-primary btn-sm rounded">Vai</button></a>
+                    <a href="ModificaDatiPersonali.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
                   </div>
                 </div>
               </div>
@@ -69,7 +69,7 @@
                     <h1 class="h3" style="color:#3ab5da">Metodi di Pagamento <i class="ion-card"></i></h1>                       
                     <h4 class="h5">Permette di gestire i tuoi metodi di pagamento.</h4>
                     <hr class="offset-xl">
-                    <a href=""><button class="btn btn-primary btn-sm rounded">Vai</button></a>
+                    <a href="MetodiPagamento.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@
                     <h1 class="h3" style="color:#3ab5da">Indirizzi di Spedizione <i class="ion-location"></i></h1>                       
                     <h4 class="h5">Permette di gestire i tuoi indirizzi di spedizione.</h4>
                     <hr class="offset-xl">
-                    <a href=""><button class="btn btn-primary btn-sm rounded">Vai</button></a>
+                    <a href="IndirizziSpedizione.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
                   </div>
                 </div>
               </div>
