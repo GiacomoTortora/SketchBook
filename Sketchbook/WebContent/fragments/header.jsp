@@ -106,14 +106,14 @@
               <li><a href="about.jsp"><i class="ion-help"></i> Chi Siamo</a></li>
             </ul>
           </div>
-
+         <form action="FoundProdController">
           <div class="search" data-style="hidden">
             <div class="input">
               <button type="button"><i class="ion-ios-search"></i></button>
-
               <input id="searchInput" type="text" name="search" value="" placeholder="Cerca..."/>
             </div>
           </div>
+         </form>
         </div>
     </nav>
     

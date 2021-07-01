@@ -45,7 +45,11 @@
   	<servlet-name>SignUpController</servlet-name>
   	<servlet-class>control.SignUpController</servlet-class>
   </servlet>
-  <servlet-mapping>
+   <servlet>
+   	<servlet-name>FoundProdController</servlet-name>
+   	<servlet-class>control.FoundProdController</servlet-class>
+   </servlet>
+   <servlet-mapping>
   	<servlet-name>SignUpController</servlet-name>
   	<url-pattern>/signup</url-pattern>
   </servlet-mapping>
@@ -76,5 +80,9 @@
   <servlet-mapping>
   	<servlet-name>OrderController</servlet-name>
   	<url-pattern>/orders</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FoundProdController</servlet-name>
+  	<url-pattern>/found</url-pattern>
   </servlet-mapping>
 </web-app>
