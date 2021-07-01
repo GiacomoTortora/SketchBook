@@ -10,7 +10,7 @@ public class OrderBean {
 	private Date data;
 	private String stato;
 	private int idCliente;
-	private double totale=0;
+	private double totale;
 	private List<ProductBean> prodotti = new ArrayList<ProductBean>();
 		
 	public int getId() {
@@ -49,7 +49,8 @@ public class OrderBean {
 		return this.totale;
 	}
 	
-	public void aggiornaTotale() {
+	private void aggiornaTotale() {
+		totale = 0;
 		for(ProductBean p : prodotti)
 			totale += p.getPrezzoTot();
     }
@@ -66,16 +67,6 @@ public class OrderBean {
 	public void setProdotti(final Collection<ProductBean> collection) {
 		prodotti = (List<ProductBean>) collection;
 		aggiornaTotale();
-	}
-	
-	public void addProduct(ProductBean p) {
-		prodotti.add(p);
-		totale += p.getPrezzo();
-	}
-	
-	public void removeProduct(ProductBean p) {
-		prodotti.remove(p);
-		totale -= p.getPrezzo();
 	}
 	
 	@Override

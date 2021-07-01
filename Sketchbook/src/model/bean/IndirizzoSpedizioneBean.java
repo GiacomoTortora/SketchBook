@@ -8,7 +8,6 @@ public class IndirizzoSpedizioneBean {
 	private String CAP;
 	private String provincia;
 	private String stato;
-	private int idCliente;
 		
 	public int getId() {
 		return this.id;
@@ -56,13 +55,5 @@ public class IndirizzoSpedizioneBean {
 	
 	public void setStato(String newStato) {
 		this.stato=newStato;
-	}
-	
-	public int getIdCliente() {
-		return this.idCliente;
-	}
-	
-	public void setIdCliente(int newIdCliente) {
-		this.idCliente=newIdCliente;
 	}
 }

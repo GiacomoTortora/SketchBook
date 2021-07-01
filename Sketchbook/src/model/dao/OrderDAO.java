@@ -58,7 +58,7 @@ public class OrderDAO {
 				bean.setData(rs.getDate("Data"));
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
-				bean.aggiornaTotale();
+				bean.setTotale(rs.getDouble("totale"));
 				
 				ordini.add(bean);
 			}
@@ -96,7 +96,7 @@ public class OrderDAO {
 				bean.setData(rs.getDate("Data"));
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
-				bean.aggiornaTotale();
+				bean.setTotale(rs.getDouble("totale"));
 			}
 
 		} finally {
@@ -231,7 +231,7 @@ public class OrderDAO {
 				bean.setData(rs.getDate("Data"));
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
-				bean.aggiornaTotale();
+				bean.setTotale(rs.getDouble("totale"));
 				
 				ordini.add(bean);
 			}
@@ -279,44 +279,4 @@ public class OrderDAO {
 				}
 			}
 		}
-	
-
-	/*public static synchronized ArrayList<OrderBean> doRetrieveByUser2(UserBean user) {
-		 PreparedStatement preparedStatement=null;
-		 OrderBean order=new OrderBean();
-		 ArrayList<OrderBean> orders=new ArrayList<OrderBean>();
-		 Connection connection=null;
-		 ResultSet rs=null;
-		 try {
-		 connection=ds.getConnection();
-	     System.out.println(user.getFirstName());
-	     System.out.println(user.getId());
-		 preparedStatement=connection.prepareStatement("SELECT ordine.ID_Cliente, dettagli_ordine.NomeProdotto, dettagli_ordine.PrezzoProdotto,"
-		 		+ "ordine.Data, ordine.Stato "
-		 		+ "FROM ordine INNER JOIN dettagli_ordine ON ordine.ID=dettagli_ordine.ID_Ordine WHERE ordine.ID_Cliente=?");
-		 preparedStatement.setInt(1, user.getId());
-		 rs=preparedStatement.executeQuery();
-		 while(rs.next()) {
-	        ProductBean product=new ProductBean();
-			int id=rs.getInt(1);
-			order.setIdCliente(id);
-			String nome=rs.getString(2);
-			product.setNome(nome);
-			Double prezzo=rs.getDouble(3);
-			product.setPrezzo(prezzo);
-			Date data=rs.getDate(4);
-			order.setData(data);
-			String stato=rs.getString(5);
-			order.setStato(stato);
-			System.out.println("nome prodotto: "+nome);
-			order.addProduct(product);
-		 }
-		 
-         
-		 } catch(Exception e) {
-			 System.out.println("Errore: "+e);
-		 }
-		return orders;
-		 
-	 }*/
 }

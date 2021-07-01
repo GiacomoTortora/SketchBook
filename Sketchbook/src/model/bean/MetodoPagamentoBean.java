@@ -5,7 +5,6 @@ public class MetodoPagamentoBean {
 	private int id;
 	private String numCarta;
 	private String tipo;
-	private int idCliente;
 		
 	public int getId() {
 		return this.id;
@@ -31,11 +30,4 @@ public class MetodoPagamentoBean {
 		this.tipo=newTipo;
 	}
 	
-	public int getIdCliente() {
-		return this.idCliente;
-	}
-	
-	public void setIdCliente(int newIdCliente) {
-		this.idCliente=newIdCliente;
-	}
 }
