@@ -65,21 +65,9 @@
         <div class="container align-center">
             <hr class="offset-md">
 
-            <h1 class="h3 upp">Iscriviti alla nostra newsletter</h1>
-            <p>Per avere informazioni e ricevere sconti speciali sui nostri prodotti.</p>
+            <h1 class="h3 upp">Seguici sui nostri social!</h1>
+            <p>Per restare sempre aggiornato sui nuovi prodotti.</p>
             <hr class="offset-sm">
-
-            <form action="#" method="post">
-              <div class="input-group">
-                <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control">
-                <span class="input-group-btn">
-                  <button type="submit" class="btn btn-primary"> Iscriviti  <i class="ion-android-send"></i> </button>
-                </span>
-              </div>
-            </form>
-            <hr class="offset-lg">
-            <hr class="offset-md">
-
             <div class="social">
               <a href="https://www.facebook.com"><i class="ion-social-facebook"></i></a>
               <a href="https://www.twitter.com"><i class="ion-social-twitter"></i></a>
@@ -123,7 +111,8 @@
           	<h1 class="h4">Supporto <i class="ion-plus-round hidden-sm hidden-md hidden-lg"></i> </h1>
 
             <div class="list-group">
-              <a href="#" class="list-group-item">Contatti</a>
+              <a href="contacts.jsp" class="list-group-item">Contatti</a>
+              <a href="FAQ.jsp" class="list-group-item">FAQ</a>
             </div>
           </div>
           <div class="col-sm-3 col-md-2">
@@ -173,18 +162,5 @@
         </div>
       </div>
     </footer>
-    
-    
-	<script src="./assets/js/jquery-latest.min.js"></script>
-    
-    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./assets/js/core.js"></script>
-    <script type="text/javascript" src="./assets/js/store.js"></script>
-    
-	<script type="text/javascript" src="./assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <script type="text/javascript" src="./assets/js/jquery-ui-1.11.4.js"></script>
-    <script type="text/javascript" src="./assets/js/jquery.ui.touch-punch.js"></script>
-    
 </body>
 </html>

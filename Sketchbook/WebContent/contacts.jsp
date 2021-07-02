@@ -52,44 +52,6 @@
       <hr class="offset-lg">
     </div>
 
-    <div class="gray">
-      <hr class="offset-lg">
-
-      <div class="container align-center">
-        <h1 class="upp"> Bisogno di aiuto? </h1>
-        <p> Inviaci una domanda dal box qui sotto. </p>
-        <hr class="offset-md">
-
-        <div class="row">
-          <div class="col-sm-4 col-sm-offset-4">
-            <form class="contact" action="index.php" method="post">
-              <textarea class="form-control" name="message" placeholder="Messaggio..." required="" rows="5"></textarea>
-              <br>
-
-              <input type="email" name="email" value="" placeholder="E-mail" required="" class="form-control" />
-              <br>
-
-              <button type="submit" class="btn btn-primary justify"> Invia </button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <br>
-    </div>
-
   <%@ include file="/fragments/footer.jsp" %>
-
-	<script src="assets/js/jquery-latest.min.js"></script>
-    
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/core.js"></script>
-    <script type="text/javascript" src="assets/js/store.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
-
-    <script type="text/javascript" src="assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <script type="text/javascript" src="assets/js/jquery-ui-1.11.4.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.ui.touch-punch.js"></script>
-
   </body>
 </html>

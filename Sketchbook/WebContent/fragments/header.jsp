@@ -34,11 +34,6 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Catamaran:400,100,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/custom-scroll/jquery.mCustomScrollbar.css" rel="stylesheet"> 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="assets/js/loginajax.js"> </script>
-    <script type="text/javascript" src="assets/js/autocomplete.js"> </script>
-    
 </head>
 
 
@@ -89,7 +84,7 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="./"><i class="ion-android-home"></i> Home</a></li>
               <li class="dropdown">
-                <a href="./store/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a href="AllProducts.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="ion-pricetag"></i> Prodotti <i class="ion-android-arrow-dropdown"></i>
                 </a>
                 <ul class="dropdown-menu">
@@ -103,7 +98,18 @@
                 </ul>
               </li>
               <li><a href="Cart.jsp"><i class="ion-ios-cart"></i> Carrello</a></li>
-              <li><a href="about.jsp"><i class="ion-help"></i> Chi Siamo</a></li>
+              
+              <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              		Altro <i class="ion-android-arrow-dropdown"></i>
+              </a>
+              <ul class="dropdown-menu">
+                  <li><a href="about.jsp">Chi Siamo</a></li>
+                  <li><a href="contacts.jsp">Contatti</a></li>
+                  <li><a href="FAQ.jsp">FAQ</a></li>
+                  <li><a href="Galleria.jsp">Galleria</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
          <form action="FoundProdController">
@@ -146,9 +152,9 @@
 
                   <div class="social-login">
                       <div class="or"><p>OPPURE</p></div>
-                      <a href="#"><i class="icon" data-src="assets/img/icons/facebook.svg"></i></a>
+                      <a href="https://facebook.com"><i class="icon" data-src="assets/img/icons/facebook.svg"></i></a>
                       <p>via</p>
-                      <a href="#"><i class="icon" data-src="assets/img/icons/google-plus.svg"></i></a>
+                      <a href="https://google.com"><i class="icon" data-src="assets/img/icons/google-plus.svg"></i></a>
                   </div>
                   <br><br>
                 </div>
@@ -271,12 +277,15 @@
     
     <script src="./assets/js/jquery-latest.min.js"></script>
     
+    <script type="text/javascript" src="assets/js/loginajax.js"> </script>
+    <script type="text/javascript" src="assets/js/autocomplete.js"> </script>
+    
     <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./assets/js/core.js"></script>
     <script type="text/javascript" src="./assets/js/store.js"></script>
-    
+    <script type="text/javascript" src="./assets/js/carousel.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.touchSwipe.min.js"></script>
 	<script type="text/javascript" src="./assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
-
     <script type="text/javascript" src="./assets/js/jquery-ui-1.11.4.js"></script>
     <script type="text/javascript" src="./assets/js/jquery.ui.touch-punch.js"></script>
     

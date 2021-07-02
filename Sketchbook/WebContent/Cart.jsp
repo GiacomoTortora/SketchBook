@@ -272,18 +272,5 @@
     <hr class="offset-lg">
     
     <%@ include file="./fragments/footer.jsp" %>
-    
-    <script src="assets/js/jquery-latest.min.js"></script>
-    
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/core.js"></script>
-    <script type="text/javascript" src="assets/js/store.js"></script>
-    <script type="text/javascript" src="assets/js/carousel.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
-
-    <script type="text/javascript" src="assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <script type="text/javascript" src="assets/js/jquery-ui-1.11.4.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.ui.touch-punch.js"></script>
 </body>
 </html>

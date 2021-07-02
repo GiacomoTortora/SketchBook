@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Catamaran:400,100,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/custom-scroll/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href="assets/css/table.css" rel="stylesheet">
 </head>
 
 <body>
@@ -225,16 +226,5 @@
     
 	
 	<%@ include file="./fragments/footer.jsp" %>
-	
-	<script src="assets/js/jquery-latest.min.js"></script>
-    
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/core.js"></script>
-    <script type="text/javascript" src="assets/js/store.js"></script>
-    <script type="text/javascript" src="assets/js/carousel-product.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
-    <script type="text/javascript" src="assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery-ui-1.11.4.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.ui.touch-punch.js"></script>
 </body>
 </html>

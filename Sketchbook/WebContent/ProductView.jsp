@@ -65,7 +65,7 @@
                     <h2 class="h1 lg upp colorful blue">TINTORETTO <br> RIMO KIT 7914</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="./store/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
+                    <a href="AllProducts.jsp" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
 
                   </div>
                 </div>
@@ -89,7 +89,7 @@
                     <h2 class="h1 lg upp colorful blue">TINTORETTO <br> THIERRY DUVAL KIT</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="./store/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
+                    <a href="AllProducts.jsp" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
                     
                   </div>
                 </div>
@@ -113,7 +113,7 @@
                     <h2 class="h1 lg upp colorful blue">Pennelli e <br class="hidden-xs"> materiale da pittura</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="./blog/" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
+                    <a href="AllProducts.jsp" rel="nofollow" class="btn btn-primary btn-lg black"> Scopri di più </a>
                       
                   </div>
                 </div>
@@ -266,7 +266,7 @@
 
         <div class="align-right align-center-xs">
           <hr class="offset-sm">
-          <a href="./store/"> <h5 class="upp">Scopri di più </h5> </a>
+          <a href="AllProducts.jsp"> <h5 class="upp">Scopri di più </h5> </a>
         </div>
       </div>
     </section>
@@ -317,7 +317,7 @@
               <div class="content align-center">
                 <p class="price">€9.99</p>
                 <p class="price through">€14.99</p>
-                <h2 class="h3">Canson Art Book</h2>
+                                <h2 class="h3">Canson Art Book</h2>
                 <hr class="offset-sm">
 
                 <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
@@ -328,7 +328,7 @@
         </div>
         <div class="align-right align-center-xs">
           <hr class="offset-sm">
-          <a href="./store/"> <h5 class="upp">Scopri di più </h5> </a>
+          <a href="AllProducts.jsp"> <h5 class="upp">Scopri di più </h5> </a>
         </div>
       </div>
     </section>
@@ -387,7 +387,7 @@
           </div>
         <div class="align-right align-center-xs">
           <hr class="offset-sm">
-          <a href="./store/"> <h5 class="upp">Scopri di più</h5> </a>
+          <a href="AllProducts.jsp"> <h5 class="upp">Scopri di più</h5> </a>
         </div>
     </section>
 
@@ -481,19 +481,5 @@
 
 
 	<%@ include file="/fragments/footer.jsp" %>
-
-    <script src="assets/js/jquery-latest.min.js"></script>
-    
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/core.js"></script>
-    <script type="text/javascript" src="assets/js/store.js"></script>
-    <script type="text/javascript" src="assets/js/carousel.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
-
-    <script type="text/javascript" src="assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <script type="text/javascript" src="assets/js/jquery-ui-1.11.4.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.ui.touch-punch.js"></script>
-
   </body>
 </html>

@@ -1339,10 +1339,12 @@
 					background-color: transparent;
 					border: none;
 					box-shadow: none;
-						-webkit-box-shadow: none;
+					-webkit-box-shadow: none;
 				}
 
 				.modal#Modal-Gallery .modal-dialog .modal-content .modal-header {
+					
+    				border-bottom: 1px solid black;
 					padding: 0;
 				}
 
