@@ -158,7 +158,7 @@
                     <p class="price">€<%= String.format("%.2f", price) %></p>
 
                     <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
-                    <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button>
+                    <a href="CartController?action=addC&id=<%=bean.getId() %>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
                   </div>
                 </div>
               </div>

@@ -34,4 +34,14 @@ public class Cart {
 	public List<ProductBean> getProducts() {
 		return  products;
 	}
+	
+	public double getPrezzoCart() {
+		double prezzo=0;
+		for(ProductBean bean : products) {
+			prezzo=bean.getPrezzoTot()+prezzo;
+		}
+		return prezzo;
+	}
+	
+	
 }

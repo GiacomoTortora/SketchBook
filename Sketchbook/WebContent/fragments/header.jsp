@@ -1,16 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"
-    import="model.bean.UserBean"
+    import="model.bean.UserBean, model.Cart"
     %>
     
 <% 
  UserBean currUser=new UserBean();
  
  UserBean admin=new UserBean();
+ 
+ Cart cart = new Cart();
 
  currUser= (UserBean) session.getAttribute("currentSessionUser");
  
  admin=(UserBean) session.getAttribute("adminSession");
+ 
+ cart = (Cart) session.getAttribute("cart");
  
 %>
 
@@ -76,7 +80,7 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="home" style="font-weight:bold; font-size:30px"> SketchBook </a>
-            <a class="navbar-brand pull-right hidden-sm hidden-md hidden-lg hidden-xs" href="Cart.jsp"> <i class="ion-bag"></i></a>
+            <a class="navbar-brand pull-right hidden-sm hidden-md hidden-lg hidden-xs" ahref="Cart.jsp"> <i class="ion-bag"></i></a>
           </div>
 
           <div id="navbar" class="navbar-collapse collapse">
@@ -283,6 +287,7 @@
 	<script type="text/javascript" src="./assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript" src="./assets/js/jquery-ui-1.11.4.js"></script>
     <script type="text/javascript" src="./assets/js/jquery.ui.touch-punch.js"></script>
+    <script type="text/javascript" src="assets/js/carousel-product.js"></script>
     
     </body>
 </html>

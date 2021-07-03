@@ -2,6 +2,7 @@
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
+<%@ page import="java.util.*,model.bean.ProductBean, model.Cart,model.bean.UserBean"%>
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +14,9 @@
 <body>
 	<%@ include file="./fragments/header.jsp" %>
 	
-	<% if(currUser==null && admin==null) response.sendRedirect("401error.jsp"); %>
+	<% if(currUser==null && admin==null) response.sendRedirect("401error.jsp"); 
+	List<ProductBean> products= cart.getProducts();
+	%>
 
 	<hr class="offset-top">
 
@@ -358,12 +361,6 @@
                     </div>
                   </div>
 
-                  <div class="row group">
-                    <div class="col-sm-4"><h2 class="h4">Codice Promozionale</h2></div>
-                    <div class="col-sm-8"> <input type="text" class="form-control" name="promo" value=""/></div>
-                  </div>
-
-
                   <hr class="offset-lg visible-xs visible-sm">
                   <hr class="offset-lg visible-xs">
             </div>
@@ -372,137 +369,36 @@
                 <hr class="offset-md visible-xs visible-sm">
                 <div class="checkout-cart">
                     <div class="content">
-
-                        <div class="media">
-                          <div class="media-left">
-                            <a href="#">
-                              <img class="media-object" src="assets/img/products/ipad-air.jpg" alt="iPad Air"/>
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <h2 class="h4 media-heading">iPad Air</h2>
-                            <label>Tablets</label>
-                            <p class="price">$449.99</p>
-                          </div>
-                          <div class="controls">
-                            <div class="input-group">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-sm" type="button" data-action="minus"><i class="ion-minus-round"></i></button>
-                              </span>
-                              <input type="text" class="form-control input-sm" placeholder="Qty" value="1" readonly="">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button>
-                              </span>
-                            </div><!-- /input-group -->
-
-                            <a href="#remove"> <i class="ion-trash-b"></i> Remove </a>
-                          </div>
-                        </div>
-
-                        <div class="media">
-                          <div class="media-left">
-                            <a href="#">
-                              <img class="media-object" src="assets/img/products/mi-pad-2.jpg" alt="HP Chromebook 11"/>
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <h2 class="h4 media-heading">Mi Pad 2</h2>
-                            <label>Tablets</label>
-                            <p class="price">$199.99</p>
-                          </div>
-                          <div class="controls">
-                            <div class="input-group">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-sm" type="button" data-action="minus"><i class="ion-minus-round"></i></button>
-                              </span>
-                              <input type="text" class="form-control input-sm" placeholder="Qty" value="1" readonly="">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button>
-                              </span>
-                            </div><!-- /input-group -->
-
-                            <a href="#remove"> <i class="ion-trash-b"></i> Remove </a>
+                      <% if (products.isEmpty()) {%>
+                   <h3 class="align-center"> L'ordine adesso è vuoto </h3>
+                   <%} else for(ProductBean prod : products){ %>
+                          <div class="media">
+                            <div class="media-left">
+                              <a href="details?action=read&id=<%=prod.getId()%>">
+                                <img class="media-object" src="assets/img/product/<%=prod.getId()%>/1.jpg" alt="<%=prod.getNome()%>"/>
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h2 class="h4 media-heading"><%=prod.getNome()%></h2>
+                              <p class="price">€<%=String.format("%.2f", prod.getPrezzoTot())%></p>
+                            </div>
+                            
+                            <div class="controls">
+                              <div class="input-group">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-default btn-sm" type="button" data-action="minus"><i class="ion-minus-round"></i></button>
+                                </span>
+                                <input type="text" class="form-control input-sm" placeholder="Qty" value="1" readonly="">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button>
+                                </span>
+                              </div><!-- /input-group -->
+                              <a href="CartController?action=deleteC&id=<%=prod.getId()%>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-close"></i>Rimuovi</button></a>
                           </div>
                         </div>
-
-                        <div class="media">
-                          <div class="media-left">
-                            <a href="#">
-                              <img class="media-object" src="assets/img/products/lenovo-yoga.jpg" alt="Lenovo Yoga"/>
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <h2 class="h4 media-heading">Lenovo Yoga</h2>
-                            <label>Hybrid</label>
-                            <p class="price">$199.99</p>
-                          </div>
-                          <div class="controls">
-                            <div class="input-group">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-sm" type="button" data-action="minus"><i class="ion-minus-round"></i></button>
-                              </span>
-                              <input type="text" class="form-control input-sm" placeholder="Qty" value="1" readonly="">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button>
-                              </span>
-                            </div><!-- /input-group -->
-
-                            <a href="#remove"> <i class="ion-trash-b"></i> Remove </a>
-                          </div>
-                        </div>
-
-                        <div class="media">
-                          <div class="media-left">
-                            <a href="#">
-                              <img class="media-object" src="assets/img/products/surface-pro.jpg" alt="HP Chromebook 11"/>
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <h2 class="h4 media-heading">Surface Pro</h2>
-                            <label>Hybrid</label>
-                            <p class="price">$199.99</p>
-                          </div>
-                          <div class="controls">
-                            <div class="input-group">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-sm" type="button" data-action="minus"><i class="ion-minus-round"></i></button>
-                              </span>
-                              <input type="text" class="form-control input-sm" placeholder="Qty" value="1" readonly="">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button>
-                              </span>
-                            </div><!-- /input-group -->
-
-                            <a href="#remove"> <i class="ion-trash-b"></i> Remove </a>
-                          </div>
-                        </div>
-
-                        <div class="media">
-                          <div class="media-left">
-                            <a href="#">
-                              <img class="media-object" src="assets/img/products/asus-transformer.jpg" alt="HP Chromebook 11"/>
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <h2 class="h4 media-heading">ASUS Transformer</h2>
-                            <label>Hybrid</label>
-                            <p class="price">$199.99</p>
-                          </div>
-                          <div class="controls">
-                            <div class="input-group">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-sm" type="button" data-action="minus"><i class="ion-minus-round"></i></button>
-                              </span>
-                              <input type="text" class="form-control input-sm" placeholder="Qty" value="1" readonly="">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button>
-                              </span>
-                            </div><!-- /input-group -->
-
-                            <a href="#remove"> <i class="ion-trash-b"></i> Remove </a>
-                          </div>
-                        </div>
-
+                         <%
+                           }
+                         %>
                     </div>
                 </div>
                 <hr class="offset-md visible-xs visible-sm">
@@ -514,8 +410,8 @@
                 <hr class="offset-md">
                 <div class="row">
                     <div class="col-xs-6 col-md-4">
-                        <h3 class="h5 no-margin">Subtotale: $1 200</h3>
-                        <h3 class="h4 no-margin">Totale: $1 200</h3>
+                        <h3 class="h5 no-margin">Subtotale: (IVA 22%) €<%=String.format("%.2f", ((cart.getPrezzoCart()*100)/122))%></h3>
+                        <h3 class="h4 no-margin">Totale: <%=String.format("%.2f", cart.getPrezzoCart())%> </h3>
                     </div>
                     <div class="col-md-4 hidden-xs">
                     </div>
