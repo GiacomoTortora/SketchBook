@@ -91,7 +91,6 @@ public class ProductDAO {
 			ResultSet rs = preparedStatement.executeQuery();
 
 			while (rs.next()) {
-				bean.setQuantitaCarrello(1);
 				bean.setId(rs.getInt("id"));
 				bean.setNome(rs.getString("nome"));
 				bean.setDescrizione(rs.getString("descrizione"));
@@ -337,5 +336,55 @@ public synchronized Collection<ProductBean> doRetrieveByCategory(int categoria) 
 					connection.close();
 			}
 		}
+	}
+	
+	public synchronized Collection<ProductBean> doRetrieveByBrand(List<String> brands) throws SQLException {
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		List<ProductBean> prodotti = new ArrayList<ProductBean>();
+		
+		String qValues = " = ?";
+		for(int i = 1; i < brands.size(); ++i) {
+			qValues += ", ?";
+		}
+		
+		String selectSQL = "SELECT * FROM " + ProductDAO.TABLE_NAME1 +
+							" WHERE MARCA" + qValues;
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setString(1, brands.get(0));
+			
+			for(int i = 1; i < brands.size(); ++i) {
+				preparedStatement.setString(i+1, brands.get(i));
+			}
+
+			ResultSet rs = preparedStatement.executeQuery();
+			
+			while(rs.next()) {
+				ProductBean bean = new ProductBean();
+				
+				bean.setId(rs.getInt("id"));
+				bean.setNome(rs.getString("nome"));
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setPrezzo(rs.getDouble("prezzo"));
+				bean.setIva(rs.getDouble("iva"));
+				bean.setQuantitaCatalogo(rs.getInt("Quantita"));
+				
+				prodotti.add(bean);
+			}
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		return prodotti;
 	}
 }

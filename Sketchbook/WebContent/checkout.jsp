@@ -410,8 +410,8 @@
                 <hr class="offset-md">
                 <div class="row">
                     <div class="col-xs-6 col-md-4">
-                        <h3 class="h5 no-margin">Subtotale: (IVA 22%) €<%=String.format("%.2f", ((cart.getPrezzoCart()*100)/122))%></h3>
-                        <h3 class="h4 no-margin">Totale: <%=String.format("%.2f", cart.getPrezzoCart())%> </h3>
+                        <h3 class="h5 no-margin">Subtotale: (IVA 22%) €<%=String.format("%.2f", cart.getSubTotale())%></h3>
+                        <h3 class="h4 no-margin">Totale: <%=String.format("%.2f", cart.getTotale())%> </h3>
                     </div>
                     <div class="col-md-4 hidden-xs">
                     </div>

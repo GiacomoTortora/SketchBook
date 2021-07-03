@@ -6,6 +6,7 @@ import java.util.List;
 public class Cart {
 
 	private List<ProductBean> products;
+	private double totale;
 	
 	public Cart() {
 		products = new ArrayList<ProductBean>();
@@ -14,6 +15,12 @@ public class Cart {
 	public boolean isEmpty() {
 		return products.isEmpty();
 	}
+	
+	public void aggiornaTotale() {
+	    totale = 0;
+		for(ProductBean p : products)
+			totale += p.getPrezzoTot()*p.getQuantitaCarrello();
+    }
 	
 	public void addProduct(ProductBean product) {
 	   boolean flag = false;
@@ -25,22 +32,27 @@ public class Cart {
        }
        if(!flag)
     	   products.add(product);
+       aggiornaTotale();
     }
 	
 	public void deleteProduct(ProductBean product) {
 		products.remove(product);
+		aggiornaTotale();
  	}
 	
 	public List<ProductBean> getProducts() {
 		return  products;
 	}
 	
-	public double getPrezzoCart() {
-		double prezzo=0;
-		for(ProductBean bean : products) {
-			prezzo=bean.getPrezzoTot()+prezzo;
-		}
-		return prezzo;
+	public double getTotale() {
+		return totale;
+	}
+	
+	public double getSubTotale() {
+		double subtotale = 0;
+		for(ProductBean p: products)
+			subtotale += p.getPrezzo()*p.getQuantitaCarrello();
+		return subtotale;
 	}
 	
 	

@@ -279,4 +279,49 @@ public class OrderDAO {
 				}
 			}
 		}
+		
+		public synchronized Collection<OrderBean> doRetrieveByDate(Date data1, Date data2) throws SQLException{
+			
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+
+			Collection<OrderBean> ordini = new LinkedList<OrderBean>();
+		
+			String selectSQL = "select * " + 
+								"FROM " + OrderDAO.TABLE_NAME1 +
+								" WHERE Data BETWEEN ? AND ?";
+
+			try {
+				connection = ds.getConnection();
+				preparedStatement = connection.prepareStatement(selectSQL);
+				preparedStatement.setDate(1, (java.sql.Date)data1);
+				preparedStatement.setDate(2, (java.sql.Date)data2);
+				
+				ResultSet rs = preparedStatement.executeQuery();
+			
+				while (rs.next()) {
+					
+					OrderBean bean = new OrderBean();
+					
+					bean.setId(rs.getInt("id"));
+					bean.setProdotti(new ProductDAO().doRetrieveByOrder(bean.getId()));
+					bean.setData(rs.getDate("Data"));
+					bean.setStato(rs.getString("Stato"));
+					bean.setIdCliente(rs.getInt("ID_Cliente"));
+					bean.setTotale(rs.getDouble("totale"));
+					
+					ordini.add(bean);
+				}
+
+			} finally {
+				try {
+					if (preparedStatement != null)
+						preparedStatement.close();
+				} finally {
+					if (connection != null)
+						connection.close();
+				}
+			}
+			return ordini;
+		}
 }

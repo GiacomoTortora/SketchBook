@@ -279,27 +279,5 @@ public class UserDAO {
 					connection.close();
 			}
 		}
-	}
-   
+	}  
 }
-
-   /* public static void doSubmit(UserBean bean) {
-	  PreparedStatement preparedStatement=null;
-	   try {  
-	   String ruolo="user";
-	   con=DriverManagerConnectionPool.getConnection();
-	   preparedStatement=con.prepareStatement("INSERT INTO cliente (Nome, Cognome, Email, Password, Ruolo) VALUES (?,?,?,?,?)");
-	   preparedStatement.setString(1, bean.getFirstName());
-	   preparedStatement.setString(2, bean.getLastName());
-	   preparedStatement.setString(3, bean.getEmail());
-	   preparedStatement.setString(4, bean.getPassword());
-	   preparedStatement.setString(5, ruolo);
-	   int i=preparedStatement.executeUpdate();
-	   con.commit();
-	   if(i!=0) {
-		   System.out.println("success");
-	   } 
-	   }  catch(Exception e) {
-		   System.out.println("Errore: "+e);
-	   } */
-   

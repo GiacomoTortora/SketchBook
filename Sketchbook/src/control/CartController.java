@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Cart;
+import model.bean.ProductBean;
 import model.dao.ProductDAO;
 
 @WebServlet("/CartController")
@@ -40,7 +41,9 @@ public class CartController extends HttpServlet {
 			if (action != null) {
 				if (action.equalsIgnoreCase("addC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
-					cart.addProduct(prodotti.doRetrieveByKey(id));
+					ProductBean prodotto = prodotti.doRetrieveByKey(id);
+					prodotto.incrementaQuantita();
+					cart.addProduct(prodotto);
 				} else if (action.equalsIgnoreCase("deleteC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					cart.deleteProduct(prodotti.doRetrieveByKey(id));

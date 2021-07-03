@@ -52,13 +52,18 @@ public class OrderBean {
 	private void aggiornaTotale() {
 		totale = 0;
 		for(ProductBean p : prodotti)
-			totale += p.getPrezzoTot();
+			totale += p.getPrezzoTot()*p.getQuantitaCarrello();
     }
 	public void setTotale(Double newPrezzo) {
 		this.totale=newPrezzo;
 	}
 	
-	
+	public double getSubTotale() {
+		double subtotale = 0;
+		for(ProductBean p: prodotti)
+			subtotale += p.getPrezzo()*p.getQuantitaCarrello();
+		return subtotale;
+	}
 	
 	public List<ProductBean> getProdotti(){
 		return prodotti;

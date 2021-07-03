@@ -64,9 +64,8 @@
 						%>
                       			
 						<%
-              					double price=0.0;
-                                int quantita = 1;	//va implementata una funzione che ritorna la quantità di un prodotto nell'ordine
-              					price = quantita * (bean.getPrezzoTot()); 
+                                int quantita = bean.getQuantitaCarrello();	//va implementata una funzione che ritorna la quantità di un prodotto nell'ordine
+              					double price = quantita * (bean.getPrezzoTot()); 
               			%>
                            
                           <div class="media">
@@ -102,7 +101,7 @@
                                 <p>Subtotale</p>
                             </div>
                             <div class="col-xs-6">
-							<p><b>€ <%=String.format("%.2f", ((order.getTotale()*100)/122))%></b></p>
+							<p><b>€ <%=String.format("%.2f", (order.getSubTotale()))%></b></p>
                             </div>
                         </div>
                     </div>

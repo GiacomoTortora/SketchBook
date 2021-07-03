@@ -93,7 +93,7 @@
                                 <p>Subtotale</p>
                             </div>
                             <div class="col-xs-6">
-                                <p><b>€<%=String.format("%.2f", ((cart.getPrezzoCart()*100)/122))%></b></p>
+                                <p><b>€ <%=String.format("%.2f", cart.getSubTotale())%></b></p>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                                 <h3 class="no-margin">Totale</h3>
                             </div>
                             <div class="col-xs-6">
-                                <h3 class="no-margin">€<%=String.format("%.2f", cart.getPrezzoCart())%></h3>
+                                <h3 class="no-margin">€<%=String.format("%.2f", cart.getTotale())%></h3>
                             </div>
                         </div>
                     </div>

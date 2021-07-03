@@ -80,9 +80,11 @@ public class ProductBean implements Serializable {
 	}
 	
 	public void incrementaQuantita() {
-		if(++quantitaCatalogo > quantitaCatalogo)
-			throw new InvalidQuantitaException("Quantità non valida");
 		quantitaCarrello++;
+	}
+	
+	public void decrementaQuantita() {
+		quantitaCarrello--;
 	}
 	
 	public int getCategoria() {
