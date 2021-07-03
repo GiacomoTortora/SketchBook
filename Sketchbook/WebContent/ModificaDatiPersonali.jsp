@@ -26,6 +26,7 @@
 <body>
 
 	<%@ include file="/fragments/header.jsp" %>	
+	<% if(currUser==null) response.sendRedirect("401error.jsp"); %>
 	
     <hr class="offset-lg">
     <hr class="offset-lg">
@@ -39,7 +40,7 @@
     <hr class="offset-md">
 
 
-    <div class="container" style="margin-right:8%">
+    <div class="container" style="margin-right:9%">
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default">

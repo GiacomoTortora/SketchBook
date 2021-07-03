@@ -196,12 +196,10 @@ public class MetodoPagamentoDAO {
 
 		Collection<MetodoPagamentoBean> metodi = new LinkedList<MetodoPagamentoBean>();
 	
-		String selectSQL = "select * " + 
-							"FROM " + MetodoPagamentoDAO.TABLE_NAME1 +
-							" JOIN " + MetodoPagamentoDAO.TABLE_NAME2 +
-							"ON ID = ID_PAGAMENTO" +
-							" WHERE ID_CLIENTE = ?";
-				
+		String selectSQL =  "SELECT * FROM ecommerce."+MetodoPagamentoDAO.TABLE_NAME1+
+							" JOIN ecommerce."+MetodoPagamentoDAO.TABLE_NAME2+
+							" ON ID = ID_Pagamento WHERE "+MetodoPagamentoDAO.TABLE_NAME2+
+							".ID_Cliente = ?";
 		
 		if (order != null && !order.equals("")) {
 			selectSQL += " ORDER BY " + order;

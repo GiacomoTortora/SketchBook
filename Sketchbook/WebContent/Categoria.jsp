@@ -32,23 +32,42 @@
 	<%@ include file="/fragments/header.jsp" %>	
 	
     <hr class="offset-lg">
+    <hr class="offset-lg">
 
-    <div class="tags">
-      <div class="container">
-          <div class="btn-group pull-right sorting">
-            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="ion-arrow-down-b"></i> Ordina per
-            </button>
-
-            <ul class="dropdown-menu">
-              <li class="active"><a href="#"> <i class="ion-arrow-down-c"></i> Nome [A-Z]</a></li>
-              <li><a href="#"> <i class="ion-arrow-up-c"></i> Nome [Z-A]</a></li>
-              <li><a href="#"> <i class="ion-arrow-down-c"></i> Prezzo [Basso-Alto]</a></li>
-              <li><a href="#"> <i class="ion-arrow-up-c"></i> Prezzo [Alto-Basso]</a></li>
-            </ul>
-          </div>
-      </div>
-    </div>
+	<%
+		switch(Integer.parseInt(request.getParameter("categoria"))) {
+		case 1:
+	%>
+	<h1 class="align-center">Matite</h1>
+	<%
+		break;
+		case 2:
+	%>
+	<h1 class="align-center">Pennarelli</h1>
+	<%
+		break;
+		case 3:
+	%>
+	<h1 class="align-center">Pittura</h1>
+	<%
+		break;
+		case 4:
+	%>
+	<h1 class="align-center">Pennelli</h1>
+	<%
+		break;
+		case 5:
+	%>
+	<h1 class="align-center">Fogli</h1>
+	<%
+		break;
+		case 6:
+	%>
+	<h1 class="align-center">Tele</h1>
+	<%
+		break;
+		}
+	%>
 
     <div class="container">
       <div class="row">
@@ -169,8 +188,7 @@
               		%>
                     
                     <p class="price">€<%= String.format("%.2f", price) %></p>
-
-                    <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
+					<hr class="offset-xs">
                     <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button>
                   </div>
                 </div>

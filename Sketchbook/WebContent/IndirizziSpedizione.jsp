@@ -33,6 +33,8 @@
 <body>
 	<%@ include file="/fragments/header.jsp" %>	
 	
+	<% if(currUser==null) response.sendRedirect("401error.jsp"); %>
+	
     <hr class="offset-lg">
     <hr class="offset-lg">
     <hr class="offset-lg">
@@ -58,7 +60,7 @@
                   <div class="content">
                     <h1 class="h3">Indirizzo n. <%=bean.getId()%></h1>
                     <h2 class="h4">Via: <%=bean.getVia()%></h2>
-                    <h2 class="h4">Città:: <%=bean.getCitta()%></h2>
+                    <h2 class="h4">Città: <%=bean.getCitta()%></h2>
                     <h2 class="h4">CAP: <%=bean.getCAP()%></h2>
                     <h2 class="h4">Provincia: <%=bean.getProvincia()%></h2>
                     <h2 class="h4">Stato: <%=bean.getStato()%></h2>
@@ -75,7 +77,7 @@
         </div>
       </div>
 	</div>
-	<a href=""><button class="btn btn-primary btn-lg rounded" style="margin-left:80%">Aggiungi Indirizzo di Spedizione <i class="ion-android-add-circle"></i></button></a>
+	<a href="Aggiungi-Indirizzo.jsp"><button class="btn btn-primary btn-lg rounded" style="margin-left:80%">Aggiungi Indirizzo di Spedizione <i class="ion-android-add-circle"></i></button></a>
 	
             	
 	<%@ include file="./fragments/footer.jsp" %>  

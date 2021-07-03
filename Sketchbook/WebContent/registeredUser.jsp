@@ -32,7 +32,7 @@
  <h1> Pagina protetta</h1>
  <br>
  
- <h1 style="margin-left: 5%"><i class="ion-person"></i> Benvenuto, <%=currUser.getFirstName() %></h1>
+ <h1 class="align-center"><i class="ion-person"></i> Benvenuto, <%=currUser.getFirstName() %></h1>
  
  <div class="container">
    <div class="row">
@@ -85,24 +85,14 @@
                 </div>
               </div>
               
-               <div class="col-sm-5 col-md-4 product">
-                <div class="body">
-                  <div class="content">
-                    <h1 class="h3" style="color:#3ab5da">Centro Comunicazioni <i class="ion-reply"></i></h1>                       
-                    <h4 class="h5">Visualizza le comunicazioni da parte degli admin e le risposte alal tue domande.</h4>
-                    <hr class="offset-xl">
-                    <a href=""><button class="btn btn-primary btn-sm rounded">Vai</button></a>
-                  </div>
-                </div>
-              </div>
               
               <div class="col-sm-5 col-md-4 product">
                 <div class="body">
                   <div class="content">
-                    <h1 class="h3" style="color:#3ab5da">Aiuto <i class="ion-help"></i></h1>                       
-                    <h4 class="h5">Serve aiuto? Non esitare a farci le tue domande.</h4>
+                    <h1 class="h3" style="color:#3ab5da">FAQ <i class="ion-help"></i></h1>                       
+                    <h4 class="h5">Hai delle domande? Prova a trovare una risposta nelle nostre FAQ.</h4>
                     <hr class="offset-xl">
-                    <a href=""><button class="btn btn-primary btn-sm rounded">Vai</button></a>
+                    <a href="FAQ.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
                   </div>
                 </div>
               </div>

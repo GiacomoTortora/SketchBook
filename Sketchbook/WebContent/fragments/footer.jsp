@@ -65,7 +65,7 @@
         <div class="container align-center">
             <hr class="offset-md">
 
-            <h1 class="h3 upp">Seguici sui nostri social!</h1>
+            <h1 class="h3 upp">Seguici sui nostri social</h1>
             <p>Per restare sempre aggiornato sui nuovi prodotti.</p>
             <hr class="offset-sm">
             <div class="social">

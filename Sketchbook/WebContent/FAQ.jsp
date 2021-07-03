@@ -50,7 +50,7 @@
             <div class="collapse" id="question3">
               <div class="well">
                 <p>
-                  Il sito è stato interamente sviluppato in meno di un mese.
+                  Il sito è stato interamente sviluppato in un paio di mesi.
                 </p>
               </div>
             </div>

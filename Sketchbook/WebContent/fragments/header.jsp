@@ -51,7 +51,6 @@
       else if(currUser!=null && admin==null) {
      %>
       <a href="LogoutController"><i class="ion-log-out"></i> Logout</a>
-      <a href="preferiti.jsp"> <i class="ion-ios-heart"></i> Preferiti </a>
       <a href="registeredUser.jsp"><i class="ion-person"></i> Salve, <%= currUser.getFirstName() %> </a>
        <%
       }
@@ -152,9 +151,7 @@
 
                   <div class="social-login">
                       <div class="or"><p>OPPURE</p></div>
-                      <a href="https://facebook.com"><i class="icon" data-src="assets/img/icons/facebook.svg"></i></a>
-                      <p>via</p>
-                      <a href="https://google.com"><i class="icon" data-src="assets/img/icons/google-plus.svg"></i></a>
+                      <a href="#signin" data-toggle="modal" data-target="#Modal-Registration" class="btn btn-primary">Registrati</a>
                   </div>
                   <br><br>
                 </div>
@@ -205,9 +202,7 @@
                     <input id="newPassword2" type="text" name="password2" value="" placeholder="Ripeti Password" required="" class="form-control" />
                     <p class="errormsg" id="newPassword2Err" name="newPassword2Err"></p>
 
-                    <button id="signupBtn" type="submit" class="btn btn-primary btn-sm">Registrati</button> &nbsp;&nbsp;
-                    <a href="#">Termini e condizioni ></a>
-
+                    <button id="signupBtn" type="submit" class="btn btn-primary btn-sm">Registrati</button> &nbsp;&nbsp;                 
                     <br><br>
                     <p>
                       Creando un account potrai fare shopping più velocemente, controllare i tuoi ordini, e restare aggiornato sulle novità.
@@ -279,7 +274,7 @@
     
     <script type="text/javascript" src="assets/js/loginajax.js"> </script>
     <script type="text/javascript" src="assets/js/autocomplete.js"> </script>
-    
+    <script type="text/javascript" src="assets/js/checkout.js"> </script>
     <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./assets/js/core.js"></script>
     <script type="text/javascript" src="./assets/js/store.js"></script>

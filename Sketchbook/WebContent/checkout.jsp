@@ -12,6 +12,8 @@
 </head>
 <body>
 	<%@ include file="./fragments/header.jsp" %>
+	
+	<% if(currUser==null && admin==null) response.sendRedirect("401error.jsp"); %>
 
 	<hr class="offset-top">
 

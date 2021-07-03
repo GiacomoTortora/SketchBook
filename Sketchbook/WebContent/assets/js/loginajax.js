@@ -102,8 +102,7 @@ $(document).ready(function(){
                url:"LoginController",
                data:{"email":email,"password":password},
                success: function () {
-	                location.reload(); //aggiorna la pagina
-                    //$(location).attr('href','ProductView.jsp');                  
+	                location.reload(); //aggiorna la pagina                
                }
              });   
              }                        

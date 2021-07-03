@@ -32,7 +32,7 @@
  <h1> Pagina protetta</h1>
  <br>
  
- <h1 style="margin-left: 5%"><i class="ion-wrench"></i> Funzioni admin <i class="ion-wrench"></i></h1>
+ <h1 class="align-center"><i class="ion-wrench"></i> Funzioni admin <i class="ion-wrench"></i></h1>
  
  <div class="container">
    <div class="row">
@@ -59,6 +59,17 @@
                     <h4 class="h5">Permette di gestire il catalogo prodotti. (Aggiungere, rimuovere, modificare)</h4>
                     <hr class="offset-xl">
                     <a href="ModificaCatalogo.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-sm-5 col-md-4 product">
+                <div class="body">
+                  <div class="content">
+                    <h1 class="h3" style="color:#3ab5da">FAQ <i class="ion-help"></i></h1>                       
+                    <h4 class="h5">Hai delle domande? Prova a trovare una risposta nelle nostre FAQ.</h4>
+                    <hr class="offset-xl">
+                    <a href="FAQ.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
                   </div>
                 </div>
               </div>

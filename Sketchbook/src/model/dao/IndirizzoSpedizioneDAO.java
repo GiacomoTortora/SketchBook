@@ -208,11 +208,9 @@ public class IndirizzoSpedizioneDAO {
 
 		Collection<IndirizzoSpedizioneBean> indirizzi = new LinkedList<IndirizzoSpedizioneBean>();
 	
-		String selectSQL = "select * " + 
-							"FROM " + IndirizzoSpedizioneDAO.TABLE_NAME1 +
-							" JOIN " + IndirizzoSpedizioneDAO.TABLE_NAME2 +
-							" ON ID = ID_INDIRIZZO" +
-							" WHERE ID_CLIENTE = ?";
+		String selectSQL = "SELECT * FROM ecommerce."+IndirizzoSpedizioneDAO.TABLE_NAME1+
+						   " JOIN ecommerce."+IndirizzoSpedizioneDAO.TABLE_NAME2+
+						   " ON ID = ID_INDIRIZZO WHERE "+IndirizzoSpedizioneDAO.TABLE_NAME2+".ID_Cliente = ?";
 				
 		
 		if (order != null && !order.equals("")) {

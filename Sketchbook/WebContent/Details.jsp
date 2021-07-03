@@ -116,7 +116,6 @@
               <hr class="offset-md">
 
               <button class="btn btn-primary rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button>
-              <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai preferiti </button>
             </div>
           </div>
         </div>
@@ -141,7 +140,7 @@
               <p class="">Mandaci un messaggio su WhatsApp</p>
               <hr class="offset-md">
 
-              <a href="#" class="btn btn-primary btn-sm"> <i class="ion-social-whatsapp"></i> +39 123 456 7890 </a>
+              <a href="tel:+391234567890" class="btn btn-primary btn-sm"> <i class="ion-social-whatsapp"></i> +39 123 456 7890 </a>
               <hr class="offset-md visible-xs">
             </div>
             <hr class="offset-sm hidden-xs">          
@@ -167,7 +166,6 @@
                 <h2 class="h3">Derwent Matite 6pz</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
@@ -182,7 +180,6 @@
                 <h2 class="h3">W&N Promarkers</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
@@ -197,7 +194,6 @@
                 <h2 class="h3">Ecoline Brush Pen</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
               </div>
             </div>
@@ -213,7 +209,6 @@
                 <h2 class="h3">W&N Acquerelli</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Dettagli</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi</button>
              </div>
            </div>

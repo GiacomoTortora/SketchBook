@@ -34,23 +34,8 @@
 	<%@ include file="/fragments/header.jsp" %>	
 	
     <hr class="offset-lg">
-
-    <div class="tags">
-      <div class="container">
-          <div class="btn-group pull-right sorting">
-            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="ion-arrow-down-b"></i> Ordina per
-            </button>
-
-            <ul class="dropdown-menu">
-              <li class="active"><a href="#"> <i class="ion-arrow-down-c"></i> Nome [A-Z]</a></li>
-              <li><a href="#"> <i class="ion-arrow-up-c"></i> Nome [Z-A]</a></li>
-              <li><a href="#"> <i class="ion-arrow-down-c"></i> Prezzo [Basso-Alto]</a></li>
-              <li><a href="#"> <i class="ion-arrow-up-c"></i> Prezzo [Alto-Basso]</a></li>
-            </ul>
-          </div>
-      </div>
-    </div>
+    <hr class="offset-lg">
+    <h1 class="align-center">Tutti i Prodotti</h1>
 
     <div class="container">
       <div class="row">
@@ -59,42 +44,7 @@
         <div class="col-sm-4 col-md-3">
           <hr class="offset-lg">
 
-          <div class="filter">
-            <div class="item">
-                <div class="title">
-                    <a href="#clear" data-action="open" class="down"> <i class="ion-android-arrow-dropdown"></i> Open</a>
-                    <a href="#clear" data-action="clear"> <i class="ion-ios-trash-outline"></i> Reset</a>
-                    <h1 class="h4">Tipo</h1>
-                </div>
-
-                <div class="controls">
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                      <div class="label" data-value="Matite">Matite</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                      <div class="label" data-value="Pennelli">Pennelli</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                      <div class="label" data-value="Pitture">Pitture</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="Fogli">Fogli</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-                </div>
-            </div>
-
-            <br>
+          <div class="filter">           
             <div class="item">
                 <div class="title">
                     <a href="#clear" data-action="open" class="down"> <i class="ion-android-arrow-dropdown"></i> Open</a>

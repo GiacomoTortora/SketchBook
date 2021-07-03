@@ -209,7 +209,6 @@
                 <h2 class="h3">Derwent Matite 6pz</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
@@ -224,7 +223,6 @@
                 <h2 class="h3">W&N Promarkers</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
@@ -239,7 +237,6 @@
                 <h2 class="h3">Ecoline Brush Pen</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
@@ -255,7 +252,6 @@
                 <h2 class="h3">W&N Acquerelli</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
@@ -288,7 +284,6 @@
                 <h2 class="h3">Derwent Paint Kit</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
@@ -304,7 +299,6 @@
                 <h2 class="h3">W&N Promarker Color</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
@@ -320,7 +314,6 @@
                                 <h2 class="h3">Canson Art Book</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
@@ -350,7 +343,6 @@
                 <h2 class="h3">Faber-Castel Polychromos</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
@@ -365,7 +357,6 @@
                 <h2 class="h3">Pennelli LeFranc Bougeois</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
@@ -380,7 +371,6 @@
                 <h2 class="h3">Tela Pintura 30x40</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-ios-heart"></i> Aggiungi ai Preferiti</button>
                 <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
               </div>
             </div>
@@ -392,92 +382,32 @@
     </section>
 
 
-    <section class="blog">
-      <div class="container">
-        <h2 class="h2 upp align-center"> Recensioni </h2>
-        <hr class="offset-lg">
-
+    	<div class="container gallery">
+    	<h2 class="h2 upp align-center">Galleria Immagini</h2>
         <div class="row">
-
-          <div class="col-sm-6 col-md-6 item">
-
-            <div class="body">
-              <a href="assets/img/blog/4.png">
-                <img src="assets/img/blog/4.png" title="img4" alt="img4">
-              </a>
-
-              <div class="caption">
-                <h2 class="h3">Ottimo!!!</h2>
-                <label> 07.01.2021</label>
-                <hr class="offset-sm">
-
-                <p>
-                  Davvero ottimi prodotti, di buona qualità e perfetti. Guardate cosa sono riuscito a fare con queste matite!
-                </p>
-                <hr class="offset-sm">
+        <%
+        	for(int i=1; i<4; i++) {
+   
+        %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="preview" data-preview="assets/img/blog/<%=i%>.jpg" data-gallery="#photo" data-source="assets/img/blog/<%=i%>.jpg">
+              <div class="title">
+                <div class="caption">
+                  <i class="ion-ios-albums-outline"></i>
+                  <h4> Vedi </h4>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="col-sm-6 col-md-6 item">
-
-            <div class="body">
-              <a href="assets/img/blog/1.png">
-                <img src="assets/img/blog/1.png" title="img1" alt="img1">
-              </a>
-
-              <div class="caption">
-                <h2 class="h3">Che gentilezza!</h2>
-                <label> 08.01.2021</label>
-                <hr class="offset-sm">
-
-                <p>
-                  Gentilissimi e tempi di consegna ottimi. Il disegno è uscito molto bene.
-                </p>
-                <hr class="offset-sm">
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-6 item">
-            <div class="body">
-              <a href="assets/img/blog/3.png">
-                <img src="assets/img/blog/3.png" title="img3" alt="img3">
-              </a>
-
-              <div class="caption">
-                <h2 class="h3">Molto soddisfatto</h2>
-                <label> 09.01.2021</label>
-                <hr class="offset-sm">
-
-                <p>
-                  Imballati in modo ottimo. Allego un piccolo risultato dei loro prodotti.
-                </p>
-                <hr class="offset-sm">
-              </div>
-            </div>
-          </div>
-          
-            <div class="col-sm-6 col-md-6 item">
-            <div class="body">
-              <a href="assets/img/blog/2.png">
-                <img src="assets/img/blog/2.png" title="img2" alt="img2">
-              </a>
-
-              <div class="caption">
-                <h2 class="h3">Perfetto</h2>
-                <label> 10.01.2021</label>
-                <hr class="offset-sm">
-
-                <p>
-                  Nulla da dire!
-                </p>
-                <hr class="offset-sm">
-              </div>
-            </div>
-          </div>
-          </div>
+          <%
+        	}
+          %>
+          <div class="align-right align-center-xs">
+          <hr class="offset-sm">
+          <a href="Galleria.jsp"> <h5 class="upp">Vedi Galleria Completa</h5> </a>
         </div>
-    </section>
+          </div>
+          </div>
 
 
 	<%@ include file="/fragments/footer.jsp" %>

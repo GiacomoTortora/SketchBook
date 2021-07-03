@@ -262,7 +262,11 @@
                     </div>
                     <hr class="offset-md">
 
+					<%if(currUser==null && admin==null) { %>
+                    <a href="#signin" data-toggle="modal" data-target="#Modal-SignIn" class="btn btn-primary btn-lg justify"><i class="ion-android-checkbox-outline"></i>&nbsp;&nbsp; Checkout</a>
+                    <%} else { %>
                     <a href="checkout.jsp" class="btn btn-primary btn-lg justify"><i class="ion-android-checkbox-outline"></i>&nbsp;&nbsp; Checkout</a>
+                    <%} %>
                     <hr class="offset-md">
                     </div>
                   </div>
@@ -271,6 +275,6 @@
         </div>
     <hr class="offset-lg">
     
-    <%@ include file="./fragments/footer.jsp" %>
+    <%@ include file="./fragments/footer.jsp" %>  
 </body>
 </html>
