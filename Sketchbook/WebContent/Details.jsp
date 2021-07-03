@@ -114,8 +114,23 @@
 
               <p class="price">€<%= String.format("%.2f", price) %></p>
               <hr class="offset-md">
-
-              <button class="btn btn-primary rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button>
+              <form id= "aggiungiIndirizzo" name="aggiungiIndirizzo" class="join" method="post" onsubmit="return validateSignUpForm(this)">
+			      <input type="number" id="quantita" name="quantita" min="1" max="<%=product.getQuantitaCatalogo()%>" value="1">
+			  </form>
+			  <hr class="offset-sm">
+			  <%
+			  	if(product.getQuantitaCatalogo() == 0) {
+			  %>
+			  <h4 class="align-left" style="color:red">Questo articolo è esaurito.</h4>
+			  <button class="btn btn-primary rounded disabled"><i class="ion-bag"></i> Aggiungi al carrello</button>
+			  <%
+			  	}
+			  	else {
+			  %>
+              <a href="CartController?action=addC&id=<%=product.getId() %>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
+              <%
+			  	}
+              %>
             </div>
           </div>
         </div>
@@ -218,6 +233,6 @@
 
     </section>
 	
-	<%@ include file="./fragments/footer.jsp" %>
+	<%@ include file="./fragments/footer.jsp" %>	
 </body>
 </html>

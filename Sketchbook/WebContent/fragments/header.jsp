@@ -1,16 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"
-    import="model.bean.UserBean"
+    import="model.bean.UserBean, model.Cart"
     %>
     
 <% 
  UserBean currUser=new UserBean();
  
  UserBean admin=new UserBean();
+ 
+ Cart cart = new Cart();
 
  currUser= (UserBean) session.getAttribute("currentSessionUser");
  
  admin=(UserBean) session.getAttribute("adminSession");
+ 
+ cart = (Cart) session.getAttribute("cart");
  
 %>
 
@@ -277,7 +281,6 @@
     <script type="text/javascript" src="assets/js/checkout.js"> </script>
     <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./assets/js/core.js"></script>
-    <script type="text/javascript" src="./assets/js/store.js"></script>
     <script type="text/javascript" src="./assets/js/carousel.js"></script>
     <script type="text/javascript" src="./assets/js/jquery.touchSwipe.min.js"></script>
 	<script type="text/javascript" src="./assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>

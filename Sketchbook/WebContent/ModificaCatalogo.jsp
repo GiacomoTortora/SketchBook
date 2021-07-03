@@ -37,6 +37,8 @@
     
    <h1 style="margin-left: 5%"><i class="ion-ios-list"></i> Modifica Catalogo <i class="ion-ios-list"></i></h1>
    <h4 class="h4" style="margin-left: 5%">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per ID, Nome e IVA)</h4>
+   <a href="AggiungiProdotto.jsp"><button class="btn btn-primary btn-lg rounded" style="margin-left:80%">Aggiungi Nuovo Prodotto <i class="ion-android-add-circle"></i></button></a>
+   <hr class="offset-sm"> 
     
 	<div class="table">
 		<div class="table-header">
@@ -56,10 +58,8 @@
 					%>
 					
 					<%
-						double price=0.0;
-              			double priceTOT=0.0;
-              			price = bean.getPrezzo();
-              			priceTOT = bean.getPrezzoTot();       	
+						double price=bean.getPrezzo();
+              			double priceTOT=bean.getPrezzoTot();    	
               		%>
 
               <div class="table-row" style="font-size:120%">		
@@ -68,7 +68,7 @@
 				<div class="table-data">€<%= String.format("%.2f", price) %></div>
 				<div class="table-data"><%=bean.getIva()%></div>
 				<div class="table-data">€<%= String.format("%.2f", priceTOT) %></div>
-				<div class="table-data"><a href="#"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a></div>
+				<div class="table-data"><a href="ModificaProdottiController?action=read&id=<%=bean.getId()%>"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a></div>
 			</div>              
 
               <%

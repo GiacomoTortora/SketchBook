@@ -49,7 +49,7 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "aggiungiIndirizzo" name="aggiungiIndirizzo" class="join" method="post" onsubmit="return validateSignUpForm(this)">
+                             <form id= "aggiungiIndirizzo" name="aggiungiIndirizzo" class="join" method="post">
         
 			                  	<h5>Via</h5>
 			                    <input id="via" type="text" name="via" value="" placeholder="Via" required=""/>
