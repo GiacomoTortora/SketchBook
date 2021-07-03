@@ -2,16 +2,20 @@
 	pageEncoding="utf-8"
 %>
 
+<%
+	ProductBean product = new ProductDAO().doRetrieveByKey(Integer.parseInt(request.getParameter("id")));
+%>
+
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.OrderBean, model.bean.ProductBean, model.dao.ProductDAO, model.dao.OrderDAO, model.bean.UserBean"%>
+<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.ProductBean, model.dao.ProductDAO"%>
 
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
      
-    <title>Aggiungi Metodo Pagamento</title>
+    <title>Aggiungi Indirizzo</title>
     
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -32,8 +36,12 @@
 
     <div class="box">
       <div class="container align-center">
-          <h1 class="align-center">Aggiungi Metodo Pagamento</h1>
+      	<div class="row">
+          <h1 class="align-center">Modifica Prodotto</h1>
+          <h3 class="align-center"><%=product.getNome()%></h3>
+          <a href="details?action=read&id=<%=product.getId()%>"><img src="assets/img/product/<%=product.getId()%>/1.jpg" alt="<%=product.getNome()%>" style="width:20%; height:20%"/></a>
           <hr class="offset-sm">
+          </div>
       </div>
     </div>
     <hr class="offset-md">
@@ -49,15 +57,26 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "aggiungiIndirizzo" name="aggiungiIndirizzo" class="join" method="post">
+                             <form id= "modificaProdotto" name="modificaProdotto" class="join" method="post">
         
-			                  	<h5>Numero Carta</h5>
-			                    <input id="#carta" type="text" name="#carta" value="" placeholder="Numero Carta" required=""/>
+			                  	<h5>Nome</h5>
+			                    <input id="nome" type="text" name="nome" value="" placeholder="Nome Prodotto" required=""/>
 			                    
-			                    <h5>Tipo</h5>
-			                    <input id="tipo" type="text" name="tipo" value="" placeholder="Tipo Carta" required=""/>		                   
+			                    <h5>Descrizione</h5>
+			                    <input id="descrizione" type="text" name="descrizione" value="" placeholder="Descrizione Prodotto" required=""/>
+			                    
+								<h5>Prezzo</h5>
+			                    <input id="prezzo" type="text" name="prezzo" value="" placeholder="Prezzo" required=""/>
+			                    
+			                    <h5>IVA %</h5>
+			                     <input id="iva" type="text" name="iva" value="22" required=""/>
+			                    
+								<h5>Quantità</h5>
+			                    <input id="quantita" type="number" name="quantita" value="1" required=""/>
 			                    <hr class="offset-lg">
-			                    <button id="addBtn" type="submit" class="btn btn-primary btn-sm">Aggiungi</button> &nbsp;&nbsp;  
+			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Prodotto</button> &nbsp;&nbsp;
+			                    <h5>OPPURE</h5>
+			                    <button id="delete" type="submit" class="btn btn-primary btn-sm">Elimina Prodotto</button> &nbsp;&nbsp;
 			                  </form>
                             </div>
             			</div>

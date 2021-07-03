@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
      
-    <title>Aggiungi Metodo Pagamento</title>
+    <title>Aggiungi Nuovo Prodotto</title>
     
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -32,14 +32,14 @@
 
     <div class="box">
       <div class="container align-center">
-          <h1 class="align-center">Aggiungi Metodo Pagamento</h1>
+          <h1 class="align-center">Aggiungi Nuovo Prodotto</h1>
           <hr class="offset-sm">
       </div>
     </div>
     <hr class="offset-md">
 
 
-    <div class="container" style="margin-right:9%">
+        <div class="container" style="margin-right:9%">
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default">
@@ -49,15 +49,25 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "aggiungiIndirizzo" name="aggiungiIndirizzo" class="join" method="post">
+                             <form id= "modificaProdotto" name="modificaProdotto" class="join" method="post">
         
-			                  	<h5>Numero Carta</h5>
-			                    <input id="#carta" type="text" name="#carta" value="" placeholder="Numero Carta" required=""/>
+			                  	<h5>Nome</h5>
+			                    <input id="nome" type="text" name="nome" value="" placeholder="Nome Prodotto" required=""/>
 			                    
-			                    <h5>Tipo</h5>
-			                    <input id="tipo" type="text" name="tipo" value="" placeholder="Tipo Carta" required=""/>		                   
+			                    <h5>Descrizione</h5>
+			                    <input id="descrizione" type="text" name="descrizione" value="" placeholder="Descrizione Prodotto" required=""/>
+			                    
+								<h5>Prezzo</h5>
+			                    <input id="prezzo" type="text" name="prezzo" value="" placeholder="Prezzo" required=""/>
+			                    
+			                    <h5>IVA %</h5>
+			                     <input id="iva" type="text" name="iva" value="22" required=""/>
+			                    
+								<h5>Quantità</h5>
+			                    <input id="quantita" type="number" name="quantita" value="1" required=""/>
 			                    <hr class="offset-lg">
-			                    <button id="addBtn" type="submit" class="btn btn-primary btn-sm">Aggiungi</button> &nbsp;&nbsp;  
+			                    <button id="addBtn" type="submit" class="btn btn-primary btn-sm">Aggiungi Prodotto</button> &nbsp;&nbsp;
+			                    <h5>N.B - Non scordare di caricare le immagini del prodotto sul server!</h5>
 			                  </form>
                             </div>
             			</div>

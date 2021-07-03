@@ -66,10 +66,10 @@
               <div class="col-sm-5 col-md-4 product">
                 <div class="body">
                   <div class="content">
-                    <h1 class="h3" style="color:#3ab5da">FAQ <i class="ion-help"></i></h1>                       
-                    <h4 class="h5">Hai delle domande? Prova a trovare una risposta nelle nostre FAQ.</h4>
+                    <h1 class="h3" style="color:#3ab5da">Gestisci Ruoli Utenti <i class="ion-person"></i></h1>                       
+                    <h4 class="h5">Permette di gestire i ruoli degli utenti e di renderli amministratori.</h4>
                     <hr class="offset-xl">
-                    <a href="FAQ.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
+                    <a href="ModificaRuoloUtente.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
                   </div>
                 </div>
               </div>
