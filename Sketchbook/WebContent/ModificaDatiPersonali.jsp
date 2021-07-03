@@ -2,9 +2,13 @@
 	pageEncoding="utf-8"
 %>
 
+<%
+	UserBean usrData = new UserDAO().doRetrieveByKey(Integer.parseInt(request.getParameter("id")));
+%>
+
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.OrderBean, model.bean.ProductBean, model.dao.ProductDAO, model.dao.OrderDAO, model.bean.UserBean"%>
+<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.UserBean, model.dao.UserDAO"%>
 
 <head>
 	<meta charset="utf-8">
@@ -26,61 +30,49 @@
 <body>
 
 	<%@ include file="/fragments/header.jsp" %>	
-	<% if(currUser==null) response.sendRedirect("401error.jsp"); %>
 	
     <hr class="offset-lg">
     <hr class="offset-lg">
 
     <div class="box">
       <div class="container align-center">
-          <h1>Modifica Dati Personali</h1>
+      	<div class="row">
+          <h1 class="align-center">Modifica Dati Personali</h1>
+          <h3 class="align-center">Utente: <%=usrData.getFirstName() %> <%=usrData.getLastName()%></h3>
           <hr class="offset-sm">
+          </div>
       </div>
     </div>
     <hr class="offset-md">
 
 
-    <div class="container" style="margin-right:9%">
+   <div class="container" style="margin-right:9%">
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default">
                   <div class="panel-body">
                     <div class="checkout-cart">
                       <div class="content">	
-                      	                        
-                          <div class="media">
-                            <div class="media-body">
-                              <h2 class="h4 media-heading">Nome: </h2>  
-                              <label><%=currUser.getFirstName()%></label><br>
-                              <hr class="offset-sm">
-                              <a href="#"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
-                            </div>
-            			</div>
-            			
+                      	                            			
             			<div class="media">
-                            <div class="media-body">
-                              <h2 class="h4 media-heading">Cognome: </h2>  
-                              <label><%=currUser.getLastName()%></label><br>
-                              <hr class="offset-sm">
-                              <a href="#"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
-                            </div>
-            			</div>
-            			
-            			<div class="media">
-                            <div class="media-body">
-                              <h2 class="h4 media-heading">Email: </h2>  
-                              <label><%=currUser.getEmail()%></label><br>
-                              <hr class="offset-sm">
-                              <a href="#"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
-                            </div>
-            			</div>
-            			
-            			<div class="media">
-                            <div class="media-body">
-                              <h2 class="h4 media-heading">Password: </h2>  
-                              <label><%=currUser.getPassword()%></label><br>
-                              <hr class="offset-sm">
-                              <a href="#"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
+                            <div class="media-body align-center">
+                             <form id= "aggiungiIndirizzo" name="aggiungiIndirizzo" class="join" method="post">
+        
+			                  	<h5>Nome</h5>
+			                    <input id="nome" type="text" name="nome" value="<%=usrData.getFirstName()%>" placeholder="Nome" required=""/>
+			                    
+			                    <h5>Cognome</h5>
+			                    <input id="cognome" type="text" name="cognome" value="<%=usrData.getLastName()%>" placeholder="Cognome" required=""/>
+			                    
+								<h5>Email</h5>
+			                    <input id="email" type="text" name="email" value="<%=usrData.getEmail()%>" placeholder="Email" required=""/>
+			                    
+			                    <h5>Password</h5>
+			                     <input id="password" type="text" name="password" value="<%=usrData.getPassword()%>" placeholder="Password" required=""/>
+
+			                    <hr class="offset-lg">
+			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Dati</button> &nbsp;&nbsp;
+			                  </form>
                             </div>
             			</div>
             			

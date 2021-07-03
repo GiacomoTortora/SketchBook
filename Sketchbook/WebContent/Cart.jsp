@@ -69,7 +69,7 @@
                                   <button class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button>
                                 </span>
                               </div><!-- /input-group -->
-                              <a href="CartController?action=deleteC&id=<%=prod.getId()%>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-close"></i>Rimuovi</button></a>
+                              <a href="CartController?action=deleteC&id=<%=prod.getId()%>"><button class="btn btn-primary btn-xs rounded"> <i class="ion-close"></i> Rimuovi</button></a>
                           </div>
                         </div>
                          <%
@@ -126,8 +126,8 @@
                     <a href="#signin" data-toggle="modal" data-target="#Modal-SignIn" class="btn btn-primary btn-lg justify"><i class="ion-android-checkbox-outline"></i>&nbsp;&nbsp; Checkout</a>
                     <%} else { %>
                     <a href="checkout.jsp" class="btn btn-primary btn-lg justify"><i class="ion-android-checkbox-outline"></i>&nbsp;&nbsp; Checkout</a>
-                    <%} } %>
                     <hr class="offset-md">
+                    <%} } %>
                     </div>
                   </div>
                 </div>

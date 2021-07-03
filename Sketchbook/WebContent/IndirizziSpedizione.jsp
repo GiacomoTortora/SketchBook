@@ -65,7 +65,7 @@
                     <h2 class="h4">Provincia: <%=bean.getProvincia()%></h2>
                     <h2 class="h4">Stato: <%=bean.getStato()%></h2>
                     <hr class="offset-xl">
-                    <a href=""><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
+                    <a href="ModificaIndirizzoSpedizioneController?action=read&id=<%=bean.getId()%>"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
                   </div>
                 </div>
               </div>

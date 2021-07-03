@@ -62,7 +62,7 @@
                     <h2 class="h4">Tipo: <%=bean.getTipo()%></h2>
                     <h2 class="h4">Numero: <%=bean.getNumCarta()%></h2>
                     <hr class="offset-xl">
-                    <a href=""><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
+                    <a href="ModificaMetodoPagamentoController?action=read&id=<%=bean.getId()%>"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
                   </div>
                 </div>
               </div>

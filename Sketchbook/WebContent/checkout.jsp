@@ -32,20 +32,15 @@
         <form action="index.html" method="post">
 
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-5" style="padding-right:40px">
                   <div class="row group">
                     <div class="col-sm-4"><h2 class="h4">Destinatario</h2></div>
-                    <div class="col-sm-8"> <input type="text" class="form-control" name="receiver" required placeholder="Mario Rossi" /></div>
-                  </div>
-
-                  <div class="row group">
-                    <div class="col-sm-4"><h2 class="h4">Telefono</h2></div>
-                    <div class="col-sm-8"> <input type="text" class="form-control" name="phone" required placeholder="+39 123 456 7890" /></div>
+                    <div class="col-sm-8"> <input type="text" class="form-control" name="receiver" placeholder="Mario Rossi" /></div>
                   </div>
 
                   <div class="row group">
                     <div class="col-sm-4"><h2 class="h4">E-mail</h2></div>
-                    <div class="col-sm-8"> <input type="email" class="form-control" name="email" required placeholder="mariorossi@mail.com" /></div>
+                    <div class="col-sm-8"> <input type="email" class="form-control" name="email" placeholder="mariorossi@mail.com" /></div>
                   </div>
 
                   <div class="row group">
@@ -53,7 +48,7 @@
                     <div class="col-sm-8">
 
                       <div class="group-select justify" tabindex='1'>
-                          <input class="form-control select" id="country" name="country" value="Italy" required />
+                          <input class="form-control select" id="country" name="country" value="Italy"/>
 
                           <ul class="dropdown">
                             <li data-value="Aaland Islands">Aaland Islands</li>
@@ -321,22 +316,17 @@
                     <div class="row">
                       <div class="col-sm-4">
                         <h2 class="h4">Città</h2>
-                        <input type="text" class="form-control" name="city" required placeholder="Roma" />
+                        <input type="text" class="form-control" name="city" placeholder="Roma" />
                         
                       </div>
                       <div class="col-sm-4">
                         <h2 class="h4">Via</h2>
-                        <input type="text" class="form-control" name="street" required placeholder="Via Tal dei Tali" />
-                        
+                        <input type="text" class="form-control" name="street" placeholder="Via Tal dei Tali" />
+                                               
                       </div>
                       <div class="col-sm-2">
-                        <h2 class="h4">Civico</h2>
-                        <input type="text" class="form-control" name="number" required placeholder="9" />
-                        
-                      </div>
-                      <div class="col-sm-2">
-                        <h2 class="h4">Zip</h2>
-                        <input type="text" class="form-control" name="zip" required placeholder="00127" />
+                        <h2 class="h4">CAP</h2>
+                        <input type="text" class="form-control" name="cap" placeholder="80035"/>
                         
                       </div>
                     </div>
@@ -365,7 +355,7 @@
                   <hr class="offset-lg visible-xs">
             </div>
 
-            <div class="col-md-5 white">
+            <div class="col-md-7 white">
                 <hr class="offset-md visible-xs visible-sm">
                 <div class="checkout-cart">
                     <div class="content">
@@ -410,8 +400,9 @@
                 <hr class="offset-md">
                 <div class="row">
                     <div class="col-xs-6 col-md-4">
-                        <h3 class="h5 no-margin">Subtotale: (IVA 22%) €<%=String.format("%.2f", cart.getSubTotale())%></h3>
-                        <h3 class="h4 no-margin">Totale: <%=String.format("%.2f", cart.getTotale())%> </h3>
+                        <h3 class="h5 no-margin">Subtotale (IVA ESCLUSA):   €<%=String.format("%.2f", cart.getSubTotale())%></h3>
+                        <hr class="offset-md">
+                        <h3 class="h4 no-margin">Totale:  €<%=String.format("%.2f", cart.getTotale())%> </h3>
                     </div>
                     <div class="col-md-4 hidden-xs">
                     </div>

@@ -160,7 +160,7 @@ if(term==null || products==null) response.sendRedirect("general-error.jsp");
               		%>
                     
                     <p class="price">€<%= String.format("%.2f", price) %></p>
-
+					<hr class="offset-sm">
                     <a href="CartController?action=addC&id=<%=bean.getId() %>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
                   </div>
                 </div>

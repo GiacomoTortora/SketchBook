@@ -3,19 +3,19 @@
 %>
 
 <%
-	ProductBean product = new ProductDAO().doRetrieveByKey(Integer.parseInt(request.getParameter("id")));
+	IndirizzoSpedizioneBean indSped = new IndirizzoSpedizioneDAO().doRetrieveByKey(Integer.parseInt(request.getParameter("id")));
 %>
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.ProductBean, model.dao.ProductDAO"%>
+<%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.IndirizzoSpedizioneBean, model.dao.IndirizzoSpedizioneDAO"%>
 
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
      
-    <title>Modifica Prodotto</title>
+    <title>Modifica Indirizzo Spedizione</title>
     
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -37,9 +37,8 @@
     <div class="box">
       <div class="container align-center">
       	<div class="row">
-          <h1 class="align-center">Modifica Prodotto</h1>
-          <h3 class="align-center"><%=product.getNome()%></h3>
-          <a href="details?action=read&id=<%=product.getId()%>"><img src="assets/img/product/<%=product.getId()%>/1.jpg" alt="<%=product.getNome()%>" style="width:20%; height:20%"/></a>
+          <h1 class="align-center">Modifica Indirizzo Spedizione</h1>
+          <h3 class="align-center">Indirizzo Via: <%=indSped.getVia() %>, <%=indSped.getCitta()%></h3>
           <hr class="offset-sm">
           </div>
       </div>
@@ -47,7 +46,7 @@
     <hr class="offset-md">
 
 
-    <div class="container" style="margin-right:9%">
+   <div class="container" style="margin-right:9%">
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default">
@@ -57,26 +56,26 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "modificaProdotto" name="modificaProdotto" class="join" method="post">
+                             <form id= "aggiungiIndirizzo" name="aggiungiIndirizzo" class="join" method="post">
         
-			                  	<h5>Nome</h5>
-			                    <input id="nome" type="text" name="nome" value="" placeholder="Nome Prodotto" required=""/>
+			                  	<h5>Via</h5>
+			                    <input id="via" type="text" name="via" value="" placeholder="Via e Civico" required=""/>
 			                    
-			                    <h5>Descrizione</h5>
-			                    <input id="descrizione" type="text" name="descrizione" value="" placeholder="Descrizione Prodotto" required=""/>
+			                    <h5>Città</h5>
+			                    <input id="citta" type="text" name="citta" value="" placeholder="Città" required=""/>
 			                    
-								<h5>Prezzo</h5>
-			                    <input id="prezzo" type="text" name="prezzo" value="" placeholder="Prezzo" required=""/>
+								<h5>CAP</h5>
+			                    <input id="cap" type="text" name="cap" value="" placeholder="CAP" required=""/>
 			                    
-			                    <h5>IVA %</h5>
-			                     <input id="iva" type="text" name="iva" value="22" required=""/>
+			                    <h5>Provincia</h5>
+			                     <input id="provincia" type="text" name="provincia" value="" placeholder="Provincia" required=""/>
 			                    
-								<h5>Quantità</h5>
-			                    <input id="quantita" type="number" name="quantita" value="1" required=""/>
+								<h5>Stato</h5>
+			                    <input id="stato" type="text" name="stato" value="" placeholder="Stato" required=""/>
 			                    <hr class="offset-lg">
-			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Prodotto</button> &nbsp;&nbsp;
+			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Indirizzo</button> &nbsp;&nbsp;
 			                    <h5>OPPURE</h5>
-			                    <button id="delete" type="submit" class="btn btn-primary btn-sm">Elimina Prodotto</button> &nbsp;&nbsp;
+			                    <button id="delete" type="submit" class="btn btn-primary btn-sm">Elimina Indirizzo</button> &nbsp;&nbsp;
 			                  </form>
                             </div>
             			</div>

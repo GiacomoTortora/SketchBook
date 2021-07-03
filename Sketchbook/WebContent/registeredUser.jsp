@@ -47,7 +47,7 @@
                     <h1 class="h3" style="color:#3ab5da">Dati Personali <i class="ion-person"></i></h1>                       
                     <h4 class="h5">Permette di modificare i propri dati personali.</h4>
                     <hr class="offset-xl">
-                    <a href="ModificaDatiPersonali.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
+                    <a href="DatiPersonali.jsp"><button class="btn btn-primary btn-sm rounded">Vai</button></a>
                   </div>
                 </div>
               </div>

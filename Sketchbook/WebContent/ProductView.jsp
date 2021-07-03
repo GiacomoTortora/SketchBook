@@ -209,7 +209,7 @@
                 <h2 class="h3">Derwent Matite 6pz</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
+              <a href="CartController?action=addC&id=10"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -223,7 +223,7 @@
                 <h2 class="h3">W&N Promarkers</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
+                <a href="CartController?action=addC&id=13"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -237,7 +237,7 @@
                 <h2 class="h3">Ecoline Brush Pen</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
+              <a href="CartController?action=addC&id=15"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -252,7 +252,7 @@
                 <h2 class="h3">W&N Acquerelli</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
+                <a href="CartController?action=addC&id=17"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -284,7 +284,7 @@
                 <h2 class="h3">Derwent Paint Kit</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
+                <a href="CartController?action=addC&id=19"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -299,7 +299,7 @@
                 <h2 class="h3">W&N Promarker Color</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
+                <a href="CartController?action=addC&id=16"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -311,10 +311,10 @@
               <div class="content align-center">
                 <p class="price">€9.99</p>
                 <p class="price through">€14.99</p>
-                                <h2 class="h3">Canson Art Book</h2>
+                <h2 class="h3">Canson Art Book</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
+                <a href="CartController?action=addC&id=5"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -343,7 +343,7 @@
                 <h2 class="h3">Faber-Castel Polychromos</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
+                <a href="CartController?action=addC&id=7"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -357,7 +357,7 @@
                 <h2 class="h3">Pennelli LeFranc Bougeois</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
+                <a href="CartController?action=addC&id=22"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -371,7 +371,7 @@
                 <h2 class="h3">Tela Pintura 30x40</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al Carrello</button>
+                <a href="CartController?action=addC&id=24"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
