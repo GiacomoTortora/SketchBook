@@ -17,6 +17,34 @@
   	<servlet-name>LoginController</servlet-name>
   	<servlet-class>control.LoginController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AggiungiProdottoController</servlet-name>
+  	<servlet-class>control.AggiungiProdottoController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ModProdottoController</servlet-name>
+  	<servlet-class>control.ModProdottoController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ModUserController</servlet-name>
+  	<servlet-class>control.ModUserController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ModPagamentoController</servlet-name>
+  	<servlet-class>control.ModPagamentoController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ModIndirizzoController</servlet-name>
+  	<servlet-class>control.ModIndirizzoController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AggiungiMetodoController</servlet-name>
+  	<servlet-class>control.AggiungiMetodoController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AggiungiIndirizzoController</servlet-name>
+  	<servlet-class>control.AggiungiIndirizzoController</servlet-class>
+  </servlet>
     <servlet>
   	<servlet-name>CheckoutController</servlet-name>
   	<servlet-class>control.CheckoutController</servlet-class>
@@ -58,6 +86,10 @@
   	<url-pattern>/signup</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+  	<servlet-name>AggiungiIndirizzoController</servlet-name>
+  	<url-pattern>/aggiungiindirizzo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
   	<servlet-name>ProductDetails</servlet-name>
   	<url-pattern>/details</url-pattern>
   </servlet-mapping>
@@ -70,8 +102,32 @@
   	<url-pattern>/checkout</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+  	<servlet-name>AggiungiMetodoController</servlet-name>
+  	<url-pattern>/aggiungimetodo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
   	<servlet-name>CartController</servlet-name>
   	<url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ModIndirizzoController</servlet-name>
+  	<url-pattern>/modindirizzo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ModUserController</servlet-name>
+  	<url-pattern>/moduser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ModPagamentoController</servlet-name>
+  	<url-pattern>/modpagamento</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ModProdottoController</servlet-name>
+  	<url-pattern>/modprod</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>AggiungiProdottoController</servlet-name>
+  	<url-pattern>/addprod</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>SearchController</servlet-name>

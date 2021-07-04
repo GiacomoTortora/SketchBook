@@ -56,20 +56,24 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "aggiungiIndirizzo" name="aggiungiIndirizzo" class="join" method="post">
+                             <form id= "modUser" name="modUser" class="join" method="post" onsubmit="return validateUser(this)">
         
 			                  	<h5>Nome</h5>
-			                    <input id="nome" type="text" name="nome" value="<%=usrData.getFirstName()%>" placeholder="Nome" required=""/>
+			                    <input id="name" type="text" name="name" value="<%=usrData.getFirstName()%>" placeholder="Nome" required=""/>
+			                    <p class="errormsg" id="nameErr"></p>
 			                    
 			                    <h5>Cognome</h5>
-			                    <input id="cognome" type="text" name="cognome" value="<%=usrData.getLastName()%>" placeholder="Cognome" required=""/>
+			                    <input id="surname" type="text" name="surname" value="<%=usrData.getLastName()%>" placeholder="Cognome" required=""/>
+			                    <p class="errormsg" id="surnameErr"></p>
 			                    
 								<h5>Email</h5>
-			                    <input id="email" type="text" name="email" value="<%=usrData.getEmail()%>" placeholder="Email" required=""/>
+			                    <input id="reMail" type="text" name="reMail" value="<%=usrData.getEmail()%>" placeholder="Email" required=""/>
+			                    <p class="errormsg" id="reMailErr"></p>
 			                    
 			                    <h5>Password</h5>
-			                     <input id="password" type="text" name="password" value="<%=usrData.getPassword()%>" placeholder="Password" required=""/>
-
+			                     <input id="rePwd" type="text" name="rePwd" value="<%=usrData.getPassword()%>" placeholder="Password" required=""/>
+                                 <p class="errormsg" id="newPwdErr"></p>
+                                 
 			                    <hr class="offset-lg">
 			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Dati</button> &nbsp;&nbsp;
 			                  </form>

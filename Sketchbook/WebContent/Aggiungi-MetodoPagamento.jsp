@@ -49,15 +49,18 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "aggiungiIndirizzo" name="aggiungiIndirizzo" class="join" method="post">
+                             <form id= "aggiungiMetodo" name="aggiungiMetodo" class="join" method="post" onsubmit="validateMetodoPagamento(this)">
         
 			                  	<h5>Numero Carta</h5>
-			                    <input id="#carta" type="text" name="#carta" value="" placeholder="Numero Carta" required=""/>
+			                    <input id="carta" type="text" name="carta" value="" placeholder="Numero Carta" required=""/>
+			                    <p class="errormsg" id="cartaErr"></p>
 			                    
 			                    <h5>Tipo</h5>
-			                    <input id="tipo" type="text" name="tipo" value="" placeholder="Tipo Carta" required=""/>		                   
+			                    <input id="tipo" type="text" name="tipo" value="" placeholder="Tipo Carta" required=""/>
+			                    <p class="errormsg" id="tipoErr"></p>
+			                    		                   
 			                    <hr class="offset-lg">
-			                    <button id="addBtn" type="submit" class="btn btn-primary btn-sm">Aggiungi</button> &nbsp;&nbsp;  
+			                    <button id="metodoBtn" type="submit" class="btn btn-primary btn-sm">Aggiungi</button> &nbsp;&nbsp;  
 			                  </form>
                             </div>
             			</div>

@@ -57,22 +57,27 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "modificaProdotto" name="modificaProdotto" class="join" method="post">
+                             <form id= "modificaProdotto" name="modificaProdotto" class="join" method="post" onsubmit="return validateProduct(this)">
         
 			                  	<h5>Nome</h5>
 			                    <input id="nome" type="text" name="nome" value="" placeholder="Nome Prodotto" required=""/>
+			                    <p class="errormsg" id="nomeErr"></p>
 			                    
 			                    <h5>Descrizione</h5>
 			                    <input id="descrizione" type="text" name="descrizione" value="" placeholder="Descrizione Prodotto" required=""/>
+			                    <p class="errormsg" id="descrizioneErr"></p>
 			                    
 								<h5>Prezzo</h5>
 			                    <input id="prezzo" type="text" name="prezzo" value="" placeholder="Prezzo" required=""/>
+			                    <p class="errormsg" id="prezzoErr"></p>
 			                    
 			                    <h5>IVA %</h5>
 			                     <input id="iva" type="text" name="iva" value="22" required=""/>
+			                     <p class="errormsg" id="ivaErr"></p>
 			                    
 								<h5>Quantità</h5>
 			                    <input id="quantita" type="number" name="quantita" value="1" required=""/>
+			                    <p class="errormsg" id="quantitaErr"></p>
 			                    <hr class="offset-lg">
 			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Prodotto</button> &nbsp;&nbsp;
 			                    <h5>OPPURE</h5>

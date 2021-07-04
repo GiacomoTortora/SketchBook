@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Catamaran:400,100,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/custom-scroll/jquery.mCustomScrollbar.css" rel="stylesheet">
+     <script type="text/javascript" src="assets/js/formValidation.js"> </script>
 </head>
 
 <body>
@@ -49,22 +50,27 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "modificaProdotto" name="modificaProdotto" class="join" method="post">
+                             <form id= "aggiungiProdotto" name="modificaProdotto" class="join" method="post" onsubmit="return validateProduct(this)">
         
 			                  	<h5>Nome</h5>
 			                    <input id="nome" type="text" name="nome" value="" placeholder="Nome Prodotto" required=""/>
+			                    <p class="errormsg" id="nomeErr"></p>
 			                    
 			                    <h5>Descrizione</h5>
 			                    <input id="descrizione" type="text" name="descrizione" value="" placeholder="Descrizione Prodotto" required=""/>
+			                    <p class="errormsg" id="descrizioneErr"></p>
 			                    
 								<h5>Prezzo</h5>
 			                    <input id="prezzo" type="text" name="prezzo" value="" placeholder="Prezzo" required=""/>
+			                    <p class="errormsg" id="prezzoErr"></p>
 			                    
 			                    <h5>IVA %</h5>
 			                     <input id="iva" type="text" name="iva" value="22" required=""/>
+			                     <p class="errormsg" id="ivaErr"></p>
 			                    
 								<h5>Quantità</h5>
 			                    <input id="quantita" type="number" name="quantita" value="1" required=""/>
+			                    <p class="errormsg" id="quantitaErr"></p>
 			                    <hr class="offset-lg">
 			                    <button id="addBtn" type="submit" class="btn btn-primary btn-sm">Aggiungi Prodotto</button> &nbsp;&nbsp;
 			                    <h5>N.B - Non scordare di caricare le immagini del prodotto sul server!</h5>

@@ -56,22 +56,27 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "aggiungiIndirizzo" name="aggiungiIndirizzo" class="join" method="post">
+                             <form id= "modificaIndirizzo" name="modificaIndirizzo" class="join" method="post" onsubmit="return validateIndirizzo(this)">
         
 			                  	<h5>Via</h5>
 			                    <input id="via" type="text" name="via" value="" placeholder="Via e Civico" required=""/>
+			                    <p class="errormsg" id="viaErr"></p>
 			                    
 			                    <h5>Città</h5>
 			                    <input id="citta" type="text" name="citta" value="" placeholder="Città" required=""/>
+			                    <p class="errormsg" id="cittaErr"></p>
 			                    
 								<h5>CAP</h5>
 			                    <input id="cap" type="text" name="cap" value="" placeholder="CAP" required=""/>
+			                    <p class="errormsg" id="capErr"></p>
 			                    
 			                    <h5>Provincia</h5>
 			                     <input id="provincia" type="text" name="provincia" value="" placeholder="Provincia" required=""/>
+			                      <p class="errormsg" id="provinciaErr"></p>
 			                    
 								<h5>Stato</h5>
 			                    <input id="stato" type="text" name="stato" value="" placeholder="Stato" required=""/>
+			                    <p class="errormsg" id="statoErr"></p>
 			                    <hr class="offset-lg">
 			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Indirizzo</button> &nbsp;&nbsp;
 			                    <h5>OPPURE</h5>

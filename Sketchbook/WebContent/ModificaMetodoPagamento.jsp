@@ -56,13 +56,15 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "modificaMetodoPagamento" name="modificaMetodoPagamento" class="join" method="post">
+                             <form id= "modificaMetodoPagamento" name="modificaMetodoPagamento" class="join" method="post" onsubmit="return validateMetodoPagamento(this)">
         
 			                  	<h5>Numero Carta</h5>
-			                    <input id="numeroCarta" type="text" name="numeroCarta" value="" placeholder="Numero Carta" required=""/>
+			                    <input id="carta" type="text" name="numeroCarta" value="" placeholder="Numero Carta" required=""/>
+			                    <p class="errormsg" id="cartaErr"></p>
 			                    
 			                    <h5>Tipo</h5>
 			                    <input id="tipo" type="text" name="tipo" value="" placeholder="Tipo Carta" required=""/>
+		                        <p class="errormsg" id="tipoErr"></p>
 			                    
 			                    <hr class="offset-lg">
 			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Metodo Pagamento</button> &nbsp;&nbsp;
