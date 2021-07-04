@@ -147,7 +147,7 @@ public class IndirizzoSpedizioneDAO {
 		String checkSQL = "SELECT ID_CLIENTE FROM " + IndirizzoSpedizioneDAO.TABLE_NAME1
 							+ " JOIN " + IndirizzoSpedizioneDAO.TABLE_NAME2 +
 							" ON ID=ID_INDIRIZZO " +
-						   "WHERE VIA = ?,   CITTA = ?, CAP = ?, PROVINCIA = ?, STATO = ?";
+						   "WHERE VIA = ?, CITTA = ?, CAP = ?, PROVINCIA = ?, STATO = ?";
 		try {
 			connection = ds.getConnection();
 			preparedStatement = connection.prepareStatement(checkSQL);

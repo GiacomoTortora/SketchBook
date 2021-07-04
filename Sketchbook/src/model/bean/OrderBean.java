@@ -1,13 +1,13 @@
 package model.bean;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 public class OrderBean {
 
 	private int id;
-	private Date data;
+	private LocalDate data;
 	private String stato;
 	private int idCliente;
 	private double totale;
@@ -21,11 +21,11 @@ public class OrderBean {
 		this.id=newId;
 	}
 	
-	public Date getData() {
+	public LocalDate getData() {
 		return this.data;
 	}
 	
-	public void setData(Date newData) {
+	public void setData(LocalDate newData) {
 		this.data=newData;
 	}
 	

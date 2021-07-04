@@ -59,7 +59,7 @@ public class OrderDAO {
 				
 				bean.setId(rs.getInt("id"));
 				bean.setProdotti(prodotti.doRetrieveByOrder(bean.getId()));
-				bean.setData(rs.getDate("Data"));
+				bean.setData(rs.getDate("Data").toLocalDate());
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
 				bean.setTotale(rs.getDouble("totale"));
@@ -97,7 +97,7 @@ public class OrderDAO {
 			while (rs.next()) {
 				bean.setId(rs.getInt("id"));
 				bean.setProdotti(prodotti.doRetrieveByOrder(bean.getId()));
-				bean.setData(rs.getDate("Data"));
+				bean.setData(rs.getDate("Data").toLocalDate());
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
 				bean.setTotale(rs.getDouble("totale"));
@@ -143,67 +143,6 @@ public class OrderDAO {
 		return (result != 0);
 	}
 	
-	
-	
-
-	public synchronized void doSave(OrderBean ordine) throws SQLException {
-
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-
-		String insertSQL = "INSERT INTO " + OrderDAO.TABLE_NAME1
-				+ " (DATA, STATO, ID_CLIENTE, TOTALE) VALUES (?, ?, ?, ?)";
-		
-		String insertSQL2 = "INSERT INTO " + OrderDAO.TABLE_NAME2 
-							+ " ID_ORDINE, ID_PRODOTTO, NOMEPRODOTTO, PREZZOPRODOTTO " + 
-							"IVAPRODOTTO, DESCRIZIONEPRODOTTO, QUANTITA " +
-							"VALUES (?, ?, ?, ?, ?, ?, ?)";
-		try {
-			connection = ds.getConnection();
-			preparedStatement = connection.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
-			
-			preparedStatement.setDate(1, ordine.getData());
-			preparedStatement.setString(2, ordine.getStato());
-			preparedStatement.setInt(3, ordine.getIdCliente());
-			preparedStatement.setDouble(4, ordine.getTotale());
-			
-			preparedStatement.executeUpdate();
-			
-			int id = preparedStatement.getGeneratedKeys().getInt(1);
-			  
-			
-			List<ProductBean> prodotti = ordine.getProdotti();
-			
-			for(int i = 0; i < prodotti.size(); ++i) {
-				ProductBean prodotto = prodotti.get(i);
-				preparedStatement = connection.prepareStatement(insertSQL2);
-				
-				preparedStatement.setInt(1, id);
-				preparedStatement.setInt(2, prodotto.getId());
-				preparedStatement.setString(3, prodotto.getNome());
-				preparedStatement.setDouble(4, prodotto.getPrezzo());
-				preparedStatement.setDouble(5, prodotto.getIva());
-				preparedStatement.setString(6, prodotto.getDescrizione());
-				preparedStatement.setInt(7, prodotto.getQuantitaCarrello());
-				
-				preparedStatement.executeUpdate();
-				
-				prodotto.setQuantitaCatalogo(prodotto.getQuantitaCatalogo() - prodotto.getQuantitaCarrello());
-				new ProductDAO().doUpdate(prodotto);
-			}
-			connection.commit();
-		} finally {
-			try {
-				if (preparedStatement != null)
-					preparedStatement.close();
-			} finally {
-				if (connection != null)
-					connection.close();
-			}
-		}
-	}
-	
-	
 		public synchronized Collection<OrderBean> doRetrieveByUser(UserBean user, String order) throws SQLException{
 	
 		Connection connection = null;
@@ -235,7 +174,7 @@ public class OrderDAO {
 				bean.setId(rs.getInt("id"));
 				
 				bean.setProdotti(prodotti.doRetrieveByOrder(bean.getId()));
-				bean.setData(rs.getDate("Data"));
+				bean.setData(rs.getDate("Data").toLocalDate());
 				bean.setStato(rs.getString("Stato"));
 				bean.setIdCliente(rs.getInt("ID_Cliente"));
 				bean.setTotale(rs.getDouble("totale"));
@@ -256,6 +195,7 @@ public class OrderDAO {
 	}
 		
 		public synchronized void doUpdate(OrderBean ordine) throws SQLException {
+			
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
 
@@ -269,7 +209,7 @@ public class OrderDAO {
 				preparedStatement = connection.prepareStatement(updateSQL);
 				
 				preparedStatement = connection.prepareStatement(updateSQL);
-				preparedStatement.setDate(1, ordine.getData());
+				preparedStatement.setDate(1, java.sql.Date.valueOf(ordine.getData()));
 				preparedStatement.setString(2, ordine.getStato());
 				preparedStatement.setInt(3, ordine.getId());
 				
@@ -312,7 +252,7 @@ public class OrderDAO {
 					
 					bean.setId(rs.getInt("id"));
 					bean.setProdotti(new ProductDAO().doRetrieveByOrder(bean.getId()));
-					bean.setData(rs.getDate("Data"));
+					bean.setData(rs.getDate("Data").toLocalDate());
 					bean.setStato(rs.getString("Stato"));
 					bean.setIdCliente(rs.getInt("ID_Cliente"));
 					bean.setTotale(rs.getDouble("totale"));
@@ -330,5 +270,65 @@ public class OrderDAO {
 				}
 			}
 			return ordini;
+		}
+		
+		public synchronized void doSave(OrderBean ordine) throws SQLException {
+			int x = 50;
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+
+			String insertSQL = "INSERT INTO " + OrderDAO.TABLE_NAME1
+					+ " (DATA, STATO, ID_CLIENTE, TOTALE) VALUES (?, ?, ?, ?)";
+			
+			String insertSQL2 = "INSERT INTO DETTAGLI_ORDINE (ID_ORDINE, ID_PRODOTTO, NOMEPRODOTTO, PREZZOPRODOTTO," + 
+								" IVAPRODOTTO, DESCRIZIONEPRODOTTO, QUANTITA) "
+								+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
+			try {
+				connection = ds.getConnection();
+				connection.setAutoCommit(false);
+				preparedStatement = connection.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
+				
+				preparedStatement.setDate(1, java.sql.Date.valueOf(ordine.getData()));
+				preparedStatement.setString(2, ordine.getStato());
+				preparedStatement.setInt(3, ordine.getIdCliente());
+				preparedStatement.setDouble(4, ordine.getTotale());
+				preparedStatement.executeUpdate();
+				preparedStatement.close();
+				//ResultSet rs = preparedStatement.getGeneratedKeys();
+				//
+				List<ProductBean> prodotti = ordine.getProdotti();
+				preparedStatement = connection.prepareStatement(insertSQL2);
+				
+				for(int i = 0; i < prodotti.size(); ++i) {
+					ProductBean prodotto = prodotti.get(i);
+					
+					
+					System.out.println(++x);
+					preparedStatement.setInt(1, 1);
+					System.out.println(++x);
+					preparedStatement.setInt(2, prodotto.getId());
+					preparedStatement.setString(3, prodotto.getNome());
+					preparedStatement.setDouble(4, prodotto.getPrezzo());
+					preparedStatement.setDouble(5, prodotto.getIva());
+					preparedStatement.setString(6, prodotto.getDescrizione());
+					preparedStatement.setInt(7, prodotto.getQuantitaCarrello());
+					System.out.println(++x);
+					preparedStatement.executeUpdate();
+					System.out.println(++x);
+					prodotto.setQuantitaCatalogo(prodotto.getQuantitaCatalogo() - prodotto.getQuantitaCarrello());
+					System.out.println(++x);
+					//new ProductDAO().doUpdate(prodotto);				
+					System.out.println(++x);
+				}System.out.println(++x);
+				connection.commit();
+			} finally {
+				try {
+					if (preparedStatement != null)
+						preparedStatement.close();
+				} finally {
+					if (connection != null)
+						connection.close();
+				}
+			}
 		}
 }

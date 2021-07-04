@@ -56,4 +56,8 @@ public class IndirizzoSpedizioneBean {
 	public void setStato(String newStato) {
 		this.stato=newStato;
 	}
+	
+	public String toString() {
+		return "Via" + getVia() + ", " + getCitta() + ", " + getProvincia() +  ", " + getStato();
+	}
 }

@@ -1,7 +1,7 @@
 package control;
 
 import java.io.IOException;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -30,28 +30,31 @@ public class CheckoutController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {System.out.println("xd1");
+		try {	
+				int x = 0;
 				OrderBean ordine = new OrderBean();
 				HttpSession session = request.getSession(false); 
-				System.out.println("xd2");
+				System.out.println(++x);
 				Cart cart = (Cart)session.getAttribute("cart");
 				UserBean user = (UserBean) session.getAttribute("currentSessionUser");
-				System.out.println("xd3");
+				System.out.println(++x);
 				if(user == null) {
-					System.out.println("xd4");
+					System.out.println(++x);
 					user = (UserBean)session.getAttribute("adminSession");
 				}
-				System.out.println("xd5");
+				System.out.println(++x);
 				List<ProductBean> prodotti = cart.getProducts();
-				System.out.println("xd6");
+				System.out.println(++x);
 				ordine.setIdCliente(user.getId());
-				ordine.setData((java.sql.Date) new Date());
+				System.out.println(++x);
+				ordine.setData(LocalDate.now());
+				System.out.println(++x);
 				ordine.setProdotti(prodotti);
 				ordine.setStato("Ordinato");
-				System.out.println("xd7");
+				System.out.println(++x);
 				new OrderDAO().doSave(ordine);
 				session.removeAttribute("cart");
-				System.out.println("xd8");
+				System.out.println(++x);
 				response.sendRedirect("ProductView.jsp");
 		}catch(Exception e) {
 			

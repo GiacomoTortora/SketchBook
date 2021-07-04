@@ -307,7 +307,7 @@ public synchronized Collection<ProductBean> doRetrieveByCategory(int categoria) 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		String updateSQL = "UPDATE prodotto NOME = ?, DESCRIZIONE = ?, PREZZO = ? " +
+		String updateSQL = "UPDATE prodotto NOME = ?, DESCRIZIONE = ?, PREZZO = ?, " +
 							"IVA = ?, QUANTITA = ?" +
 							" WHERE ID = ?";
 
@@ -316,7 +316,6 @@ public synchronized Collection<ProductBean> doRetrieveByCategory(int categoria) 
 			connection.setAutoCommit(false);
 			preparedStatement = connection.prepareStatement(updateSQL);
 			
-			preparedStatement = connection.prepareStatement(updateSQL);
 			preparedStatement.setString(1, product.getNome());
 			preparedStatement.setString(2, product.getDescrizione());
 			preparedStatement.setDouble(3, product.getPrezzo());

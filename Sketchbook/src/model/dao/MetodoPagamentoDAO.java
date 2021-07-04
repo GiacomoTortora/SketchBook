@@ -141,7 +141,7 @@ public class MetodoPagamentoDAO {
 		String checkSQL = "SELECT ID_CLIENTE FROM " + MetodoPagamentoDAO.TABLE_NAME1
 						   + " JOIN " + MetodoPagamentoDAO.TABLE_NAME2 +
 						   " ON ID=ID_PAGAMENTO " +
-						   "WHERE #carta = ?,   tipo = ?";
+						   "WHERE #carta = ?, tipo = ?";
 		
 		try {
 			connection = ds.getConnection();
