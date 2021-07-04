@@ -44,7 +44,7 @@
                 <div class="panel panel-default">
                   <div class="panel-body">
                     <div class="checkout-cart">
-                      <div class="content">
+                      <div id="toUpdate" class="content">
                    <% if (products.isEmpty()) {%>
                    <h3 class="align-center"> Il carrello è vuoto :( </h3>
                    <%} else for(ProductBean prod : products){ %>
@@ -56,17 +56,17 @@
                             </div>
                             <div class="media-body">
                               <h2 class="h4 media-heading"><%=prod.getNome()%></h2>
-                              <p class="price">€<%=String.format("%.2f", prod.getPrezzoTot())%></p>
+                              <p id="price" class="price">€<%=String.format("%.2f", prod.getPrezzoTot())%></p>
                             </div>
                             
                             <div class="controls">
                               <div class="input-group">
                                 <span class="input-group-btn">
-                                  <button class="btn btn-default btn-sm" type="button" data-action="minus"><i class="ion-minus-round"></i></button>
+                                  <button id="minus" class="btn btn-default btn-sm" type="button" data-action="minus" onClick="calcPrice()"  ><i class="ion-minus-round"></i></button>
                                 </span>
-                                <input type="text" class="form-control input-sm" placeholder="Qty" value="<%=prod.getQuantitaCarrello()%>" readonly="">
+                                <input id="quantity" type="text" class="form-control input-sm" placeholder="Qty" value="<%=prod.getQuantitaCarrello()%>" readonly="">
                                 <span class="input-group-btn">
-                                  <button class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button>
+                                  <button id="plus" class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button>
                                 </span>
                               </div><!-- /input-group -->
                               <a href="CartController?action=deleteC&id=<%=prod.getId()%>"><button class="btn btn-primary btn-xs rounded"> <i class="ion-close"></i> Rimuovi</button></a>
@@ -87,7 +87,7 @@
                     <h2 class="no-margin">Riepilogo</h2>
                     <hr class="offset-md">
 
-                    <div class="container-fluid">
+                    <div id="toUpdate" class="container-fluid">
                         <div class="row">
                             <div class="col-xs-6">
                                 <p>Subtotale</p>
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container-fluid">
+                    <div id="toUpdate" class="container-fluid">
                         <div class="row">
                             <div class="col-xs-6">
                                 <p>IVA</p>
@@ -109,7 +109,7 @@
                     </div>
                     <hr>
 
-                    <div class="container-fluid">
+                    <div id="toUpdate" class="container-fluid">
                         <div class="row">
                             <div class="col-xs-6">
                                 <h3 class="no-margin">Totale</h3>

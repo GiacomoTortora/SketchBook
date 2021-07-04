@@ -36,7 +36,7 @@
     <hr class="offset-md">
 
     <div class="container checkout">
-        <form action="index.html" method="post">
+        <form action="CheckoutController" method="GET">
 
         <div class="row">
             <div class="col-md-5" style="padding-right:40px">
@@ -382,7 +382,7 @@
                             </div>
                             <div class="media-body">
                               <h2 class="h4 media-heading"><%=prod.getNome()%></h2>
-                              <p class="price">€<%=String.format("%.2f", prod.getPrezzoTot())%></p>
+                           <p class="price">€<%=String.format("%.2f", prod.getPrezzoTot())%></p>
                             </div>
                             
                             <div class="controls">
@@ -407,7 +407,6 @@
             </div>
 
             <hr class="offset-lg hidden-xs">
-			<form action="CheckoutController">
             <div class="col-sm-12 white">
                 <hr class="offset-md">
                 <div class="row">
@@ -419,12 +418,12 @@
                     <div class="col-md-4 hidden-xs">
                     </div>
                     <div class="col-xs-6 col-md-4">
-                       <button class="btn btn-primary pull-right">Conferma Ordine</button>
+                       <button class="btn btn-primary pull-right" type="submit">Conferma Ordine</button>
                     </div>
                 </div>            
                 <hr class="offset-md">
             </div>
-            </form>
+           
 
         </div>
         </form>

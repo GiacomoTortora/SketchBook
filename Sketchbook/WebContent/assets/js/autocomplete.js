@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 $(document).ready(function() {
     $('#searchInput').autocomplete({
 	    //FINESTRA SUGGERIMENTI
@@ -24,3 +27,23 @@ $(document).ready(function() {
  
     });
 });
+
+function focus(){
+	document.getElementById("searchInput").focus;
+}
+
+
+/*$(document).ready(function(){
+  $('#plus').on('click', function()
+   {
+	 location.reload();
+  })
+})
+
+$(document).ready(function(){
+  $('#minus').on('click', function()
+   {
+	 location.reload();
+  })
+})*/
+

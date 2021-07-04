@@ -119,7 +119,7 @@
           <div class="search" data-style="hidden">
             <div class="input">
               <button type="button"><i class="ion-ios-search"></i></button>
-              <input id="searchInput" type="text" name="search" value="" placeholder="Cerca..."/>
+              <input id="searchInput" type="text" name="search" value="" placeholder="Cerca..." onClick="focus()"/>
             </div>
           </div>
          </form>
