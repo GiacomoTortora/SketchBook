@@ -64,7 +64,7 @@
 						%>
                       			
 						<%
-                                int quantita = bean.getQuantitaCarrello();	//va implementata una funzione che ritorna la quantità di un prodotto nell'ordine
+                                int quantita = bean.getQuantitaCarrello();
               					double price = quantita * (bean.getPrezzoTot()); 
               			%>
                            

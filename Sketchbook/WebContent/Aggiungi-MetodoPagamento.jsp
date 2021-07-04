@@ -58,6 +58,8 @@
 			                    <h5>Tipo</h5>
 			                    <input id="tipo" type="text" name="tipo" value="" placeholder="Tipo Carta" required=""/>
 			                    <p class="errormsg" id="tipoErr"></p>
+			                    
+			                    <h5 id="messaggio" style="color:green"></h5>
 			                    		                   
 			                    <hr class="offset-lg">
 			                    <button id="metodoBtn" type="submit" class="btn btn-primary btn-sm">Aggiungi</button> &nbsp;&nbsp;  

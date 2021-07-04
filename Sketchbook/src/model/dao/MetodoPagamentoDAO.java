@@ -137,46 +137,44 @@ public class MetodoPagamentoDAO {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
-		
-		String checkSQL = "SELECT ID_CLIENTE FROM " + MetodoPagamentoDAO.TABLE_NAME1
-						   + " JOIN " + MetodoPagamentoDAO.TABLE_NAME2 +
-						   " ON ID=ID_PAGAMENTO " +
-						   "WHERE #carta = ? AND tipo = ?";
+		PreparedStatement preparedStatementCheck = null;
 		
 		try {
-			connection = ds.getConnection();
-			preparedStatement = connection.prepareStatement(checkSQL);
 			
-			preparedStatement.setString(1, metodo_pagamento.getNumCarta());
-			preparedStatement.setString(2, metodo_pagamento.getTipo());
+				String SQL = "SELECT ID FROM METODO_PAGAMENTO WHERE `#CARTA` = ?";
 			
-			ResultSet rs = preparedStatement.executeQuery();
-		
-			while(rs.next()) {
-				if(rs.getInt("id_cliente") == user.getId())
-					return;
-			}
-			
-
-			String insertSQL = "INSERT INTO " + MetodoPagamentoDAO.TABLE_NAME1
-				+ " (ID, #CARTA, TIPO) VALUES (?, ?, ?)";
-			String insertSQL2 = "INSERT INTO " + MetodoPagamentoDAO.TABLE_NAME2 +
-							" (ID_CLIENTE, ID_PAGAMENTO) VALUES (?, ?)";
-
-			connection = ds.getConnection();
-			preparedStatement = connection.prepareStatement(insertSQL);
-			PreparedStatement preparedStatement2 = connection.prepareStatement(insertSQL2);
-			
-			preparedStatement.setInt(1, metodo_pagamento.getId());
-			preparedStatement.setString(2, metodo_pagamento.getNumCarta());
-			preparedStatement.setString(3, metodo_pagamento.getTipo());
-			
-			preparedStatement2.setInt(1, user.getId());
-			preparedStatement2.setInt(2, metodo_pagamento.getId());
-			
-			preparedStatement.executeUpdate();
-			preparedStatement2.executeUpdate();
-			connection.commit();
+				String insertSQL = "INSERT INTO " + MetodoPagamentoDAO.TABLE_NAME1
+					+ " (ID, `#CARTA`, TIPO) VALUES (?, ?, ?)";
+								
+				String insertSQL2 = "INSERT INTO " + MetodoPagamentoDAO.TABLE_NAME2 +
+								" (utilizzo.ID_Cliente, utilizzo.ID_Pagamento) VALUES (?, ?)";				
+	
+				connection = ds.getConnection();
+				preparedStatement = connection.prepareStatement(insertSQL);
+				PreparedStatement preparedStatement2 = connection.prepareStatement(insertSQL2);
+				
+				preparedStatement.setInt(1, metodo_pagamento.getId());
+				preparedStatement.setString(2, metodo_pagamento.getNumCarta());
+				preparedStatement.setString(3, metodo_pagamento.getTipo());
+								
+				connection.setAutoCommit(false);
+				
+				preparedStatement.executeUpdate();
+				
+				preparedStatementCheck = connection.prepareStatement(SQL);
+				preparedStatementCheck.setString(1, metodo_pagamento.getNumCarta());
+				ResultSet rs = preparedStatementCheck.executeQuery();
+				int ciaoIoFaccioFunzionareLaQuery=0;
+				while (rs.next()) {
+					System.out.println("sono nel while");
+					ciaoIoFaccioFunzionareLaQuery = rs.getInt("ID");
+				}
+				
+				preparedStatement2.setInt(1, user.getId());
+				preparedStatement2.setInt(2, ciaoIoFaccioFunzionareLaQuery);
+				
+				preparedStatement2.executeUpdate();
+				connection.commit();
 		} finally {
 			try {
 				if (preparedStatement != null)
@@ -239,7 +237,7 @@ public class MetodoPagamentoDAO {
 			PreparedStatement preparedStatement = null;
 
 			String updateSQL = "UPDATE " + MetodoPagamentoDAO.TABLE_NAME1 + 
-								" SET #CARTA = ?, TIPO = ? " +
+								" SET `#CARTA` = ?, `TIPO` = ? " +
 								"WHERE ID = ?";
 
 			try {
@@ -247,10 +245,11 @@ public class MetodoPagamentoDAO {
 				connection.setAutoCommit(false);
 				preparedStatement = connection.prepareStatement(updateSQL);
 				
-				preparedStatement = connection.prepareStatement(updateSQL);
 				preparedStatement.setString(1, metodo.getNumCarta());
 				preparedStatement.setString(2, metodo.getTipo());
 				preparedStatement.setInt(3, metodo.getId());
+				
+				System.out.println(metodo.getId());
 				
 				preparedStatement.executeUpdate();
 

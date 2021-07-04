@@ -40,7 +40,7 @@ public class ModIndirizzoController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			System.out.println("bene");
+			System.out.println("mod ind");
 			IndirizzoSpedizioneDAO save=new IndirizzoSpedizioneDAO();
 			IndirizzoSpedizioneBean indirizzo=new IndirizzoSpedizioneBean();
 			indirizzo.setVia(request.getParameter("via"));
@@ -48,6 +48,7 @@ public class ModIndirizzoController extends HttpServlet {
 			indirizzo.setCAP(request.getParameter("cap"));
 			indirizzo.setProvincia(request.getParameter("provincia"));
 			indirizzo.setStato(request.getParameter("stato"));
+			indirizzo.setId(Integer.parseInt(request.getParameter("id")));
 			save.doUpdate(indirizzo);
 			//response.sendRedirect("Aggiungi-Indirizzo.jsp");
 		}catch(Exception e) {

@@ -42,7 +42,7 @@ public class AggiungiProdottoController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			System.out.println("bene");
+			System.out.println("agg prod");
 			ProductDAO save=new ProductDAO();
 			ProductBean product=new ProductBean();
 			product.setNome(request.getParameter("nome"));

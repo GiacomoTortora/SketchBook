@@ -32,7 +32,7 @@ public class AggiungiIndirizzoController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			System.out.println("bene");
+			System.out.println("agg ind");
 			IndirizzoSpedizioneDAO save=new IndirizzoSpedizioneDAO();
 			IndirizzoSpedizioneBean indirizzo=new IndirizzoSpedizioneBean();
 			UserBean user= new UserBean();

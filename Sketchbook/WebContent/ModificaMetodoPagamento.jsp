@@ -59,17 +59,17 @@
                              <form id= "modificaMetodoPagamento" name="modificaMetodoPagamento" class="join" method="post" onsubmit="return validateMetodoPagamento(this)">
         
 			                  	<h5>Numero Carta</h5>
-			                    <input id="carta" type="text" name="numeroCarta" value="" placeholder="Numero Carta" required=""/>
+			                    <input id="carta" type="text" name="numeroCarta" value="<%=metodoPag.getNumCarta()%>" placeholder="Numero Carta" required=""/>
 			                    <p class="errormsg" id="cartaErr"></p>
 			                    
 			                    <h5>Tipo</h5>
-			                    <input id="tipo" type="text" name="tipo" value="" placeholder="Tipo Carta" required=""/>
+			                    <input id="tipo" type="text" name="tipo" value="<%=metodoPag.getTipo() %>" placeholder="Tipo Carta" required=""/>
 		                        <p class="errormsg" id="tipoErr"></p>
+		                        
+			                    <input id="idbello" name="idbello" type="hidden" value="<%=metodoPag.getId()%>"/>
 			                    
 			                    <hr class="offset-lg">
-			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Metodo Pagamento</button> &nbsp;&nbsp;
-			                    <h5>OPPURE</h5>
-			                    <button id="delete" type="submit" class="btn btn-primary btn-sm">Elimina Metodo Pagamento</button> &nbsp;&nbsp;
+			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Metodo Pagamento</button>
 			                  </form>
                             </div>
             			</div>

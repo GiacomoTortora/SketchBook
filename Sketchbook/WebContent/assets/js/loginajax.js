@@ -170,29 +170,20 @@ if(!regExpName.test(tipo)){
 }
 
 function validateIndirizzo(form){ 
-	
-var via=form.via.value;  
-var città=form.citta.value;
+
 var cap=form.cap.value;
 var provincia=form.provincia.value;
 var stato=form.stato.value;
 var isValid=true;
-$('#viaErr').html("");
 $('#cittaErr').html("");
 $('#capErr').html("");
 $('#provinciaErr').html("");
 $('#statoErr').html("");
 
-
-if(!regExpPlace.test(via)){
-	form.via.focus();
-	$('#viaErr').html("Inserire via valida");
-	isValid=false;
-  }
 if(!regExpPlace.test(città)){
 	 form.citta.focus();
      $('#cittaErr').html("Inserire città valida");
-     isValid=false;
+     isValid=true;
    }
 
 if(!regExpCap.test(cap)){
@@ -428,7 +419,6 @@ $(document).ready(function(){
        $('#aggiungiIndirizzoFrm').on('submit',function(e)
        { 
 	      e.preventDefault(); //blocca il submit del form
-          var via=$('#via').val();
           var citta=$('#citta').val();
           var cap=$('#cap').val();
           var provincia=$('#provincia').val();
@@ -451,8 +441,6 @@ $(document).ready(function(){
        $('#modificaIndirizzo').on('submit',function(e)
        { 
 	      e.preventDefault(); //blocca il submit del form
-          var via=$('#via').val();
-          var citta=$('#citta').val();
           var cap=$('#cap').val();
           var provincia=$('#provincia').val();
           var stato=$('#stato').val()

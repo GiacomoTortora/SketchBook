@@ -42,10 +42,11 @@ public class AggiungiMetodoController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			System.out.println("bene");
+			System.out.println("agg pagamento");
 			MetodoPagamentoDAO save=new MetodoPagamentoDAO();
 			MetodoPagamentoBean metodo=new MetodoPagamentoBean();
 			UserBean user= new UserBean();
+			
 			HttpSession session=request.getSession();
 			user=(UserBean) session.getAttribute("currentSessionUser");
 			if(user==null) {
@@ -54,7 +55,7 @@ public class AggiungiMetodoController extends HttpServlet {
 			metodo.setNumCarta(request.getParameter("carta"));
 			metodo.setTipo(request.getParameter("tipo"));
 			save.doSave(metodo, user);
-			//response.sendRedirect("Aggiungi-Indirizzo.jsp");
+			response.sendRedirect("MetodiPagamento.jsp");
 		}catch(Exception e) {
 			System.out.println(e);
 		}

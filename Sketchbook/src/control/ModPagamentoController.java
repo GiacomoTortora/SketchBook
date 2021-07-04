@@ -40,13 +40,19 @@ public class ModPagamentoController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			System.out.println("bene");
+			System.out.println("mod pagamento");
 			MetodoPagamentoDAO save=new MetodoPagamentoDAO();
 			MetodoPagamentoBean metodo=new MetodoPagamentoBean();
 			metodo.setNumCarta(request.getParameter("carta"));
 			metodo.setTipo(request.getParameter("tipo"));
+			
+			System.out.println(request.getParameter("carta"));
+			System.out.println(request.getParameter("tipo"));
+			System.out.println(request.getParameter("idbello"));
+			int faccioFunzionareTutto = (Integer.parseInt(request.getParameter("idbello")));
+			metodo.setId(faccioFunzionareTutto);
+			
 			save.doUpdate(metodo);
-			//response.sendRedirect("Aggiungi-Indirizzo.jsp");
 		}catch(Exception e) {
 			System.out.println(e);
 		}
