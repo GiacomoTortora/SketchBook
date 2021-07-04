@@ -295,7 +295,6 @@ public class OrderDAO {
 				preparedStatement.executeUpdate();
 				preparedStatement.close();
 				//ResultSet rs = preparedStatement.getGeneratedKeys();
-				//
 				List<ProductBean> prodotti = ordine.getProdotti();
 				preparedStatement = connection.prepareStatement(insertSQL2);
 				

@@ -68,7 +68,7 @@
                     <div class="col-sm-4"><h2 class="h4">Indirizzo</h2></div>
                     <div class="col-sm-8">
                       <div class="group-select justify" tabindex='1'>
-                          <input class="form-control select" id="indirizzo" name="indirizzo" value="Scegli Indirizzo" required/>
+                          <input class="form-control select" id="indirizzo" name="indirizzo" value="Predefinito" required/>
 
                           <ul class="dropdown">
                           	<%
@@ -108,7 +108,7 @@
                     <div class="col-sm-4"><h2 class="h4">Pagamento</h2></div>
                     <div class="col-sm-8">
                       <div class="group-select justify" tabindex='1'>
-                          <input class="form-control select" id="indirizzo" name="indirizzo" value="Scegli Pagamento" required/>
+                          <input class="form-control select" id="indirizzo" name="indirizzo" value="Predefinito" required/>
 
                           <ul class="dropdown">
                           	<%
@@ -185,7 +185,18 @@
                     </div>
                     <div class="col-xs-6 col-md-4">
                     <form action="CheckoutController" method="GET">
+                    <%
+                  		if(pagamenti.size() > 0) {
+                  	%>
                        <button class="btn btn-primary pull-right" type="submit">Conferma Ordine</button>
+                    <%
+                  		}else{
+                    %>
+                    	<button class="btn btn-primary pull-right disabled" type="submit">Conferma Ordine</button>
+                    	<p class="errormsg">Inserire un metodo di pagamento prima della conferma.</p>
+                    <%
+                  		}
+                    %>
                     </form>
                     </div>
                 </div>            

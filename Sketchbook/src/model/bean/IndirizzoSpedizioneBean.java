@@ -58,6 +58,6 @@ public class IndirizzoSpedizioneBean {
 	}
 	
 	public String toString() {
-		return "Via" + getVia() + ", " + getCitta() + ", " + getProvincia() +  ", " + getStato();
+		return "Via " + getVia() + ", " + getCitta() + ", " + getProvincia() +  ", " + getStato();
 	}
 }

@@ -55,7 +55,7 @@ public class CheckoutController extends HttpServlet {
 				new OrderDAO().doSave(ordine);
 				session.removeAttribute("cart");
 				System.out.println(++x);
-				response.sendRedirect("ProductView.jsp");
+				response.sendRedirect("ConfermaOrdine.jsp");
 		}catch(Exception e) {
 			
 		}
