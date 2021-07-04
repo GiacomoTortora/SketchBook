@@ -99,12 +99,14 @@
                     </div>
                     <div id="toUpdate" class="container-fluid">
                         <div class="row">
+                        <% if (!(products.isEmpty())) {%>
                             <div class="col-xs-6">
                                 <p>IVA</p>
                             </div>
-                            <div class="col-xs-6">
-                                <p><b>22%</b></p>
+                            <div class="col-xs-6"> 
+                            	<p><b>22%</b></p>
                             </div>
+                            <% } %>
                         </div>
                     </div>
                     <hr>

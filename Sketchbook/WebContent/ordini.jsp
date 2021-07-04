@@ -2,13 +2,6 @@
 	pageEncoding="utf-8"
 %>
 
-<%
-	UserBean orderUser=new UserBean();
-	orderUser= (UserBean) session.getAttribute("currentSessionUser");
-
-	Collection<?> orders = new OrderDAO().doRetrieveByUser(orderUser,"");
-%>
-
 <!DOCTYPE html>
 <html>
 <%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.OrderBean, model.Cart, model.bean.UserBean, model.dao.OrderDAO"%>
@@ -33,7 +26,18 @@
 <body>
 	<%@ include file="/fragments/header.jsp" %>	
 	
-	<% if(currUser==null) response.sendRedirect("401error.jsp"); %>
+	<% if(currUser==null && admin==null) response.sendRedirect("401error.jsp"); %>
+	
+	<%
+		UserBean user;
+	    if(currUser != null)
+	        user = currUser;
+	    else 
+	        user = admin;
+	    
+	    Collection<?> orders = new OrderDAO().doRetrieveByUser(user,"");
+	    
+	%>
 	
     <hr class="offset-lg">
     <hr class="offset-lg">

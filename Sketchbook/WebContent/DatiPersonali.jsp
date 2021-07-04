@@ -26,7 +26,15 @@
 <body>
 
 	<%@ include file="/fragments/header.jsp" %>	
-	<% if(currUser==null) response.sendRedirect("401error.jsp"); %>
+	<% if(currUser==null && admin==null) response.sendRedirect("401error.jsp"); %>
+	
+	<%
+		UserBean user;
+	    if(currUser != null)
+	        user = currUser;
+	    else 
+	        user = admin;
+	%>
 	
     <hr class="offset-lg">
     <hr class="offset-lg">
@@ -39,7 +47,6 @@
     </div>
     <hr class="offset-md">
 
-
     <div class="container" style="margin-right:9%">
         <div class="row">
             <div class="col-md-8">
@@ -51,7 +58,7 @@
                           <div class="media">
                             <div class="media-body">
                               <h2 class="h3 media-heading">Nome: </h2>  
-                              <label><%=currUser.getFirstName()%></label><br>
+                              <label><%=user.getFirstName()%></label><br>
                               <hr class="offset-sm">
                             </div>
             			</div>
@@ -59,7 +66,7 @@
             			<div class="media">
                             <div class="media-body">
                               <h2 class="h3 media-heading">Cognome: </h2>  
-                              <label><%=currUser.getLastName()%></label><br>
+                              <label><%=user.getLastName()%></label><br>
                               <hr class="offset-sm">
                             </div>
             			</div>
@@ -67,7 +74,7 @@
             			<div class="media">
                             <div class="media-body">
                               <h2 class="h3 media-heading">Email: </h2>  
-                              <label><%=currUser.getEmail()%></label><br>
+                              <label><%=user.getEmail()%></label><br>
                               <hr class="offset-sm">
                             </div>
             			</div>
@@ -75,13 +82,13 @@
             			<div class="media">
                             <div class="media-body">
                               <h2 class="h3 media-heading">Password: </h2>  
-                              <label><%=currUser.getPassword()%></label><br>
+                              <label><%=user.getPassword()%></label><br>
                               <hr class="offset-sm">
                             </div>
             			</div>
             			
             			<hr class="offset-lg">
-            			<a href="ModificaDatiPersonaliController?action=read&id=<%=currUser.getId()%>"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
+            			<a href="ModificaDatiPersonaliController?action=read&id=<%=user.getId()%>"><button class="btn btn-primary btn-sm rounded">Modifica <i class="ion-android-create"></i></button></a>
             			
            			</div>
           		</div>

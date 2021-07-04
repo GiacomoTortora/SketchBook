@@ -30,4 +30,8 @@ public class MetodoPagamentoBean {
 		this.tipo=newTipo;
 	}
 	
+	public String toString() {
+        return "Numero: " + getNumCarta() + ", " + getTipo();
+    }
+	
 }

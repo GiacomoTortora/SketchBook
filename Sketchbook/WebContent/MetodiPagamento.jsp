@@ -2,13 +2,6 @@
 	pageEncoding="utf-8"
 %>
 
-<%
-	UserBean orderUser=new UserBean();
-	orderUser= (UserBean) session.getAttribute("currentSessionUser");
-
-	Collection<?> metodi_pagamento = new MetodoPagamentoDAO().doRetrieveByUser(orderUser,"");
-%>
-
 <!DOCTYPE html>
 <html>
 <%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.MetodoPagamentoBean, model.Cart, model.bean.UserBean, model.dao.MetodoPagamentoDAO"%>
@@ -33,7 +26,17 @@
 <body>
 	<%@ include file="/fragments/header.jsp" %>	
 	
-	<% if(currUser==null) response.sendRedirect("401error.jsp"); %>
+	<% if(currUser==null && admin==null) response.sendRedirect("401error.jsp"); %>
+	
+	<%
+		UserBean user;
+	    if(currUser != null)
+	        user = currUser;
+	    else 
+	        user = admin;
+	    
+	    Collection<?> metodi_pagamento = new MetodoPagamentoDAO().doRetrieveByUser(user,"");
+	%>
 	
     <hr class="offset-lg">
     <hr class="offset-lg">
@@ -53,12 +56,13 @@
 							Iterator<?> it = metodi_pagamento.iterator();
 							while (it.hasNext()) {
 							MetodoPagamentoBean bean = (MetodoPagamentoBean) it.next();
+							int i=1;
 					%>
 
               <div class="col-sm-5 col-md-4 product">
                 <div class="body">
                   <div class="content">
-                    <h1 class="h3">Metodo di Pagamento n. <%=bean.getId()%></h1>
+                    <h1 class="h3">Metodo di Pagamento n. <%=i %></h1>
                     <h2 class="h4">Tipo: <%=bean.getTipo()%></h2>
                     <h2 class="h4">Numero: <%=bean.getNumCarta()%></h2>
                     <hr class="offset-xl">

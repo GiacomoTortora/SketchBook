@@ -2,13 +2,6 @@
 	pageEncoding="utf-8"
 %>
 
-<%
-	UserBean orderUser=new UserBean();
-	orderUser= (UserBean) session.getAttribute("currentSessionUser");
-
-	Collection<?> indirizzi = new IndirizzoSpedizioneDAO().doRetrieveByUser(orderUser,"");
-%>
-
 <!DOCTYPE html>
 <html>
 <%@ page contentType="text/html; charset=utf-8" import="java.util.*, model.bean.IndirizzoSpedizioneBean, model.Cart, model.bean.UserBean, model.dao.IndirizzoSpedizioneDAO"%>
@@ -33,7 +26,17 @@
 <body>
 	<%@ include file="/fragments/header.jsp" %>	
 	
-	<% if(currUser==null) response.sendRedirect("401error.jsp"); %>
+	<% if(currUser==null && admin==null) response.sendRedirect("401error.jsp"); %>
+	
+	<%
+		UserBean user;
+	    if(currUser != null)
+	        user = currUser;
+	    else 
+	        user = admin;
+	    
+	    Collection<?> indirizzi = new IndirizzoSpedizioneDAO().doRetrieveByUser(user,"");
+	%>
 	
     <hr class="offset-lg">
     <hr class="offset-lg">
@@ -53,12 +56,13 @@
 							Iterator<?> it = indirizzi.iterator();
 							while (it.hasNext()) {
 							IndirizzoSpedizioneBean bean = (IndirizzoSpedizioneBean) it.next();
+							int i=1;
 					%>
 
               <div class="col-sm-5 col-md-4 product">
                 <div class="body">
                   <div class="content">
-                    <h1 class="h3">Indirizzo n. <%=bean.getId()%></h1>
+                    <h1 class="h3">Indirizzo n. <%=i %></h1>
                     <h2 class="h4">Via: <%=bean.getVia()%></h2>
                     <h2 class="h4">Città: <%=bean.getCitta()%></h2>
                     <h2 class="h4">CAP: <%=bean.getCAP()%></h2>

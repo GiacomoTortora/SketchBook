@@ -203,7 +203,7 @@
                     <p class="errormsg" id="newPasswordErr" name="newPasswordErr"></p>
                     
 					<h5>Conferma Password</h5>
-                    <input id="newPassword2" type="text" name="password2" value="" placeholder="Ripeti Password" required="" class="form-control" />
+                    <input id="newPassword2" type="password" name="password2" value="" placeholder="Ripeti Password" required="" class="form-control" />
                     <p class="errormsg" id="newPassword2Err" name="newPassword2Err"></p>
 
                     <button id="signupBtn" type="submit" class="btn btn-primary btn-sm">Registrati</button> &nbsp;&nbsp;                 
