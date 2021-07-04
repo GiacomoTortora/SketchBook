@@ -3,7 +3,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.sql.Statement;
+import java.util.Collection;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -148,7 +152,7 @@ public class OrderDAO {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + OrderDAO.TABLE_NAME1
-				+ " (ID, DATA, STATO, ID_CLIENTE) VALUES (?, ?, ?, ?)";
+				+ " (DATA, STATO, ID_CLIENTE, TOTALE) VALUES (?, ?, ?, ?)";
 		
 		String insertSQL2 = "INSERT INTO " + OrderDAO.TABLE_NAME2 
 							+ " ID_ORDINE, ID_PRODOTTO, NOMEPRODOTTO, PREZZOPRODOTTO " + 
@@ -156,14 +160,17 @@ public class OrderDAO {
 							"VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try {
 			connection = ds.getConnection();
-			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement = connection.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
 			
-			preparedStatement.setInt(1, ordine.getId());
-			preparedStatement.setDate(2, ordine.getData());
-			preparedStatement.setString(3, ordine.getStato());
-			preparedStatement.setInt(4, ordine.getIdCliente());
+			preparedStatement.setDate(1, ordine.getData());
+			preparedStatement.setString(2, ordine.getStato());
+			preparedStatement.setInt(3, ordine.getIdCliente());
+			preparedStatement.setDouble(4, ordine.getTotale());
 			
 			preparedStatement.executeUpdate();
+			
+			int id = preparedStatement.getGeneratedKeys().getInt(1);
+			  
 			
 			List<ProductBean> prodotti = ordine.getProdotti();
 			
@@ -171,7 +178,7 @@ public class OrderDAO {
 				ProductBean prodotto = prodotti.get(i);
 				preparedStatement = connection.prepareStatement(insertSQL2);
 				
-				preparedStatement.setInt(1, ordine.getId());
+				preparedStatement.setInt(1, id);
 				preparedStatement.setInt(2, prodotto.getId());
 				preparedStatement.setString(3, prodotto.getNome());
 				preparedStatement.setDouble(4, prodotto.getPrezzo());

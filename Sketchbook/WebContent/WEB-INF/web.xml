@@ -17,6 +17,10 @@
   	<servlet-name>LoginController</servlet-name>
   	<servlet-class>control.LoginController</servlet-class>
   </servlet>
+    <servlet>
+  	<servlet-name>CheckoutController</servlet-name>
+  	<servlet-class>control.CheckoutController</servlet-class>
+  </servlet>
   <servlet>
   	<servlet-name>CartController</servlet-name>
   	<servlet-class>control.CartController</servlet-class>
@@ -60,6 +64,10 @@
   <servlet-mapping>
   	<servlet-name>LogoutController</servlet-name>
   	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CheckoutController</servlet-name>
+  	<url-pattern>/checkout</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>CartController</servlet-name>

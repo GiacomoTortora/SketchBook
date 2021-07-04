@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
-<%@ page import="java.util.*,model.bean.ProductBean, model.Cart,model.bean.UserBean"%>
+<%@ page import="java.util.*,model.bean.ProductBean, model.Cart,model.bean.UserBean, model.bean.IndirizzoSpedizioneBean, model.dao.IndirizzoSpedizioneDAO"%>
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +16,13 @@
 	
 	<% if(currUser==null && admin==null) response.sendRedirect("401error.jsp"); 
 	List<ProductBean> products= cart.getProducts();
+	UserBean user;
+	if(currUser != null)
+		user = currUser;
+	else 
+		user = admin;
+	
+	Collection<IndirizzoSpedizioneBean> indirizzi = new IndirizzoSpedizioneDAO().doRetrieveByUser(user,"");
 	%>
 
 	<hr class="offset-top">
@@ -34,13 +41,18 @@
         <div class="row">
             <div class="col-md-5" style="padding-right:40px">
                   <div class="row group">
-                    <div class="col-sm-4"><h2 class="h4">Destinatario</h2></div>
-                    <div class="col-sm-8"> <input type="text" class="form-control" name="receiver" placeholder="Mario Rossi" /></div>
+                    <div class="col-sm-4"><h2 class="h4">Nome</h2></div>
+                    <div class="col-sm-8"> <input type="text" class="form-control" name="receiver" value="<%=user.getFirstName()%>" placeholder="Mario" /></div>
+                  </div>
+                  
+                  <div class="row group">
+                    <div class="col-sm-4"><h2 class="h4">Cognome</h2></div>
+                    <div class="col-sm-8"> <input type="text" class="form-control" name="receiver" value="<%=user.getLastName()%>" placeholder="Rossi" /></div>
                   </div>
 
                   <div class="row group">
                     <div class="col-sm-4"><h2 class="h4">E-mail</h2></div>
-                    <div class="col-sm-8"> <input type="email" class="form-control" name="email" placeholder="mariorossi@mail.com" /></div>
+                    <div class="col-sm-8"> <input type="email" class="form-control" name="email" value="<%=user.getEmail()%>" placeholder="mariorossi@mail.com" /></div>
                   </div>
 
                   <div class="row group">
@@ -395,7 +407,7 @@
             </div>
 
             <hr class="offset-lg hidden-xs">
-
+			<form action="CheckoutController">
             <div class="col-sm-12 white">
                 <hr class="offset-md">
                 <div class="row">
@@ -407,11 +419,12 @@
                     <div class="col-md-4 hidden-xs">
                     </div>
                     <div class="col-xs-6 col-md-4">
-                        <button class="btn btn-primary pull-right" type="submit">Conferma Ordine</button>
+                       <button class="btn btn-primary pull-right">Conferma Ordine</button>
                     </div>
-                </div>
+                </div>            
                 <hr class="offset-md">
             </div>
+            </form>
 
         </div>
         </form>
