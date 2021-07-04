@@ -33,21 +33,22 @@ function validateProduct(form){
 	$('#ivaErr').html(""); 
 	$('#quantitaErr').html(""); 
 	
-	if(nome.lenght>32 || nome.lenght<5){
+	if(nome.length<4 || nome.length>64){
 		form.nome.focus();
 		$('#nomeErr').html("Nome non valido"); 
 		isValid=false;
 	}
 	
-	if(descrizione.lenght>512 || descrizione.lenght<8){
+	if(descrizione.length<8 || descrizione.length>512){
 		form.descrizione.focus();
 		$('#descrizioneErr').html("Descrizione non valida"); 
-		isValid==false;
+		isValid=false;
 	}
 	
 	if(prezzo<0 || prezzo>1000000){
 		form.prezzo.focus();
 		$('#prezzoErr').html("Prezzo non valido");
+		isValid=false;
 	}
 	
 	if(iva<1 || iva>99){
@@ -106,13 +107,11 @@ function validateSignUpForm(form){
         isValid=false;
 	}
 	if(password2!=password){
-		form.password.focus();
 		form.password2.focus();
 	    $('#newPassword2Err').html("Le due password non coincidono");
         isValid=false;
 	}
 	if(email2!=email){
-		form.email.focus();
 		form.email2.focus();
 	    $('#newEmail2Err').html("Le due email non coincidono");
         isValid=false;
