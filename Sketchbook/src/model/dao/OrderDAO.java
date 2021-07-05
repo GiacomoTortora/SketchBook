@@ -277,6 +277,7 @@ public class OrderDAO {
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
 
+
 			String insertSQL = "INSERT INTO " + OrderDAO.TABLE_NAME1
 					+ " (DATA, STATO, ID_CLIENTE, TOTALE) VALUES (?, ?, ?, ?)";
 			
@@ -293,32 +294,37 @@ public class OrderDAO {
 				preparedStatement.setInt(3, ordine.getIdCliente());
 				preparedStatement.setDouble(4, ordine.getTotale());
 				preparedStatement.executeUpdate();
-				preparedStatement.close();
-				//ResultSet rs = preparedStatement.getGeneratedKeys();
+				
+				
+				System.out.println("hel");
+				ResultSet rs = preparedStatement.getGeneratedKeys();
+				System.out.println("lo");
+				
+				int id=0;
+				if(rs.next()) {
+					id = (rs.getInt(1));
+				}
+				
+				System.out.println("oooooo");
+				
 				List<ProductBean> prodotti = ordine.getProdotti();
+				preparedStatement.close();
 				preparedStatement = connection.prepareStatement(insertSQL2);
 				
 				for(int i = 0; i < prodotti.size(); ++i) {
 					ProductBean prodotto = prodotti.get(i);
 					
 					
-					System.out.println(++x);
-					preparedStatement.setInt(1, 1);
-					System.out.println(++x);
+					preparedStatement.setInt(1, id);
 					preparedStatement.setInt(2, prodotto.getId());
 					preparedStatement.setString(3, prodotto.getNome());
 					preparedStatement.setDouble(4, prodotto.getPrezzo());
 					preparedStatement.setDouble(5, prodotto.getIva());
 					preparedStatement.setString(6, prodotto.getDescrizione());
 					preparedStatement.setInt(7, prodotto.getQuantitaCarrello());
-					System.out.println(++x);
 					preparedStatement.executeUpdate();
-					System.out.println(++x);
 					prodotto.setQuantitaCatalogo(prodotto.getQuantitaCatalogo() - prodotto.getQuantitaCarrello());
-					System.out.println(++x);
-					//new ProductDAO().doUpdate(prodotto);				
-					System.out.println(++x);
-				}System.out.println(++x);
+				}
 				connection.commit();
 			} finally {
 				try {

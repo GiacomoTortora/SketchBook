@@ -61,13 +61,18 @@
                             
                             <div class="controls">
                               <div class="input-group">
-                                <span class="input-group-btn">
-                                  <button id="minus" class="btn btn-default btn-sm" type="button" data-action="minus" onClick="calcPrice()"  ><i class="ion-minus-round"></i></button>
-                                </span>
-                                <input id="quantity" type="text" class="form-control input-sm" placeholder="Qty" value="<%=prod.getQuantitaCarrello()%>" readonly="">
-                                <span class="input-group-btn">
-                                  <button id="plus" class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button>
-                                </span>
+                              <form id= "qnt" name="qnt" class="join" method="post">
+                                <select>
+                                	<%
+                                		for(int i=1; i<=prod.getQuantitaCatalogo(); i++) {
+                                			
+                                	%>
+								    <option value="<%=i%>"><%=i%></option>
+								    <%
+                                		}
+								    %>
+							  	</select>
+							  	</form>
                               </div><!-- /input-group -->
                               <a href="CartController?action=deleteC&id=<%=prod.getId()%>"><button class="btn btn-primary btn-xs rounded"> <i class="ion-close"></i> Rimuovi</button></a>
                           </div>

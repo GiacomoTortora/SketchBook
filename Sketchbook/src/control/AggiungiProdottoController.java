@@ -50,6 +50,7 @@ public class AggiungiProdottoController extends HttpServlet {
 			product.setIva(Double.valueOf(request.getParameter("iva")));
 			product.setPrezzo(Double.valueOf(request.getParameter("prezzo")));
 			product.setQuantitaCatalogo(Integer.valueOf(request.getParameter("prezzo")));
+			product.setCategoria(Integer.valueOf(request.getParameter("cat")));
 			save.doSave(product);
 			//response.sendRedirect("Aggiungi-Indirizzo.jsp");
 		}catch(Exception e) {

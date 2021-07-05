@@ -78,10 +78,26 @@
 								<h5>Quantità</h5>
 			                    <input id="quantita" type="number" name="quantita" value="1" required=""/>
 			                    <p class="errormsg" id="quantitaErr"></p>
+			                    
+			                    <h5>Categoria</h5>
+			                    <select name="cat" id="cat">
+								    <option value="1">Matite</option>
+								    <option value="2">Pennarelli</option>
+								    <option value="3">Pittura</option>
+								    <option value="4">Pennelli</option>
+								    <option value="5">Fogli</option>
+								    <option value="6">Tele</option>
+							  	</select>
+							  	
+							  	<input id="idbello" name="idbello" type="hidden" value="<%=product.getId()%>"/>
+			                    
 			                    <hr class="offset-lg">
-			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Prodotto</button> &nbsp;&nbsp;
+			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Prodotto</button>
 			                    <h5>OPPURE</h5>
-			                    <button id="delete" type="submit" class="btn btn-primary btn-sm">Elimina Prodotto</button> &nbsp;&nbsp;
+			                    </form>
+			                    <form id= "eliminaProdotto" name="eliminaProdotto" class="join" method="post" action="EliminaProdottoController">
+			                    	<input id="idbello" name="idbello" type="hidden" value="<%=product.getId()%>"/>
+			                    	<button id="delete" type="submit" class="btn btn-primary btn-sm">Elimina Prodotto</button>
 			                  </form>
                             </div>
             			</div>

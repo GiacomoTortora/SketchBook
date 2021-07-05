@@ -39,6 +39,12 @@ public class CartController extends HttpServlet {
 
 		try {
 			if (action != null) {
+				if (action.equalsIgnoreCase("setQuant")) {
+					int id = Integer.parseInt(request.getParameter("id"));
+					ProductBean prodotto = prodotti.doRetrieveByKey(id);
+					prodotto.setQuantitaCarrello(Integer.parseInt(request.getParameter("quantity")));
+					cart.addProduct(prodotto);
+				}	
 				if (action.equalsIgnoreCase("addC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					ProductBean prodotto = prodotti.doRetrieveByKey(id);

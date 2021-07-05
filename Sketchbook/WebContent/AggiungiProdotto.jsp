@@ -71,6 +71,17 @@
 								<h5>Quantità</h5>
 			                    <input id="quantita" type="number" name="quantita" value="1" required=""/>
 			                    <p class="errormsg" id="quantitaErr"></p>
+			                    
+			                    <h5>Categoria</h5>
+			                    <select name="cat" id="cat">
+								    <option value="1">Matite</option>
+								    <option value="2">Pennarelli</option>
+								    <option value="3">Pittura</option>
+								    <option value="4">Pennelli</option>
+								    <option value="5">Fogli</option>
+								    <option value="6">Tele</option>
+							  	</select>
+			                    
 			                    <hr class="offset-lg">
 			                    <button id="addBtn" type="submit" class="btn btn-primary btn-sm">Aggiungi Prodotto</button> &nbsp;&nbsp;
 			                    <h5>N.B - Non scordare di caricare le immagini del prodotto sul server!</h5>

@@ -13,14 +13,14 @@ import model.dao.ProductDAO;
 /**
  * Servlet implementation class ModProdottoController
  */
-@WebServlet("/ModProdottoController")
-public class ModProdottoController extends HttpServlet {
+@WebServlet("/EliminaProdottoController")
+public class EliminaProdottoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ModProdottoController() {
+    public EliminaProdottoController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,15 +41,10 @@ public class ModProdottoController extends HttpServlet {
 			System.out.println("mod prod");
 			ProductDAO save=new ProductDAO();
 			ProductBean product=new ProductBean();
-			product.setNome(request.getParameter("nome"));
-			product.setDescrizione(request.getParameter("descrizione"));
-			product.setIva(Double.valueOf(request.getParameter("iva")));
-			product.setPrezzo(Double.valueOf(request.getParameter("prezzo")));
-			product.setQuantitaCatalogo(Integer.valueOf(request.getParameter("quantita")));
-			product.setCategoria(Integer.valueOf(request.getParameter("cat")));
+			System.out.println(Integer.valueOf(request.getParameter("idbello")));
 			product.setId(Integer.valueOf(request.getParameter("idbello")));
-			save.doUpdate(product);
-			//response.sendRedirect("Aggiungi-Indirizzo.jsp");
+			save.doDelete(product.getId());
+			response.sendRedirect("ConfermaElimina.jsp");
 		}catch(Exception e) {
 			System.out.println(e);
 		}

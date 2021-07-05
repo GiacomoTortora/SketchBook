@@ -20,6 +20,7 @@ const regExpCap=/^\d{5}$/;
 
 const regExpPlace=/^[a-zA-Z ]{2,16}$/;
 
+/*  VALIDAZIONE PRODOTTO  */
 function validateProduct(form){
 	var nome=form.nome.value;
 	var descrizione=form.descrizione.value;
@@ -69,7 +70,7 @@ function validateProduct(form){
 	else return true;
 }
 
-
+/*  VALIDAZIONE SIGNUP  */
 function validateSignUpForm(form){
 	
 	var firstName=form.firstName.value;
@@ -122,6 +123,7 @@ function validateSignUpForm(form){
 	else return true;
 }
 
+/*  VALIDAZIONE LOGIN  */
 function validateLoginForm(form){ 
 	
 var email=form.email.value;  
@@ -146,6 +148,7 @@ if(isValid==false) {
   else return true;
 }
 
+/*  VALIDAZIONE METODO PAGAMENTO  */
 function validateMetodoPagamento(form){
 var carta=form.carta.value;
 var tipo=form.tipo.value;
@@ -169,21 +172,31 @@ if(!regExpName.test(tipo)){
   else return true;
 }
 
+/*  VALIDAZIONE INDIRIZZO SPEDIZIONE  */
 function validateIndirizzo(form){ 
-
+	
+var via=form.via.value;  
+var città=form.citta.value;
 var cap=form.cap.value;
 var provincia=form.provincia.value;
 var stato=form.stato.value;
 var isValid=true;
+$('#viaErr').html("");
 $('#cittaErr').html("");
 $('#capErr').html("");
 $('#provinciaErr').html("");
 $('#statoErr').html("");
 
+
+if(!regExpPlace.test(via)){
+	form.via.focus();
+	$('#viaErr').html("Inserire via valida");
+	isValid=false;
+  }
 if(!regExpPlace.test(città)){
 	 form.citta.focus();
      $('#cittaErr').html("Inserire città valida");
-     isValid=true;
+     isValid=false;
    }
 
 if(!regExpCap.test(cap)){
@@ -209,7 +222,7 @@ if(isValid==false) {
   }
   else return true;
 }
-
+/*  VALIDAZIONE MODIFICA DATI PERSONALI  */
 function validateUser(form){
 	
 	var name=form.name.value;
@@ -250,6 +263,9 @@ function validateUser(form){
 }
 
 
+ //INIZIO AJAX
+
+/*  AJAX AGGIUNGI PRODOTTO AL CATALOGO  */
 $(document).ready(function(){
        $('#aggiungiProdotto').on('submit',function(e)
        { 
@@ -259,12 +275,13 @@ $(document).ready(function(){
           var prezzo=$('#prezzo').val();
           var iva=$('#iva').val();
           var quantita=$('#quantita').val();
+          var cat=$('#cat').val();
           if(validateProduct(this)){
 	      //il form è corretto, siamo fuori dal preventdefault e quindi il form viene passato alla servlet dopo il controllo
           $.ajax({
                type: "POST",
                url:"AggiungiProdottoController",
-               data:{"nome":nome,"descrizione":descrizione, "prezzo":prezzo, "iva": iva, "quantita": quantita},
+               data:{"nome":nome,"descrizione":descrizione, "prezzo":prezzo, "iva": iva, "quantita": quantita, "cat":cat},
                success: function () {
 	                location.reload(); //aggiorna la pagina                
                }
@@ -272,6 +289,8 @@ $(document).ready(function(){
              }                        
            });
          });
+
+/*  AJAX MODIFICA PRODOTTO AL CATALOGO  */
 
 $(document).ready(function(){
        $('#modificaProdotto').on('submit',function(e)
@@ -282,12 +301,14 @@ $(document).ready(function(){
           var prezzo=$('#prezzo').val();
           var iva=$('#iva').val();
           var quantita=$('#quantita').val();
+          var cat=$('#cat').val();
+          var idbello=$('#idbello').val();
           if(validateProduct(this)){
 	      //il form è corretto, siamo fuori dal preventdefault e quindi il form viene passato alla servlet dopo il controllo
           $.ajax({
                type: "POST",
                url:"ModProdottoController",
-               data:{"nome":nome,"descrizione":descrizione, "prezzo":prezzo, "iva": iva, "quantita": quantita},
+               data:{"nome":nome,"descrizione":descrizione, "prezzo":prezzo, "iva": iva, "quantita": quantita, "cat":cat, "idbello":idbello},
                success: function () {
 	                location.reload(); //aggiorna la pagina                
                }
@@ -296,7 +317,7 @@ $(document).ready(function(){
            });
          });
 
-
+/*  AJAX AGGIUNGI METODO PAGAMENTO  */
 $(document).ready(function(){
        $('#aggiungiMetodo').on('submit',function(e)
        { 
@@ -317,18 +338,21 @@ $(document).ready(function(){
            });
          });
 
+/*  AJAX MODIFICA METODO PAGAMENTO  */
+
 $(document).ready(function(){
        $('#modificaMetodoPagamento').on('submit',function(e)
        { 
 	      e.preventDefault(); //blocca il submit del form
           var carta=$('#carta').val();
           var tipo=$('#tipo').val();
+          var idbello=$('#idbello').val();
           if(validateMetodoPagamento(this)){
 	      //il form è corretto, siamo fuori dal preventdefault e quindi il form viene passato alla servlet dopo il controllo
           $.ajax({
                type: "POST",
                url:"ModPagamentoController",
-               data:{"carta":carta,"tipo":tipo},
+               data:{"carta":carta,"tipo":tipo, "idbello":idbello},
                success: function () {
 	                location.reload(); //aggiorna la pagina                
                }
@@ -336,6 +360,8 @@ $(document).ready(function(){
              }                        
            });
          });
+
+/*  AJAX MODIFICA DATI PERSONALI  */
 
 $(document).ready(function(){
        $('#modUser').on('submit',function(e)
@@ -365,7 +391,7 @@ $(document).ready(function(){
            });
          });
 
-
+/*  AJAX LOGIN  */
 
 $(document).ready(function(){
        $('#loginFrm').on('submit',function(e)
@@ -386,6 +412,8 @@ $(document).ready(function(){
              }                        
            });
          });
+
+/*  AJAX REGISTRAZIONE */
 
 $(document).ready(function(){
        $('#signupFrm').on('submit',function(e)
@@ -415,10 +443,13 @@ $(document).ready(function(){
            });
          });
 
+/*  AJAX AGGIUNGI INDIRIZZO SPEDIZIONE  */
+
 $(document).ready(function(){
        $('#aggiungiIndirizzoFrm').on('submit',function(e)
        { 
 	      e.preventDefault(); //blocca il submit del form
+          var via=$('#via').val();
           var citta=$('#citta').val();
           var cap=$('#cap').val();
           var provincia=$('#provincia').val();
@@ -437,10 +468,14 @@ $(document).ready(function(){
            });
          });
 
+/*  AJAX MODIFICA INDIRIZZO SPEDIZIONE  */
+
 $(document).ready(function(){
        $('#modificaIndirizzo').on('submit',function(e)
        { 
 	      e.preventDefault(); //blocca il submit del form
+          var via=$('#via').val();
+          var citta=$('#citta').val();
           var cap=$('#cap').val();
           var provincia=$('#provincia').val();
           var stato=$('#stato').val()

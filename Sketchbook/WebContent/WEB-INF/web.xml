@@ -50,6 +50,10 @@
   	<servlet-class>control.CheckoutController</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>EliminaProdottoController</servlet-name>
+  	<servlet-class>control.EliminaProdottoController</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>CartController</servlet-name>
   	<servlet-class>control.CartController</servlet-class>
   </servlet>
@@ -92,6 +96,10 @@
   <servlet-mapping>
   	<servlet-name>ProductDetails</servlet-name>
   	<url-pattern>/details</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EliminaProdottoController</servlet-name>
+  	<url-pattern>/eliminaProdotto</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>LogoutController</servlet-name>

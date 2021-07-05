@@ -196,7 +196,7 @@ public class ProductDAO {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + ProductDAO.TABLE_NAME1
-				+ " (NOME, DESCRIZIONE, PREZZO, IVA, Quantita) VALUES (?, ?, ?, ?, ?)";
+				+ " (NOME, DESCRIZIONE, PREZZO, IVA, Quantita, CATEGORIA) VALUES (?, ?, ?, ?, ?, ?)";
 
 		try {
 			connection = ds.getConnection();
@@ -207,6 +207,7 @@ public class ProductDAO {
 			preparedStatement.setDouble(3, product.getPrezzo());
 			preparedStatement.setDouble(4, product.getIva());
 			preparedStatement.setInt(5, product.getQuantitaCatalogo());
+			preparedStatement.setInt(6, product.getCategoria());
 			
 			preparedStatement.executeUpdate();
 
@@ -307,8 +308,8 @@ public synchronized Collection<ProductBean> doRetrieveByCategory(int categoria) 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		String updateSQL = "UPDATE prodotto NOME = ?, DESCRIZIONE = ?, PREZZO = ?, " +
-							"IVA = ?, QUANTITA = ?" +
+		String updateSQL = "UPDATE prodotto SET NOME = ?, DESCRIZIONE = ?, PREZZO = ?, " +
+							"IVA = ?, QUANTITA = ?, CATEGORIA = ?" +
 							" WHERE ID = ?";
 
 		try {
@@ -321,7 +322,8 @@ public synchronized Collection<ProductBean> doRetrieveByCategory(int categoria) 
 			preparedStatement.setDouble(3, product.getPrezzo());
 			preparedStatement.setDouble(4, product.getIva());
 			preparedStatement.setInt(5, product.getQuantitaCatalogo());
-			preparedStatement.setInt(6, product.getId());
+			preparedStatement.setInt(6, product.getCategoria());
+			preparedStatement.setInt(7, product.getId());
 			
 			preparedStatement.executeUpdate();
 
