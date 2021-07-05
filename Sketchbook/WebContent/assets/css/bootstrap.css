@@ -2312,6 +2312,13 @@ fieldset[disabled] .btn-default.focus {
   background-color: rgba(30,30,30,1);
   border-color: rgba(30,30,30,1);
 }
+
+.btn-primary-green {
+  color: #fff;
+  background-color: green;
+  border-color: green;
+}
+
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
