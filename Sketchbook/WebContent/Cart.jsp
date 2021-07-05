@@ -63,13 +63,13 @@
                               <div class="input-group">
                               <div class="row">
                               <div class="col-md-4">
-                              <form id= "qnt" name="qnt" class="join" method="post" action="CartController">
-                                <select>
+                              <form id= "qnt" name="qnt" class="join" method="post">
+                                <select id="qntSelect">
                                 	<%
                                 		for(int i=1; i<=prod.getQuantitaCatalogo(); i++) {
                                 			
                                 	%>
-								    <option style="z-index:100"value="<%=i%>"><%=i%></option>
+								    <option id="option" style="z-index:100"value="<%=i%>"><%=i%></option>
 								    <%
                                 		}
 								    %>
@@ -78,7 +78,7 @@
 							  	</form>
 							  	</div>
 							  	<div class="col-sm-2">
-							  	<button id="qnt" type="submit" class="btn btn-standard btn-sm pull-left align-left"><i class="ion-android-refresh"></i></button>
+							  	<button id="qntRefresh" type="submit" class="btn btn-standard btn-sm pull-left align-left"><i class="ion-android-refresh"></i></button>
 							  	</div>
                               </div><!-- /input-group -->
                               <hr class="offset-md">
@@ -106,7 +106,7 @@
                             <div class="col-xs-6">
                                 <p>Subtotale</p>
                             </div>
-                            <div class="col-xs-6">
+                            <div id="update" class="col-xs-6">
                                 <p><b>€ <%=String.format("%.2f", cart.getSubTotale())%></b></p>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                             <div class="col-xs-6">
                                 <h3 class="no-margin">Totale</h3>
                             </div>
-                            <div class="col-xs-6">
+                            <div id="update" class="col-xs-6">
                                 <h3 class="no-margin">€<%=String.format("%.2f", cart.getTotale())%></h3>
                             </div>
                         </div>

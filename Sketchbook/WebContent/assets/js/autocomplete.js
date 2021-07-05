@@ -1,6 +1,9 @@
 /**
  * 
  */
+/**
+ * 
+ */
 $(document).ready(function() {
     $('#searchInput').autocomplete({
 	    //FINESTRA SUGGERIMENTI
@@ -28,6 +31,34 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function(){
+       $('#qntSelect').change(function()
+       { 
+          var qty=$('#qntSelect :selected').text();
+          var id=$('#id').val();
+          $.ajax({
+               type: "POST",
+               url:"CartController?action=setQuant&id="+id+"&qty="+qty,
+               data:{"qty":qty, "id":id},
+               success: function () {
+	                  location.reload();
+               },
+             });                           
+           });
+         });
+
+
+
 function focus(){
 	document.getElementById("searchInput").focus;
+}
+
+function getQty(){
+	var qty=document.getElementById("qntSelect").value;
+    document.getElementById("demo").innerHTML = "You selected: " + qty;
+}
+
+function updateDiv()
+{ 
+    $( "#update" ).load(window.location.href + " #update" );
 }

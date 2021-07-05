@@ -56,7 +56,7 @@
                       	                            			
             			<div class="media">
                             <div class="media-body align-center">
-                             <form id= "modificaIndirizzo" name="modificaIndirizzo" class="join" method="post">
+                             <form id= "modificaIndirizzo" name="modificaIndirizzo" class="join" method="post" onsubmit="return validateIndirizzo(this)">
         
 			                  	<h5>Via</h5>
 			                    <input id="via" type="text" name="via" value="<%=indSped.getVia() %>" placeholder="Via e Civico" required=""/>
@@ -76,8 +76,9 @@
 			                    
 								<h5>Stato</h5>
 			                    <input id="stato" type="text" name="stato" value="<%=indSped.getStato() %>" placeholder="Stato" required=""/>
-			                    <input id="id" type="hidden" name="id" value="<%=indSped.getId() %>">
 			                    <p class="errormsg" id="statoErr"></p>
+			                    <input id="id" type="hidden" name="id" value="<%=indSped.getId() %>">
+			                    
 			                    <hr class="offset-lg">
 			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Indirizzo</button>
 			                  </form>
