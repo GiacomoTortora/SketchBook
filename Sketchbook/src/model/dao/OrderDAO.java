@@ -4,8 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.Collection;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -227,7 +227,7 @@ public class OrderDAO {
 			}
 		}
 		
-		public synchronized Collection<OrderBean> doRetrieveByDate(Date data1, Date data2) throws SQLException{
+		public synchronized Collection<OrderBean> doRetrieveByDate(LocalDate data1, LocalDate data2) throws SQLException{
 			
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
@@ -241,8 +241,8 @@ public class OrderDAO {
 			try {
 				connection = ds.getConnection();
 				preparedStatement = connection.prepareStatement(selectSQL);
-				preparedStatement.setDate(1, (java.sql.Date)data1);
-				preparedStatement.setDate(2, (java.sql.Date)data2);
+				preparedStatement.setDate(1, java.sql.Date.valueOf(data1));
+				preparedStatement.setDate(2, java.sql.Date.valueOf(data2));
 				
 				ResultSet rs = preparedStatement.executeQuery();
 			
