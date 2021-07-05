@@ -53,6 +53,7 @@ public class CartController extends HttpServlet {
 				} else if (action.equalsIgnoreCase("deleteC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					cart.deleteProduct(prodotti.doRetrieveByKey(id));
+					
 				}
 			}
 		}

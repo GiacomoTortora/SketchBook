@@ -62,8 +62,8 @@
                             <div class="controls">
                               <div class="input-group">
                               <div class="row">
-                              <div class="col-md-3">
-                              <form id= "qnt" name="qnt" class="join" method="post" action="CartController?setQuant&id=<%=prod.getId()%>">
+                              <div class="col-md-4">
+                              <form id= "qnt" name="qnt" class="join" method="post" action="CartController">
                                 <select>
                                 	<%
                                 		for(int i=1; i<=prod.getQuantitaCatalogo(); i++) {
@@ -74,10 +74,11 @@
                                 		}
 								    %>
 							  	</select>
+							  	<input id="id" name="id" type="hidden" value="<%=prod.getId()%>"/>
 							  	</form>
 							  	</div>
 							  	<div class="col-sm-2">
-							  	<button id="qnt" type="submit" class="btn btn-sm"><i class="ion-android-refresh"></i></button>
+							  	<button id="qnt" type="submit" class="btn btn-standard btn-sm pull-left align-left"><i class="ion-android-refresh"></i></button>
 							  	</div>
                               </div><!-- /input-group -->
                               <hr class="offset-md">
