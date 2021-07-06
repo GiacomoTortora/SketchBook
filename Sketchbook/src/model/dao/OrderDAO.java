@@ -272,8 +272,52 @@ public class OrderDAO {
 			return ordini;
 		}
 		
+		public synchronized Collection<OrderBean> doRetrieveByName(String nome, String cognome) throws SQLException{
+			
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+
+			Collection<OrderBean> ordini = new LinkedList<OrderBean>();
+		
+			String selectSQL = "select ordine.id from ordine join cliente on id_cliente = cliente.id where name = ? and cognome = ?";
+								
+
+			try {
+				connection = ds.getConnection();
+				preparedStatement = connection.prepareStatement(selectSQL);
+				preparedStatement.setString(1, nome);
+				preparedStatement.setString(2, cognome);
+				
+				ResultSet rs = preparedStatement.executeQuery();
+			
+				while (rs.next()) {
+					
+					OrderBean bean = new OrderBean();
+					
+					bean.setId(rs.getInt("id"));
+					bean.setProdotti(new ProductDAO().doRetrieveByOrder(bean.getId()));
+					bean.setData(rs.getDate("Data").toLocalDate());
+					bean.setStato(rs.getString("Stato"));
+					bean.setIdCliente(rs.getInt("ID_Cliente"));
+					bean.setTotale(rs.getDouble("totale"));
+					
+					ordini.add(bean);
+				}
+
+			} finally {
+				try {
+					if (preparedStatement != null)
+						preparedStatement.close();
+				} finally {
+					if (connection != null)
+						connection.close();
+				}
+			}
+			return ordini;
+		}
+		
 		public synchronized void doSave(OrderBean ordine) throws SQLException {
-			int x = 50;
+			
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
 
@@ -296,16 +340,16 @@ public class OrderDAO {
 				preparedStatement.executeUpdate();
 				
 				
-				System.out.println("hel");
+				
 				ResultSet rs = preparedStatement.getGeneratedKeys();
-				System.out.println("lo");
+				
 				
 				int id=0;
 				if(rs.next()) {
 					id = (rs.getInt(1));
 				}
 				
-				System.out.println("oooooo");
+				
 				
 				List<ProductBean> prodotti = ordine.getProdotti();
 				preparedStatement.close();

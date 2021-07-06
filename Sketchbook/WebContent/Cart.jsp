@@ -44,10 +44,11 @@
                 <div class="panel panel-default">
                   <div class="panel-body">
                     <div class="checkout-cart">
-                      <div id="toUpdate" class="content">
+                      <div id="content" class="content">
                    <% if (products.isEmpty()) {%>
                    <h3 class="align-center"> Il carrello è vuoto :( </h3>
                    <%} else for(ProductBean prod : products){ %>
+                   
                           <div class="media">
                             <div class="media-left">
                               <a href="details?action=read&id=<%=prod.getId()%>">
@@ -61,15 +62,16 @@
                             
                             <div class="controls">
                               <div class="input-group">
-                              <div class="row">
+                              <div id="row" class="row">
                               <div class="col-md-4">
-                              <form id= "qnt" name="qnt" class="join" method="post" action="CartController">
-                                <select>
+                              <form id= "qnt" name="qnt" class="join" method="post">
+                                <select id="qntSelect">
                                 	<%
                                 		for(int i=1; i<=prod.getQuantitaCatalogo(); i++) {
                                 			
                                 	%>
-								    <option style="z-index:100"value="<%=i%>"><%=i%></option>
+								    <option id="option" style="z-index:100"value="<%=i%>"><%=i%></option>
+								    
 								    <%
                                 		}
 								    %>
@@ -78,7 +80,6 @@
 							  	</form>
 							  	</div>
 							  	<div class="col-sm-2">
-							  	<button id="qnt" type="submit" class="btn btn-standard btn-sm pull-left align-left"><i class="ion-android-refresh"></i></button>
 							  	</div>
                               </div><!-- /input-group -->
                               <hr class="offset-md">
@@ -94,6 +95,7 @@
                   </div>
                 </div>
             </div>
+            
             <div class="col-sm-8 col-md-4">
               <hr class="offset-md visible-sm">
                 <div class="panel panel-default">
@@ -106,11 +108,12 @@
                             <div class="col-xs-6">
                                 <p>Subtotale</p>
                             </div>
-                            <div class="col-xs-6">
+                            <div id="update" class="col-xs-6">
                                 <p><b>€ <%=String.format("%.2f", cart.getSubTotale())%></b></p>
                             </div>
                         </div>
                     </div>
+                   
                     <div id="toUpdate" class="container-fluid">
                         <div class="row">
                         <% if (!(products.isEmpty())) {%>
@@ -130,12 +133,15 @@
                             <div class="col-xs-6">
                                 <h3 class="no-margin">Totale</h3>
                             </div>
-                            <div class="col-xs-6">
+                            <div id="update" class="col-xs-6">
                                 <h3 class="no-margin">€<%=String.format("%.2f", cart.getTotale())%></h3>
                             </div>
                         </div>
                     </div>
                     <hr class="offset-md">
+                     <form action="SvuotaCarrelloController" method="post">
+                     <button id="svuota" type="submit" class="btn btn-standard btn-sm pull-left align-left"><i class="ion-android-refresh"></i></button>
+                     </form>
                      
                     <%if(!products.isEmpty()){ %>
 					<%if(currUser==null && admin==null) { %>
