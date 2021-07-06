@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"
+	import="java.time.LocalDate"
 %>
 
+
 <%
-	Collection<?> orders = new OrderDAO().doRetrieveAll("");
+	LocalDate data1=(LocalDate) session.getAttribute("data1");
+    LocalDate data2=(LocalDate) session.getAttribute("data2");
+    Collection<?> orders = new OrderDAO().doRetrieveByDate(data1, data2);
 %>
 
 <!DOCTYPE html>
@@ -15,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Ordini Complessivi</title>
+    <title>Ordini Per Data</title>
     
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -35,21 +39,8 @@
     <hr class="offset-lg">
     <hr class="offset-lg">
     
-   <h1 style="margin-left: 5%">Ordini Totali di tutti i Clienti</h1>
+   <h1 style="margin-left: 5%">Ordini dei clienti fra la data <%=data1%> e <%=data2%></h1>
    <h4 class="h4" style="margin-left: 5%">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per ID, Cliente, Data e Stato)</h4>
-   <div class="right" style="margin-right: 5%">
-   <form action="SearchByNameController" method="POST">
-    <input type="text" id="nameInput" name="nome" placeholder="Nome">
-    <input type="text" id="cognomeInput" name="cognome" placeholder="Cognome">
-    <button type="submit"> Ricerca per nominativo</button>
-   </form>
-   <hr class="offset-md">
-   <form action="SearchByDateController" method="POST">
-    <input type="text" name="data1" placeholder="2021-06-10">
-    <input type="text" name="data2" placeholder="2021-07-05">
-    <button type="submit"> Ricerca da data a data</button>
-   </form>
-   </div>
 	<div class="table">
 		<div class="table-header">
 			<div class="header__item"><a id="ID" class="filter__link filter__link--number" href="#">ID</a></div>

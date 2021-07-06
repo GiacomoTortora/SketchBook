@@ -279,7 +279,7 @@ public class OrderDAO {
 
 			Collection<OrderBean> ordini = new LinkedList<OrderBean>();
 		
-			String selectSQL = "select ordine.id from ordine join cliente on id_cliente = cliente.id where name = ? and cognome = ?";
+			String selectSQL = "select * from ordine join cliente on id_cliente = cliente.id where Nome = ? and Cognome = ?";
 								
 
 			try {
@@ -294,12 +294,13 @@ public class OrderDAO {
 					
 					OrderBean bean = new OrderBean();
 					
-					bean.setId(rs.getInt("id"));
+					bean.setId(rs.getInt("ID"));
 					bean.setProdotti(new ProductDAO().doRetrieveByOrder(bean.getId()));
 					bean.setData(rs.getDate("Data").toLocalDate());
 					bean.setStato(rs.getString("Stato"));
+					bean.setTotale(rs.getDouble("Totale"));
 					bean.setIdCliente(rs.getInt("ID_Cliente"));
-					bean.setTotale(rs.getDouble("totale"));
+					
 					
 					ordini.add(bean);
 				}

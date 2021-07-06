@@ -81,6 +81,10 @@
    	<servlet-name>SearchController</servlet-name>
    	<servlet-class>control.SearchController</servlet-class>
    </servlet>
+   <servlet>
+   	<servlet-name>SearchByDateController</servlet-name>
+   	<servlet-class>control.SearchByDateController</servlet-class>
+   </servlet>
     <servlet>
    	<servlet-name>SearchByNameController</servlet-name>
    	<servlet-class>control.SearchByNameController</servlet-class>
@@ -152,6 +156,10 @@
     <servlet-mapping>
   	<servlet-name>SearchByNameController</servlet-name>
   	<url-pattern>/searchbyname</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SearchByDateController</servlet-name>
+  	<url-pattern>/searchbydate</url-pattern>
   </servlet-mapping>
    <servlet-mapping>
   	<servlet-name>SvuotaCarrelloController</servlet-name>
