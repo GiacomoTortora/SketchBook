@@ -59,26 +59,26 @@
                              <form id= "modificaIndirizzo" name="modificaIndirizzo" class="join" method="post" onsubmit="return validateIndirizzo(this)">
         
 			                  	<h5>Via</h5>
-			                    <input id="via" type="text" name="via" value="<%=indSped.getVia() %>" placeholder="Via e Civico" required=""/>
+			                    <input id="via" type="text" name="via" value="<%=indSped.getVia() %>" placeholder="Via e Civico" required/>
 			                    <p class="errormsg" id="viaErr"></p>
 			                    
 			                    <h5>Città</h5>
-			                    <input id="citta" type="text" name="citta" value="<%=indSped.getCitta() %>" placeholder="Città" required=""/>
+			                    <input id="citta" type="text" name="citta" value="<%=indSped.getCitta() %>" placeholder="Città" required/>
 			                    <p class="errormsg" id="cittaErr"></p>
 			                    
 								<h5>CAP</h5>
-			                    <input id="cap" type="text" name="cap" value="<%=indSped.getCAP() %>" placeholder="CAP" required=""/>
+			                    <input id="cap" type="text" name="cap" value="<%=indSped.getCAP() %>" placeholder="CAP" required/>
 			                    <p class="errormsg" id="capErr"></p>
 			                    
 			                    <h5>Provincia</h5>
-			                     <input id="provincia" type="text" name="provincia" value="<%=indSped.getProvincia() %>" placeholder="Provincia" required=""/>
+			                     <input id="provincia" type="text" name="provincia" value="<%=indSped.getProvincia() %>" placeholder="Provincia" required/>
 			                      <p class="errormsg" id="provinciaErr"></p>
 			                    
 								<h5>Stato</h5>
-			                    <input id="stato" type="text" name="stato" value="<%=indSped.getStato() %>" placeholder="Stato" required=""/>
+			                    <input id="stato" type="text" name="stato" value="<%=indSped.getStato() %>" placeholder="Stato" required/>
 			                    <p class="errormsg" id="statoErr"></p>
-			                    <input id="id" type="hidden" name="id" value="<%=indSped.getId() %>">
 			                    
+			                    <input id="idbello" type="hidden" name="idbello" value="<%=indSped.getId()%>"/>
 			                    <hr class="offset-lg">
 			                    <button id="refresh" type="submit" class="btn btn-primary btn-sm">Aggiorna Indirizzo</button>
 			                  </form>

@@ -35,14 +35,14 @@
     <hr class="offset-lg">
     <hr class="offset-lg">
     
-   <h1 style="margin-left: 5%"><i class="ion-ios-list"></i> Modifica Catalogo <i class="ion-ios-list"></i></h1>
-   <h4 class="h4" style="margin-left: 5%">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per ID, Nome e IVA)</h4>
+   <h1 class="align-center"><i class="ion-ios-list"></i> Modifica Catalogo <i class="ion-ios-list"></i></h1>
+   <h4 class="h4 align-center">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per Nome e IVA)</h4>
    <a href="AggiungiProdotto.jsp"><button class="btn btn-primary btn-lg rounded" style="margin-left:80%">Aggiungi Nuovo Prodotto <i class="ion-android-add-circle"></i></button></a>
    <hr class="offset-sm"> 
-    
+	
 	<div class="table">
 		<div class="table-header">
-			<div class="header__item"><a id="id" class="filter__link filter__link--number" href="">ID</a></div>
+			<div class="header__item" style="color: white">ID</div>
 			<div class="header__item"><a id="nome" class="filter__link" href="">Nome</a></div>
 			<div class="header__item" style="color: white">Prezzo</div>
 			<div class="header__item"><a id="iva" class="filter__link filter__link--number" href="">IVA</a></div>

@@ -54,15 +54,15 @@
 
 					<%
 							Iterator<?> it = indirizzi.iterator();
+							int i=1;
 							while (it.hasNext()) {
 							IndirizzoSpedizioneBean bean = (IndirizzoSpedizioneBean) it.next();
-							int i=1;
 					%>
 
               <div class="col-sm-5 col-md-4 product">
                 <div class="body">
                   <div class="content">
-                    <h1 class="h3">Indirizzo n. <%=i %></h1>
+                    <h1 class="h3">Indirizzo n. <%=i++ %></h1>
                     <h2 class="h4">Via: <%=bean.getVia()%></h2>
                     <h2 class="h4">Città: <%=bean.getCitta()%></h2>
                     <h2 class="h4">CAP: <%=bean.getCAP()%></h2>

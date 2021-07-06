@@ -54,15 +54,15 @@
 
 					<%
 							Iterator<?> it = metodi_pagamento.iterator();
+							int i=1;
 							while (it.hasNext()) {
 							MetodoPagamentoBean bean = (MetodoPagamentoBean) it.next();
-							int i=1;
 					%>
 
               <div class="col-sm-5 col-md-4 product">
                 <div class="body">
                   <div class="content">
-                    <h1 class="h3">Metodo di Pagamento n. <%=i %></h1>
+                    <h1 class="h3">Metodo di Pagamento n. <%=i++ %></h1>
                     <h2 class="h4">Tipo: <%=bean.getTipo()%></h2>
                     <h2 class="h4">Numero: <%=bean.getNumCarta()%></h2>
                     <hr class="offset-xl">

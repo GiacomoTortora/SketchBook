@@ -143,35 +143,19 @@ public class IndirizzoSpedizioneDAO {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
+		PreparedStatement preparedStatementCheck = null;
 		
-		String checkSQL = "SELECT ID_CLIENTE FROM " + IndirizzoSpedizioneDAO.TABLE_NAME1
-							+ " JOIN " + IndirizzoSpedizioneDAO.TABLE_NAME2 +
-							" ON ID=ID_INDIRIZZO " +
-						   "WHERE VIA = ?, CITTA = ?, CAP = ?, PROVINCIA = ?, STATO = ?";
 		try {
-			connection = ds.getConnection();
-			preparedStatement = connection.prepareStatement(checkSQL);
-			
-			preparedStatement.setString(1, indirizzo.getVia());
-			preparedStatement.setString(2, indirizzo.getCitta());
-			preparedStatement.setString(3, indirizzo.getCAP());
-			preparedStatement.setString(4, indirizzo.getProvincia());
-			preparedStatement.setString(5, indirizzo.getStato());
-			
-			ResultSet rs = preparedStatement.executeQuery();
-		
-			while(rs.next()) {
-				if(rs.getInt("id_cliente") == user.getId())
-					return;
-			}
+			String SQL = "SELECT ID FROM INDIRIZZO WHERE VIA=? AND CITTA=?";
 			
 			String insertSQL = "INSERT INTO " + IndirizzoSpedizioneDAO.TABLE_NAME1
 					+ " (ID, VIA, CITTA, CAP, PROVINCIA, STATO) VALUES (?, ?, ?, ?, ?, ?)";
 			
 			String insertSQL2 = "INSERT INTO " + IndirizzoSpedizioneDAO.TABLE_NAME2 + 
-								" (ID_CLIENTE, ID_INDIRIZZO) VALUES (?, ?)";
+								" (locazione.ID_CLIENTE, locazione.ID_INDIRIZZO) VALUES (?, ?)";
 
 		
+			connection = ds.getConnection();
 			preparedStatement = connection.prepareStatement(insertSQL);
 			PreparedStatement preparedStatement2 = connection.prepareStatement(insertSQL2);
 			
@@ -182,12 +166,24 @@ public class IndirizzoSpedizioneDAO {
 			preparedStatement.setString(5, indirizzo.getProvincia());
 			preparedStatement.setString(6, indirizzo.getStato());
 			
-			preparedStatement2.setInt(1, indirizzo.getId());
-			preparedStatement2.setInt(2, user.getId());
+			connection.setAutoCommit(false);
 			
 			preparedStatement.executeUpdate();
+			
+			preparedStatementCheck = connection.prepareStatement(SQL);
+			preparedStatementCheck.setString(1, indirizzo.getVia());
+			preparedStatementCheck.setString(2, indirizzo.getCitta());
+			ResultSet rs = preparedStatementCheck.executeQuery();
+			int ciaoIoFaccioFunzionareLaQuery=0;
+			while (rs.next()) {
+				System.out.println("sono nel while");
+				ciaoIoFaccioFunzionareLaQuery = rs.getInt("ID");
+			}
+			
+			preparedStatement2.setInt(1, user.getId());
+			preparedStatement2.setInt(2, ciaoIoFaccioFunzionareLaQuery);
+			
 			preparedStatement2.executeUpdate();
-				
 			connection.commit();
 		} finally {
 			try {

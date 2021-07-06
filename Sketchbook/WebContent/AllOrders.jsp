@@ -35,21 +35,25 @@
     <hr class="offset-lg">
     <hr class="offset-lg">
     
-   <h1 style="margin-left: 5%">Ordini Totali di tutti i Clienti</h1>
-   <h4 class="h4" style="margin-left: 5%">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per ID, Cliente, Data e Stato)</h4>
-   <div class="right" style="margin-right: 5%">
+   <h1 class="align-center"><i class="ion-ios-list"></i> Ordini Totali di tutti i Clienti <i class="ion-ios-list"></i></h1>
+   <h4 class="h4 align-center">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per ID, Cliente, Data e Stato)</h4>
+   
+   <div class="row align-right" style="margin-right:5px">
    <form action="SearchByNameController" method="POST">
-    <input type="text" id="nameInput" name="nome" placeholder="Nome">
-    <input type="text" id="cognomeInput" name="cognome" placeholder="Cognome">
-    <button type="submit"> Ricerca per nominativo</button>
+    <input type="text" id="nameInput" name="nome" placeholder="Nome" required>
+    <input type="text" id="cognomeInput" name="cognome" placeholder="Cognome" required>
+    <button type="submit" class="btn btn-primary btn-sm rounded"> Ricerca per nominativo</button>
    </form>
-   <hr class="offset-md">
+	<hr class="offset-xs">
    <form action="SearchByDateController" method="POST">
-    <input type="text" name="data1" placeholder="2021-06-10">
-    <input type="text" name="data2" placeholder="2021-07-05">
-    <button type="submit"> Ricerca da data a data</button>
+    <input type="text" name="data1" placeholder="Da: " required>
+    <input type="text" name="data2" placeholder="A: " required>
+    <button type="submit" class="btn btn-primary btn-sm rounded"> Ricerca da data a data</button>
    </form>
    </div>
+   
+   <hr class="offset-lg">
+   
 	<div class="table">
 		<div class="table-header">
 			<div class="header__item"><a id="ID" class="filter__link filter__link--number" href="#">ID</a></div>
