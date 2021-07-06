@@ -45,7 +45,14 @@ $(document).ready(function(){
                },
              });                           
            });
-         });
+       });
+
+$(document).ready(function(){
+    var count = 1;
+    $(".row").each(function(){
+       $("#id").append("<input type='hidden' name='id_" + (count++) +"'/><br />");
+    });
+})
 
 
 
@@ -57,6 +64,8 @@ function getQty(){
 	var qty=document.getElementById("qntSelect").value;
     document.getElementById("demo").innerHTML = "You selected: " + qty;
 }
+
+
 
 function updateDiv()
 { 

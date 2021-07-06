@@ -55,5 +55,10 @@ public class Cart {
 		return subtotale;
 	}
 	
+	public void svuota() {
+		products.clear();
+		totale=0;
+	}
+	
 	
 }
