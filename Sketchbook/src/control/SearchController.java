@@ -16,37 +16,25 @@ import model.dao.ProductDAO;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
-/**
- * Servlet implementation class SearchController
- */
+
 @WebServlet("/SearchController")
 public class SearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public SearchController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//System.out.println("ciao");
 		ProductDAO findProd=new ProductDAO(); 
 		PrintWriter out = response.getWriter();
 		JsonArray arr=new JsonArray();
 		
 		try {
 			String input= request.getParameter("term");
-			//System.out.println("Data from ajax call " + input);
 			Collection<ProductBean> list=new LinkedList<ProductBean>();
 			list=findProd.doRetrieveByName(input);
 			for(ProductBean bean : list) {
-				//System.out.println(bean.getNome());
 				arr.add(bean.getNome());
 			}
 			out.println(arr.toString());
@@ -56,11 +44,8 @@ public class SearchController extends HttpServlet {
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

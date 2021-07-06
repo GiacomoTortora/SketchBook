@@ -58,6 +58,10 @@
   	<servlet-class>control.CartController</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>SvuotaCarrelloController</servlet-name>
+  	<servlet-class>control.SvuotaCarrelloController</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>ProductDetails</servlet-name>
   	<servlet-class>control.ProductDetails</servlet-class>
   </servlet>
@@ -76,6 +80,10 @@
    <servlet>
    	<servlet-name>SearchController</servlet-name>
    	<servlet-class>control.SearchController</servlet-class>
+   </servlet>
+    <servlet>
+   	<servlet-name>SearchByNameController</servlet-name>
+   	<servlet-class>control.SearchByNameController</servlet-class>
    </servlet>
    <servlet>
   	<servlet-name>SignUpController</servlet-name>
@@ -140,6 +148,14 @@
   <servlet-mapping>
   	<servlet-name>SearchController</servlet-name>
   	<url-pattern>/search</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+  	<servlet-name>SearchByNameController</servlet-name>
+  	<url-pattern>/searchbyname</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>SvuotaCarrelloController</servlet-name>
+  	<url-pattern>/svuota</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>LoginController</servlet-name>

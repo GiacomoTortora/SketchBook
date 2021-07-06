@@ -37,7 +37,14 @@
     
    <h1 style="margin-left: 5%">Ordini Totali di tutti i Clienti</h1>
    <h4 class="h4" style="margin-left: 5%">(Cliccando sulle relative intestazioni in tabella, puoi ordinare per ID, Cliente, Data e Stato)</h4>
-    
+   <form action="SearchByNameController" method="POST">
+    <input type="text" id="nameInput" name="nome">
+    <input type="text" id="cognomeInput" name="cognome">
+    <button type="submit"> Submit</button>
+   </form>
+   <form>
+    <input type="text">
+   </form>
 	<div class="table">
 		<div class="table-header">
 			<div class="header__item"><a id="ID" class="filter__link filter__link--number" href="#">ID</a></div>
