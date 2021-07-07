@@ -228,7 +228,7 @@
                 <p class="price">€<%= String.format("%.2f", price) %></p>
                 <h2 class="h3"><%=prodotti.get(random).getNome()%></h2>
                 <hr class="offset-sm">
-              <a href="CartController?action=addC&id=<%=prodotti.get(random).getId()%>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
+              <a href="CartController?action=addC&id=<%=prodotti.get(random).getId()%>" data-toggle="modal" data-target="#Modal-Cart"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -274,7 +274,7 @@
                 <p class="price through">€<%= String.format("%.2f", price+10) %></p>
                 <h2 class="h3"><%=prodotti.get(random).getNome()%></h2>
                 <hr class="offset-sm">
-                <a href="CartController?action=addC&id=<%=prodotti.get(random).getId()%>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
+                <a href="CartController?action=addC&id=<%=prodotti.get(random).getId()%>" data-toggle="modal" data-target="#Modal-Cart"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
@@ -319,7 +319,7 @@
                 <p class="price">€<%= String.format("%.2f", price) %></p>
                 <h2 class="h3"><%=prodotti.get(random).getNome()%></h2>
                 <hr class="offset-sm">
-                <a href="CartController?action=addC&id=<%=prodotti.get(random).getId()%>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
+                <a href="CartController?action=addC&id=<%=prodotti.get(random).getId()%>" data-toggle="modal" data-target="#Modal-Cart"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>

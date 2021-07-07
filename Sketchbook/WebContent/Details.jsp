@@ -127,7 +127,7 @@
                   }
                   else {
               %>
-              <a href="CartController?action=addC&id=<%=product.getId() %>"><button class="btn btn-primary btn-md rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
+              <a href="CartController?action=addC&id=<%=product.getId() %>" data-toggle="modal" data-target="#Modal-Cart"><button class="btn btn-primary btn-md rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               <%
                   }
               %>

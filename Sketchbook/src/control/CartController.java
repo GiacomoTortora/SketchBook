@@ -50,10 +50,18 @@ public class CartController extends HttpServlet {
 					ProductBean prodotto = prodotti.doRetrieveByKey(id);
 					prodotto.incrementaQuantita();
 					cart.addProduct(prodotto);
+					request.getSession().setAttribute("cart", cart);
+					request.setAttribute("cart", cart);
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("");
+					dispatcher.forward(request, response);
 					
 				} else if (action.equalsIgnoreCase("deleteC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					cart.deleteProduct(prodotti.doRetrieveByKey(id));
+					request.getSession().setAttribute("cart", cart);
+					request.setAttribute("cart", cart);
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
+					dispatcher.forward(request, response);
 					
 				}
 			}
@@ -61,12 +69,6 @@ public class CartController extends HttpServlet {
 		catch (SQLException e) {
 			System.out.println("Error:" + e.getMessage());
 		}
-		
-		request.getSession().setAttribute("cart", cart);
-		request.setAttribute("cart", cart);
-		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
-		dispatcher.forward(request, response);
 	}
 	
 	
