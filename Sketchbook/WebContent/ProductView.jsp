@@ -9,15 +9,14 @@
 	}
 	
 	ProductBean product = (ProductBean) request.getAttribute("product");
-	
-	
-	
+	ArrayList<ProductBean> prodotti = new ArrayList<ProductBean>();
+	ArrayList<Integer> uscito = new ArrayList<Integer>();
 	
 %>
 
 <!DOCTYPE html>
 <html>
-	<%@ page contentType="text/html; charset=utf-8" import="java.util.*,model.bean.ProductBean, model.Cart,model.bean.UserBean"%>
+	<%@ page contentType="text/html; charset=utf-8" import="java.util.*,model.bean.ProductBean, model.Cart, model.bean.UserBean, model.dao.ProductDAO"%>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -200,64 +199,42 @@
 
         <div class="row">
 
-          <div class="col-sm-6 col-md-3 product">
-            <div class="body">
-              <a href="details?action=read&id=10"><img src="assets/img/product-home/10.jpg" alt="Derwent 6pz"/></a>
+		<%
 
-              <div class="content align-center">
-                <p class="price">€8.95</p>
-                <h2 class="h3">Derwent Matite 6pz</h2>
-                <hr class="offset-sm">
+			Iterator<?> it = products.iterator();
+			while (it.hasNext()) 
+			prodotti.add((ProductBean) it.next());
 
-              <a href="CartController?action=addC&id=10"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-md-3 product">
-            <div class="body">
-              <a href="details?action=read&id=13"><img src="assets/img/product-home/winsor-newton-promarkers.jpg" alt="Winsor&Newton ProMarker"/></a>
-
-              <div class="content align-center">
-                <p class="price">€17.36</p>
-                <h2 class="h3">W&N Promarkers</h2>
-                <hr class="offset-sm">
-
-                <a href="CartController?action=addC&id=13"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
-              </div>
-            </div>
-          </div>
+		
+			for(int i=0; i<4; i++) {
+				Random generator = new Random();
+				int random = 1+(generator.nextInt(prodotti.size()-1));
+				while(uscito.contains(random) || (prodotti.get(random).getQuantitaCatalogo() == 0)) {
+					random = 1+(generator.nextInt(prodotti.size()-1));
+				}
+				
+				uscito.add(random);
+		%>
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="details?action=read&id=15"><img src="assets/img/product-home/ecoline.jpg" alt="Ecoline Brush Pen"/></a>
+              <a href="details?action=read&id=<%=prodotti.get(random).getId()%>"><img src="assets/img/product/<%=prodotti.get(random).getId()%>/1.jpg"/></a>
 
               <div class="content align-center">
-                <p class="price">€14.79</p>
-                <h2 class="h3">Ecoline Brush Pen</h2>
+              <%
+              			double price=0.0;
+              			price = prodotti.get(random).getPrezzoTot();       	
+              %>
+                <p class="price">€<%= String.format("%.2f", price) %></p>
+                <h2 class="h3"><%=prodotti.get(random).getNome()%></h2>
                 <hr class="offset-sm">
-
-              <a href="CartController?action=addC&id=15"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
+              <a href="CartController?action=addC&id=<%=prodotti.get(random).getId()%>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
-
-
-          <div class="col-sm-6 col-md-3 product">
-            <div class="body">
-              <a href="details?action=read&id=17"><img src="assets/img/product-home/wn-acquerelli.jpg" alt="Winsor&Newton Set Acquerelli"/></a>
-
-              <div class="content align-center">
-                <p class="price">€14.49</p>
-                <h2 class="h3">W&N Acquerelli</h2>
-                <hr class="offset-sm">
-
-                <a href="CartController?action=addC&id=17"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
-              </div>
-            </div>
-          </div>
-
-
+          <%
+			}
+          %>
         </div>
 
         <div class="align-right align-center-xs">
@@ -274,50 +251,36 @@
 
         <div class="row">
 
-          <div class="col-sm-6 col-md-4 product">
-            <div class="body">
-              <a href="details?action=read&id=19"><img src="assets/img/product-home/derwent-paintkit.jpg" alt="Derwent Paint Kit"/></a>
-
-              <div class="content align-center">
-                <p class="price">€23.80</p>
-                <p class="price through">€39.90</p>
-                <h2 class="h3">Derwent Paint Kit</h2>
-                <hr class="offset-sm">
-
-                <a href="CartController?action=addC&id=19"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
-              </div>
-            </div>
-          </div>
+		<%	
+			for(int i=0; i<3; i++) {
+				Random generator = new Random();
+				int random = 1+(generator.nextInt(prodotti.size()-1));
+				while(uscito.contains(random) || (prodotti.get(random).getQuantitaCatalogo() == 0)) {
+					random = 1+(generator.nextInt(prodotti.size()-1));
+				}
+				
+				uscito.add(random);
+		%>
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="details?action=read&id=16"><img src="assets/img/product-home/promarker-color.jpg" alt="Winsor&Newton Promarker Color"/></a>
-
+              <a href="details?action=read&id=<%=prodotti.get(random).getId()%>"><img src="assets/img/product/<%=prodotti.get(random).getId()%>/1.jpg"/></a>
               <div class="content align-center">
-                <p class="sale">€16.24</p>
-                <p class="price through">€21.99</p>
-                <h2 class="h3">W&N Promarker Color</h2>
+              <%
+              			double price=0.0;
+              			price = prodotti.get(random).getPrezzoTot();       	
+              %>
+                <p class="price">€<%= String.format("%.2f", price) %></p>
+                <p class="price through">€<%= String.format("%.2f", price+10) %></p>
+                <h2 class="h3"><%=prodotti.get(random).getNome()%></h2>
                 <hr class="offset-sm">
-
-                <a href="CartController?action=addC&id=16"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
+                <a href="CartController?action=addC&id=<%=prodotti.get(random).getId()%>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
-
-          <div class="col-sm-6 col-md-4 product">
-            <div class="body">
-              <a href="details?action=read&id=5"><img src="assets/img/product-home/art-book.jpg" alt="Canson Art Book"/></a>
-
-              <div class="content align-center">
-                <p class="price">€9.99</p>
-                <p class="price through">€14.99</p>
-                <h2 class="h3">Canson Art Book</h2>
-                <hr class="offset-sm">
-
-                <a href="CartController?action=addC&id=5"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
-              </div>
-            </div>
-          </div>
+		<%
+			}
+		%>
         </div>
         <div class="align-right align-center-xs">
           <hr class="offset-sm">
@@ -334,47 +297,36 @@
 
         <div class="row">
 
-          <div class="col-sm-6 col-md-4 product">
-            <div class="body">
-              <a href="details?action=read&id=7"><img src="assets/img/product-home/faber-castell.jpg" alt="Faber Castel Polychromos"/></a>
-
-              <div class="content align-center">
-                <p class="price">€55.00</p>
-                <h2 class="h3">Faber-Castel Polychromos</h2>
-                <hr class="offset-sm">
-
-                <a href="CartController?action=addC&id=7"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
-              </div>
-            </div>
-          </div>
+		<%	
+			for(int i=0; i<3; i++) {
+				Random generator = new Random();
+				int random = 1+(generator.nextInt(prodotti.size()-1));
+				while(uscito.contains(random) || (prodotti.get(random).getQuantitaCatalogo() == 0)) {
+					random = 1+(generator.nextInt(prodotti.size()-1));
+				}
+				
+				uscito.add(random);
+		%>
 
           <div class="col-sm-6 col-md-4 product">
             <div class="body">
-              <a href="details?action=read&id=22"><img src="assets/img/product-home/pennelli.jpg" alt="Pennelli LeFranc"/></a>
-
+              <a href="details?action=read&id=<%=prodotti.get(random).getId()%>"><img src="assets/img/product/<%=prodotti.get(random).getId()%>/1.jpg"/></a>
               <div class="content align-center">
-                <p class="price">€6.16</p>
-                <h2 class="h3">Pennelli LeFranc Bougeois</h2>
+              <%
+              			double price=0.0;
+              			price = prodotti.get(random).getPrezzoTot();       	
+              %>
+                <p class="price">€<%= String.format("%.2f", price) %></p>
+                <h2 class="h3"><%=prodotti.get(random).getNome()%></h2>
                 <hr class="offset-sm">
-
-                <a href="CartController?action=addC&id=22"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
+                <a href="CartController?action=addC&id=<%=prodotti.get(random).getId()%>"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               </div>
             </div>
           </div>
+        <%
+			}
+        %>
 
-          <div class="col-sm-6 col-md-4 product">
-            <div class="body">
-              <a href="details?action=read&id=24"><img src="assets/img/product-home/tela.jpg" alt="Tela Pintura 30x40"/></a>
-
-              <div class="content align-center">
-                <p class="price">€5.29</p>
-                <h2 class="h3">Tela Pintura 30x40</h2>
-                <hr class="offset-sm">
-
-                <a href="CartController?action=addC&id=24"><button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
-              </div>
-            </div>
-          </div>
         <div class="align-right align-center-xs">
           <hr class="offset-sm">
           <a href="AllProducts.jsp"> <h5 class="upp">Scopri di più</h5> </a>

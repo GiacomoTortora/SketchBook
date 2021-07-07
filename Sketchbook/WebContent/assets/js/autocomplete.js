@@ -38,10 +38,9 @@ $(document).ready(function(){
           var id=$('#id').val();
           $.ajax({
                type: "POST",
-               url:"CartController?action=setQuant&id="+id+"&qty="+qty,
+               url:"AddQuantController?action=setQuant&id="+id+"&qty="+qty,
                data:{"qty":qty, "id":id},
                success: function () {
-	                  location.reload();
                },
              });                           
            });

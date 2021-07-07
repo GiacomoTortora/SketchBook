@@ -69,8 +69,8 @@
                               <div class="input-group">
                               <div id="row" class="row">
                               <div class="col-md-4">
-                              <form id= "qnt" name="qnt" class="join" method="post">
-                                <select id="qntSelect">
+                              <form id= "qnt" name="qnt" class="join" method="post" action="AddQuantController">
+                                <select id="qntSelect" name="qty">
                                 	<%
                                 		for(int i=1; i<=prod.getQuantitaCatalogo(); i++) {
                                 			
@@ -145,9 +145,14 @@
                     </div>
                     <hr class="offset-md">
                      <form action="SvuotaCarrelloController" method="post">
-                     <button id="svuota" type="submit" class="btn btn-standard btn-sm pull-left align-left"><i class="ion-android-refresh"></i></button>
+                     <%if(!products.isEmpty()){ %>
+                     <button id="svuota" type="submit" class="btn btn-danger btn-md align-center"><i class="ion-android-delete"></i> Svuota Carrello</button>
+                     <hr class="offset-md">
+                     <%
+                     	}
+                     %>
                      </form>
-                     
+                        
                     <%if(!products.isEmpty()){ %>
 					<%if(currUser==null && admin==null) { %>
                     <a href="#signin" data-toggle="modal" data-target="#Modal-SignIn" class="btn btn-primary btn-lg justify"><i class="ion-android-checkbox-outline"></i>&nbsp;&nbsp; Checkout</a>

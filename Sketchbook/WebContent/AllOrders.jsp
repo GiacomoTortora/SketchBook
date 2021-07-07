@@ -46,8 +46,8 @@
    </form>
 	<hr class="offset-xs">
    <form action="SearchByDateController" method="POST">
-    <input type="text" name="data1" placeholder="Da: " required>
-    <input type="text" name="data2" placeholder="A: " required>
+    <input type="text" name="data1" placeholder="Da: 2021-01-01" required>
+    <input type="text" name="data2" placeholder="A: 2021-12-31" required>
     <button type="submit" class="btn btn-primary btn-sm rounded"> Ricerca da data a data</button>
    </form>
    </div>
