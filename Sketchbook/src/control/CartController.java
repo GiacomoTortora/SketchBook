@@ -40,10 +40,16 @@ public class CartController extends HttpServlet {
 		try {
 			if (action != null) {
 				if (action.equalsIgnoreCase("setQuant")) {
-					int id = Integer.parseInt(request.getParameter("id"));
-					ProductBean prodotto = prodotti.doRetrieveByKey(id);
-					prodotto.setQuantitaCarrello(Integer.parseInt(request.getParameter("qty")));
-					cart.addProduct(prodotto);
+
+						int id = Integer.parseInt(request.getParameter("id"));
+						int qty = Integer.parseInt(request.getParameter("qty"));
+						cart.updateQty(id, qty);
+						request.getSession().setAttribute("cart", cart);
+						request.setAttribute("cart", cart);
+						System.out.println("id" + id + "e qnt" + qty);
+						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
+						dispatcher.forward(request, response);
+					
 				}	
 				if (action.equalsIgnoreCase("addC")) {
 					int id = Integer.parseInt(request.getParameter("id"));

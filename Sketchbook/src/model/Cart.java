@@ -55,6 +55,13 @@ public class Cart {
 		return subtotale;
 	}
 	
+	public void updateQty(int idProdotto, int quantita) {
+		for(int i = 0; i<products.size();++i) {
+			if(idProdotto == products.get(i).getId())
+				products.get(i).setQuantitaCarrello(quantita);
+			aggiornaTotale();
+		}
+	}
 	public void svuota() {
 		products.clear();
 		totale=0;

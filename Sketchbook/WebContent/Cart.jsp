@@ -69,7 +69,7 @@
                               <div class="input-group">
                               <div id="row" class="row">
                               <div class="col-md-4">
-                              <form id= "qnt" name="qnt" class="join" method="post">
+                              <form action="CartController?action=setQuant" id= "qnt" name="qnt" class="join" method="post">
                                 <input type="number" min="1" max="<%=prod.getQuantitaCatalogo()%>" name="qty"/>
 							  	<input id="id" name="id" type="hidden" value="<%=prod.getId()%>"/>
 							  </form>
