@@ -53,8 +53,8 @@ public class ModIndirizzoController extends HttpServlet {
 			System.out.println(request.getParameter("provincia"));
 			indirizzo.setStato(request.getParameter("stato"));
 			System.out.println(request.getParameter("stato"));
-			indirizzo.setId(Integer.valueOf(request.getParameter("id")));
-			System.out.println(request.getParameter("id"));
+			indirizzo.setId(Integer.valueOf(request.getParameter("idbello")));
+			System.out.println(request.getParameter("idbello"));
 			save.doUpdate(indirizzo);
 			//response.sendRedirect("Aggiungi-Indirizzo.jsp");
 		}catch(Exception e) {

@@ -441,6 +441,8 @@ $(document).ready(function(){
              }                                
            });
          });
+         
+
 
 /*  AJAX AGGIUNGI INDIRIZZO SPEDIZIONE  */
 
@@ -466,6 +468,8 @@ $(document).ready(function(){
              }                        
            });
          });
+         
+
 
 /*  AJAX MODIFICA INDIRIZZO SPEDIZIONE  */
 
@@ -478,13 +482,13 @@ $(document).ready(function(){
           var cap=$('#cap').val();
           var provincia=$('#provincia').val();
           var stato=$('#stato').val()
-          var id=$('#id').val();
+          var idbello=$('#idbello').val();
           if(validateIndirizzo(this)){
 	      //il form è corretto, siamo fuori dal preventdefault e quindi il form viene passato alla servlet dopo il controllo
           $.ajax({
                type: "POST",
                url:"ModIndirizzoController",
-               data:{"via":via,"citta":citta,"cap":cap,"provincia":provincia,"stato":stato,"id":id},
+               data:{"via":via,"citta":citta,"cap":cap,"provincia":provincia,"stato":stato,"idbello":idbello},
                success: function () {
 	                location.reload(); //aggiorna la pagina                
                }
