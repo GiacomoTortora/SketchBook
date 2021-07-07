@@ -13,7 +13,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Carrello</title>
-    
+    <script>window.onpaint = refresh()
+            function refresh(){
+				if(window.location.href.includes("CartController"))
+    				window.location.href = "Cart.jsp";
+			}
+    </script>
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
 </head>
 

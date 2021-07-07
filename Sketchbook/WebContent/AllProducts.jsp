@@ -15,9 +15,8 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <title>Catalogo</title>
-    
+  
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
@@ -129,7 +128,7 @@
           </div>
         </div>
         <!-- /// -->
-
+		     
         <!-- Prodotti -->
         <div class="col-sm-8 col-md-9">
           <hr class="offset-lg">
@@ -163,7 +162,7 @@
               </div>
               <%
 				 }
-              %>
+              %>  
              </div>
             </div>
            </div>

@@ -170,8 +170,7 @@ if(!regExpName.test(tipo)){
 	 return false;
   }
   else return true;
-}
-
+}    
 /*  VALIDAZIONE INDIRIZZO SPEDIZIONE  */
 function validateIndirizzo(form){ 
 	
