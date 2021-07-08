@@ -67,23 +67,19 @@
                             
                             <div class="controls">
                               <div class="input-group">
-                              <div id="row" class="row">
-                              <div class="col-md-4">
                                
                                 <span class="input-group-btn">
                                 <a href="CartController?action=minus&id=<%=prod.getId()%>"><button class="btn btn-default btn-sm" type="button" data-action="minus"><i class="ion-minus-round"></i></button></a> 
                                 </span>
 
-                                <input type="text" class="form-control input-sm" placeholder="Qty" value="<%=prod.getQuantitaCarrello()%>" readonly="">
+                                <input type="text" class="form-control input-sm" placeholder="Qty" value="<%=prod.getQuantitaCarrello()%>" readonly>
                                 <span class="input-group-btn">
                                  <a href="CartController?action=plus&id=<%=prod.getId()%>"><button class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button></a>
                                 </span>
-							  	</div>
-							  	<div class="col-sm-2">
-							  	</div>
-                              </div><!-- /input-group -->
                               <hr class="offset-md">
-                              <a href="CartController?action=deleteC&id=<%=prod.getId()%>"><button class="btn btn-primary btn-xs rounded"> <i class="ion-close"></i> Rimuovi</button></a>
+                          	</div>
+                          	<div class="float">
+		                      <a href="CartController?action=deleteC&id=<%=prod.getId()%>"><button class="btn btn-primary btn-xs"> <i class="ion-close"></i> Rimuovi</button></a>
                           	</div>
                           </div>
                         </div>
