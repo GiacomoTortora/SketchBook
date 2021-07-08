@@ -161,7 +161,7 @@
                             </div>
                             
                             <div class="controls">
-                                <input type="text" class="form-control input-sm" placeholder="Qty" value="1" readonly>
+                                <input type="text" class="form-control input-sm" placeholder="Qty" value="<%=prod.getQuantitaCarrello()%>" readonly>
                           </div>
                         </div>
                          <%

@@ -55,13 +55,22 @@ public class Cart {
 		return subtotale;
 	}
 	
-	public void updateQty(int idProdotto, int quantita) {
+	public void plusQty(int idProdotto) {
 		for(int i = 0; i<products.size();++i) {
-			if(idProdotto == products.get(i).getId())
-				products.get(i).setQuantitaCarrello(quantita);
+			if(idProdotto == products.get(i).getId() && products.get(i).getQuantitaCarrello()<=products.get(i).getQuantitaCatalogo()-1)
+				products.get(i).incrementaQuantita();
 			aggiornaTotale();
 		}
 	}
+	
+	public void minusQty(int idProdotto) {
+		for(int i = 0; i<products.size();++i) {
+			if(idProdotto == products.get(i).getId() && products.get(i).getQuantitaCarrello()>1) 
+				products.get(i).decrementaQuantita();
+			aggiornaTotale();
+		}
+	}
+	
 	public void svuota() {
 		products.clear();
 		totale=0;

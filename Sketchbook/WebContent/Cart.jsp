@@ -69,10 +69,15 @@
                               <div class="input-group">
                               <div id="row" class="row">
                               <div class="col-md-4">
-                              <form action="CartController?action=setQuant" id= "qnt" name="qnt" class="join" method="post">
-                                <input type="number" min="1" max="<%=prod.getQuantitaCatalogo()%>" name="qty"/>
-							  	<input id="id" name="id" type="hidden" value="<%=prod.getId()%>"/>
-							  </form>
+                               
+                                <span class="input-group-btn">
+                                <a href="CartController?action=minus&id=<%=prod.getId()%>"><button class="btn btn-default btn-sm" type="button" data-action="minus"><i class="ion-minus-round"></i></button></a> 
+                                </span>
+
+                                <input type="text" class="form-control input-sm" placeholder="Qty" value="<%=prod.getQuantitaCarrello()%>" readonly="">
+                                <span class="input-group-btn">
+                                 <a href="CartController?action=plus&id=<%=prod.getId()%>"><button class="btn btn-default btn-sm" type="button" data-action="plus"><i class="ion-plus-round"></i></button></a>
+                                </span>
 							  	</div>
 							  	<div class="col-sm-2">
 							  	</div>

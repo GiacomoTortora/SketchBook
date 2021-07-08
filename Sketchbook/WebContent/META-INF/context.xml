@@ -6,6 +6,6 @@
         driverClassName="com.mysql.cj.jdbc.Driver"
         type="javax.sql.DataSource"
         username="root"
-        password="rpjt"
+        password="P1PP0B4UD0"
         url="jdbc:mysql://localhost:3306/ecommerce?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
 </Context>

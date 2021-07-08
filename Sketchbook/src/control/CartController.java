@@ -39,14 +39,25 @@ public class CartController extends HttpServlet {
 
 		try {
 			if (action != null) {
-				if (action.equalsIgnoreCase("setQuant")) {
-
+				if (action.equalsIgnoreCase("plus")) {
+                    System.out.println("ciao");
+					int id = Integer.parseInt(request.getParameter("id"));
+					cart.plusQty(id);
+					request.getSession().setAttribute("cart", cart);
+					request.setAttribute("cart", cart);
+					System.out.println("id" + id);
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
+					dispatcher.forward(request, response);
+				
+			}
+				if (action != null) {
+					if (action.equalsIgnoreCase("minus")) {
+	                    System.out.println("ciao");
 						int id = Integer.parseInt(request.getParameter("id"));
-						int qty = Integer.parseInt(request.getParameter("qty"));
-						cart.updateQty(id, qty);
+						cart.minusQty(id);
 						request.getSession().setAttribute("cart", cart);
 						request.setAttribute("cart", cart);
-						System.out.println("id" + id + "e qnt" + qty);
+						System.out.println("id" + id);
 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
 						dispatcher.forward(request, response);
 					
@@ -72,6 +83,7 @@ public class CartController extends HttpServlet {
 				}
 			}
 		}
+	}
 		catch (SQLException e) {
 			System.out.println("Error:" + e.getMessage());
 		}

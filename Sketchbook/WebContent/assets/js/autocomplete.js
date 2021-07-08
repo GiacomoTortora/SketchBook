@@ -31,7 +31,7 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function(){
+/*$(document).ready(function(){
        $('#qntSelect').change(function()
        { 
           var qty=$('#qntSelect :selected').text();
@@ -45,13 +45,14 @@ $(document).ready(function(){
              });                           
            });
        });
+*/
 
-$(document).ready(function(){
+/*$(document).ready(function(){
     var count = 1;
     $(".row").each(function(){
        $("#id").append("<input type='hidden' name='id_" + (count++) +"'/><br />");
     });
-})
+})*/
 
 
 
@@ -60,8 +61,8 @@ function focus(){
 }
 
 function getQty(){
-	var qty=document.getElementById("qntSelect").value;
-    document.getElementById("demo").innerHTML = "You selected: " + qty;
+	var qty=document.getElementName("qty").value;
+    return qty;
 }
 
 
