@@ -15,6 +15,7 @@
  admin=(UserBean) session.getAttribute("adminSession");
  
  cart = (Cart) session.getAttribute("cart");
+
  
 %>
 

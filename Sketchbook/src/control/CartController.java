@@ -38,6 +38,7 @@ public class CartController extends HttpServlet {
 		String action = request.getParameter("action");
 
 		try {
+			
 			if (action != null) {
 				if (action.equalsIgnoreCase("plus")) {
                     System.out.println("ciao");
@@ -61,7 +62,23 @@ public class CartController extends HttpServlet {
 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
 						dispatcher.forward(request, response);
 					
-				}	
+				}
+					if (action != null) {
+						if (action.equalsIgnoreCase("setQuant")) {
+		                    System.out.println("ciao");
+							int id = Integer.parseInt(request.getParameter("idProd"));
+							int qty=Integer.valueOf(request.getParameter("qty"));
+							ProductBean prodotto= prodotti.doRetrieveByKey(id);
+							for(int i=0; i<=qty; i++) {
+								cart.addProduct(prodotto);
+							}
+							request.getSession().setAttribute("cart", cart);
+							request.setAttribute("cart", cart);
+							System.out.println("id" + id);
+							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
+							dispatcher.forward(request, response);
+						
+					}	
 				if (action.equalsIgnoreCase("addC")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					ProductBean prodotto = prodotti.doRetrieveByKey(id);
@@ -84,6 +101,7 @@ public class CartController extends HttpServlet {
 			}
 		}
 	}
+}
 		catch (SQLException e) {
 			System.out.println("Error:" + e.getMessage());
 		}

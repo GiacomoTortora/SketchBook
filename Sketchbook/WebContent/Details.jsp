@@ -115,9 +115,19 @@
 
               <p class="price">€<%= String.format("%.2f", price) %></p>
               <hr class="offset-md">
-              <form id= "num" name="num" class="join" method="post">
-                  <input type="number" id="quantita" name="quantita" min="1" max="<%=product.getQuantitaCatalogo()%>" value="1">
-              </form>
+              <form id= "num" name="num" class="join" method="post" action="CartController?action=setQuant">
+                   <select name="qty">
+                                	<%
+                                		for(int i=1; i<=product.getQuantitaCatalogo(); i++) {
+                                			
+                                	%>
+								    <option id="option" style="z-index:100"value="<%=i%>"><%=i%></option>
+								    
+								    <%
+                                		}
+								    %>
+							  	</select>
+                  <input type="hidden" name="idProd" value="<%=product.getId()%>">
               <hr class="offset-sm">
               <%
                   if(product.getQuantitaCatalogo() == 0) {
@@ -128,10 +138,11 @@
                   }
                   else {
               %>
-              <a href="CartController?action=addC&id=<%=product.getId() %>" data-toggle="modal" data-target="#Modal-Cart"><button class="btn btn-primary btn-md rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
+              <button type="submit"class="btn btn-primary btn-md rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               <%
                   }
               %>
+              </form>
             </div>
           </div>
         </div>

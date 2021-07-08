@@ -32,7 +32,7 @@
     <hr class="offset-lg">
     
    <h1 class="align-center"><i class="ion-android-done"></i> Grazie per il tuo ordine! <i class="ion-android-done"></i></h1>
-   <h3 class="h4 align-center">L'ordine è stato preso in carica con successo.<br> Grazie!</h3>
+   <h3 class="h4 align-center">L'ordine è stato preso in carico con successo.<br> Grazie!</h3>
    <hr class="offset-xl">
    <h3 class="h4 align-center"><a href="ProductView.jsp">Torna Indietro</a></h3>
     

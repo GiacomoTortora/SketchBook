@@ -32,21 +32,21 @@ $(document).ready(function() {
 });
 
 /*$(document).ready(function(){
-       $('#qntSelect').change(function()
+       $('#qty').change(function()
        { 
-          var qty=$('#qntSelect :selected').text();
-          var id=$('#id').val();
+          var qty=$('#qty :selected').text();
+          var id=$('#idProd').val();
           $.ajax({
                type: "POST",
-               url:"AddQuantController?action=setQuant&id="+id+"&qty="+qty,
+               url:"CartController?action=setQuant",
                data:{"qty":qty, "id":id},
                success: function () {
+               location.reload();
                },
              });                           
            });
        });
 */
-
 /*$(document).ready(function(){
     var count = 1;
     $(".row").each(function(){
