@@ -138,7 +138,7 @@
                   }
                   else {
               %>
-              <button type="submit"class="btn btn-primary btn-md rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
+              <a href="CartController?action=addC&id=<%=product.getId() %>" data-toggle="modal" data-target="#Modal-Cart"><button type="submit"class="btn btn-primary btn-md rounded"> <i class="ion-bag"></i> Aggiungi al carrello</button></a>
               <%
                   }
               %>
@@ -186,7 +186,7 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="details?action=read&id=10"><img src="assets/img/product-home/10.jpg" alt="Derwent 6pz"/></a>
+              <a href="details?action=read&id=10"><img src="assets/img/product/10/1.jpg" alt="Derwent 6pz"/></a>
 
               <div class="content align-center">
                 <p class="price">€8.95</p>
@@ -200,7 +200,7 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="details?action=read&id=13"><img src="assets/img/product-home/winsor-newton-promarkers.jpg" alt="Winsor&Newton ProMarker"/></a>
+              <a href="details?action=read&id=13"><img src="assets/img/product/13/1.jpg" alt="Winsor&Newton ProMarker"/></a>
 
               <div class="content align-center">
                 <p class="price">€17.36</p>
@@ -214,7 +214,7 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="details?action=read&id=15"><img src="assets/img/product-home/ecoline.jpg" alt="Ecoline Brush Pen"/></a>
+              <a href="details?action=read&id=15"><img src="assets/img/product/15/1.jpg" alt="Ecoline Brush Pen"/></a>
 
               <div class="content align-center">
                 <p class="price">€14.78</p>
@@ -229,7 +229,7 @@
 
           <div class="col-sm-6 col-md-3 product">
             <div class="body">
-              <a href="details?action=read&id=17"><img src="assets/img/product-home/wn-acquerelli.jpg" alt="Winsor&Newton Set Acquerelli"/></a>
+              <a href="details?action=read&id=17"><img src="assets/img/product/17/1.jpg" alt="Winsor&Newton Set Acquerelli"/></a>
 
               <div class="content align-center">
                 <p class="price">€14.49</p>

@@ -71,99 +71,12 @@
 
     <div class="container">
       <div class="row">
-      
-        <!-- Filtri -->
         <div class="col-sm-4 col-md-3">
           <hr class="offset-lg">
-
-          <div class="filter">
-            <div class="item">
-                <div class="title">
-                    <a href="#clear" data-action="open" class="down"> <i class="ion-android-arrow-dropdown"></i> Open</a>
-                    <a href="#clear" data-action="clear"> <i class="ion-ios-trash-outline"></i> Reset</a>
-                    <h1 class="h4">Marca</h1>
-                </div>
-
-                <div class="controls">
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                      <div class="label" data-value="Canson">Canson</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                      <div class="label" data-value="Cobra">Cobra</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="Copic">Copic</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="Derwent">Derwent</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="Ecoline">Ecoline</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="FaberCastel">Faber Castel</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="Fabriano">Fabriano</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-                  
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="LefrancBourgeois">LeFranc Bourgeois</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-                  
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="Lyra">Lyra</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-                  
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="Pintura">Pintura</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-                  
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="VanGogh">Van Gogh</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-
-                  <div class="checkbox-group" data-status="inactive">
-                      <div class="checkbox"><i class="ion-android-done"></i></div>
-                       <div class="label" data-value="Winsor&Newton">Winsor & Newton</div>
-                      <input type="checkbox" name="checkbox" value="">
-                  </div>
-                </div>
-            </div>
-          </div>
         </div>
-        <!-- /// -->
 
         <!-- Prodotti -->
-        <div class="col-sm-8 col-md-9">
+        <div class="col-sm-8 col-md-9" style="margin-left:5%">
           <hr class="offset-lg">
 
           <div class="products">

@@ -30,6 +30,7 @@
 <body>
 
 	<%@ include file="/fragments/header.jsp" %>	
+	<% if(admin==null) response.sendRedirect("401error.jsp"); %>
 	
     <hr class="offset-lg">
     <hr class="offset-lg">
@@ -60,15 +61,15 @@
                              <form id= "modificaProdotto" name="modificaProdotto" class="join" method="post" onsubmit="return validateProduct(this)">
         
 			                  	<h5>Nome</h5>
-			                    <input id="nome" type="text" name="nome" value="" placeholder="Nome Prodotto" required=""/>
+			                    <input id="nome" type="text" name="nome" value="<%=product.getNome()%>" placeholder="Nome Prodotto" required=""/>
 			                    <p class="errormsg" id="nomeErr"></p>
 			                    
 			                    <h5>Descrizione</h5>
-			                    <input id="descrizione" type="text" name="descrizione" value="" placeholder="Descrizione Prodotto" required=""/>
+			                    <input id="descrizione" type="text" name="descrizione" value="<%=product.getDescrizione()%>" placeholder="Descrizione Prodotto" required=""/>
 			                    <p class="errormsg" id="descrizioneErr"></p>
 			                    
 								<h5>Prezzo</h5>
-			                    <input id="prezzo" type="text" name="prezzo" value="" placeholder="Prezzo" required=""/>
+			                    <input id="prezzo" type="text" name="prezzo" value="<%= String.format("%.2f", product.getPrezzoTot()) %>" placeholder="Prezzo" required=""/>
 			                    <p class="errormsg" id="prezzoErr"></p>
 			                    
 			                    <h5>IVA %</h5>

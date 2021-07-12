@@ -1,9 +1,7 @@
 <%@page import="org.eclipse.jdt.internal.compiler.ast.ThisReference"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    
-
-	
+    	
 <!DOCTYPE html>
 <html>
 <%@ page import="java.util.*,model.bean.ProductBean, model.Cart,model.bean.UserBean"%>

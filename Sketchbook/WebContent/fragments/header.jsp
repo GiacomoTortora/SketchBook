@@ -5,16 +5,15 @@
     
 <% 
  UserBean currUser=new UserBean();
- 
  UserBean admin=new UserBean();
- 
- Cart cart = new Cart();
 
  currUser= (UserBean) session.getAttribute("currentSessionUser");
  
  admin=(UserBean) session.getAttribute("adminSession");
  
- cart = (Cart) session.getAttribute("cart");
+ Cart cart;
+ if((cart = (Cart) session.getAttribute("cart")) != null);
+ else cart = new Cart();
 
  
 %>

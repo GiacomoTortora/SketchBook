@@ -31,30 +31,20 @@ public class CheckoutController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {	
-				int x = 0;
 				OrderBean ordine = new OrderBean();
 				HttpSession session = request.getSession(false); 
-				System.out.println(++x);
 				Cart cart = (Cart)session.getAttribute("cart");
 				UserBean user = (UserBean) session.getAttribute("currentSessionUser");
-				System.out.println(++x);
 				if(user == null) {
-					System.out.println(++x);
 					user = (UserBean)session.getAttribute("adminSession");
 				}
-				System.out.println(++x);
 				List<ProductBean> prodotti = cart.getProducts();
-				System.out.println(++x);
 				ordine.setIdCliente(user.getId());
-				System.out.println(++x);
-				ordine.setData(LocalDate.now());
-				System.out.println(++x);
+				ordine.setData(LocalDate.now().plusDays(1));
 				ordine.setProdotti(prodotti);
 				ordine.setStato("Ordinato");
-				System.out.println(++x);
 				new OrderDAO().doSave(ordine);
 				session.removeAttribute("cart");
-				System.out.println(++x);
 				response.sendRedirect("ConfermaOrdine.jsp");
 		}catch(Exception e) {
 			

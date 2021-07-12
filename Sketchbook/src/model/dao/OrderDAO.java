@@ -242,7 +242,7 @@ public class OrderDAO {
 				connection = ds.getConnection();
 				preparedStatement = connection.prepareStatement(selectSQL);
 				preparedStatement.setDate(1, java.sql.Date.valueOf(data1));
-				preparedStatement.setDate(2, java.sql.Date.valueOf(data2));
+				preparedStatement.setDate(2, java.sql.Date.valueOf(data2.plusDays(1)));
 				
 				ResultSet rs = preparedStatement.executeQuery();
 			
