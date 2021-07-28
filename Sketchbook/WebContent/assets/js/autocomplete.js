@@ -31,31 +31,6 @@ $(document).ready(function() {
     });
 });
 
-/*$(document).ready(function(){
-       $('#qty').change(function()
-       { 
-          var qty=$('#qty :selected').text();
-          var id=$('#idProd').val();
-          $.ajax({
-               type: "POST",
-               url:"CartController?action=setQuant",
-               data:{"qty":qty, "id":id},
-               success: function () {
-               location.reload();
-               },
-             });                           
-           });
-       });
-*/
-/*$(document).ready(function(){
-    var count = 1;
-    $(".row").each(function(){
-       $("#id").append("<input type='hidden' name='id_" + (count++) +"'/><br />");
-    });
-})*/
-
-
-
 function focus(){
 	document.getElementById("searchInput").focus;
 }

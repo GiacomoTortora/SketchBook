@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>Galleria Immagini</title>
+    <title>Galleria</title>
     
     <link rel="shortcut icon" href="assets/img/favicon.png"/>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 
 	<div class="white">
         <div class="container checkout">
-            <h1>Galleria Immagini</h1>
+            <h1>Galleria Disegni dei Clienti</h1>
             <hr class="offset-sm">
         </div>
     </div>

@@ -76,7 +76,7 @@
         </div>
 
         <!-- Prodotti -->
-        <div class="col-sm-8 col-md-9" style="margin-left:5%">
+        <div class="col-sm-8 col-md-9" style="margin-left:12%">
           <hr class="offset-lg">
 
           <div class="products">

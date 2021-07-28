@@ -68,7 +68,7 @@
                   <img src="assets/img/product/<%=product.getId()%>/4.jpg" alt="<%=product.getNome()%>" class="background"/>
 
                   <div class="tiles">
-                    <a href="https://www.youtube.com/watch?v=uKxyLmbOc0Q&ab_channel=YugoKanno%28tema%29YugoKanno%28tema%29">
+                    <a href="https://www.youtube.com">
                         <img src="assets/img/product/<%=product.getId()%>/4.jpg" alt="<%=product.getNome()%>">
                         
 
